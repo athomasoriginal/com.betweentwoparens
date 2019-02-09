@@ -1,0 +1,31 @@
+/* @accessibility  available to screen reader, but not visible to sighted users */
+.hide {
+  left: -999em;
+  position: absolute;
+}
+
+.article-index-item {
+  grid-column: main-start;
+  margin: 1.75rem 0 1.75rem 0;
+}
+
+.article-index-item__title {
+  font-size: 24px;
+  margin-bottom: 0.4375rem;
+  color: hsl(0, 0%, 0%); /* TODO make me a variable */
+}
+
+.article-index-item__link {
+  color: hsl(0, 0%, 0%); /* TODO make me a variable */
+}
+
+.article-index-item__meta {
+  font-size: 14px;
+  margin: 0;
+  color: hsl(0, 0%, 53%); /* TODO make me a variable */
+}
+
+.article-index-item__description {
+  font-size: 18px;
+  margin: 0;
+}
