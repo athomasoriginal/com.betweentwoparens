@@ -17,8 +17,10 @@
 1. **Start blog**
 
    ```sh
-   gatsby develop
+   npx gatsby develop
    ```
+
+   > Using `npx` means you do not have to install gatsby globally
 
 Your site is now running at `http://localhost:8000`!
 
