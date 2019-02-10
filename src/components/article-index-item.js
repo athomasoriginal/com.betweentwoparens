@@ -5,11 +5,11 @@ import { Link } from 'gatsby'
 
 import './article-index-item.css'
 
-const ArticleIndexItem = ({ title, date, description }) => (
+const ArticleIndexItem = ({ title, date, description, url }) => (
   <article className="article-index-item">
     <header>
       <h2 className="article-index-item__title">
-        <Link className="article-index-item__link" to="/another-page/">
+        <Link className="article-index-item__link" to={url}>
           {title}
         </Link>
       </h2>
