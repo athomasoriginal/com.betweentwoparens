@@ -1,3 +1,9 @@
 .footer {
   grid-column: main-start;
 }
+
+.footer__link {
+  color: hsl(0, 0%, 0%); /* TODO make me a variable */
+  text-decoration: none;
+  margin-right: 10px;
+}

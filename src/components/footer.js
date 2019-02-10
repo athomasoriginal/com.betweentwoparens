@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { Link } from 'gatsby'
-
 import './footer.css'
+
+const FooterLink = ({ title, url }) => (
+  <a className="footer__link" href={url} target="__blank">
+    {title}
+  </a>
+)
 
 const Footer = ({ links }) => (
   <footer className="footer">
     {links.map(link => (
-      <Link key={link} to="/another-page/">
-        {link}
-      </Link>
+      <FooterLink key={link.title} title={link.title} url={link.url} />
     ))}
   </footer>
 )
