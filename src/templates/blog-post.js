@@ -3,15 +3,18 @@ import Layout from '../components/layout'
 
 import { graphql } from 'gatsby'
 
+import './blog-post.css'
+
 export default ({ data }) => {
   const post = data.markdownRemark
 
   return (
     <Layout>
-      <div>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      <h2 className="article__title">{post.frontmatter.title}</h2>
+      <div
+        className="article__content"
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      />
     </Layout>
   )
 }

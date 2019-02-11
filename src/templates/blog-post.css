@@ -1,0 +1,4 @@
+.article__title,
+.article__content {
+  grid-column: main-start;
+}
