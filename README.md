@@ -1,6 +1,6 @@
 - [Quick Start](#quick-start)
 - [Article Guidelines](#article-frontmatter-guidelines)
-  - [Date Formatting](#date-formatting)
+  - [Date](#date)
   - [Summary](#summary)
   - [Slug](#slug)
 
@@ -34,7 +34,7 @@ Your site is now running at `http://localhost:8000`!
 
 ## Article Frontmatter Guidelines
 
-### Date Formatting
+### Date
 
 - Date Formatting
 
