@@ -51,21 +51,6 @@ Your site is now running at `http://localhost:8000`!
 
   > All blog posts require frontmatter to have a date included with the proper formatting
 
-- Custom Slugs
-
-  ```bash
-  # bad
-  my_custom_slug
-
-  # bad
-  myCustomSlug
-
-  # good
-  my-custom-slug
-  ```
-
-  > perfer lisp case as I feel it is more readable
-
 ### Summary
 
 `gatsby-transformer-remark` will provide you with what they call an `excerpt` of the content in your markdown file. The `excerpt` is the first 140 characters of your markdown file. While you can set it to be whatever you like, for my blog posts I like to write a custom summary. To do this you can add a `summary` field to your `frontmatter`. Try to limit it to 140 characters.
@@ -89,6 +74,21 @@ slug: my-custom-slug <--- this
 ---
 ```
 
-with the above, your slug will now look like `www.my-site.com/articles/my-custom-slug/`.
+with the above, your slug will now look like `www.my-site.com/articles/my-custom-slug/`. Please also keep in mind rules for naming slugs:
+
+- Custom Slugs
+
+  ```bash
+  # bad
+  my_custom_slug
+
+  # bad
+  myCustomSlug
+
+  # good
+  my-custom-slug
+  ```
+
+  > perfer lisp case as I feel it is more readable
 
 > @note you may notice that `articles` will always show up in the above. This is because it is hardcoded in `gatsby-node.js`. Feel free to change it if needed.
