@@ -3,6 +3,7 @@
   - [Date](#date)
   - [Summary](#summary)
   - [Slug](#slug)
+  - [Footnotes](#footnotes)
 
 ## Quick start
 
