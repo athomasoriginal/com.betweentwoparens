@@ -92,3 +92,21 @@ with the above, your slug will now look like `www.my-site.com/articles/my-custom
   > perfer lisp case as I feel it is more readable
 
 > @note you may notice that `articles` will always show up in the above. This is because it is hardcoded in `gatsby-node.js`. Feel free to change it if needed.
+
+### Footnotes
+
+Follow this for writing footnotes. I generally use them when I want to qualify a point with additional information.
+
+```html
+<a href="#footnotes" aria-describedby="footnote-label" id="footnotes-ref">methods</a
+
+
+<aside>
+  <h2>Footnotes</h2>
+  <ol>
+    <li id="footnotes">This is the footnote about methods <a href="#footnotes-ref" aria-label="Back to content">↩</a></li>
+  </ol>
+</aside>
+```
+
+We provide aria-labels for everything and we also add an `aside` at the bottom which is where we put the footers. You do not need to manually add numbers to the footnotes inside the blog post because our CSS is adding them dynamically, but this does mean that you do have to put them in the correct order in the footer section at the bottom.

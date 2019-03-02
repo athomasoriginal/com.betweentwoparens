@@ -2,3 +2,32 @@
 .article__content {
   grid-column: main-start;
 }
+
+/* Accessible Footnotes */
+
+a[aria-describedby='footnote-label'] {
+  counter-increment: footnotes;
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+  outline: none;
+}
+
+a[aria-describedby='footnote-label']::after {
+  content: counter(footnotes);
+  vertical-align: super;
+  font-size: 0.5em;
+  margin-left: 2px;
+  color: dodgerblue;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+ol :target {
+  background-color: yellow;
+}
+
+[aria-label='Back to content'] {
+  font-size: 12px;
+}
