@@ -110,4 +110,4 @@ Follow this for writing footnotes. I generally use them when I want to qualify a
 </aside>
 ```
 
-We provide aria-labels for everything and we also add an `aside` at the bottom which is where we put the footers. You do not need to manually add numbers to the footnotes inside the blog post because our CSS is adding them dynamically, but this does mean that you do have to put them in the correct order in the footer section at the bottom.
+We provide aria-labels for everything and we also add an `aside` at the bottom which is where we put the footers. You do not need to manually add numbers to the footnotes inside the blog post because our CSS is adding them dynamically, but you do still need to put them in the correct order in the aside section at the bottom.
