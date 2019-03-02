@@ -1,3 +1,190 @@
+/* -----------------------------------------------------------------------------
+ * Blog Post Style Variables
+ * ---------------------------------------------------------------------------*/
+
+:root {
+  --char: #d8dee9;
+  --comment: #999999;
+  --keyword: #c5a5c5;
+  --lineHighlight: #14161a;
+  --primitive: #5a9bcf;
+  --string: #8dc891;
+  --variable: #d7deea;
+  --boolean: #ff8b50;
+  --punctuation: #5fb3b3;
+  --tag: #fc929e;
+  --function: #79b6f2;
+  --className: #fac863;
+  --method: #6699cc;
+  --operator: #fc929e;
+  --dark-blue: #282c34;
+  --white: #fff;
+  --lineHighlight: #14161a;
+}
+
+/* -----------------------------------------------------------------------------
+ * Blog Post Syntax Highlight Theme
+ *
+ * borrowed from reactjs.org.  apply to prismjs.
+ * ---------------------------------------------------------------------------*/
+
+.gatsby-highlight {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border-radius: 10px;
+  overflow: auto;
+  tab-size: 1.5em;
+}
+
+.gatsby-highlight code[class*='gatsby-code-'],
+.gatsby-highlight pre[class*='gatsby-code-'],
+.gatsby-highlight pre.prism-code {
+  height: auto !important;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  /* remove all margin to resolve wonky indentation */
+  margin-bottom: 0;
+}
+
+.gatsby-highlight + .gatsby-highlight {
+  margin-top: 20px;
+}
+
+.gatsby-highlight-code-line {
+  background-color: var(--lineHighlight);
+  display: block;
+  margin: -0.125rem calc(-1rem - 15px);
+  padding: 0.125rem calc(1rem + 15px);
+}
+
+.token.attr-name {
+  color: var(--keyword);
+}
+
+/* comment highlighting */
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--comment);
+}
+
+/* primitive highlighting */
+
+.token.property,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--primitive);
+}
+
+/* boolean highlighting */
+
+.token.boolean {
+  color: var(--boolean);
+}
+
+/* tag highlighting - jsx */
+
+.token.tag {
+  color: var(--tag);
+}
+
+/* String Highlighting */
+
+.token.string {
+  color: var(--string);
+}
+
+/* punctuation highlighting */
+
+.token.punctuation {
+  color: var(--punctuation);
+}
+
+/*  */
+
+.token.selector,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--char);
+}
+
+/* function highlighting */
+
+.token.function {
+  color: var(--function);
+}
+
+/*  */
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  color: var(--variable);
+}
+
+/* */
+
+.token.attr-value {
+  color: var(--string);
+}
+
+/* */
+
+.token.keyword {
+  color: var(--keyword);
+}
+
+/* */
+
+.token.atrule,
+.token.class-name {
+  color: var(--className);
+}
+
+/* */
+
+.token.important {
+  font-weight: 400;
+}
+
+/* */
+
+.token.bold {
+  font-weight: 700;
+}
+
+/* */
+
+.token.italic {
+  font-style: italic;
+}
+
+/* */
+
+.token.entity {
+  cursor: help;
+}
+
+/* */
+
+.namespace {
+  opacity: 0.7;
+}
+
+/* -----------------------------------------------------------------------------
+ * Blog Post General Styles
+ * ---------------------------------------------------------------------------*/
+
 .article__title,
 .article__content {
   grid-column: main-start;
