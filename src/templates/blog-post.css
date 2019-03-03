@@ -34,6 +34,7 @@
   border-radius: 10px;
   overflow: auto;
   tab-size: 1.5em;
+  margin-bottom: 25px;
 }
 
 .gatsby-highlight code[class*='gatsby-code-'],
