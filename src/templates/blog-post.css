@@ -20,6 +20,10 @@
   --dark-blue: #282c34;
   --white: #fff;
   --lineHighlight: #14161a;
+  /* Light Canary Yellow */
+  --color-blockquote: rgba(255, 229, 100, 0.3);
+  --color-blockquote-sidebar: rgba(255, 229, 100, 1);
+  --font-semi-bold: 600;
 }
 
 /* -----------------------------------------------------------------------------
@@ -218,4 +222,31 @@ ol :target {
 
 [aria-label='Back to content'] {
   font-size: 12px;
+}
+
+/* Quotes */
+
+.article__content blockquote {
+  background-color: var(--color-blockquote);
+  border-left-color: var(--color-blockquote-sidebar);
+  border-left-width: 9px;
+  border-left-style: solid;
+  padding: 20px 45px 20px 26px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
+.article__content blockquote p {
+  margin-top: 15px;
+}
+
+.article__content blockquote p:first-of-type {
+  font-weight: var(--font-semi-bold);
+  margin-top: 0;
+}
+
+.article__content blockquote p:first-of-type:nth-of-type(2) {
+  margin-top: 0;
 }
