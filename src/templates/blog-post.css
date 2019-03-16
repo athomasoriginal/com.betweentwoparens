@@ -45,7 +45,7 @@
 .gatsby-highlight pre[class*='gatsby-code-'],
 .gatsby-highlight pre.prism-code {
   height: auto !important;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 20px;
   white-space: pre-wrap;
   word-break: break-word;
