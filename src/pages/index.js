@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ArticleIndexItem from '../components/article-index-item'
+import AuthorAvatar from '../components/author-avatar'
 import Footer from '../components/Footer'
 import Header from '../components/header'
 
@@ -37,7 +38,10 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`clojurescript`, `clojure`, `javascript`]} />
-      <Header siteTitle="Thomas Town" />
+      <AuthorAvatar
+        name="Thomas Mattacchione"
+        interests={['Clojure', 'ClojureScript', 'JavaScript']}
+      />
       {articles && articles.length ? (
         <Articles articles={articles} />
       ) : (
