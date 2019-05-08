@@ -11,6 +11,21 @@
   --font-bold: 700;
 }
 
+.main-content {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(1em, 1fr) [main-start] minmax(0, 30em)
+    [main-end] minmax(1em, 1fr) [full-end];
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  align-self: center;
+}
+
+.main-content > * {
+  grid-column: main;
+}
+
 .h__base {
   font-weight: var(--font-normal);
   line-height: 1;
@@ -26,7 +41,7 @@
 }
 
 .ul {
-  list-style-typse: none;
+  list-style-type: none;
   padding: 0;
   margin: 0;
 }
