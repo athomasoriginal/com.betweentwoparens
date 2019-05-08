@@ -6,7 +6,6 @@ import SEO from '../components/seo'
 import ArticleIndexItem from '../components/article-index-item'
 import AuthorAvatar from '../components/author-avatar'
 import Footer from '../components/Footer'
-import Header from '../components/header'
 
 const social_media_links = [
   { title: 'Github', url: 'https://github.com/tkjone/' },
