@@ -4,6 +4,11 @@
 
 .footer__link {
   color: hsl(0, 0%, 0%); /* TODO make me a variable */
+  font-weight: bold;
   text-decoration: none;
   margin-right: 10px;
+}
+
+.footer__link:hover {
+  background: rgba(97, 130, 237, 0.3);
 }

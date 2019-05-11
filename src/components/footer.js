@@ -4,7 +4,7 @@ import React from 'react'
 import './footer.css'
 
 const FooterLink = ({ title, url }) => (
-  <a className="footer__link" href={url} target="__blank">
+  <a className="footer__link link__underline" href={url} target="__blank">
     {title}
   </a>
 )
