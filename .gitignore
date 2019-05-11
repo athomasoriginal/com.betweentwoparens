@@ -69,6 +69,6 @@ yarn-error.log
 .yarn-integrity
 
 # dev
-articles
-articles-research
 build-journal.md
+/articles
+/articles-research
