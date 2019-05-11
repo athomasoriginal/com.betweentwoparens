@@ -41,6 +41,10 @@
   padding: 0.125rem calc(1rem + 15px);
 }
 
+.gatsby-code-text {
+  background-color: var(--yellow-code-text);
+}
+
 .token.attr-name {
   color: var(--keyword);
 }
