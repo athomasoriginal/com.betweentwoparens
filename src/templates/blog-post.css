@@ -6,7 +6,7 @@
 
 .gatsby-highlight {
   background-color: var(--dark-blue);
-  color: var(--white);
+  color: var(--color-white);
   border-radius: 10px;
   overflow: auto;
   tab-size: 1.5em;
