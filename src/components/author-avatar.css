@@ -1,47 +1,6 @@
 /* Author Avatar Styles */
 
-/* calcs, globals css variable colors and cleanup this circle fun below */
-
 .root {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.circle1 {
-  border-radius: 50%;
-  position: relative;
-  width: 120px;
-  height: 120px;
-  background-color: var(--color-deep-pink);
-}
-
-.circle2 {
-  border-radius: 50%;
-  background-color: var(--color-white);
-  width: 110px;
-  height: 110px;
-
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.circle3 {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  background-color: var(--color-deep-pink);
-
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.skills {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
 }
