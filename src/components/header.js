@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './author-avatar.css'
+import './header.css'
 
-const AuthorAvatar = ({ name, interests, picture }) => (
+const Header = ({ name, interests, picture }) => (
   <div className="root">
     <h1 className="site-title">Between Two Parens</h1>
 
@@ -10,14 +10,14 @@ const AuthorAvatar = ({ name, interests, picture }) => (
   </div>
 )
 
-AuthorAvatar.propTypes = {
+Header.propTypes = {
   name: PropTypes.string,
   interests: PropTypes.array,
   picture: PropTypes.element,
 }
 
-AuthorAvatar.defaultProps = {
+Header.defaultProps = {
   siteTitle: ``,
 }
 
-export default AuthorAvatar
+export default Header

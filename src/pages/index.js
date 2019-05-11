@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ArticleIndexItem from '../components/article-index-item'
-import AuthorAvatar from '../components/author-avatar'
+import Header from '../components/header'
 import Footer from '../components/Footer'
 
 const social_media_links = [
@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`clojurescript`, `clojure`, `javascript`]} />
-      <AuthorAvatar
+      <Header
         name="Thomas Mattacchione"
         interests={['Clojure', 'ClojureScript', 'JavaScript']}
       />
