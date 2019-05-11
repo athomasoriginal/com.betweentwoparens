@@ -171,6 +171,14 @@
  * Blog Post General Styles
  * ---------------------------------------------------------------------------*/
 
+.article__title {
+  margin-bottom: 0;
+}
+
+.article__content {
+  margin-top: 20px;
+}
+
 .article__title,
 .article__content {
   grid-column: main-start;

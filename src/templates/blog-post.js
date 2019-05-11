@@ -14,6 +14,10 @@ export default ({ data }) => {
         Between Two Parens
       </Link>
       <h2 className="article__title">{post.frontmatter.title}</h2>
+      <p className="article-index-item__meta">
+        <span className="hide">posted on</span>
+        <time>{post.frontmatter.date}</time>
+      </p>
       <div
         className="article__content"
         dangerouslySetInnerHTML={{ __html: post.html }}
@@ -28,6 +32,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date(formatString: "DD MMMM, YYYY")
       }
     }
   }
