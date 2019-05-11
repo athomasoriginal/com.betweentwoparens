@@ -17,6 +17,7 @@
 
 .article-index-item__link {
   color: hsl(0, 0%, 0%); /* TODO make me a variable */
+  text-decoration: none;
 }
 
 .article-index-item__meta {
