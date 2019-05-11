@@ -6,12 +6,13 @@ import { graphql, Link } from 'gatsby'
 import './blog-post.css'
 
 export default ({ data }) => {
+  const siteMetadata = data.site.siteMetadata
   const post = data.markdownRemark
 
   return (
     <Layout>
       <Link className="site-title" to={'/'}>
-        Between Two Parens
+        {siteMetadata.title}
       </Link>
       <h2 className="article__title">{post.frontmatter.title}</h2>
       <p className="article-index-item__meta">
@@ -28,6 +29,11 @@ export default ({ data }) => {
 
 export const query = graphql`
   query($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

@@ -32,13 +32,15 @@ const Articles = ({ articles }) => {
 }
 
 const IndexPage = ({ data }) => {
+  const siteMetadata = data.site.siteMetadata
   const articles = data.allMarkdownRemark.edges
 
   return (
     <Layout>
       <SEO title="Home" keywords={[`clojurescript`, `clojure`, `javascript`]} />
       <Header
-        name="Thomas Mattacchione"
+        title={siteMetadata.title}
+        name={siteMetadata.author}
         interests={['Clojure', 'ClojureScript', 'JavaScript']}
       />
       {articles && articles.length ? (
@@ -53,6 +55,12 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+        author
+      }
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
