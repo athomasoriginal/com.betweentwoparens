@@ -224,7 +224,6 @@ ol :target {
 }
 
 .article__content blockquote p:first-of-type {
-  font-weight: var(--font-semi-bold);
   margin-top: 0;
 }
 
