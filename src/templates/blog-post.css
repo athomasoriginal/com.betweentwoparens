@@ -188,6 +188,27 @@
   grid-column: main-start;
 }
 
+.article__content a {
+  color: var(--blue);
+  color: black;
+  font-weight: bold;
+  background: linear-gradient(
+    to top,
+    rgba(97, 130, 237, 0.3) 35%,
+    transparent 35%
+  );
+  background: linear-gradient(
+    to top,
+    rgba(97, 130, 237, 0.7) 18%,
+    transparent 8%
+  );
+  text-decoration: none;
+}
+
+.article__content a:hover {
+  background: rgba(97, 130, 237, 0.3);
+}
+
 /* Accessible Footnotes */
 
 a[aria-describedby='footnote-label'] {
