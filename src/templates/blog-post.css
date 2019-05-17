@@ -184,7 +184,10 @@
   grid-column: main-start;
 }
 
-.article__content a {
+/* Links */
+
+.article__content a,
+.article__link {
   color: var(--blue);
   color: black;
   font-weight: bold;
@@ -201,7 +204,8 @@
   text-decoration: none;
 }
 
-.article__content a:hover {
+.article__content a:hover,
+.article__link:hover {
   background: rgba(97, 130, 237, 0.3);
 }
 
