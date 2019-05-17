@@ -4,6 +4,7 @@
   - [Summary](#summary)
   - [Slug](#slug)
   - [Footnotes](#footnotes)
+  - [Article Notes](#article-notes)
 
 ## Quick start
 
@@ -110,4 +111,10 @@ Footnotes are great when you have additional clarifying comments or want to cred
 </aside>
 ```
 
-We provide aria-labels for everything and we also add an `aside` at the bottom which is where we put the footers. You do not need to manually add numbers to the footnotes inside the blog post because our CSS is adding them dynamically, but you do still need to put them in the correct order in the aside section at the bottom.
+We provide aria-labels for everything and we also add an `aside` at the bottom which is where we put the footers.
+
+Note that you do not need to manually add numbers to the footnotes. This is because we have setup the CSS to dynamically count your footnotes. Having said this, you do need to put them in the correct order in the aside section at the bottom.
+
+### Article Notes
+
+These are marked up as `<asides/>` and used in blog posts to make a clarification inline. When should a clarification be made inline vs. in a footnote? Just ask yourself how important is it to have the additional information highlighting inline. Its subjective.
