@@ -1,5 +1,5 @@
 - [Quick Start](#quick-start)
-- [Article Guidelines](#article-frontmatter-guidelines)
+- [Article Formatting Guidelines](#article-formatting-guidelines)
   - [Date](#date)
   - [Summary](#summary)
   - [Slug](#slug)
@@ -16,7 +16,7 @@
 1. **Install blog dependencies**
 
    ```sh
-   npm install
+   yarn install
    ```
 
    > run this command from the root of blog
@@ -33,7 +33,7 @@ Your site is now running at `http://localhost:8000`!
 
 > You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data.
 
-## Article Frontmatter Guidelines
+## Article Formatting Guidelines
 
 ### Date
 
@@ -50,11 +50,11 @@ Your site is now running at `http://localhost:8000`!
   09 February 2019
   ```
 
-  > All blog posts require frontmatter to have a date included with the proper formatting
+> For a blog post to have properly formatted dates you must include the date in the blog posts markdown frontmatter
 
 ### Summary
 
-`gatsby-transformer-remark` will provide you with what they call an `excerpt` of the content in your markdown file. The `excerpt` is the first 140 characters of your markdown file. While you can set it to be whatever you like, for my blog posts I like to write a custom summary. To do this you can add a `summary` field to your `frontmatter`. Try to limit it to 140 characters.
+`gatsby-transformer-remark` will provide you with what they call an `excerpt` of the content in your markdown file. The `excerpt` is the first 140 characters of your markdown file. While you can set it to be whatever you like, I prefer custom excerpts. Thus, to add a custom excerpt you must add a `summary` field to your `frontmatter`. Please limit to 140 characters.
 
 ### Slug
 
@@ -92,11 +92,11 @@ with the above, your slug will now look like `www.my-site.com/articles/my-custom
 
   > perfer lisp case as I feel it is more readable
 
-> @note you may notice that `articles` will always show up in the above. This is because it is hardcoded in `gatsby-node.js`. Feel free to change it if needed.
+> @note The `articles` segment of the URL example is hardcoded in `gatsby-node.js`. Feel free to change it if needed.
 
 ### Footnotes
 
-Follow this for writing footnotes. I generally use them when I want to qualify a point with additional information.
+Footnotes are great when you have additional clarifying comments or want to credit someone else work etc. For this reason, I provide a quick way of adding footnotes to your blog posts.
 
 ```html
 <a href="#footnotes" aria-describedby="footnote-label" id="footnotes-ref">methods</a
