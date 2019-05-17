@@ -118,3 +118,15 @@ Note that you do not need to manually add numbers to the footnotes. This is beca
 ### Article Notes
 
 These are marked up as `<asides/>` and used in blog posts to make a clarification inline. When should a clarification be made inline vs. in a footnote? Just ask yourself how important is it to have the additional information highlighting inline. Its subjective.
+
+Also keep in mind that if you use `<aside/>` the text inside will not be parsed correctly so things like backticks or links will not be formatted. To regain formatting, please use
+
+```html
+<code class="gatsby-code-text">...</code>
+
+/* or */
+
+<a class="article__link" href="https://pages.github.com/" target=" _blank"
+  >...</a
+>
+```
