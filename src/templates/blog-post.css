@@ -234,9 +234,9 @@ ol :target {
   font-size: 12px;
 }
 
-/* Quotes */
+/* Article Notes - Asides */
 
-.article__content blockquote {
+.article__content .article__note {
   background-color: var(--color-blockquote);
   border-left-color: var(--color-blockquote-sidebar);
   border-left-width: 9px;
@@ -248,14 +248,14 @@ ol :target {
   margin-right: -30px;
 }
 
-.article__content blockquote p {
+.article__content .article__note p {
   margin-top: 15px;
 }
 
-.article__content blockquote p:first-of-type {
+.article__content .article__note p:first-of-type {
   margin-top: 0;
 }
 
-.article__content blockquote p:first-of-type:nth-of-type(2) {
+.article__content .article__note p:first-of-type:nth-of-type(2) {
   margin-top: 0;
 }
