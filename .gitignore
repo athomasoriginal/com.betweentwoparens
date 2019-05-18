@@ -72,3 +72,5 @@ yarn-error.log
 build-journal.md
 /articles
 /articles-research
+.env.development
+.env.production

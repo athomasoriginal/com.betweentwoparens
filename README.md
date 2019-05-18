@@ -1,4 +1,5 @@
 - [Quick Start](#quick-start)
+- [Configuration](#configuration)
 - [Article Formatting Guidelines](#article-formatting-guidelines)
   - [Date](#date)
   - [Summary](#summary)
@@ -33,6 +34,16 @@
 Your site is now running at `http://localhost:8000`!
 
 > You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data.
+
+## Configuration
+
+- environment variables are required for google analytics. To set these, create an `.env.development` and `.env.production` and set each to look like:
+
+  ```bash
+  # Envvironment Variables
+
+  GATSBY_GA_TRACKING_ID=to-come-later
+  ```
 
 ## Article Formatting Guidelines
 
