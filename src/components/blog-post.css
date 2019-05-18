@@ -4,29 +4,29 @@
   position: absolute;
 }
 
-.article-index-item {
+.blog-post-item {
   grid-column: main-start;
   margin: 1.75rem 0 1.75rem 0;
 }
 
-.article-index-item__title {
+.blog-post-item__title {
   font-size: 24px;
   margin-bottom: 0.4375rem;
   color: hsl(0, 0%, 0%); /* TODO make me a variable */
 }
 
-.article-index-item__link {
+.blog-post-item__link {
   color: hsl(0, 0%, 0%); /* TODO make me a variable */
   text-decoration: none;
 }
 
-.article-index-item__meta {
+.blog-post-item__meta {
   font-size: 14px;
   margin: 0;
   color: hsl(0, 0%, 53%); /* TODO make me a variable */
 }
 
-.article-index-item__description {
+.blog-post-item__description {
   font-size: 18px;
   margin: 0;
 }

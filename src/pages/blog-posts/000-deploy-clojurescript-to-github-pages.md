@@ -36,7 +36,7 @@ org.clojure/clojure 1.10.0
   org.clojure/core.specs.alpha 0.2.44
 ```
 
-<aside class="article__note">Don't worry if your versions are different from mine.</aside>
+<aside class="blog-post__note">Don't worry if your versions are different from mine.</aside>
 
 ### Setting up your HTML
 
@@ -106,7 +106,7 @@ To do _anything_ with ClojureScript, we need to configure our project to use it.
 {:deps {org.clojure/clojurescript {:mvn/version "1.10.516"}}}
 ```
 
-<aside class="article__note">If you are coming from JavaScript it can be helpful to think of the <code class="gatsby-code-text">deps.edn</code> file as similar to a <code class="gatsby-code-text">package.json</code> file. The purpose of this file is to tell <code class="gatsby-code-text">clojure</code> which version of <code class="gatsby-code-text">ClojureScript</code> we want to use.</aside>
+<aside class="blog-post__note">If you are coming from JavaScript it can be helpful to think of the <code class="gatsby-code-text">deps.edn</code> file as similar to a <code class="gatsby-code-text">package.json</code> file. The purpose of this file is to tell <code class="gatsby-code-text">clojure</code> which version of <code class="gatsby-code-text">ClojureScript</code> we want to use.</aside>
 
 Let's recap a bit. At this point, your directory structure should look like this:
 
