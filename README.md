@@ -40,6 +40,8 @@ Your site is now running at `http://localhost:8000`!
 
 ## Configuration
 
+### Environment Variables
+
 - environment variables are required for google analytics. To set these, create an `.env.development` and `.env.production` and set each to look like:
 
   ```bash
