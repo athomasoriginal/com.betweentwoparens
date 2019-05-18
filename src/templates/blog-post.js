@@ -14,13 +14,13 @@ export default ({ data }) => {
       <Link className="site-title" to={'/'}>
         {siteMetadata.title}
       </Link>
-      <h2 className="article__title">{post.frontmatter.title}</h2>
-      <p className="article-index-item__meta">
+      <h2 className="blog-post__title">{post.frontmatter.title}</h2>
+      <p className="blog-post-item__meta">
         <span className="hide">posted on</span>
         <time>{post.frontmatter.date}</time>
       </p>
       <div
-        className="article__content"
+        className="blog-post__content"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
     </Layout>

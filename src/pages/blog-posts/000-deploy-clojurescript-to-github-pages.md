@@ -36,7 +36,7 @@ org.clojure/clojure 1.10.0
   org.clojure/core.specs.alpha 0.2.44
 ```
 
-<aside class="article__note">Don't worry if your versions are different from mine.</aside>
+<aside class="blog-post__note">Don't worry if your versions are different from mine.</aside>
 
 ### Setting up your HTML
 

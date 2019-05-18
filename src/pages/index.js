@@ -14,7 +14,7 @@ const social_media_links = [
 ]
 
 const EmptyIndexScreenMsg = ({ msg }) => (
-  <p className="no-articles-msg">{msg}</p>
+  <p className="no-blog-posts-msg">{msg}</p>
 )
 
 const BlogPosts = ({ blogPosts }) => {

@@ -6,19 +6,19 @@ import { Link } from 'gatsby'
 import './blog-post.css'
 
 const BlogPost = ({ title, date, description, url }) => (
-  <article className="article-index-item">
+  <article className="blog-post-item">
     <header>
-      <h2 className="article-index-item__title">
-        <Link className="article-index-item__link" to={url}>
+      <h2 className="blog-post-item__title">
+        <Link className="blog-post-item__link" to={url}>
           {title}
         </Link>
       </h2>
     </header>
-    <p className="article-index-item__meta">
+    <p className="blog-post-item__meta">
       <span className="hide">posted on</span>
       <time>{date}</time>
     </p>
-    <p className="article-index-item__description">{description}</p>
+    <p className="blog-post-item__description">{description}</p>
   </article>
 )
 

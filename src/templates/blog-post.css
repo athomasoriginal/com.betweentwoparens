@@ -25,7 +25,7 @@
   margin-bottom: 0;
 }
 
-.article__content .gatsby-highlight {
+.blog-post__content .gatsby-highlight {
   grid-column-start: full-start;
   grid-column-end: main-end;
 }
@@ -171,23 +171,23 @@
  * Blog Post General Styles
  * ---------------------------------------------------------------------------*/
 
-.article__title {
+.blog-post__title {
   margin-bottom: 5px;
 }
 
-.article__content {
+.blog-post__content {
   margin-top: 20px;
 }
 
-.article__title,
-.article__content {
+.blog-post__title,
+.blog-post__content {
   grid-column: main-start;
 }
 
 /* Links */
 
-.article__content a,
-.article__link {
+.blog-post__content a,
+.blog-post__link {
   color: var(--blue);
   color: black;
   font-weight: bold;
@@ -204,8 +204,8 @@
   text-decoration: none;
 }
 
-.article__content a:hover,
-.article__link:hover {
+.blog-post__content a:hover,
+.blog-post__link:hover {
   background: rgba(97, 130, 237, 0.3);
 }
 
@@ -238,9 +238,9 @@ ol :target {
   font-size: 12px;
 }
 
-/* Article Notes - Asides */
+/* Blog Post Notes - Asides */
 
-.article__content .article__note {
+.blog-post__content .blog-post__note {
   background-color: var(--color-blockquote);
   border-left-color: var(--color-blockquote-sidebar);
   border-left-width: 9px;
@@ -252,14 +252,14 @@ ol :target {
   margin-right: -30px;
 }
 
-.article__content .article__note p {
+.blog-post__content .blog-post__note p {
   margin-top: 15px;
 }
 
-.article__content .article__note p:first-of-type {
+.blog-post__content .blog-post__note p:first-of-type {
   margin-top: 0;
 }
 
-.article__content .article__note p:first-of-type:nth-of-type(2) {
+.blog-post__content .blog-post__note p:first-of-type:nth-of-type(2) {
   margin-top: 0;
 }

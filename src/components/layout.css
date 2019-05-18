@@ -630,6 +630,6 @@ pre tt:after {
   max-width: 800px;
 }
 
-.no-articles-msg {
+.no-blog-posts-msg {
   grid-column: main-start;
 }
