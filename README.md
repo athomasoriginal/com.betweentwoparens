@@ -6,6 +6,7 @@
   - [Slug](#slug)
   - [Footnotes](#footnotes)
   - [Article Notes](#article-notes)
+  - [Images](#images)
 
 ## Quick start
 
@@ -141,3 +142,13 @@ Also keep in mind that if you use `<aside/>` the text inside will not be parsed 
   >...</a
 >
 ```
+
+### Images
+
+- All blog images should live in `pages/blog/images`.
+- Please prefix each image with the same 3 digit code as your blog post. For example, if your blog is `001-...` your image name should also begin with `001-image-name-0f-your-choosing`.
+- Example of how to reference your images in a blog post
+
+  ```markdown
+  ![screenshot of example hello clojurescript site](/001-image-hello-cljs-dev-example.png)
+  ```
