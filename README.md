@@ -96,11 +96,11 @@ Your site is now running at `http://localhost:8000`!
 By default Gatsby will use the file path provided and filename to provide your slugs with names. For example, if you have a markdown file structure like:
 
 ```bash
-├── articles
+├── blog-posts
 │   └── 001-initial-post.md
 ```
 
-You will end up with a `slug` like `www.my-site.com/articles/001-initial-post/`. For any number of reasons you might want your `slug` to have a different name compared to your directory/filename structure. For example, in the above case you may have used the prefix `001` as a way to organize your blog posts, but you don't actually want to use `001` in the slug as it's for internal use only. To fix this, you can add a `slug` field to your markdown file like this:
+You will end up with a `slug` like `www.my-site.com/001-initial-post/`. For any number of reasons you might want your `slug` to have a different name compared to your directory/filename structure. For example, in the above case you may have used the prefix `001` as a way to organize your blog posts, but you don't actually want to use `001` in the slug as it's for internal use only. To fix this, you can add a `slug` field to your markdown file like this:
 
 ```markdown
 ---
@@ -110,7 +110,7 @@ slug: my-custom-slug <--- this
 ---
 ```
 
-with the above, your slug will now look like `www.my-site.com/articles/my-custom-slug/`. Please also keep in mind rules for naming slugs:
+with the above, your slug will now look like `www.my-site.com/my-custom-slug/`. Please also keep in mind rules for naming slugs:
 
 - Custom Slugs
 
@@ -127,7 +127,7 @@ with the above, your slug will now look like `www.my-site.com/articles/my-custom
 
   > perfer lisp case as I feel it is more readable
 
-> @note The `articles` segment of the URL example is hardcoded in `gatsby-node.js`. Feel free to change it if needed.
+> @note The URL segments of the URL can be set in `gatsby-node.js`.
 
 ### Footnotes
 
