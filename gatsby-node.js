@@ -16,13 +16,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const parsedFilePath = path.parse(fileNode.relativePath)
 
     // @note handles custom slug names.  When a markdown file has `slug` in the
-    //       frontmatter this is what looks for it and applies it to the slug
+    //       frontmatter this is what loofartks for it and applies it to the slug
     //       so we can have custom slugs.  When no slug found, we revert to the
     //       default behaviour
     let slug
 
     if (node.frontmatter && node.frontmatter.slug) {
-      slug = `/articles/${node.frontmatter.slug}`
+      slug = `/${node.frontmatter.slug}`
     } else {
       slug = createFilePath({ node, getNode, basePath: `pages` })
     }
