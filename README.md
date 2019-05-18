@@ -2,7 +2,7 @@
 - [Configuration](#configuration)
   - [Environment Variables](#environment-variables)
   - [Upgrading Dependencies](#upgrading-dependencies)
-- [Article Formatting Guidelines](#article-formatting-guidelines)
+- [Blog Post Formatting Guidelines](#blog-post-formatting-guidelines)
   - [Date](#date)
   - [Summary](#summary)
   - [Slug](#slug)
@@ -68,7 +68,7 @@ Your site is now running at `http://localhost:8000`!
 
   > Above is fine if you want to upgrade to latest and to have the package.json also updated
 
-## Article Formatting Guidelines
+## Blog Post Formatting Guidelines
 
 ### Date
 
