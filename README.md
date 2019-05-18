@@ -1,5 +1,7 @@
 - [Quick Start](#quick-start)
 - [Configuration](#configuration)
+  - [Environment Variables](#environment-variables)
+  - [Upgrading Dependencies](#upgrading-dependencies)
 - [Article Formatting Guidelines](#article-formatting-guidelines)
   - [Date](#date)
   - [Summary](#summary)
@@ -45,6 +47,24 @@ Your site is now running at `http://localhost:8000`!
 
   GATSBY_GA_TRACKING_ID=to-come-later
   ```
+
+### Upgrading Dependencies
+
+> You will notice that my dependencies in package.json are exact versions. The reason for this is because of how tools like yarn and npm work. For example, if you run yarn upgrade, yarn looks at your package.json dep versions and will update to the highest version they allow. The problem with this is that semantic versioning is not a respected or consistent metric in JavaScript so a minor change could be breaking. Should it be? No, of course not, but that does not mean it will not be. For safety, we lock down to exact versions.
+
+- Find outdated packages
+
+  ```bash
+  yarn outdated
+  ```
+
+- Upgrade specific packages in package.json
+
+  ```bash
+  yarn upgrade <package-name> --latest
+  ```
+
+  > Above is fine if you want to upgrade to latest and to have the package.json also updated
 
 ## Article Formatting Guidelines
 
