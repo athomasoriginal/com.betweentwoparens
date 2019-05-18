@@ -3,9 +3,9 @@ import React from 'react'
 
 import { Link } from 'gatsby'
 
-import './article-index-item.css'
+import './blog-post.css'
 
-const ArticleIndexItem = ({ title, date, description, url }) => (
+const BlogPost = ({ title, date, description, url }) => (
   <article className="article-index-item">
     <header>
       <h2 className="article-index-item__title">
@@ -22,16 +22,16 @@ const ArticleIndexItem = ({ title, date, description, url }) => (
   </article>
 )
 
-ArticleIndexItem.propTypes = {
-  articleTitle: PropTypes.string,
+BlogPost.propTypes = {
+  title: PropTypes.string,
   date: PropTypes.string,
   description: PropTypes.string,
 }
 
-ArticleIndexItem.defaultProps = {
-  articleTitle: ``,
+BlogPost.defaultProps = {
+  title: ``,
   date: '',
   description: '',
 }
 
-export default ArticleIndexItem
+export default BlogPost
