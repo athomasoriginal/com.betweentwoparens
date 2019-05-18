@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import ArticleIndexItem from '../components/article-index-item'
+import BlogPost from '../components/blog-post'
 import Header from '../components/header'
 import Footer from '../components/Footer'
 
@@ -17,15 +17,15 @@ const EmptyIndexScreenMsg = ({ msg }) => (
   <p className="no-articles-msg">{msg}</p>
 )
 
-const Articles = ({ articles }) => {
-  return articles.map(article => {
+const BlogPosts = ({ blogPosts }) => {
+  return blogPosts.map(blogPost => {
     return (
-      <ArticleIndexItem
-        key={article.node.id}
-        title={article.node.frontmatter.title}
-        date={article.node.frontmatter.date}
-        description={article.node.frontmatter.summary}
-        url={article.node.fields.slug}
+      <BlogPost
+        key={blogPost.node.id}
+        title={blogPost.node.frontmatter.title}
+        date={blogPost.node.frontmatter.date}
+        description={blogPost.node.frontmatter.summary}
+        url={blogPost.node.fields.slug}
       />
     )
   })
@@ -33,7 +33,7 @@ const Articles = ({ articles }) => {
 
 const IndexPage = ({ data }) => {
   const siteMetadata = data.site.siteMetadata
-  const articles = data.allMarkdownRemark.edges
+  const blogPosts = data.allMarkdownRemark.edges
 
   return (
     <Layout>
@@ -51,10 +51,10 @@ const IndexPage = ({ data }) => {
         description={siteMetadata.description}
         interests={['Clojure', 'ClojureScript', 'JavaScript']}
       />
-      {articles && articles.length ? (
-        <Articles articles={articles} />
+      {blogPosts && blogPosts.length ? (
+        <BlogPosts blogPosts={blogPosts} />
       ) : (
-        <EmptyIndexScreenMsg msg="No articles yet" />
+        <EmptyIndexScreenMsg msg="No blog posts yet" />
       )}
       <Footer links={social_media_links} />
     </Layout>
