@@ -1,12 +1,18 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import './footer.css'
 
 const FooterLink = ({ title, url }) => (
-  <a className="footer__link link__underline" href={url} target="__blank">
+  <OutboundLink
+    className="footer__link link__underline"
+    href={url}
+    target="__blank"
+    rel="noopener noreferrer"
+  >
     {title}
-  </a>
+  </OutboundLink>
 )
 
 const Footer = ({ links }) => (
