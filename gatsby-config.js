@@ -6,8 +6,16 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
+    // title is used in the blog index page and the seoTitle is meant for the
+    // meta tags in the blogs to help with seo.  Thus, title is to be visually
+    // seen when people visit the site
     title: `Between Two Parens`,
     author: `Thomas Mattacchione`,
+    description: `A blog about life between two parens`,
+    seoTitle: `Between Two Parens - a blog on clojure, clojurescript and programming`,
+    seoLang: `en`,
+    seoDescription: `A blog about programming clojure, clojurescript and javascript for the purpose of teaching and learning`,
+    ogURL: `https://www.betweentwoparens.com`,
   },
   plugins: [
     `gatsby-plugin-sharp`,
