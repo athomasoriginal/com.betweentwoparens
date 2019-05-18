@@ -6,7 +6,7 @@ const Header = ({ title, description, name, interests, picture }) => (
   <div className="root">
     <h1 className="site-title">{title}</h1>
 
-    <h2 className="h__base h__1 site-description">{description}</h2>
+    <p className="h__base h__1 site-description">{description}</p>
   </div>
 )
 
