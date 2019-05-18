@@ -37,10 +37,18 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" keywords={[`clojurescript`, `clojure`, `javascript`]} />
+      <SEO
+        title={siteMetadata.seoTitle}
+        description={siteMetadata.seoDescription}
+        author={siteMetadata.author}
+        lang={siteMetadata.seoLang}
+        ogURL={siteMetadata.ogURL}
+        keywords={[`clojurescript`, `clojure`, `javascript`]}
+      />
       <Header
         title={siteMetadata.title}
         name={siteMetadata.author}
+        description={siteMetadata.description}
         interests={['Clojure', 'ClojureScript', 'JavaScript']}
       />
       {articles && articles.length ? (
@@ -59,6 +67,11 @@ export const query = graphql`
       siteMetadata {
         title
         author
+        description
+        seoTitle
+        seoDescription
+        seoLang
+        ogURL
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
