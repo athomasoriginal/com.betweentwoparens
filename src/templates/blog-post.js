@@ -11,9 +11,11 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <Link className="site-title" to={'/'}>
-        {siteMetadata.title}
-      </Link>
+      <h1 className="site-title">
+        <Link className="site-title__link" to={'/'}>
+          {siteMetadata.title}
+        </Link>
+      </h1>
       <h2 className="blog-post__title">{post.frontmatter.title}</h2>
       <p className="blog-post-item__meta">
         <span className="hide">posted on</span>
