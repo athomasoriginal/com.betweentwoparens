@@ -125,13 +125,13 @@ Like most code projects our code is going to live in a `src` directory. Go ahead
 
 ├── src
 │   └──  demo
-│       └── static_site.cljs
+│       └── static_website.cljs
 ├── style.css
 ├── deps.edn
 └── index.html
 ```
 
-Once completed, open `static_site.cljs` and type this in:
+Once completed, open `static_website.cljs` and type this in:
 
 ```clojure
 (ns demo.static-website)
