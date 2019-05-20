@@ -176,6 +176,7 @@
 }
 
 .blog-post__content {
+  counter-reset: footnotes;
   margin-top: 20px;
 }
 
@@ -188,7 +189,6 @@
 
 .blog-post__content a,
 .blog-post__link {
-  color: var(--blue);
   color: black;
   font-weight: bold;
   background: linear-gradient(
@@ -212,22 +212,29 @@
 /* Accessible Footnotes */
 
 a[aria-describedby='footnote-label'] {
-  counter-increment: footnotes;
+  font-weight: normal;
   text-decoration: none;
   color: inherit;
   cursor: default;
   outline: none;
+  background: none;
 }
 
 a[aria-describedby='footnote-label']::after {
+  counter-increment: footnotes;
   content: counter(footnotes);
   vertical-align: super;
   font-size: 0.5em;
   margin-left: 2px;
+  /* TODO make me a variable */
   color: dodgerblue;
   text-decoration: underline;
   cursor: pointer;
   font-weight: bold;
+}
+
+a[aria-describedby='footnote-label']:hover {
+  background: none;
 }
 
 ol :target {
