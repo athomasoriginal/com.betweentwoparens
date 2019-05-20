@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import BlogPost from '../components/blog-post'
 import Header from '../components/header'
-import Footer from '../components/Footer'
+import Footer from '../components/footer'
 
 const social_media_links = [
   { title: 'Github', url: 'https://github.com/tkjone/' },
