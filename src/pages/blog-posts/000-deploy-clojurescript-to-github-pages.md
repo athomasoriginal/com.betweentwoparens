@@ -141,11 +141,13 @@ Once completed, open `static_website.cljs` and type this in:
 
 ### Build development bundle
 
-In the above steps, we have built a minimal site using HTML, CSS and ClojureScript so the last step is to make sure everything is working by running the following command:
+In the above steps, we have built a minimal site using HTML, CSS and ClojureScript so the last step is to make sure everything is working by running the following command from the root of your project.
 
 ```bash
 clj -m cljs.main -d "demo-clojurescript-gh-pages/out"  -c demo.static-website -r
 ```
+
+<aside class="blog-post__note">You want to run the above command from the same place as your <code class="gatsby-code-text">deps.edn</code></aside>
 
 The above command will take a moment to run. When completed, a browser tab will automatically open and serve your HTM, CSS and ClojureScript. If everything worked you should see a site that looks like this:
 
