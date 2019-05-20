@@ -134,13 +134,17 @@ with the above, your slug will now look like `www.my-site.com/my-custom-slug/`. 
 Footnotes are great when you have additional clarifying comments or want to credit someone else work etc. For this reason, I provide a quick way of adding footnotes to your blog posts.
 
 ```html
-<a href="#footnotes" aria-describedby="footnote-label" id="footnotes-ref">methods</a
-
+<a href="#footnotes" aria-describedby="footnote-label" id="footnotes-ref"
+  >methods</a
+>
 
 <aside>
   <h2>Footnotes</h2>
   <ol>
-    <li id="footnotes">This is the footnote about methods <a href="#footnotes-ref" aria-label="Back to content">↩</a></li>
+    <li id="footnotes">
+      This is the footnote about methods
+      <a href="#footnotes-ref" aria-label="Back to content">↩</a>
+    </li>
   </ol>
 </aside>
 ```
