@@ -170,7 +170,7 @@ Once the above is done, rock a `git push` to your Github project repo and you sh
 As I noted in the beginning, this is a minimal example without 3rd party build tools, frameworks, libraries or conveniences and this the point. There are all kinds of routes you can take, but I hope that I have shown that ClojureScript can be an accessible tool for building static websites.
 
 <aside>
-  <h2>Footnotes</h2>
+  <h3>Footnotes</h3>
   <ol>
     <li id="fn-step-1-commit">
       <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-gh-pages/commit/90156bf57c1b80bd2e125909e8e7a584a53538c2" target="_blank" rel="noopener noreferrer">Commit</a>
