@@ -96,6 +96,10 @@
   line-height: 1.1;
   text-rendering: optimizeLegibility;
   font-weight: bold;
+}
+
+.site-title__link {
+  color: inherit;
   text-decoration: none;
 }
 
