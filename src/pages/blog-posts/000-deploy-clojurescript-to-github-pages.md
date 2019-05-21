@@ -171,6 +171,8 @@ Once the above is done, rock a `git push` to your Github project repo and you sh
 
 As I noted in the beginning, this is a minimal example without 3rd party build tools, frameworks, libraries or conveniences and this the point. There are all kinds of routes you can take, but I hope that I have shown that ClojureScript can be an accessible tool for building static websites.
 
+<aside class="blog-post__note">Hopefully you did not run into any issues, but if you did please head over to <a class="blog-post__link"  target="_blank" href="https://github.com/tkjone/demo-clojurescript-gh-pages" rel="noopener noreferrer">my demo project</a> where I try to identify and help to resolve some gotchas.  Experience something new?  Please feel free to get in touch and I would be happy to help work through the issue with you.</aside>
+
 <aside>
   <h3>Footnotes</h3>
   <ol>
