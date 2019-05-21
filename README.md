@@ -10,6 +10,7 @@
   - [Article Notes](#article-notes)
   - [Images](#images)
   - [Edits](#edits)
+- [Special Thanks](#special-thanks)
 
 ## Quick start
 
@@ -199,3 +200,9 @@ Each commit should follow a convention like
 > article-id > type > edit - summary of change
 
 Once completed, make a PR. The PR is to deploy a preview.
+
+## Special Thanks
+
+I appreciate everyone who has helped to improve this blog whenever possible. Shoutouts:
+
+- [anantpaatra](https://github.com/tkjone/blog/commits?author=anantpaatra)
