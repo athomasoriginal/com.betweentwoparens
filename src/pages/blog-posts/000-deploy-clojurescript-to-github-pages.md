@@ -141,11 +141,13 @@ Once completed, open `static_website.cljs` and type this in:
 
 ### Build development bundle
 
-In the above steps, we have built a minimal site using HTML, CSS and ClojureScript so the last step is to make sure everything is working by running the following command:
+In the above steps, we have built a minimal site using HTML, CSS and ClojureScript so the last step is to make sure everything is working by running the following command from the root of your project.
 
 ```bash
 clj -m cljs.main -d "demo-clojurescript-gh-pages/out"  -c demo.static-website -r
 ```
+
+<aside class="blog-post__note">You want to run the above command from the same place as your <code class="gatsby-code-text">deps.edn</code></aside>
 
 The above command will take a moment to run. When completed, a browser tab will automatically open and serve your HTM, CSS and ClojureScript. If everything worked you should see a site that looks like this:
 
@@ -168,6 +170,8 @@ Once the above is done, rock a `git push` to your Github project repo and you sh
 ### Conclusion
 
 As I noted in the beginning, this is a minimal example without 3rd party build tools, frameworks, libraries or conveniences and this the point. There are all kinds of routes you can take, but I hope that I have shown that ClojureScript can be an accessible tool for building static websites.
+
+<aside class="blog-post__note">Hopefully you did not run into any issues, but if you did please head over to <a class="blog-post__link"  target="_blank" href="https://github.com/tkjone/demo-clojurescript-gh-pages" rel="noopener noreferrer">my demo project</a> where I try to identify and help to resolve some gotchas.  Experience something new?  Please feel free to get in touch and I would be happy to help work through the issue with you.</aside>
 
 <aside>
   <h3>Footnotes</h3>
@@ -193,11 +197,11 @@ As I noted in the beginning, this is a minimal example without 3rd party build t
       <a href="#fn-src-dir-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="fn-step-4-commit">
-      https://github.com/tkjone/demo-clojurescript-gh-pages/commit/d0f31e3c2c981c0a736252f73b5f79a00ae08bb4
+      <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-gh-pages/commit/d0f31e3c2c981c0a736252f73b5f79a00ae08bb4" target="_blank" rel="noopener noreferrer">Commit</a>
       <a href="#fn-step-4-commit-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="fn-project-name">
-      We are referencing  <code class="gatsby-code-text">demo-clojurescript-gh-pages</code> in our <code class="gatsby-code-text">index.html</code> and as the output directory for our development bundle.  The is because when our code is served from Github Pages it's going to be served from <code class="gatsby-code-text">https://username.github.io/project-name/</code> where <code class="gatsby-code-text">project-name</code> is the name of <a class="blog-post__link" href="https://tkjone.github.io/demo-clojurescript-gh-pages/" target=" _blank" rel="noopener noreferrer">our Github repo</a>.  This means that in order to serve our site in development and production, without having two script tags in our <code class="gatsby-code-text">index.html</code> we sync with what its called in production so we only have to set it once.  There are other ways to achieve this, but with a goal of minimalism in mind, I feel this will do.</a>
+      We are referencing  <code class="gatsby-code-text">demo-clojurescript-gh-pages</code> in our <code class="gatsby-code-text">index.html</code> and as the  <a class="blog-post__link" href="https://clojurescript.org/reference/compiler-options#output-dir" target=" _blank" rel="noopener noreferrer">-d or :output-dir flag</a> for our development bundle.  The is because when our code is served from Github Pages it's going to be served from <code class="gatsby-code-text">https://username.github.io/project-name/</code> where <code class="gatsby-code-text">project-name</code> is the name of <a class="blog-post__link" href="https://tkjone.github.io/demo-clojurescript-gh-pages/" target=" _blank" rel="noopener noreferrer">our Github repo</a>.  This means that in order to serve our site in development and production, without having two script tags in our <code class="gatsby-code-text">index.html</code> we sync with what its called in production so we only have to set it once.  There are other ways to achieve this, but with a goal of minimalism in mind, I feel this will do.</a>
       <a href="#fn-project-name-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="fn-versioned-dependencies">
