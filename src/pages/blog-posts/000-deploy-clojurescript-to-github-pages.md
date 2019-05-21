@@ -195,7 +195,7 @@ As I noted in the beginning, this is a minimal example without 3rd party build t
       <a href="#fn-src-dir-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="fn-step-4-commit">
-      https://github.com/tkjone/demo-clojurescript-gh-pages/commit/d0f31e3c2c981c0a736252f73b5f79a00ae08bb4
+      <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-gh-pages/commit/d0f31e3c2c981c0a736252f73b5f79a00ae08bb4" target="_blank" rel="noopener noreferrer">Commit</a>
       <a href="#fn-step-4-commit-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="fn-project-name">
