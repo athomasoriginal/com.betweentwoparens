@@ -205,4 +205,4 @@ Once completed, make a PR. The PR is to deploy a preview.
 
 I appreciate everyone who has helped to improve this blog whenever possible. Shoutouts:
 
-- [anantpaatra](https://github.com/tkjone/blog/commits?author=anantpaatra)
+- [anantpaatra](https://github.com/anantpaatra/)
