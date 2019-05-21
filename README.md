@@ -9,6 +9,7 @@
   - [Footnotes](#footnotes)
   - [Article Notes](#article-notes)
   - [Images](#images)
+  - [Edits](#edits)
 
 ## Quick start
 
@@ -178,3 +179,23 @@ Also keep in mind that if you use `<aside/>` the text inside will not be parsed 
   ```markdown
   ![screenshot of example hello clojurescript site](/001-image-hello-cljs-dev-example.png)
   ```
+
+### Edits
+
+I want to work to keep these posts updated so that they remain relevant. To do this, we should have a consistent system to handle edits/updaes. For example, when we make an update we should do so on a separate branch which follows these naming conventions:
+
+```bash
+000-edit-round-1-deploy-clojurescript-to-github-pages
+```
+
+> article-id > edit > round # - article name
+
+Each commit should follow a convention like
+
+```bash
+000 - blog post - edit - add note about Gotchas
+```
+
+> article-id > type > edit - summary of change
+
+Once completed, make a PR. The PR is to deploy a preview.
