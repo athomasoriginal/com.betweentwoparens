@@ -26,6 +26,10 @@
   color: hsl(0, 0%, 53%); /* TODO make me a variable */
 }
 
+.blog-post-item__author::after {
+  content: ' | ';
+}
+
 .blog-post-item__description {
   font-size: 18px;
   margin: 0;

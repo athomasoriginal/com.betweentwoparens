@@ -23,6 +23,7 @@ const BlogPosts = ({ blogPosts }) => {
       <BlogPost
         key={blogPost.node.id}
         title={blogPost.node.frontmatter.title}
+        author={blogPost.node.frontmatter.author}
         date={blogPost.node.frontmatter.date}
         description={blogPost.node.frontmatter.summary}
         url={blogPost.node.fields.slug}
@@ -66,7 +67,6 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-        author
         description
         seoTitle
         seoDescription
@@ -81,6 +81,7 @@ export const query = graphql`
           id
           frontmatter {
             title
+            author
             date(formatString: "DD MMMM, YYYY")
             summary
           }
