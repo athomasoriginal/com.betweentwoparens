@@ -26,13 +26,13 @@
   color: hsl(0, 0%, 53%); /* TODO make me a variable */
 }
 
+.blog-post-item__description {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+
 .blog-post-item__date {
   margin-left: 5px;
   border-left: 1px solid gray;
   padding-left: 4px;
-}
-
-.blog-post-item__description {
-  font-size: 18px;
-  margin: 0;
 }
