@@ -14,12 +14,12 @@ const BlogPost = ({ title, author, date, description, url }) => (
         </Link>
       </h2>
     </header>
+    <p className="blog-post-item__description">{description}</p>
     <p className="blog-post-item__meta">
       <span className="blog-post-item__author">{author}</span>
       <span className="hide">posted on</span>
-      <time>{date}</time>
+      <time className="blog-post-item__date">{date}</time>
     </p>
-    <p className="blog-post-item__description">{description}</p>
   </article>
 )
 
