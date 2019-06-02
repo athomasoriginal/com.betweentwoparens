@@ -32,7 +32,8 @@ export default ({ data }) => {
   return (
     <Layout>
       <h1 className="site-title">
-        <Link className="site-title__link" to={'/'}>
+        <Link className="site-title__post-link" to={'/'}>
+          <LeftArrowIcon />
           {siteMetadata.title}
         </Link>
       </h1>
