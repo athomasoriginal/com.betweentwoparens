@@ -98,9 +98,21 @@
   font-weight: bold;
 }
 
-.site-title__link {
+.site-title__link,
+.site-title__post-link {
   color: inherit;
   text-decoration: none;
+}
+
+/* only needed when site title for blog posts have left arrow icon */
+.site-title__post-link {
+  display: flex;
+  align-items: center;
+}
+
+/* targets the left arrow icon beside the "between two parens" site title */
+.site-title__post-link svg {
+  margin-right: 10px;
 }
 
 /* -----------------------------------------------------------------------------

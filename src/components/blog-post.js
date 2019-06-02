@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 
 import './blog-post.css'
 
-const BlogPost = ({ title, date, description, url }) => (
+const BlogPost = ({ title, author, date, description, url }) => (
   <article className="blog-post-item">
     <header>
       <h2 className="blog-post-item__title">
@@ -14,11 +14,12 @@ const BlogPost = ({ title, date, description, url }) => (
         </Link>
       </h2>
     </header>
-    <p className="blog-post-item__meta">
-      <span className="hide">posted on</span>
-      <time>{date}</time>
-    </p>
     <p className="blog-post-item__description">{description}</p>
+    <p className="blog-post-item__meta">
+      <span className="blog-post-item__author">{author}</span>
+      <span className="hide">posted on</span>
+      <time className="blog-post-item__date">{date}</time>
+    </p>
   </article>
 )
 
