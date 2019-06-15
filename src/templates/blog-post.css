@@ -23,6 +23,7 @@
   word-break: break-word;
   /* remove all margin to resolve wonky indentation */
   margin-bottom: 0;
+  padding-right: 0;
 }
 
 .blog-post__content .gatsby-highlight {
@@ -37,8 +38,8 @@
 .gatsby-highlight-code-line {
   background-color: var(--lineHighlight);
   display: block;
-  margin: -0.125rem calc(-1rem - 15px);
-  padding: 0.125rem calc(1rem + 15px);
+  margin: -0.125rem 0 -0.125rem calc(-1rem - 15px);
+  padding: 0.125rem 0 0.125rem calc(1rem + 15px);
 }
 
 .gatsby-code-text {
