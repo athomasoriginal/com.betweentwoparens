@@ -167,6 +167,53 @@
   opacity: 0.7;
 }
 
+/* Line Numbers */
+
+pre[class*='gatsby-code-'].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre[class*='gatsby-code-'].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 24px;
+  font-size: 100%;
+  /* gatsby-prism-remark is being a proscriptive and providing default styles
+     attached to the HTML style object so we have to overwrite with an important
+     https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-remark-prismjs/src/add-line-numbers.js#L17 */
+  left: 8px !important;
+  /* works for line-numbers below 1000 lines */
+  width: 3em;
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
+
 /* -----------------------------------------------------------------------------
  * Blog Post General Styles
  * ---------------------------------------------------------------------------*/
