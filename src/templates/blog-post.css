@@ -257,6 +257,19 @@ pre[class*='gatsby-code-'].line-numbers > code {
   background: rgba(97, 130, 237, 0.3);
 }
 
+/* Anchors
+
+   We are resetting the style of anchor links because they automatically inherit
+   from the above styles which we only want applied to inline text links
+*/
+
+.blog-post__content .blog-post__anchor {
+  background: initial;
+}
+.blog-post__content .blog-post__anchor:hover {
+  background: initial;
+}
+
 /* Accessible Footnotes */
 
 a[aria-describedby='footnote-label'] {
