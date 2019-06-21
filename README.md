@@ -10,13 +10,14 @@
   - [Article Notes](#article-notes)
   - [Images](#images)
   - [Edits](#edits)
+  - [Header Links](#header-links)
 - [Special Thanks](#special-thanks)
 
 ## Quick start
 
 1. **Clone blog**
 
-   ```sh
+   ```sh-
    git clone git@github.com:tkjone/blog.git
    ```
 
@@ -34,7 +35,7 @@
    npx gatsby develop
    ```
 
-   > Using `npx` means you do not have to install gatsby globally
+   > Using `npx` is a dev convience so you do not have to install gatsby globally
 
 Your site is now running at `http://localhost:8000`!
 
@@ -200,6 +201,10 @@ Each commit should follow a convention like
 > article-id > type > edit - summary of change
 
 Once completed, make a PR. The PR is to deploy a preview.
+
+### Header Links
+
+Linking header github style is a feature we want. However, this will not happen automatically so we require an [additional plugin](https://www.gatsbyjs.org/packages/gatsby-remark-autolink-headers/) to provide this support. Now, whenever we have `H*` level headers they automatically recieve links.
 
 ## Special Thanks
 

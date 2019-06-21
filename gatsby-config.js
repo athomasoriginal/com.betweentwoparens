@@ -32,6 +32,12 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: 'blog-post__anchor',
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'gatsby-code-',
