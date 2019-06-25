@@ -94,6 +94,8 @@ Your site is now running at `http://localhost:8000`!
 
 `gatsby-transformer-remark` will provide you with what they call an `excerpt` of the content in your markdown file. The `excerpt` is the first 140 characters of your markdown file. While you can set it to be whatever you like, I prefer custom excerpts. Thus, to add a custom excerpt you must add a `summary` field to your `frontmatter`. Please limit to 140 characters.
 
+Also used for the SEO description
+
 ### Slug
 
 By default Gatsby will use the file path provided and filename to provide your slugs with names. For example, if you have a markdown file structure like:
@@ -131,6 +133,8 @@ with the above, your slug will now look like `www.my-site.com/my-custom-slug/`. 
   > perfer lisp case as I feel it is more readable
 
 > @note The URL segments of the URL can be set in `gatsby-node.js`.
+
+Also used for the SEO ogURL
 
 ### Footnotes
 
