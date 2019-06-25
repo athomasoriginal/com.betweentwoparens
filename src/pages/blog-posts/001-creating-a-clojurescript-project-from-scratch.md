@@ -2,7 +2,7 @@
 title: 'Start a ClojureScript App from Scratch'
 date: '2019-06-24'
 slug: start-a-clojurescript-app-from-scratch
-summary: 'Starting a ClojureScript app does not have to be painful.  Here is the process from scratch.'
+summary: 'A guide to setting up a ClojureScript app from scratch without fear or worry.'
 author: 'Thomas Mattacchione'
 ---
 
