@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 import { graphql, Link } from 'gatsby'
 
@@ -31,6 +32,14 @@ export default ({ data }) => {
 
   return (
     <Layout>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.summary}
+        author={post.frontmatter.author}
+        lang={siteMetadata.seoLang}
+        ogURL={`${siteMetadata.ogURL}/${post.frontmatter.slug}`}
+        keywords={[`clojurescript`, `clojure`, `javascript`]}
+      />
       <h1 className="site-title">
         <Link className="site-title__post-link" to={'/'}>
           <LeftArrowIcon />
@@ -55,12 +64,17 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        ogURL
+        seoLang
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         title
+        summary
+        author
+        slug
         date(formatString: "DD MMMM, YYYY")
       }
     }
