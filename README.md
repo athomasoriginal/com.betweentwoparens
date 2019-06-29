@@ -215,3 +215,4 @@ Linking header github style is a feature we want. However, this will not happen 
 I appreciate everyone who has helped to improve this blog whenever possible. Shoutouts:
 
 - [anantpaatra](https://github.com/anantpaatra/)
+- [syungb](https://github.com/syungb)
