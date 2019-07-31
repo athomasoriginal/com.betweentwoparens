@@ -216,3 +216,5 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 
 - [anantpaatra](https://github.com/anantpaatra/)
 - [syungb](https://github.com/syungb)
+- [lokeh](https://github.com/Lokeh)
+- [skidding](https://github.com/skidding)
