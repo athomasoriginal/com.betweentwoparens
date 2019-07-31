@@ -16,8 +16,11 @@ module.exports = {
     seoLang: `en`,
     seoDescription: `A blog about programming clojure, clojurescript and javascript for the purpose of teaching and learning`,
     ogURL: `https://www.betweentwoparens.com`,
+    // added for the RSS feed
+    siteUrl: `https://betweentwoparens.com`
   },
   plugins: [
+    `gatsby-plugin-feed`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     {
