@@ -78,10 +78,10 @@ Your site is now running at `http://localhost:8000`!
 - Date Formatting
 
   ```bash
-  # bad
+  # no bueno
   February 09, 2018
 
-  # bad
+  # no bueno
   2019, 09 February
 
   # good
@@ -120,10 +120,10 @@ with the above, your slug will now look like `www.my-site.com/my-custom-slug/`. 
 - Custom Slugs
 
   ```bash
-  # bad
+  # no bueno
   my_custom_slug
 
-  # bad
+  # no bueno
   myCustomSlug
 
   # good
