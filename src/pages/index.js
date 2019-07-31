@@ -11,6 +11,7 @@ const social_media_links = [
   { title: 'Github', url: 'https://github.com/tkjone/' },
   { title: 'Linkedin', url: 'https://www.linkedin.com/in/tmattacchione/' },
   { title: 'Twitter', url: 'https://twitter.com/tmkjone' },
+  { title: 'rss', url: `https://betweentwoparens.com/rss.xml`}
 ]
 
 const EmptyIndexScreenMsg = ({ msg }) => (
