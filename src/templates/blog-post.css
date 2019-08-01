@@ -43,6 +43,11 @@
 .gatsby-code-text {
   background-color: var(--yellow-code-text);
 }
+/* Remove the extra space after the end of the higlighted piece of inline code
+   which sadly bleeds into the next word */
+.gatsby-code-text:after {
+  content: '';
+}
 
 .token.attr-name {
   color: var(--keyword);
