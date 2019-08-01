@@ -302,7 +302,7 @@ a[aria-describedby='footnote-label']:hover {
 }
 
 ol :target {
-  background-color: yellow;
+  background-color: var(--color-blockquote);
 }
 
 [aria-label='Back to content'] {
