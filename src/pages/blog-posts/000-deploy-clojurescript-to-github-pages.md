@@ -4,6 +4,7 @@ author: Thomas Mattacchione
 date: '2019-05-20'
 slug: deoploy-clojurescript-to-github-pages
 summary: How to build a static site in ClojureScript in probably 2.5 minutes
+keywords: ['deploy', 'clojurescript', 'github']
 ---
 
 This blog will outline how to build a minimal static website using just HTML, CSS and ClojureScript. The cherry on top will be us deploying our site to Github Pages. My goal is to illustrate how straightforward this process can be and hopefully inspire some interest in ClojureScript. Before we begin let's review ClojureScript and Github Pages.
