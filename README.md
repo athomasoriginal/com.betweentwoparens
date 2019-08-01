@@ -7,6 +7,7 @@
   - [Summary](#summary)
   - [Slug](#slug)
   - [Footnotes](#footnotes)
+  - [Keywords](#keywords)
   - [Article Notes](#article-notes)
   - [Images](#images)
   - [Edits](#edits)
@@ -159,6 +160,19 @@ Footnotes are great when you have additional clarifying comments or want to cred
 We provide aria-labels for everything and we also add an `aside` at the bottom which is where we put the footers.
 
 Note that you do not need to manually add numbers to the footnotes. This is because we have setup the CSS to dynamically count your footnotes. Having said this, you do need to put them in the correct order in the aside section at the bottom.
+
+### Keywords
+
+`keywords` refer to seo keywords.  Should be written as a vector like:
+
+```markdown
+---
+title: 'What the Reagent Component?!'
+date: '2019-07-29'
+...
+keywords: ['reagent', 'class components', 'clojurescript']
+---
+```
 
 ### Article Notes
 

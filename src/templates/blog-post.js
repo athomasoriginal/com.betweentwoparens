@@ -28,17 +28,17 @@ function LeftArrowIcon() {
 
 export default ({ data }) => {
   const siteMetadata = data.site.siteMetadata
-  const post = data.markdownRemark
+  const {frontmatter} = data.markdownRemark
 
   return (
     <Layout>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.summary}
-        author={post.frontmatter.author}
+        title={frontmatter.title}
+        description={frontmatter.summary}
+        author={frontmatter.author}
         lang={siteMetadata.seoLang}
-        ogURL={`${siteMetadata.ogURL}/${post.frontmatter.slug}`}
-        keywords={[`clojurescript`, `clojure`, `javascript`]}
+        ogURL={`${siteMetadata.ogURL}/${frontmatter.slug}`}
+        keywords={frontmatter.keywords}
       />
       <h1 className="site-title">
         <Link className="site-title__post-link" to={'/'}>
@@ -46,14 +46,14 @@ export default ({ data }) => {
           {siteMetadata.title}
         </Link>
       </h1>
-      <h2 className="blog-post__title">{post.frontmatter.title}</h2>
+      <h2 className="blog-post__title">{frontmatter.title}</h2>
       <p className="blog-post-item__meta">
         <span className="hide">posted on</span>
-        <time>{post.frontmatter.date}</time>
+        <time>{frontmatter.date}</time>
       </p>
       <div
         className="blog-post__content"
-        dangerouslySetInnerHTML={{ __html: post.html }}
+        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
       />
     </Layout>
   )
@@ -76,6 +76,7 @@ export const query = graphql`
         author
         slug
         date(formatString: "DD MMMM, YYYY")
+        keywords
       }
     }
   }

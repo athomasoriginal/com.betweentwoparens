@@ -4,6 +4,7 @@ date: '2019-06-24'
 slug: start-a-clojurescript-app-from-scratch
 summary: 'A guide to setting up a ClojureScript app from scratch without fear or worry.'
 author: 'Thomas Mattacchione'
+keywords: ['clojurescript', 'start', 'new']
 ---
 
 Building apps is hard AF. Choosing a language like Clojure(Script) can remove some of the pain, but the fact remains that when we are starting out, just knowing where to begin is a frustrating experience.

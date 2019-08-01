@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => {
         author={siteMetadata.author}
         lang={siteMetadata.seoLang}
         ogURL={siteMetadata.ogURL}
-        keywords={[`clojurescript`, `clojure`, `javascript`]}
+        keywords={siteMetadata.seokeywords}
       />
       <Header
         title={siteMetadata.title}
@@ -72,6 +72,7 @@ export const query = graphql`
         seoTitle
         seoDescription
         seoLang
+        seokeywords
         ogURL
       }
     }
