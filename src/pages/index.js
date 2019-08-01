@@ -7,12 +7,6 @@ import BlogPost from '../components/blog-post'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
-const social_media_links = [
-  { title: 'Github', url: 'https://github.com/tkjone/' },
-  { title: 'Linkedin', url: 'https://www.linkedin.com/in/tmattacchione/' },
-  { title: 'Twitter', url: 'https://twitter.com/tmkjone' },
-  { title: 'rss', url: `https://betweentwoparens.com/rss.xml`}
-]
 
 const EmptyIndexScreenMsg = ({ msg }) => (
   <p className="no-blog-posts-msg">{msg}</p>
@@ -58,7 +52,7 @@ const IndexPage = ({ data }) => {
       ) : (
         <EmptyIndexScreenMsg msg="No blog posts yet" />
       )}
-      <Footer links={social_media_links} />
+      <Footer links={siteMetadata.footerlinks} />
     </Layout>
   )
 }
@@ -74,6 +68,10 @@ export const query = graphql`
         seoLang
         seokeywords
         ogURL
+        footerlinks {
+          title
+          url
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

@@ -17,8 +17,14 @@ module.exports = {
     seoDescription: `A blog about programming clojure, clojurescript and javascript for the purpose of teaching and learning`,
     ogURL: `https://www.betweentwoparens.com`,
     seokeywords: [`clojurescript`, `clojure`, `javascript`],
-    // added for the RSS feed
-    siteUrl: `https://betweentwoparens.com`
+    // added for the RSS feed plugin
+    siteUrl: `https://betweentwoparens.com`,
+    footerlinks: [
+      { title: 'Github', url: 'https://github.com/tkjone/' },
+      { title: 'Linkedin', url: 'https://www.linkedin.com/in/tmattacchione/' },
+      { title: 'Twitter', url: 'https://twitter.com/tmkjone' },
+      { title: 'rss', url: `https://betweentwoparens.com/rss.xml`},
+    ],
   },
   plugins: [
     `gatsby-plugin-feed`,
