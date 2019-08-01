@@ -19,8 +19,6 @@
   height: auto !important;
   font-size: 13px;
   line-height: 20px;
-  white-space: pre-wrap;
-  word-break: break-word;
   /* remove all margin to resolve wonky indentation */
   margin-bottom: 0;
   padding-right: 0;
@@ -38,8 +36,8 @@
 .gatsby-highlight-code-line {
   background-color: var(--lineHighlight);
   display: block;
-  margin: -0.125rem 0 -0.125rem calc(-1rem - 15px);
-  padding: 0.125rem 0 0.125rem calc(1rem + 15px);
+  margin: -0.125rem calc(-1rem - 15px);
+  padding: 0.125rem calc(1rem + 15px);
 }
 
 .gatsby-code-text {
@@ -336,5 +334,18 @@ ol :target {
 @media (min-width: 700px) {
   .blog-post__content .blog-post__note {
     margin: 20px -30px 30px -30px;
+  }
+
+  /* prevents scrollbar for windows larger than a phone when highlighting */
+  .gatsby-highlight code[class*='gatsby-code-'],
+  .gatsby-highlight pre[class*='gatsby-code-'],
+  .gatsby-highlight pre.prism-code {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .gatsby-highlight-code-line {
+    margin: -0.125rem 0 -0.125rem calc(-1rem - 15px);
+    padding: 0.125rem 0 0.125rem calc(1rem + 15px);
   }
 }
