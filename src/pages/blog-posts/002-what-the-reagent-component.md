@@ -178,7 +178,7 @@ At this point we are ready to return to Reagent's `create-class` function and ex
 
 ## The Reagent Pattern
 
-The above overview was required because Reagent's `create-class` function is implementing a modified version of the `pseudoclassical instantiation pattern`.  The following code snippet is a simplified version of some of the essential bits of `create-class`:
+As noted, the history lesson from the above section should provide a little insight into the tribal knowledge that is informing how `create-class` is being implemented.   Namely this is becausse what `create-class` is doing is implementing a modified version of the `pseudoclassical instantiation pattern`.  The following code snippet is a simplified version of some of the essential bits of `create-class`:
 
 ```javascript
 function cmp(props, context, updater) {
@@ -269,6 +269,8 @@ console.log(Welcome.prototype.isPrototypeOf(welcome))
 What the above shows is that `Welcome` is not a child of `React.component` even though it has all the properties and methods that `React.Component` has.  This is why were lucky that React is smart about detecting [class vs. function components](https://overreacted.io/how-does-react-tell-a-class-from-a-function/).
 
 Second, by `copying` rather than `linking` prototypes we could inccur a performance cost but again, in our case this cost is negligible.
+
+<aside class="blog-post__note">For those who want to know why the Reagent team chose to modify the pseudoclassical instantiation pattern I do not really have an answer.  At the end of the day, they do more or less the same things without any significant downsides. </aside>
 
 ## Conclusion
 
