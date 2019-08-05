@@ -16,7 +16,7 @@ For example, if you were to write this `form-1` Reagent component:
   [:h1 "Hello, friend"])
 ```
 
-By the time Reagent passes it to to React it would be the equivalent of you writing this:
+By the time Reagent passes it to React it would be the equivalent of you writing this:
 
 ```javascript
 class Welcome extends React.Component {
