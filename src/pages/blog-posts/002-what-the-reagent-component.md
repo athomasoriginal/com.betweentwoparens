@@ -28,15 +28,13 @@ class Welcome extends React.Component {
 
 <aside class="blog-post__note">To be clear, Reagent components do not specifically turn into an <a class="blog-post__link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" rel="noopener noreferrer">ES6 class syntax</a>.  This is my way of illustrating that Reagent components are class components to React.</aside>
 
-While the fact that all Reagent components becoming class components is an interesting piece of trivia, the part that blew my mind was  _how_ they actually become `class components`<a href="#reagent-components-are-cray" aria-describedby="footnote-label" id="reagent-components-are-cray-ref">.</a>
-
-As I see it, the benefit of having this fundamental understanding of Reagent components means that seemingly ellusive topics will become more inuitive.  For example, topics like:
+While the fact that all Reagent components become class components is an interesting piece of trivia, the part that blew my mind was  _how_ they actually become <a href="#reagent-components-are-cray" aria-describedby="footnote-label" id="reagent-components-are-cray-ref">`class components`</a>.  Once I understood this, a few other things became clearer like:
 
 - why we [can't just use hooks with Reagent components](https://github.com/reagent-project/reagent/blob/master/doc/ReactFeatures.md#hooks)
 - React's strategy for [distinguishing class and function components](https://overreacted.io/how-does-react-tell-a-class-from-a-function/).
 - JavaScript "classes"
 
-The rest of this post will focus on digging into where and how this transformation happens by breaking it all down into 3 sections:
+In the spirit of sharing this knowledge, the rest of this post will dig into the whys and wherefores of this transformation by breaking it down into 3 sections:
 
 1. [A Pseudoclassical Pattern](#a-pseudoclassical-pattern)
 1. [The Reagent Pattern](#the-reagent-pattern)
