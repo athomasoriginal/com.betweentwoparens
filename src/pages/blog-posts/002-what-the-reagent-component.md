@@ -63,7 +63,7 @@ But as I said, JavaScript did not have formal classes.  This led the JavaScript 
 
 Of all of these patterns, the `pseudoclassical instantiation pattern` became one of the most popular ways to simulate a class in JavaScript.  This is evidenced by the fact that many of the "first generation" JavaScript libraries and frameworks, like [google closure library](https://developers.google.com/closure/library/) and [backbone](https://backbonejs.org/), are written in this style.
 
-The reason this history is important is because what these "instantiation patterns" are is just that: patterns.  They are not a formal syntax in the language wich you can just look up.  Further, when modifications to these patterns are applied, its increasingly difficult to understand the intent behind them.
+The reason this history is important is because what these "instantiation patterns" are is just that: patterns.  They are not a formal syntax in the language which you can just look up.  Further, when modifications to these patterns are applied, its increasingly difficult to understand the intent behind them.
 
 By extension, this means that unless you were around in the early days of React, the only way you know how to write React class components is using ES6 syntax.  But the fact remains that ES6 syntax is just syntactic sugar over the more manual `pseudoclassical instantiation pattern`.
 
