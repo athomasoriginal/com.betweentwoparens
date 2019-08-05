@@ -41,7 +41,7 @@ In the spirit of sharing this knowledge, the rest of this post will dig into the
 1. [Conclusion](#conclusion)
 
 
-<aside class="blog-post__note">I assume readers have a level of familiarity with ClojureScript, JavaScript and React. Please also note that understanding Reagent at this level is not required to be productive in Reagent.  This kind of knowledge can become valuable when seeking to understand fundamental concepts of why and how Reagent does what it does.</aside>
+<aside class="blog-post__note">I assume readers have a level of familiarity with ClojureScript, JavaScript and React. Please also note that understanding Reagent at this level is not required to be productive in Reagent.</aside>
 
 ## A Pseudoclassical Pattern
 
