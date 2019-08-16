@@ -134,7 +134,7 @@ This concludes setting up the project structure and boilerplate code. The next s
 
 ## Build Tools
 
-To run our app we need what developers call `build tools`. The most popular build tools in Clojure land are `lein`, `boot` and `clj`. Before I reveal which tool we are going to use, let me provide a quick rundown of each of them.
+To run, develop and build a production version of our app we need what developers call `build tools`. The most popular build tools in Clojure land are `lein`, `boot` and `clj`. Before I reveal which tool we are going to use, let me provide a quick rundown of each of them.
 
 [lein](https://leiningen.org/) is the grandfather and most popular Clojure(Script) build tool. If I had to compare it to something it would be as if `npm` and `webpack` made a Clojure baby. You will see lein used in most all projects created prior to mid-2018. Yet, it has started to show its age. So members of the Clojure(Script) community went off to build a better lein and they called it boot.
 
@@ -148,7 +148,7 @@ To run our app we need what developers call `build tools`. The most popular buil
 
 what makes clj special is that it's begineer oriented and also powerful enough for advanced Clojurists. Further, because clj is focused on doing less it's easier to understand which means that when things go wrong it's easier to debug. It also encourages us to compose libraries instead of buying into a framework.
 
-As you may have guessed, `clj` is my build tool of choice and what we will use in this app.
+As you may have guessed, `clj` is my build tool of choice and what we will use in this app.  If you are the type who is looking for a deeper understanding of these build tools Sean Corfield has written an excellent [overview of clojure's build tools](https://corfield.org/blog/2018/04/18/all-the-paths/).
 
 ### Step 6 - Add deps file
 
