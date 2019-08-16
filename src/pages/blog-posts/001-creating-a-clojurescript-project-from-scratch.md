@@ -148,7 +148,7 @@ To run, develop and build a production version of our app we need what developer
 
 what makes clj special is that it's begineer oriented and also powerful enough for advanced Clojurists. Further, because clj is focused on doing less it's easier to understand which means that when things go wrong it's easier to debug. It also encourages us to compose libraries instead of buying into a framework.
 
-As you may have guessed, `clj` is my build tool of choice and what we will use in this app.  If you are the type who is looking for a deeper understanding of these build tools Sean Corfield has written an excellent [overview of clojure's build tools](https://corfield.org/blog/2018/04/18/all-the-paths/).
+As you may have guessed, `clj` is my build tool of choice and what we will use in this app.  If you are the type who is looking for a deeper understanding of these build tools Sean Corfield has written an excellent [overview of clojure's build tools](https://corfield.org/blog/2018/04/18/all-the-paths/).  Further, if you are interested in the usage breakdown of the build tools checkout the [2019 State of Clojure Community Report](https://www.surveymonkey.com/results/SM-S9JVNXNQV/)
 
 ### Step 6 - Add deps file
 
@@ -173,10 +173,10 @@ To use `clj` we need to `configure` it. clj is configured using a file called `d
 
 <aside class="blog-post__note">Unlike other files in our Clojure project we don't get to choose what we call our configuration file.  <code class="gatsby-code-text">deps.edn</code> is the name that <code class="gatsby-code-text">clj</code> looks for.  Further, you will notice that the extension of this file is <code class="gatsby-code-text">edn</code>. This is the Clojure(Script) equivalent of <code class="gatsby-code-text">json</code>.</aside>
 
-Before we continue we should be familiar with what the connfiguration file is doing:
+Before we continue we should be familiar with what the configuration file is doing:
 
-- [:paths](https://clojure.org/reference/deps_and_cli#_paths) tells clojure where to look for clojure code. Also known as a `classpath`
-- [:deps](https://clojure.org/reference/deps_and_cli#_dependencies) tells clojure which dependencies our app needs. Right now our only dependency is ClojureScript.
+- [:paths](https://clojure.org/reference/deps_and_cli#_paths) tells clj where to look for clojure code. Also known as a `classpath`
+- [:deps](https://clojure.org/reference/deps_and_cli#_dependencies) tells clj which dependencies our app needs. Right now our only dependency is ClojureScript.
 - [:aliases](https://clojure.org/reference/deps_and_cli#_aliases) commands we can write to modify how we build our app.
 
 When we run our app for prod, dev or test we may need to run the app differently. That is why we use aliases. In our case, we specified a `:dev` alias and configured it to:
@@ -233,7 +233,7 @@ It starts by adding figwheel as a dependency. We do this by opening the `deps.ed
  }
 ```
 
-<aside class="blog-post__note">Clojure libraries are generally found in <a class="blog-post__link" href="https://clojars.org" target="_blank" rel="noopener noreferrer">Clojars</a> which is a popular Clojure package repository.  This is where you can go to find packages, examples of how to specify them and their version numbers<a href="#package-repos" aria-describedby="footnote-label" id="package-repos-ref">.</a>  Also note that when you add new dependencies to your project you will also have to stop and restart your app.</aside>
+<aside class="blog-post__note">Clojure libraries are generally found in <a class="blog-post__link" href="https://clojars.org" target="_blank" rel="noopener noreferrer">Clojars</a> which is a popular Clojure package repository.  This is where you can go to find packages and examples of how to use the packages in our projects<a href="#package-repos" aria-describedby="footnote-label" id="package-repos-ref">.</a>  Also note that when you add new dependencies to your project you will also have to stop and restart your app.</aside>
 
 ### Step 8 - Add build configuration
 
