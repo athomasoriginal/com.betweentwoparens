@@ -70,7 +70,15 @@ Your site is now running at `http://localhost:8000`!
   yarn upgrade <package-name> --latest
   ```
 
-  > Above is fine if you want to upgrade to latest and to have the package.json also updated
+  > Above is fine if you want to upgrade to latest and to have the package.json also updated.
+
+If you find there are a lot of outdated packages try using
+
+```bash
+yarn upgrade --latest --pattern "gatsby-"
+```
+
+> Replace "gatsby-" with the common pattern.
 
 ## Blog Post Formatting Guidelines
 
