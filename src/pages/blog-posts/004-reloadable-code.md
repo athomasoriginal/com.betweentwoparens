@@ -249,9 +249,7 @@ Writing `reloadable code` can seem tricky at first, but hopefully we can see tha
 
 The other gain is the power that ClojureScript gives you out of the box.  It take very little to setup HMR and start writing reloadable code with the tools provided by Clojure(Script) core library.  You don't need additional dependencies.
 
-The next takeaway is that these ideas can be applied to JavaScript as well.
-
-Finally, there is something fundamental to be learned here:  all humans have a tendency to blame a tool rather than understanding a problem.  I see the problem with this manifested in developers creating additional layers of tooling and supersets of languages when the problem is fundamentally unrelated to what we type, it's about how we think.  And that is what `reloadable code` is:  us thinking through the way something works and making the outcome predicatable and consistent which ultimatley leads to increased productivity and building outstanding things.
+Hopefully this provides a decent example set with which to start your reloadable code journey.
 
 <aside>
   <h3>Footnotes</h3>
