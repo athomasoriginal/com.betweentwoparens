@@ -7,7 +7,7 @@ summary: How to build a static site in ClojureScript in probably 2.5 minutes
 keywords: ['deploy', 'clojurescript', 'github']
 ---
 
-This blog will outline how to build a minimal static website using just HTML, CSS and ClojureScript. The cherry on top will be us deploying our site to Github Pages. My goal is to illustrate how straightforward this process can be and hopefully inspire some interest in ClojureScript. Before we begin let's review ClojureScript and Github Pages.
+This blog will guide you through the process of building and deploying a minimal static website to Github Pages. By the end we should see how straightforward and accessible working with ClojureScript has become. Before we dive in, let's introduce the key players.
 
 ### What is ClojureScript?
 
@@ -19,7 +19,7 @@ Github Pages is a service provided by Github which allows you to freely host you
 
 With this in mind, let's start coding.
 
-<aside class="blog-post__note">The rest of this article assumes that you have a Github account. If you don't, no worries. Take a moment and <a class="blog-post__link" href="https://help.github.com/en/articles/signing-up-for-a-new-github-account" target=" _blank" rel="noopener noreferrer">create one for free</a> or just sit back and enjoy the read. For those who do want to adventure with me, go through Github's official <a class="blog-post__link" href="https://pages.github.com/" target=" _blank" rel="noopener noreferrer">Github Pages Quickstart</a> for projects and follow it exactly.  Note that throughout this post I will have footnotes referencing my live <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-gh-pages" target="_blank" rel="noopener noreferrer">demo project</a> which has each step mirrored by its corresponding
+<aside class="blog-post__note">The rest of this article assumes that you have a Github account. If you don't, no worries. Take a moment and <a class="blog-post__link" href="https://help.github.com/en/articles/signing-up-for-a-new-github-account" target=" _blank" rel="noopener noreferrer">create one for free</a> or just sit back and enjoy the read. For those who want to adventure with me, go through Github's official <a class="blog-post__link" href="https://pages.github.com/" target=" _blank" rel="noopener noreferrer">Github Pages Quickstart</a> for projects and follow it exactly.  Note that throughout this post I will have footnotes referencing my live <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-gh-pages" target="_blank" rel="noopener noreferrer">demo project</a> which has each step mirrored by its corresponding
 <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-gh-pages/commits/master" target="_blank" rel="noopener noreferrer">commit</a>. Please lean on them if you feel lost at any point</aside>
 
 Let's start by getting Clojure setup on your local machine. To do this, visit the [ClojureScript Quickstart](https://clojurescript.org/guides/quick-start) and follow the instructions there.
@@ -149,7 +149,7 @@ In the above steps, we have built a minimal site using HTML, CSS and ClojureScri
 clj -m cljs.main -d "demo-clojurescript-gh-pages/out"  -c demo.static-website -r
 ```
 
-<aside class="blog-post__note">You want to run the above command from the same place as your <code class="gatsby-code-text">deps.edn</code></aside>
+<aside class="blog-post__note">You want to run the above command from the same place as your <code class="gatsby-code-text">deps.edn</code>.  Further, if you're curious above the above command and what things like `-d` or `-c` means you can check these out in your terminal by running  <code class="gatsby-code-text">clj -m cljs.main --help</code></aside>
 
 The above command will take a moment to run. When completed, a browser tab will automatically open and serve your HTM, CSS and ClojureScript. If everything worked you should see a site that looks like this:
 
@@ -157,7 +157,7 @@ The above command will take a moment to run. When completed, a browser tab will 
 
 Further, if you open your browser console you should see "Hello, Github Pages!"
 
-<aside class="blog-post__note">If you are not seeing your ClojureScript in the browser console, please veryify that your <code class="gatsby-code-text">index.html</code> file is using your Github project name and the string following the <code class="gatsby-code-text">-d</code> in the above command, "demo-clojurescript-gh-pages", is also using your Github project <a href="#fn-project-name" aria-describedby="footnote-label" id="fn-project-name-ref">name</a>.</aside>
+<aside class="blog-post__note">If you are not seeing your ClojureScript in the browser console, please veryify that your <code class="gatsby-code-text">index.html</code> file is using your Github project name and the string following the <code class="gatsby-code-text">-d</code> in the above command, <code class="gatsby-code-text">demo-clojurescript-gh-pages</code>, is also using your Github project <a href="#fn-project-name" aria-describedby="footnote-label" id="fn-project-name-ref">name</a>.</aside>
 
 ### Build production bundle
 
