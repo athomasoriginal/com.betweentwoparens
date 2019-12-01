@@ -79,7 +79,7 @@ Knowing this, lets move onto how I setup Atom for my development workflow.
 
 ## My Text Editor Setup
 
-The beauty of an Atom of VS Code is you get most everything you need out-of-the-box.  Here are the plugins I use:
+The beauty of editors like `Atom` or `VS Code` is you get most everything you need out-of-the-box.  Here are the plugins I use:
 
 - [Chlorine](https://atom.io/packages/chlorine)
 
