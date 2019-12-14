@@ -7,6 +7,8 @@ author: 'Thomas Mattacchione'
 keywords: ['clojurescript tutorial', 'atom github clojurescript', 'atom clojure']
 ---
 
+<aside class="blog-post__note">This post begins with a bit of my origin story, but I get that you might just want to see what my editor setup looks like so <a class="blog-post__link" href="#my-text-editor-setup">click here</a> to jump ahead</aside>
+
 I'd been a professional software developer for a number of years before I came to Clojure.  So, it's fair to say that by the time I went all-in on Clojure I had, thankfully, seen some things and started to form opinions around what I felt was the "best" way to practice software development.
 
 One of the tenets of my model?  I should always be capable of growth.  To me, this means accepting the opportunity to revisit and refine my _opinions_ and _beliefs_.  One great way to do this as a programmer is to be "new" at something again.  For example, learn a **different** programming language.  Clojure was that language.  I chose it because it would expose me to new ideas like [functional programming](https://www.geeksforgeeks.org/functional-programming-paradigm/), [lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)) etc.
