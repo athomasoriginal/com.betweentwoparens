@@ -7,7 +7,7 @@ author: 'Thomas Mattacchione'
 keywords: ['clojurescript tutorial', 'atom github clojurescript', 'atom clojure']
 ---
 
-<aside class="blog-post__note">Interested in jumping right to my editor setup? <a class="blog-post__link" href="#my-text-editor-setup">click here</a>.</aside>
+<aside class="blog-post__note">Interested in jumping right to my editor setup? <a class="blog-post__link" href="#my-text-editor-setup">click here</a> or you can checkout my <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp">Youtube video series</a> of this post</aside>
 
 I'd been a professional software developer for a number of years before I came to Clojure.  So, it's fair to say that by the time I went all-in on Clojure I had, thankfully, seen some things and started to form opinions around what I felt was the "best" way to practice software development.
 
@@ -84,7 +84,7 @@ Knowing this, lets move onto how I setup Atom for my development workflow.
 
 As mentioned, `Atom` is _currently_ my preferred text editor for Clojure development.  The reason? it's portable, easy to setup and customize.
 
-With that, lets run over how I setup Atom for Clojure development.
+Below you will find an outline of how I setup Atom for Clojure development.  I have also released a [Clojure Text Editors](https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp) Youtube series where I walk you through how to setup Atom for Clojure development from scratch.
 
 ### Plugins and Configuration
 
