@@ -20,9 +20,10 @@ module.exports = {
     // added for the RSS feed plugin
     siteUrl: `https://betweentwoparens.com`,
     footerlinks: [
+      { title: 'Twitter', url: 'https://twitter.com/tmkjone' },
+      { title: 'Youtube', url: 'https://www.youtube.com/channel/UCfBUN43AQoyGiQxmCIDZe2w/featured?view_as=subscriber' },
       { title: 'Github', url: 'https://github.com/tkjone/' },
       { title: 'Linkedin', url: 'https://www.linkedin.com/in/tmattacchione/' },
-      { title: 'Twitter', url: 'https://twitter.com/tmkjone' },
       { title: 'rss', url: `https://betweentwoparens.com/rss.xml`},
     ],
   },
