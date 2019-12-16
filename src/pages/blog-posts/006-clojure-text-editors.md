@@ -7,6 +7,8 @@ author: 'Thomas Mattacchione'
 keywords: ['clojurescript tutorial', 'atom github clojurescript', 'atom clojure']
 ---
 
+<aside class="blog-post__note">Interested in jumping right to my editor setup? <a class="blog-post__link" href="#my-text-editor-setup">click here</a> or you can checkout my <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp">Youtube video series</a> of this post</aside>
+
 I'd been a professional software developer for a number of years before I came to Clojure.  So, it's fair to say that by the time I went all-in on Clojure I had, thankfully, seen some things and started to form opinions around what I felt was the "best" way to practice software development.
 
 One of the tenets of my model?  I should always be capable of growth.  To me, this means accepting the opportunity to revisit and refine my _opinions_ and _beliefs_.  One great way to do this as a programmer is to be "new" at something again.  For example, learn a **different** programming language.  Clojure was that language.  I chose it because it would expose me to new ideas like [functional programming](https://www.geeksforgeeks.org/functional-programming-paradigm/), [lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)) etc.
@@ -24,6 +26,7 @@ The rest of this article will be [bikeshed](https://www.urbandictionary.com/defi
 - [Clojure Text Editors](#clojure-text-editors)
 - [Which Text Editor to Use](#which-text-editor-to-use)
 - [My Text Editor Setup](#my-text-editor-setup)
+  - [Plugins and Configuration](#plugins-and-configuration)
 
 <aside class="blog-post__note">Text Editors are a source of furious debate among programmers.  So if the opinions expressed herein enrage, please know that is not my intention.  I love you.  For those who just want to see how I setup my Text Editor for Clojure development, jump to the <a href="#my-text-editor-setup">third section</a> of this post.  Also note that my recommendations are for both Clojure and ClojureScript.</aside>
 
@@ -79,29 +82,36 @@ Knowing this, lets move onto how I setup Atom for my development workflow.
 
 ## My Text Editor Setup
 
-The beauty of editors like `Atom` or `VS Code` is you get most everything you need out-of-the-box.  Here are the plugins I use:
+As mentioned, `Atom` is _currently_ my preferred text editor for Clojure development.  The reason? it's portable, easy to setup and customize.
 
-- [Chlorine](https://atom.io/packages/chlorine)
+Below you will find an outline of how I setup Atom for Clojure development.  I have also released a [Clojure Text Editors](https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp) Youtube series where I walk you through how to setup Atom for Clojure development from scratch.
 
-  Integrate your Clojure REPL into your editor.
+### Plugins and Configuration
+
+I have always found that to be productive with Clojure you don't need many tools. This is great because it means I can keep a relatively spartan setup for my Text Editor.  Now, let's take a look at the plugins I use and how I configure them.
+
+<aside class="blog-post__note">For each of the plugins listed below you will have to install them.  If you have never installed packages with Atom it's straightforward, but if you need additional help <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://flight-manual.atom.io/using-atom/sections/atom-packages/">Checkout this guide</a>.
+</aside>
 
 - [Ink](https://atom.io/packages/ink)
 
-  Chlorine depends on this.
+  - **Description:** Chlorine depends on this.
+  - **Configuration:** None required.
+
+- [Chlorine](https://atom.io/packages/chlorine)
+
+  - **Description:** Integrate your Clojure REPL into your editor.
+  - **Configuration:** Add the Chlorine hotkeys.  [Here is an example](https://github.com/tkjone/dotfiles/blob/master/atom/keymap.cson#L34) of where to put them.
 
 - [Parinfer](https://atom.io/packages/parinfer)
 
-  Automatically balance your parens
+  - **Description:** Automatically balance your parens.  Translation?  Thinks less about your parens.
+  - **Configuration:** The default settings are great, but I recommend enabling `smart mode`
 
-- [Chlorine Keybinding Setup](https://github.com/tkjone/dotfiles/blob/master/atom/keymap.cson#L34)
-
-  Learn the hotkeys to quickly connect to a Clojure repl and evaluate Clojure expressions
-
-That's everything that I use.
 
 ## Conclusion
 
-In the end, I hope I have helped to illuminate the options available for Clojure Text Editors.  The big take away is to be good to yourself in your early learning journey and choose a tool that does not get in your way and just lets you focus on learning Clojure.
+Remember that no matter what language you choose, there are going to be a ton of micro decisions to make.  The important thing in the beginning is to focus on the language and the learning process and not stress over the tooling.  Be good to yourself in your learning journey and try not to obsess over all the details or aligning to the _ideal programmer_ stereotype.
 
 
 <aside>
