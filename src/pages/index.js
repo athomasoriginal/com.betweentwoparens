@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => {
         title={siteMetadata.title}
         name={siteMetadata.author}
         description={siteMetadata.description}
-        interests={['Clojure', 'ClojureScript', 'JavaScript']}
+        interests={siteMetadata.seokeywords}
       />
       {blogPosts && blogPosts.length ? (
         <BlogPosts blogPosts={blogPosts} />
