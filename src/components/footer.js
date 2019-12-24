@@ -15,11 +15,23 @@ const FooterLink = ({ title, url }) => (
   </OutboundLink>
 )
 
-const Footer = ({ links }) => (
+export const FooterLicense = ({license}) => {
+  return (
+    <div className="footer__license">
+      <p>© 2019</p>
+      <p>Licensed under <FooterLink title={license.name} url={license.url} /></p>
+    </div>
+  )
+}
+
+const Footer = ({ links, license }) => (
   <footer className="footer">
+    {/* footer links */}
     {links.map(link => (
       <FooterLink key={link.title} title={link.title} url={link.url} />
     ))}
+
+    <FooterLicense license={license}/>
   </footer>
 )
 

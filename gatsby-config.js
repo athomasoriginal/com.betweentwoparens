@@ -19,6 +19,10 @@ module.exports = {
     seokeywords: [`clojurescript`, `clojure`, `javascript`],
     // added for the RSS feed plugin
     siteUrl: `https://betweentwoparens.com`,
+    license: {
+      name: 'CC BY-NC',
+      url: 'https://creativecommons.org/licenses/by-nc/4.0/',
+    },
     footerlinks: [
       { title: 'Twitter', url: 'https://twitter.com/tmkjone' },
       { title: 'Youtube', url: 'https://www.youtube.com/channel/UCfBUN43AQoyGiQxmCIDZe2w/featured?view_as=subscriber' },

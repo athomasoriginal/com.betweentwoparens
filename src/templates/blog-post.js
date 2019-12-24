@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
+import {FooterLicense} from '../components/footer'
 import SEO from '../components/seo'
 
 import { graphql, Link } from 'gatsby'
@@ -55,6 +56,7 @@ export default ({ data }) => {
         className="blog-post__content"
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
       />
+      <FooterLicense license={siteMetadata.license}/>
     </Layout>
   )
 }
@@ -66,6 +68,10 @@ export const query = graphql`
         title
         ogURL
         seoLang
+        license {
+          name
+          url
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

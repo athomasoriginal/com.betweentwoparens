@@ -12,3 +12,17 @@
 .footer__link:hover {
   background: rgba(97, 130, 237, 0.3);
 }
+
+.footer__license {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: hsl(0, 0%, 53%);
+  border-top: 1px solid hsl(0, 0%, 53%);
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.footer__license .footer__link {
+  margin-right: 0px;
+}

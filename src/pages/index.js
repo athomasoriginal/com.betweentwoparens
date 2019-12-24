@@ -52,7 +52,7 @@ const IndexPage = ({ data }) => {
       ) : (
         <EmptyIndexScreenMsg msg="No blog posts yet" />
       )}
-      <Footer links={siteMetadata.footerlinks} />
+      <Footer links={siteMetadata.footerlinks} license={siteMetadata.license} />
     </Layout>
   )
 }
@@ -70,6 +70,10 @@ export const query = graphql`
         ogURL
         footerlinks {
           title
+          url
+        }
+        license {
+          name
           url
         }
       }
