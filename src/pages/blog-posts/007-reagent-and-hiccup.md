@@ -75,6 +75,10 @@ To be considered valid `Reagent Hiccup`, the vector you pass to Reagent needs to
 
 ; => [:h1 {:class "welcome"}]
 
+[tag children]
+
+; => [:h1 "Hello world!"]
+
 [tag attributes children]
 
 ; => [:h1 {:class "welcome"} "Hello world!"]
