@@ -11,7 +11,7 @@ Let's start this post by looking at React's [hello world](https://reactjs.org/do
 
 ```javascript
 ReactDOM.render(
-  <h1>Hello, world!</h1>, // <-- JSX
+  <h1 className="welcome">Hello, world!</h1>, // <-- JSX
   document.getElementById('root')
 );
 ```
@@ -20,7 +20,7 @@ and now let's rewrite it in Reagent (a popular ClojureScript React wrapper)
 
 ```clojure{numberLines: true}
 (reagent.core/render-component
-  [:div {:class "welcome"} "Hello, world!"] ; <-- Hiccup
+  [:h1 {:class "welcome"} "Hello, world!"] ; <-- Hiccup
   (.. js/document (getElementById  "root")))
 ```
 
@@ -30,7 +30,7 @@ and now let's rewrite it in Reagent (a popular ClojureScript React wrapper)
 If the above is the first time you're reading ClojureScript or Reagent, it may look foreign, but you might also notice that the overall shape of the code (lines, structure, functions) is more or less the same.  To me, the biggest difference is what happens on **line 2**
 
 ```clojure
-[:div {:class "welcome"} "Hello, world!"]
+[:h1 {:class "welcome"} "Hello, world!"]
 ```
 
 The above, my friends, is `Reagent Hiccup` and it's a common way to _represent_ HTML in Clojure.  In this way, it's Reagent's version of [JSX](https://reactjs.org/docs/introducing-jsx.html).  Just to provide more context, here is another example of `Reagent Hiccup`:
@@ -56,7 +56,7 @@ Let's return to the code snippet we started this post with:
 
 ```clojure
 (reagent.core/render-component
-  [:div {:class "welcome"} "Hello, world!"] ; <-- hiccup
+  [:h1 {:class "welcome"} "Hello, world!"] ; <-- hiccup
   (.. js/document (getElementById  "root")))
 ```
 
@@ -69,20 +69,20 @@ To be considered valid `Reagent Hiccup`, the vector you pass to Reagent needs to
 ```clojure
 [tag]
 
-; => [:div]
+; => [:h1]
 
 [tag attributes]
 
-; => [:div {:class "welcome"}]
+; => [:h1 {:class "welcome"}]
 
 [tag attributes children]
 
-; => [:div {:class "welcome"} "Hello world!"]
+; => [:h1 {:class "welcome"} "Hello world!"]
 ```
 
 Here is another way to break it down:
 
-- **tag** - `:div`
+- **tag** - `:h1`
 - **attributes** - `{:class "welcome"}`
 - **children** - `"Hello world!"`
 
@@ -101,14 +101,14 @@ The process begins by Reagent passing the `component` given to `reagent.core/ren
 `as-element` accepts `Reagent Hiccup` like this:
 
 ```clojure
-[:div {:class "welcome"} "Hello, world!"]
+[:h1 {:class "welcome"} "Hello, world!"]
 ```
 
 Compiles it to `React.createElement` function calls like this:
 
 ```javascript
 React.createElement(
-  "div",
+  "h1",
   {className: 'welcome'},
   "Hello, world!"
 );
@@ -118,7 +118,7 @@ The above is given to React which actually runs the `React.createElement` calls 
 
 ```javascript
 {
-  type: "div",
+  type: "h1",
   props: {
     className: 'greeting',
     children: "Hello, world!"
@@ -129,7 +129,7 @@ The above is given to React which actually runs the `React.createElement` calls 
 which ultimatley gets turned into HTML
 
 ```html
-<div>Hello, world!</div>
+<h1 class="welcome">Hello, world!</h1>
 ```
 
 Understanding that everything is turned into `React.createElement` calls you might be asking, _"Could we just use React.createElement and not use Reagent Hiccup?"_.  The answer? Yup!
@@ -140,7 +140,7 @@ Similar to React and JSX, you can use plain old `React.createElement` to create 
 
 ```clojure
 (reagent.core/render-component
-  [:div {:class "welcome"} "Hello, world!"]
+  [:h1 {:class "welcome"} "Hello, world!"]
   (.. js/document (getElementById  "root")))
 ```
 
@@ -149,7 +149,7 @@ we could also use `reagent.core/create-element` to write a `Reagent component` l
 ```clojure
 (reagent.core/render-component
   (reagent.core/create-element
-    "div"
+    "h1"
     #js{:className "welcome"}
     "Hello, world!")
   (.. js/document (getElementById  "root")))
@@ -159,11 +159,11 @@ Thus, the following are equivalent
 
 ```clojure
 ; hiccup
-[:div {:class "welcome"} "Hello, world!"]
+[:h1 {:class "welcome"} "Hello, world!"]
 
 ; reagent function
 (reagent.core/create-element
-  "div"
+  "h1"
   #js{:className "welcome"}
   "Hello, world!")
 ```
