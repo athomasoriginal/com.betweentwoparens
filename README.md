@@ -240,3 +240,5 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 - [syungb](https://github.com/syungb)
 - [lokeh](https://github.com/Lokeh)
 - [skidding](https://github.com/skidding)
+- [@henrikeneroth](https://twitter.com/henrikeneroth?lang=en)
+- [holyjak](https://github.com/holyjak)
