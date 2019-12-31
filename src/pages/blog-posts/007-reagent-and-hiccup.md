@@ -64,7 +64,7 @@ On **line 2** we have an unassuming Clojure vector, or is it?  In truth, that's 
 
 The reason is because `reagent.core/render-component`, the entry point for a Reagent app, accepts either `Reagent Hiccup` or a `React Element` as the first argument.  So by providing a `vector`, Reagent automatically treats it like `Reagent Hiccup`.  This means that Reagent also expects it to be written in a specific way.
 
-To be considered valid `Reagent Hiccup`, the vector you pass to Reagent needs to take one of the following three shapes:
+To be considered valid `Reagent Hiccup`, the vector you pass to Reagent needs to take one of the following shapes:
 
 ```clojure
 [tag]
