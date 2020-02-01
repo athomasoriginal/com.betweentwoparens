@@ -25,9 +25,9 @@ This post will cover the following topics:
 
 With every line of code we write, we're making assumptions. We assume that our code will run in specific environment(s) and work in a particular way.  The longer we play the game, the clearer we see that these assumptions are traps.
 
-A possible solution is to agree on standards.  We say that our software _will_ work on specific versions of a language and in specific environments.  Then we work to back this guarentee.  There is also another side to this coin. Something unexpected happens and our standards are betrayed and we have to figure out why.
+A possible solution is to agree on standards.  We say that our software _will_ work on specific versions of a language and in specific environments.  Then we work to back this guarantee.  There is also another side to this coin. Something unexpected happens and our standards are betrayed and we have to figure out why.
 
-It's for these reasons that we have language version management tools.  They allow us to quickly and easily manage the versions of our programming languages.  This enables us to better debug and fortify our code.  Example scenarios where I've  had to switch language versions:
+It's for these reasons that we have language version management tools.  They allow us to quickly and easily manage (add, switch, remove et al.) the versions of our programming languages.  This enables us to better debug and fortify our code.  Example scenarios where I've  had to switch language versions:
 
 - Debugging CI environments
 - Resolving "works on my machine" events
@@ -48,6 +48,8 @@ The first thing we have to do is install `jEnv`.
 brew install jenv
 ```
 
+<aside class="blog-post__note">The above is actually the only step that is different for linux.  So macos and linux users can follow everything that comes next together</aside>
+
 and now let's do a sanity check to see if it's installed correctly.  Run:
 
 ```bash
@@ -63,17 +65,17 @@ and if the above worked you should see something like this:
 [ERROR]	To fix : cat eval "$(jenv init -)" >> /Users/# ...
 ```
 
-<aside class="blog-post__note">Note that the above output is truncated because I am choosing to focus on what I consider the important details and will likely be different from yours.  For example, i'm using <code class="gatsby-code-text">zsh</code>.  If you're using <code class="gatsby-code-text">bash</code>, then your output on line 3 will read <code class="gatsby-code-text">bash</code>.  Further, the truncated pieces are everything beginning with <code class="gatsby-code-text"># ...</code></aside>
+<aside class="blog-post__note">Note that the above output is truncated because I am choosing to focus on what I consider the important details.  Further, the pieces I truncated may be specific to my machine.  For example, i'm using <code class="gatsby-code-text">zsh</code>.  If you're using <code class="gatsby-code-text">bash</code>, then your output on line 3 will read <code class="gatsby-code-text">bash</code>.  Everything truncated is identified with <code class="gatsby-code-text"># ...</code></aside>
 
 Assuming the above worked, we can move onto actually configuring `jEnv`.  This means that the next step is to add `jEnv` to our `PATH`.
 
-To do this, we have to add some code to our shell configuration file.  This means that we have to know which shell we are running.  Just to be safe, I will assume we don't know.  So, what we do to figure out which shell we are using is run the following command:
+To do this, we have to add some code to our shell configuration file.  Now, if you'r not sure which shell you're running, that's fine, I will assume we don't know.  This means that our next step is to find out which shell we are using is run the following command:
 
 ```shell
 echo $0
 ```
 
-If you are using `bash`, the above will print out `-bash` and if you're using `zsh` the above will print out `-zsh`.  Once you discover which shell you are using, please choose the associated code block below for your currently active shell:
+If you are using `bash`, the above will print out `-bash` and if you're using `zsh` the above will print out `-zsh`.  Once you discover which shell you are using, please choose the associated code block below and run the code inside of it line by line:
 
 <aside class="blog-post__note">In other words, you only have to run the code from <strong>one</strong> of the following blocks</aside>
 
