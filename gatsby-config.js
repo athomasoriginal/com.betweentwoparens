@@ -24,9 +24,9 @@ module.exports = {
       url: 'https://creativecommons.org/licenses/by-nc/4.0/',
     },
     footerlinks: [
-      { title: 'Twitter', url: 'https://twitter.com/tmkjone' },
+      { title: 'Twitter', url: 'https://twitter.com/athomasoriginal' },
       { title: 'Youtube', url: 'https://www.youtube.com/channel/UCfBUN43AQoyGiQxmCIDZe2w/featured?view_as=subscriber' },
-      { title: 'Github', url: 'https://github.com/tkjone/' },
+      { title: 'Github', url: 'https://github.com/athomasoriginal' },
       { title: 'Linkedin', url: 'https://www.linkedin.com/in/tmattacchione/' },
       { title: 'rss', url: `https://betweentwoparens.com/rss.xml`},
     ],
