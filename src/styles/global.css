@@ -6,7 +6,15 @@
   /* colors */
   --color-deep-pink: hsl(321, 71%, 20%);
   --color-white: white;
-  --color-black: black;
+  --color-black: hsl(0, 0%, 0%);
+  --color-gray-20: hsl(0, 0%, 20%);
+  --color-purple-30: hsla(226, 80%, 65%, 0.3);
+  --color-purple-70: hsla(226, 80%, 65%, 0.7);
+  --color-dark-gray: hsla(0, 0%, 0%, 0.8);
+  --color-gray: hsla(0, 0%, 0%, 0.5);
+  --color-snow-gray: hsla(0, 0%, 0%, 0.12);
+  --color-light-gray: hsla(0, 0%, 0%, 0.04);
+  --color-lightest-gray: hsla(0, 0%, 0%, 0.2);
 
   /* fonts */
   --font-normal: 400;
@@ -122,7 +130,7 @@
 .link__underline {
   background: linear-gradient(
     to top,
-    rgba(97, 130, 237, 0.7) 18%,
+    var(--color-purple-70) 18%,
     transparent 8%
   );
 }
