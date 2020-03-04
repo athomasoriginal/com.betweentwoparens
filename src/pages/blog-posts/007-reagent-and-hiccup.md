@@ -1,5 +1,5 @@
 ---
-title: 'Reagent and Hiccup'
+title: 'Reagent & Hiccup'
 date: '2019-12-31'
 slug: reagent-and-hiccup
 summary: Hiccup is the Ryan Atwood to JSX's Seth Cohen
