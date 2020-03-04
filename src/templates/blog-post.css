@@ -233,6 +233,7 @@ pre[class*='gatsby-code-'].line-numbers > code {
 .blog-post__content {
   counter-reset: footnotes;
   margin-top: 20px;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .blog-post__title,
@@ -264,12 +265,12 @@ pre[class*='gatsby-code-'].line-numbers > code {
   font-weight: bold;
   background: linear-gradient(
     to top,
-    rgba(97, 130, 237, 0.3) 35%,
+    var(--color-purple-60) 35%,
     transparent 35%
   );
   background: linear-gradient(
     to top,
-    rgba(97, 130, 237, 0.7) 18%,
+    var(--color-purple-60) 18%,
     transparent 8%
   );
   text-decoration: none;
