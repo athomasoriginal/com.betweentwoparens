@@ -392,8 +392,6 @@ And with that we have successfully deployed our ClojureScript app to our own `Ng
 
 Again, my hope is to outline a piece of the process.  Let me know if this helped!
 
-## Footnotes
-
 <aside>
   <h3>Footnotes</h3>
   <ol>

@@ -11,14 +11,6 @@ Building apps is hard AF. Choosing a language like Clojure(Script) can remove _s
 
 My goal with this post is to provide a step by step guide into writing a ClojureScript app. We'll work to assuage your fears & stresses and alleviate those overwhelming thoughts about doing things the "right" or "wrong" way by showing a common way to start a Clojure(Script) app and provide context for why we are making each decision.
 
-Through this guide we will cover the steps I take when starting a new ClojureScript app from scratch.
-
-- [Setup Project Structure](#setup-project-structure)
-- [Build Tools](#build-tools)
-- [Setup a ClojureScript Toolchain](#setup-a-clojurescript-toolchain)
-- [Hot Module Reloading](#hot-module-reloading)
-- [Adding Reagent (React)](#add-reagent)
-
 To get us into the headspace, imagine that we are a company called `tallex` and we are building an app called `time dive`. This excercise will prove useful when learning how to structure/name our files/folders.
 
 <aside class="blog-post__note">In case you get stuck at any point, I have a <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app" target="_blank" rel="noopener noreferrer">demo project</a> which you can reference as you work through this post.  There won't be too much ClojureScript code because we are focusing on setup, but if at any point you feel overwhelmed by the ClojureScript syntax I recommend this <a class="blog-post__link" href="https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes" target="_blank" rel="noopener noreferrer">quick 15 minute primer to the syntax of Clojure</a>.</aside>

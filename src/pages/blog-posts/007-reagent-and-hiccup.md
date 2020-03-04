@@ -42,11 +42,7 @@ The above, my friends, is `Reagent Hiccup` and it's a common way to _represent_ 
   [:li {:class "list-item"} "Item 3"]]
 ```
 
-If you're like me when I first started writing ClojureScript, `Hiccup` can seem a little confusing.  How is it possible to use `Hiccup` without importing a library or adding a plugin to our build tools?  How does React know what to do with `Reagent Hiccup`?  These, and more, are questions I hope to answer in this post.  Here is a full post overview:
-
-- [Reagent Hiccup](#reagent-hiccup)
-- [Reagent without Hiccup](#reagent-without-hiccup)
-- [Hiccup and Clojure](#hiccup-and-clojure)
+If you're like me when I first started writing ClojureScript, `Hiccup` can seem a little confusing.  How is it possible to use `Hiccup` without importing a library or adding a plugin to our build tools?  How does React know what to do with `Reagent Hiccup`?  These, and more, are questions I hope to answer in this post.
 
 <aside class="blog-post__note">This post is geared toward beginner and intermediate ClojureScript developers who want to understand a little more about how <code class="gatsby-code-text">Reagent Hiccup</code> works.  As a result, we won't cover how to write Hiccup, but if that's your goal, please see this <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://purelyfunctional.tv/guide/reagent/#hiccup">Guide to Writing Hiccup</a>.</aside>
 

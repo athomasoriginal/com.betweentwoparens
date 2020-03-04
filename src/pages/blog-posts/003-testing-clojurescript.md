@@ -9,16 +9,7 @@ keywords: ['test setup', 'test tools', 'clojurescript']
 
 ClojureScript rewards you for having more than a passing acquaintance with software testing practices. The community has provided great tools, but you do need to know how, why and when to use them<a href="#intro-to-testing" aria-describedby="footnote-label" id="intro-to-testing-ref">.</a>
 
-To be sure, this is a big topic so this post will focus on setting up a test toolchain for ClojureScript:
-
-- [ClojureScript Project Setup](#clojurescript-project-setup)
-- [Writing a Simple Test](#writing-a-simple-test)
-- [Understanding JS Test Environments](#understanding-js-test-environments)
-- [Browser Testing](#browser-testing)
-- [Headless Browser Testing](#headless-browser-testing)
-- [Next Steps](#next-steps)
-
-Because we are focusing on the early steps of test toolchain setup this post will not discuss testing strategies like TDD, best practices, how to use libraries or even writing ClojureScript.  We are dedicated to making our test toolchain feel good.
+Because we are focusing on the early steps of test toolchain setup this post will not discuss testing strategies like TDD, best practices, how to use libraries or even writing ClojureScript.  We are dedicated to understanding _how_ to setup our toolchain.
 
 <aside class="blog-post__note">If you are following along please make sure you have Clojure setup on your local machine.  To do this, visit the <a  class="blog-post__link" href="https://clojurescript.org/guides/quick-start" target="_blank" rel="noopener noreferrer">ClojureScript Quickstart</a> and follow the instructions there.</aside>
 

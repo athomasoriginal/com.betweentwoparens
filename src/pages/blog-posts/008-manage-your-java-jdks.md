@@ -13,14 +13,6 @@ All it takes is a [CI] environment running a different version of your programmi
 
 It's for this reason that I always manage my programming languages with a language version manager.  If you're using JavaScript, [nvm] is a great option, Ruby has [rvm] and for Clojure developers we have [tools.deps] for managing versions of Clojure and [jEnv] for managings our JDKs.
 
-This post will cover the following topics:
-
-- [Why Version Management Tools]
-- [Installing jEnv]
-- [Add a JDK to jEnv]
-- [Set a JDK version via jEnv]
-- [Uninstalling jEnv]
-
 ## Why Version Management Tools
 
 With every line of code we write, we're making assumptions. We assume that our code will run in specific environment(s) and work in a particular way.  The longer we play the game, the clearer we see that these assumptions are traps.
