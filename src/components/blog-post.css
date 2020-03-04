@@ -54,3 +54,10 @@
   font-weight: bold;
   text-transform: uppercase;
 }
+
+@media (min-width: 760px) {
+  .blog-post-item {
+    grid-column: main-start;
+    margin: 32px 0 38px 0;
+  }
+}

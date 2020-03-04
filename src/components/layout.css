@@ -621,15 +621,6 @@ pre tt:after {
 
 /* App Specific */
 
-.main-content {
-  display: grid;
-  grid-template-columns:
-    [full-start] minmax(1em, 1fr) [main-start] minmax(0, 30em)
-    [main-end] minmax(1em, 1fr);
-  margin: 0 auto;
-  max-width: 800px;
-}
-
 .no-blog-posts-msg {
   grid-column: main-start;
 }

@@ -52,11 +52,11 @@
 .content-container {
   display: grid;
   grid-template-areas:
-    "header header header"
-    "nav main aside";
-  grid-template-columns: 1fr 600px 1fr;
-  grid-template-rows: 1fr auto;
-  column-gap: 90px;
+    "header"
+    "aside"
+    "main";
+  grid-template-columns: auto;
+  grid-template-rows: auto;
   height: 100vh;
 }
 
@@ -66,12 +66,13 @@
   height: 104px;
   align-content: end;
   grid-template-areas:
-    "header-logo header-byline header-nav";
-  grid-template-columns: 1fr 600px 1fr;
+    "header-logo header-nav";
+  grid-template-columns: 1fr 1fr;
   column-gap: 90px;
 }
 
 .header__logo {
+  grid-area: header-logo;
   display: flex;
   align-items: flex-end;
   /* @note this has to be in sync with the margin-right of header__nav */
@@ -80,7 +81,8 @@
 }
 
 .header__tagline {
-  display: flex;
+  grid-area: header-tagline;
+  display: none;
   flex-direction: column;
   justify-content: flex-end;
   font-family: 'Noto Sans', sans-serif;
@@ -102,10 +104,10 @@
 }
 
 .header__nav {
-  grid-column: 3;
+  grid-area: header-nav;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   margin-right: 30px
 }
 
@@ -154,19 +156,11 @@
   grid-area: aside;
 }
 
-.main-content {
-  display: grid;
-  grid-template-columns:
-    [full-start] minmax(1em, 1fr) [main-start] minmax(0, 30em)
-    [main-end] minmax(1em, 1fr) [full-end];
-  width: 100%;
-  max-width: 800px;
-  margin: 50px auto;
-  align-self: center;
-}
-
-.main-content > * {
-  grid-column: main;
+.blog-posts {
+  grid-area: main;
+  /* prevent the blog-post index items from touching the edges of the screen
+  mobile */
+  margin: 0 15px 0 15px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -233,4 +227,38 @@
     var(--color-purple-60) 18%,
     transparent 8%
   );
+}
+
+@media (min-width: 760px) {
+  .content-container {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "nav main aside";
+    grid-template-columns: 1fr 600px 1fr;
+    grid-template-rows: 1fr auto;
+    column-gap: 90px;
+    height: 100vh;
+  }
+
+  .header {
+    grid-template-areas:
+      "header-logo header-tagline header-nav";
+    grid-template-columns: 1fr 600px 1fr;
+    column-gap: 90px;
+  }
+
+  .blog-posts {
+    margin: 0;
+  }
+
+  .header__tagline {
+    grid-area: header-tagline;
+    display: flex;
+  }
+
+  .header__nav {
+    grid-area: header-nav;
+    align-items: flex-end;
+  }
 }
