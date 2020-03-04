@@ -48,10 +48,11 @@ export default ({ data }) => {
         </Link>
       </h1>
       <h2 className="blog-post__title">{frontmatter.title}</h2>
-      <p className="blog-post-item__meta">
+      <p className="blog-post__meta">
         <span className="hide">posted on</span>
         <time>{frontmatter.date}</time>
       </p>
+      <span className="blog-post__meta-hr"/>
       <div
         className="blog-post__content"
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}

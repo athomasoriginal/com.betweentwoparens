@@ -223,7 +223,11 @@ pre[class*='gatsby-code-'].line-numbers > code {
  * ---------------------------------------------------------------------------*/
 
 .blog-post__title {
-  margin: 40px 0 5px 0;
+  margin: 40px 0 20px 0;
+  text-align: center;
+  font-size: 42px;
+  font-weight: normal;
+  font-family: 'Playfair Display', serif;
 }
 
 .blog-post__content {
@@ -234,6 +238,22 @@ pre[class*='gatsby-code-'].line-numbers > code {
 .blog-post__title,
 .blog-post__content {
   grid-column: main-start;
+}
+
+.blog-post__meta {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 12px;
+  margin: 0 0 18px 0;
+  color: var(--color-black);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.blog-post__meta-hr {
+  display: inline-block;
+  border: 2px solid var(--color-yellow-53);
+  width: 100px;
+  margin: 0 auto;
 }
 
 /* Links */
