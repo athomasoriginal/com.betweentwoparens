@@ -14,11 +14,15 @@ const BlogPost = ({ title, author, date, description, url }) => (
         </Link>
       </h2>
     </header>
-    <p className="blog-post-item__description">{description}</p>
+    <div>
+      <p className="blog-post-item__description">{description}</p>
+      <span className="blog-post-item__description-hr"/>
+    </div>
     <p className="blog-post-item__meta">
-      <span className="blog-post-item__author">{author}</span>
-      <span className="hide">posted on</span>
       <time className="blog-post-item__date">{date}</time>
+      <span className="hide">posted on</span>
+      <span className=""> BY </span>
+      <span className="blog-post-item__author">{author}</span>
     </p>
   </article>
 )

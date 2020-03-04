@@ -10,6 +10,17 @@ function SEO({ description, lang, meta, keywords, title, author, ogURL }) {
       }}
       title={title}
       titleTemplate={title}
+      link={[
+        {
+          href:
+            'https://fonts.googleapis.com/css?family=Noto+Sans&display=swap',
+          rel: 'stylesheet',
+        },
+        {
+          href: 'https://fonts.googleapis.com/css?family=Playfair+Display&display=swap',
+          rel: 'stylesheet'
+        }
+      ]}
       meta={[
         {
           name: `description`,
