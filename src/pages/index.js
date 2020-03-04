@@ -7,7 +7,6 @@ import BlogPost from '../components/blog-post'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
-
 const EmptyIndexScreenMsg = ({ msg }) => (
   <p className="no-blog-posts-msg">{msg}</p>
 )
@@ -48,12 +47,14 @@ const IndexPage = ({ data }) => {
         interests={siteMetadata.seokeywords}
         navList={siteMetadata.headerLinks}
       />
-      {blogPosts && blogPosts.length ? (
-        <BlogPosts blogPosts={blogPosts} />
-      ) : (
-        <EmptyIndexScreenMsg msg="No blog posts yet" />
-      )}
-      <Footer links={siteMetadata.footerlinks} license={siteMetadata.license} />
+      <div className="blog-posts">
+        {blogPosts && blogPosts.length ? (
+          <BlogPosts blogPosts={blogPosts} />
+        ) : (
+          <EmptyIndexScreenMsg msg="No blog posts yet" />
+        )}
+        <Footer links={siteMetadata.footerlinks} license={siteMetadata.license} />
+      </div>
     </Layout>
   )
 }

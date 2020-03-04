@@ -30,7 +30,9 @@ const HeaderLinkExnternal = ({ url, title, iconName }) => {
 // @note description can be false and when it is, we don't show the site tagline
 const Header = ({ title, description, name, interests, picture, navList }) => (
   <div className="header">
-    <div className="header__logo">Logo</div>
+    <div className="header__logo">
+      Logo
+    </div>
 
     {description ? (
       <div className="header__tagline">

@@ -26,22 +26,28 @@ export default ({ data }) => {
         description={false}
         navList={siteMetadata.headerLinks}
       />
-      <div className="blog-post__title-wrapper">
-        <h2 className="blog-post__title">{frontmatter.title}</h2>
-        <p className="blog-post__meta">
-          <span className="hide">posted on</span>
-          <time>{frontmatter.date}</time>
-          <span className="blog-post__meta-hr" />
-        </p>
+      <div className="blog-post__content-wrapper">
+        <div className="blog-post__title-wrapper">
+          <h2 className="blog-post__title">{frontmatter.title}</h2>
+          <p className="blog-post__meta">
+            <span className="hide">posted on</span>
+            <time>{frontmatter.date}</time>
+            <span className="blog-post__meta-hr" />
+          </p>
+        </div>
+        <div
+          className="blog-post__content"
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        />
       </div>
-      <div
-        className="blog-post__content"
-        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-      />
-      <aside>
+      <aside className="blog-post__toc-wrapper">
         <div className="blog-post__toc">
           <p>This post covers the following topics: </p>
-          <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.tableOfContents }} />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.markdownRemark.tableOfContents,
+            }}
+          />
         </div>
       </aside>
       <Footer links={siteMetadata.footerlinks} license={siteMetadata.license} />
@@ -76,9 +82,7 @@ export const query = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-      tableOfContents (
-        maxDepth: 2
-      )
+      tableOfContents(maxDepth: 2)
       frontmatter {
         title
         summary

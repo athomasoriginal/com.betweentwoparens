@@ -5,7 +5,7 @@
   font-size: 14px;
   color: var(--color-gray);
   border-top: 1px solid var(--color-black);
-  margin-top: 10px;
+  margin: 10px 0 0 0;
   padding-top: 15px;
 }
 
@@ -42,9 +42,23 @@
 }
 
 .social-icons__list-item:not(:last-child)  {
-  padding-right: 15px;
+  padding-right: 10px;
 }
 
 .social-icons__list-item-link {
   background-color: transparent;
+}
+
+@media (min-width: 760px) {
+  .footer {
+    margin: 10px 0 0 0;
+  }
+
+  .footer__link {
+    margin-right: 10px;
+  }
+
+  .social-icons__list-item:not(:last-child)  {
+    padding-right: 15px;
+  }
 }
