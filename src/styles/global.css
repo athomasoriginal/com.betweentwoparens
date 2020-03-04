@@ -9,6 +9,7 @@
   --color-black: hsl(0, 0%, 0%);
   --color-gray-20: hsl(0, 0%, 20%);
   --color-purple-30: hsla(226, 80%, 65%, 0.3);
+  --color-purple-60: 	hsl(270, 100%, 66%);
   --color-purple-70: hsla(226, 80%, 65%, 0.7);
   --color-dark-gray: hsla(0, 0%, 0%, 0.8);
   --color-gray: hsla(0, 0%, 0%, 0.5);
@@ -130,7 +131,7 @@
 .link__underline {
   background: linear-gradient(
     to top,
-    var(--color-purple-70) 18%,
+    var(--color-purple-60) 18%,
     transparent 8%
   );
 }

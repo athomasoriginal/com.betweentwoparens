@@ -71,6 +71,7 @@ export const query = graphql`
         footerlinks {
           title
           url
+          iconName
         }
         license {
           name

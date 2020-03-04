@@ -24,11 +24,32 @@ module.exports = {
       url: 'https://creativecommons.org/licenses/by-nc/4.0/',
     },
     footerlinks: [
-      { title: 'Twitter', url: 'https://twitter.com/athomasoriginal' },
-      { title: 'Youtube', url: 'https://www.youtube.com/channel/UCfBUN43AQoyGiQxmCIDZe2w/featured?view_as=subscriber' },
-      { title: 'Github', url: 'https://github.com/athomasoriginal' },
-      { title: 'Linkedin', url: 'https://www.linkedin.com/in/tmattacchione/' },
-      { title: 'rss', url: `https://betweentwoparens.com/rss.xml`},
+      {
+        title: 'Twitter',
+        url: 'https://twitter.com/athomasoriginal',
+        iconName: 'twitter',
+      },
+      {
+        title: 'Youtube',
+        url:
+          'https://www.youtube.com/channel/UCfBUN43AQoyGiQxmCIDZe2w/featured?view_as=subscriber',
+        iconName: 'youtube',
+      },
+      {
+        title: 'Git',
+        url: 'https://github.com/athomasoriginal',
+        iconName: 'git',
+      },
+      {
+        title: 'Linkedin',
+        url: 'https://www.linkedin.com/in/tmattacchione/',
+        iconName: 'linkedin',
+      },
+      {
+        title: 'rss',
+        url: `https://betweentwoparens.com/rss.xml`,
+        iconName: 'rss',
+      },
     ],
   },
   plugins: [
@@ -53,11 +74,11 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-external-links",
+            resolve: 'gatsby-remark-external-links',
             options: {
-              target: "_blank",
-              rel: "noopener noreferrer"
-            }
+              target: '_blank',
+              rel: 'noopener noreferrer',
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
