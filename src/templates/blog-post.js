@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import {FooterLicense} from '../components/footer'
+import Footer from '../components/footer'
 import SEO from '../components/seo'
 
 import { graphql, Link } from 'gatsby'
@@ -56,7 +56,7 @@ export default ({ data }) => {
         className="blog-post__content"
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
       />
-      <FooterLicense license={siteMetadata.license}/>
+      <Footer links={siteMetadata.footerlinks} license={siteMetadata.license} />
     </Layout>
   )
 }
@@ -71,6 +71,11 @@ export const query = graphql`
         license {
           name
           url
+        }
+        footerlinks {
+          title
+          url
+          iconName
         }
       }
     }
