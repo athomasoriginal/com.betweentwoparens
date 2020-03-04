@@ -237,25 +237,36 @@ pre[class*='gatsby-code-'].line-numbers > code {
   font-size: 16px;
 }
 
+.blog-post__title-wrapper {
+  grid-area: main;
+}
+
 .blog-post__title,
 .blog-post__content {
   grid-column: main-start;
 }
 
 .blog-post__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: 'Noto Sans', sans-serif;
   font-size: 12px;
-  margin: 0 0 18px 0;
+  margin: 0;
   color: var(--color-black);
   text-align: center;
   text-transform: uppercase;
 }
 
+.blog-post__meta time {
+  margin-bottom: 20px;
+}
+
 .blog-post__meta-hr {
   display: inline-block;
-  border: 2px solid var(--color-yellow-53);
+  height: 3px;
+  background-color: var(--color-yellow-53);
   width: 100px;
-  margin: 0 auto;
 }
 
 /* Links */

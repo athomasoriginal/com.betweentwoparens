@@ -49,6 +49,111 @@
    General Layout
    -------------------------------------------------------------------------- */
 
+.content-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav main aside";
+  grid-template-columns: 1fr 600px 1fr;
+  grid-template-rows: 1fr auto;
+  column-gap: 90px;
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  display: grid;
+  height: 104px;
+  align-content: end;
+  grid-template-areas:
+    "header-logo header-byline header-nav";
+  grid-template-columns: 1fr 600px 1fr;
+  column-gap: 90px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: flex-end;
+  /* @note this has to be in sync with the margin-right of header__nav */
+  margin-left: 50px;
+  margin-bottom: 16px;
+}
+
+.header__tagline {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.header__tagline-text {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.header__tagline-hr {
+  display: inline-block;
+  height: 3px;
+  background-color: var(--color-yellow-53);
+  width: 100px;
+  margin-top: 18px;
+}
+
+.header__nav {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 30px
+}
+
+.header__nav-list {
+  list-style-type: none;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 16px 0;
+}
+
+.header__nav-list-item {
+  font-size: 14px;
+  padding: 0;
+  margin: 0 12px 0 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.header__nav-list-item a,
+.header__nav-list-item a:visited,
+.header__nav-list-item a:active {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.header__nav-list-item-text {
+  /* used to manually vertically align the youtube link to the link text */
+  margin-top: 2px
+}
+
+/* nav list item styles */
+.header__nav-list-item-text a {
+  text-decoration: none;
+}
+
+.header__nav-list-item:last-of-type {
+  margin: 0;
+}
+
+.main {
+  grid-area: main;
+}
+
+.aside {
+  grid-area: aside;
+}
+
 .main-content {
   display: grid;
   grid-template-columns:
@@ -82,25 +187,20 @@
   margin-bottom: 20px;
 }
 
-.site-description {
-  color: hsl(0, 0%, 53%);
-  font-size: 16px;
-  max-width: 320px;
-  margin-top: 10px;
-}
-
 .ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
+.site-byline {
+  font-size: 16px;
+}
+
 .site-title {
   color: var(--blue);
   font-size: 22px;
   margin: 30px 0 0 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.1;
   text-rendering: optimizeLegibility;
   font-weight: bold;

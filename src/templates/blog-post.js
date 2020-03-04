@@ -1,35 +1,14 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Footer from '../components/footer'
+import Header from '../components/header'
 import SEO from '../components/seo'
-
-import { graphql, Link } from 'gatsby'
-
+import { graphql } from 'gatsby'
 import './blog-post.css'
-
-function LeftArrowIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="22"
-      height="22"
-      viewBox="0 0 22 22"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="feather feather-arrow-left"
-    >
-      <line x1="19" y1="12" x2="5" y2="12" />
-      <polyline points="12 19 5 12 12 5" />
-    </svg>
-  )
-}
 
 export default ({ data }) => {
   const siteMetadata = data.site.siteMetadata
-  const {frontmatter} = data.markdownRemark
+  const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
@@ -41,18 +20,20 @@ export default ({ data }) => {
         ogURL={`${siteMetadata.ogURL}/${frontmatter.slug}`}
         keywords={frontmatter.keywords}
       />
-      <h1 className="site-title">
-        <Link className="site-title__post-link" to={'/'}>
-          <LeftArrowIcon />
-          {siteMetadata.title}
-        </Link>
-      </h1>
-      <h2 className="blog-post__title">{frontmatter.title}</h2>
-      <p className="blog-post__meta">
-        <span className="hide">posted on</span>
-        <time>{frontmatter.date}</time>
-      </p>
-      <span className="blog-post__meta-hr"/>
+      <Header
+        title={siteMetadata.title}
+        name={siteMetadata.author}
+        description={false}
+        navList={siteMetadata.headerLinks}
+      />
+      <div className="blog-post__title-wrapper">
+        <h2 className="blog-post__title">{frontmatter.title}</h2>
+        <p className="blog-post__meta">
+          <span className="hide">posted on</span>
+          <time>{frontmatter.date}</time>
+          <span className="blog-post__meta-hr" />
+        </p>
+      </div>
       <div
         className="blog-post__content"
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
@@ -68,10 +49,17 @@ export const query = graphql`
       siteMetadata {
         title
         ogURL
+        description
         seoLang
         license {
           name
           url
+        }
+        headerLinks {
+          title
+          url
+          iconName
+          isInternalLink
         }
         footerlinks {
           title

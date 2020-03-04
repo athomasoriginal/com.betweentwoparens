@@ -23,6 +23,27 @@ module.exports = {
       name: 'CC BY-NC',
       url: 'https://creativecommons.org/licenses/by-nc/4.0/',
     },
+    headerLinks: [
+      {
+        title: 'Articles',
+        url: '/',
+        iconName: '',
+        isInternalLink: true
+      },
+      {
+        title: 'Contact',
+        url: 'mailto:thomasmattacchione@gmail.com?Subject=Hi%20Thomas',
+        iconName: '',
+        isInternalLink: false
+      },
+      {
+        title: 'Youtube',
+        url:
+          'https://www.youtube.com/channel/UCfBUN43AQoyGiQxmCIDZe2w/featured?view_as=subscriber',
+        iconName: 'youtube',
+        isInternalLink: false
+      },
+    ],
     footerlinks: [
       {
         title: 'Twitter',
