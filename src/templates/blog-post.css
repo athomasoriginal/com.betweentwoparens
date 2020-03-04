@@ -41,7 +41,7 @@
 }
 
 .gatsby-code-text {
-  background-color: var(--yellow-code-text);
+  background-color: var(--color-yellow-53-light);
 }
 /* Remove the extra space after the end of the higlighted piece of inline code
    which sadly bleeds into the next word */
@@ -234,6 +234,7 @@ pre[class*='gatsby-code-'].line-numbers > code {
   counter-reset: footnotes;
   margin-top: 20px;
   font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
 }
 
 .blog-post__title,
@@ -323,7 +324,7 @@ a[aria-describedby='footnote-label']:hover {
 }
 
 ol :target {
-  background-color: var(--color-blockquote);
+  background-color: var(--color-yellow-53-light);
 }
 
 [aria-label='Back to content'] {
@@ -333,12 +334,13 @@ ol :target {
 /* Blog Post Notes - Asides */
 
 .blog-post__content .blog-post__note {
-  background-color: var(--color-blockquote);
-  border-left-color: var(--color-blockquote-sidebar);
+  background-color: var(--color-yellow-53-light);
+  border-left-color: var(--color-yellow-53);
   border-left-width: 9px;
   border-left-style: solid;
   padding: 20px 45px 20px 26px;
   margin: 20px 0 30px -30px;
+  font-size: 16px;
 }
 
 .blog-post__content .blog-post__note p {
