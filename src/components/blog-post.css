@@ -6,7 +6,11 @@
 
 .blog-post-item {
   grid-column: main-start;
-  margin: 1.75rem 0 38px 0;
+  margin: 32px 0 38px 0;
+}
+
+.blog-post-item:first-of-type {
+  margin-top: 42px;
 }
 
 .blog-post-item:last-of-type {

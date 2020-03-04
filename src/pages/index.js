@@ -46,6 +46,7 @@ const IndexPage = ({ data }) => {
         name={siteMetadata.author}
         description={siteMetadata.description}
         interests={siteMetadata.seokeywords}
+        navList={siteMetadata.headerLinks}
       />
       {blogPosts && blogPosts.length ? (
         <BlogPosts blogPosts={blogPosts} />
@@ -68,6 +69,12 @@ export const query = graphql`
         seoLang
         seokeywords
         ogURL
+        headerLinks {
+          title
+          url
+          iconName
+          isInternalLink
+        }
         footerlinks {
           title
           url
