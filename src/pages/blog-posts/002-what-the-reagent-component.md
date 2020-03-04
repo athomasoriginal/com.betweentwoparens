@@ -34,13 +34,6 @@ While the fact that all Reagent components become class components is an interes
 - React's strategy for [distinguishing class and function components](https://overreacted.io/how-does-react-tell-a-class-from-a-function/).
 - JavaScript "classes"
 
-In the spirit of sharing this knowledge, the rest of this post will dig into the whys and wherefores of this transformation by breaking it down into 3 sections:
-
-1. [A Pseudoclassical Pattern](#a-pseudoclassical-pattern)
-1. [The Reagent Pattern](#the-reagent-pattern)
-1. [Conclusion](#conclusion)
-
-
 <aside class="blog-post__note">I assume readers have a level of familiarity with ClojureScript, JavaScript and React. Please also note that understanding Reagent at this level is not required to be productive in Reagent.</aside>
 
 ## A Pseudoclassical Pattern

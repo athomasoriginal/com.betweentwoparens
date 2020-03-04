@@ -28,13 +28,7 @@ Since I _obviously_ identified the source of the problem I decided to resolve th
 
 Some time later I realized that, no, the problem was not `HMR`...it was _my_ code.  As it turns out, `HMR` isn't free.  It requires the code author to design and build the code to be [reloadable code](https://figwheel.org/docs/reloadable_code.html).
 
-So in the intrepid spirit of craftsmanship, I have resurected my Calendar App and refactored it into `reloadable code`.  What follows is the process one could take to achieve `reloadable code`:
-
-- [Intro to Hot Module Reloading](#intro-to-hmr)
-- ["Submit" event listeners](#submit-event-listeners)
-- ["Change" event listeners](#change-event-listeners)
-- [Populating Dropdown Options](#populating-dropdown-options)
-- [Managing App State](#managing-app-state)
+So in the intrepid spirit of craftsmanship, I have resurected my Calendar App and refactored it to be `reloadable code`.
 
 ## Intro to Hot Module Reloading
 

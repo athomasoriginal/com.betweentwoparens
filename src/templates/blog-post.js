@@ -38,6 +38,12 @@ export default ({ data }) => {
         className="blog-post__content"
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
       />
+      <aside>
+        <div className="blog-post__toc">
+          <p>This post covers the following topics: </p>
+          <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.tableOfContents }} />
+        </div>
+      </aside>
       <Footer links={siteMetadata.footerlinks} license={siteMetadata.license} />
     </Layout>
   )
@@ -70,6 +76,9 @@ export const query = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      tableOfContents (
+        maxDepth: 2
+      )
       frontmatter {
         title
         summary

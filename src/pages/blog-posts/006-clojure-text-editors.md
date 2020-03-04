@@ -23,12 +23,7 @@ Turns out that choosing emacs was not a great choice for me.  I should have stuc
 
 All of this is to say, here is an article that outlines the landscape of Clojure Editors which will hopefully help to inform your initial steps into Clojure land.
 
-The rest of this article will be [bikeshed](https://www.urbandictionary.com/define.php?term=bikeshed) city. The hope? By documenting the thoughts and providing a few words of encouragement we can save some future Clojure developer some time.  With that, this post will cover the following topics:
-
-- [Clojure Text Editors](#clojure-text-editors)
-- [Which Text Editor to Use](#which-text-editor-to-use)
-- [My Text Editor Setup](#my-text-editor-setup)
-  - [Plugins and Configuration](#plugins-and-configuration)
+The rest of this article will be [bikeshed](https://www.urbandictionary.com/define.php?term=bikeshed) city. The hope? By documenting the thoughts and providing a few words of encouragement we can save some future Clojure developer some time.
 
 <aside class="blog-post__note">Text Editors are a source of furious debate among programmers.  So if the opinions expressed herein enrage, please know that is not my intention.  I love you.  For those who just want to see how I setup my Text Editor for Clojure development, jump to the <a href="#my-text-editor-setup">third section</a> of this post.  Also note that my recommendations are for both Clojure and ClojureScript.</aside>
 

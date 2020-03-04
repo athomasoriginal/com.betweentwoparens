@@ -29,6 +29,51 @@
   grid-column-end: main-end;
 }
 
+.blog-post__toc {
+  border-left: 3px solid var(--color-yellow-53);
+  padding-left: 20px;
+  position: sticky;
+  top: 20px;
+}
+
+.blog-post__toc ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.blog-post__toc p {
+  font-size: 14px;
+  margin: 0;
+  /* reducing the line height because we want the yellow side border to the left
+  to be flush with the topc of the TOC line */
+  line-height: 1;
+  padding-bottom: 4px;
+}
+
+.blog-post__toc ul li {
+  margin: 0;
+}
+
+.blog-post__toc ul li a {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+
+  background: linear-gradient(
+    to top,
+    var(--color-purple-60) 18%,
+    transparent 8%
+  );
+}
+
+.blog-post__toc ul li a:active,
+.blog-post__toc ul li a:visited {
+  color: black;
+}
+
 .gatsby-highlight + .gatsby-highlight {
   margin-top: 20px;
 }
@@ -275,11 +320,6 @@ pre[class*='gatsby-code-'].line-numbers > code {
 .blog-post__link {
   color: black;
   font-weight: bold;
-  background: linear-gradient(
-    to top,
-    var(--color-purple-60) 35%,
-    transparent 35%
-  );
   background: linear-gradient(
     to top,
     var(--color-purple-60) 18%,
