@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "between-two-parens",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Between two parens official blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Thomas Mattacchione <thomasmattacchione@gmail.com>",
   "dependencies": {
     "gatsby": "2.19.27",
     "gatsby-cli": "^2.8.22",
