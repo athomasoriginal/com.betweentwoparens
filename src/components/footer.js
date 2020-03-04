@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import Icon from './icon'
 
 import './footer.css'
 
@@ -15,25 +16,48 @@ const FooterLink = ({ title, url }) => (
   </OutboundLink>
 )
 
-export const FooterLicense = ({license}) => {
+const SocialLinksList = ({ links }) => {
   return (
-    <div className="footer__license">
-      <p>© 2019</p>
-      <p>Licensed under <FooterLink title={license.name} url={license.url} /></p>
-    </div>
+    <ul className="social-icons__list">
+      {links.map(link => {
+        // @note remove the youtube icon because in our design it only appears
+        // in the header for now
+        if (link.iconName === 'youtube') return false
+
+        return (
+          <li key={link.title} className="social-icons__list-item">
+            <OutboundLink
+              className="social-icons__list-item-link"
+              href={link.url}
+              target="__blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name={link.iconName} />
+            </OutboundLink>
+          </li>
+        )
+      })}
+    </ul>
   )
 }
 
-const Footer = ({ links, license }) => (
-  <footer className="footer">
-    {/* footer links */}
-    {links.map(link => (
-      <FooterLink key={link.title} title={link.title} url={link.url} />
-    ))}
+export const FooterLicense = ({ license }) => {
+  return (
+    <p>
+      <span className="footer-license__description">© 2020 | Licensed under{' '}</span>
+      <FooterLink title={license.name} url={license.url} />
+    </p>
+  )
+}
 
-    <FooterLicense license={license}/>
-  </footer>
-)
+const Footer = ({ links, license }) => {
+  return (
+    <footer className="footer">
+      <SocialLinksList links={links} />
+      <FooterLicense license={license} />
+    </footer>
+  )
+}
 
 Footer.propTypes = {
   links: PropTypes.array,
