@@ -55,8 +55,8 @@
     "header"
     "aside"
     "main";
-  grid-template-columns: auto;
-  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  /* grid-template-rows: auto; */
   height: 100vh;
 }
 
@@ -68,7 +68,6 @@
   grid-template-areas:
     "header-logo header-nav";
   grid-template-columns: 1fr 1fr;
-  column-gap: 90px;
 }
 
 .header__logo {
