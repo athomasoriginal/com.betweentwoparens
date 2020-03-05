@@ -67,12 +67,12 @@ export default ({ data }) => {
       />
       <div className="blog-content__wrapper">
         <BlogHeading title={frontmatter.title} date={frontmatter.date} />
+        <TableOfContents toc={data.markdownRemark.tableOfContents} />
         <BlogContent
           html={data.markdownRemark.html}
           footerLinks={siteMetadata.footerlinks}
           license={siteMetadata.license}
         />
-        <TableOfContents toc={data.markdownRemark.tableOfContents} />
       </div>
     </Layout>
   )

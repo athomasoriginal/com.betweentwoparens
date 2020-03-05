@@ -112,6 +112,7 @@
 
 .blog-content__toc-wrapper {
   grid-area: content-aside;
+  margin: 20px 0 0 10px;
 }
 
 .aside {
@@ -462,6 +463,7 @@ ol :target {
 
   .blog-content__toc-wrapper {
     grid-area: blog-content-aside;
+    margin-top: 0;
   }
 
   .header__tagline {
