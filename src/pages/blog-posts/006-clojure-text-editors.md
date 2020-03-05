@@ -25,7 +25,7 @@ All of this is to say, here is an article that outlines the landscape of Clojure
 
 The rest of this article will be [bikeshed](https://www.urbandictionary.com/define.php?term=bikeshed) city. The hope? By documenting the thoughts and providing a few words of encouragement we can save some future Clojure developer some time.
 
-<aside class="blog-post__note">Text Editors are a source of furious debate among programmers.  So if the opinions expressed herein enrage, please know that is not my intention.  I love you.  For those who just want to see how I setup my Text Editor for Clojure development, jump to the <a href="#my-text-editor-setup">third section</a> of this post.  Also note that my recommendations are for both Clojure and ClojureScript.</aside>
+<aside class="blog-content__note">Text Editors are a source of furious debate among programmers.  So if the opinions expressed herein enrage, please know that is not my intention.  I love you.  For those who just want to see how I setup my Text Editor for Clojure development, jump to the <a href="#my-text-editor-setup">third section</a> of this post.  Also note that my recommendations are for both Clojure and ClojureScript.</aside>
 
 ## Clojure Text Editors
 
@@ -89,7 +89,7 @@ As mentioned, `Atom` is _currently_ my preferred text editor for Clojure develop
 
 I have always found that to be productive with Clojure you don't need many tools. This is great because it means I can keep a relatively spartan setup for my Text Editor.  Now, let's take a look at the plugins I use and how I configure them.
 
-<aside class="blog-post__note">For each of the plugins listed below you will have to install them.  If you have never installed packages with Atom it's straightforward, but if you need additional help <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://flight-manual.atom.io/using-atom/sections/atom-packages/">Checkout this guide</a>.
+<aside class="blog-content__note">For each of the plugins listed below you will have to install them.  If you have never installed packages with Atom it's straightforward, but if you need additional help <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://flight-manual.atom.io/using-atom/sections/atom-packages/">Checkout this guide</a>.
 </aside>
 
 - [Ink](https://atom.io/packages/ink)

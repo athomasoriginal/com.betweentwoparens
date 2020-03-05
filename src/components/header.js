@@ -5,7 +5,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const HeaderLinkInternal = ({ url, title }) => {
   return (
-    <li className="header__nav-list-item header__nav-list-item-text">
+    <li className="header__nav-item header__nav-item-text">
       <Link to={url}>{title}</Link>
     </li>
   )
@@ -14,8 +14,8 @@ const HeaderLinkInternal = ({ url, title }) => {
 const HeaderLinkExnternal = ({ url, title, iconName }) => {
   const classes =
     iconName === ''
-      ? 'header__nav-list-item header__nav-list-item-text'
-      : 'header__nav-list-item'
+      ? 'header__nav-item header__nav-item-text'
+      : 'header__nav-item'
   const target = iconName === '' ? '' : '_blank'
 
   return (
@@ -35,7 +35,7 @@ const Header = ({ title, description, name, interests, picture, navList }) => (
     {description ? (
       <div className="header__tagline">
         <p className="h__base header__tagline-text">{description}</p>
-        <span className="header__tagline-hr" />
+        <span className="header__tagline-divider" />
       </div>
     ) : (
       false

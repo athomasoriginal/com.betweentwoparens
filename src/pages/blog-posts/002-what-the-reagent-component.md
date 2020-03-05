@@ -26,7 +26,7 @@ class Welcome extends React.Component {
 }
 ```
 
-<aside class="blog-post__note">To be clear, Reagent components do not specifically turn into an <a class="blog-post__link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" rel="noopener noreferrer">ES6 class syntax</a>.  This is my way of illustrating that Reagent components are class components to React.</aside>
+<aside class="blog-content__note">To be clear, Reagent components do not specifically turn into an <a class="blog-post__link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" rel="noopener noreferrer">ES6 class syntax</a>.  This is my way of illustrating that Reagent components are class components to React.</aside>
 
 While the fact that all Reagent components become class components is an interesting piece of trivia, the part that blew my mind was  _how_ they actually become <a href="#reagent-components-are-cray" aria-describedby="footnote-label" id="reagent-components-are-cray-ref">`class components`</a>.  Once I understood this, a few other things became clearer like:
 
@@ -34,7 +34,7 @@ While the fact that all Reagent components become class components is an interes
 - React's strategy for [distinguishing class and function components](https://overreacted.io/how-does-react-tell-a-class-from-a-function/).
 - JavaScript "classes"
 
-<aside class="blog-post__note">I assume readers have a level of familiarity with ClojureScript, JavaScript and React. Please also note that understanding Reagent at this level is not required to be productive in Reagent.</aside>
+<aside class="blog-content__note">I assume readers have a level of familiarity with ClojureScript, JavaScript and React. Please also note that understanding Reagent at this level is not required to be productive in Reagent.</aside>
 
 ## A Pseudoclassical Pattern
 
@@ -93,7 +93,7 @@ class Welcome extends React.Component {
 }
 ```
 
-<aside class="blog-post__note">Yup, ES6 class syntax is a sexier pseudoclassical instantiation pattern and also a good example of what developers mean when they say <code class="gatsby-code-text">syntactic sugar</code>.  I should also mention that there are some differences between the two approaches which means they are not 100% equivalent, but for most developers the differences are academic.  <strong>Fun time bonus:</strong> I encourage you checkout <a  class="blog-post__link" href="https://codesandbox.io/s/pseudoclassical-instantiation-pattern-sc0fk" target="_blank" rel="noopener noreferrer">this code sandbox</a> where I have setup live examples of both.</aside>
+<aside class="blog-content__note">Yup, ES6 class syntax is a sexier pseudoclassical instantiation pattern and also a good example of what developers mean when they say <code class="gatsby-code-text">syntactic sugar</code>.  I should also mention that there are some differences between the two approaches which means they are not 100% equivalent, but for most developers the differences are academic.  <strong>Fun time bonus:</strong> I encourage you checkout <a  class="blog-post__link" href="https://codesandbox.io/s/pseudoclassical-instantiation-pattern-sc0fk" target="_blank" rel="noopener noreferrer">this code sandbox</a> where I have setup live examples of both.</aside>
 
 If the live code sandbox was not enough, we can use JavaScript's built-in introspection tools to compare the `pseudoclassical instantiation pattern` to the `ES6 class` syntax.
 
@@ -187,7 +187,7 @@ goog.extend(cmp, React.Component, staticMethods)
 cmp.prototype.constructor = cmp
 ```
 
-<aside class="blog-post__note">We are writing in JavaScript because I feel its easier to understand than the Reagent ClojureScript code as what we are discussing is JavaScript patterns translated into ClojureScript.</aside>
+<aside class="blog-content__note">We are writing in JavaScript because I feel its easier to understand than the Reagent ClojureScript code as what we are discussing is JavaScript patterns translated into ClojureScript.</aside>
 
 What we have above is Reagents take on the `pseudoclassical instantiation pattern` with a few minor tweaks:
 
