@@ -14,7 +14,7 @@
 }
 
 .footer-license__description {
-  font-size: 16px;
+  font-size: 12px;
   color: var(--color-black);
 }
 
@@ -31,7 +31,7 @@
 }
 
 .social-icons__list-item:not(:last-child)  {
-  padding-right: 10px;
+  padding-right: 8px;
 }
 
 .social-icons__list-item-link {
@@ -49,5 +49,9 @@
 
   .social-icons__list-item:not(:last-child)  {
     padding-right: 15px;
+  }
+
+  .footer-license__description {
+    font-size: 16px;
   }
 }
