@@ -71,16 +71,6 @@
   grid-template-columns: auto auto;
 }
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  color: var(--color-gray);
-  border-top: 1px solid var(--color-black);
-  margin: 10px 0 0 0;
-  padding-top: 15px;
-}
-
 /* this is the blog index wrapper */
 .blogs {
   grid-area: main;
@@ -119,6 +109,17 @@
 .aside {
   grid-area: aside;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--color-gray);
+  border-top: 1px solid var(--color-black);
+  margin: 10px 0 0 0;
+  padding-top: 15px;
+}
+
 
 /* header */
 
