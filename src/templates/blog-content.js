@@ -7,7 +7,8 @@ import { graphql } from 'gatsby'
 import './prism-syntax-highlighting.css'
 
 const TableOfContents = ({ toc }) => {
-  return (
+  // only return the TOC if there is one to return
+  return toc != '' ? (
     <aside className="blog-content__toc-wrapper">
       <div className="blog-content__toc">
         <p>This post covers the following topics: </p>
@@ -18,6 +19,8 @@ const TableOfContents = ({ toc }) => {
         />
       </div>
     </aside>
+  ) : (
+    false
   )
 }
 
