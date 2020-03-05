@@ -19,6 +19,10 @@ function SEO({ description, lang, meta, keywords, title, author, ogURL }) {
         {
           href: 'https://fonts.googleapis.com/css?family=Playfair+Display&display=swap',
           rel: 'stylesheet'
+        },
+        {
+          href: 'https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap',
+          rel: 'stylesheet'
         }
       ]}
       meta={[
