@@ -237,7 +237,7 @@
 /* handle the layout for mobile devices - add space around content for mobile,
 but notice that the elements below the main ones are exceptions to the rule.
 They are: notes, code blocks, lists */
-.blog-content > * {
+.blog-content div > * {
   margin-right: 10px;
   margin-left: 10px;
 }
