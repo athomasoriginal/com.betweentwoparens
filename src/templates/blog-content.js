@@ -36,14 +36,12 @@ const BlogHeading = ({ title, date }) => {
 
 const BlogContent = ({ html, footerLinks, license }) => {
   return (
-    <div
-      className="blog-content"
-      dangerouslySetInnerHTML={{ __html: html }}
-    ></div>
+    <div className="blog-content">
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Footer links={footerLinks} license={license} />
+    </div>
   )
 }
-
-// <Footer links={footerLinks} license={license} />
 
 export default ({ data }) => {
   const siteMetadata = data.site.siteMetadata

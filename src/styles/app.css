@@ -84,6 +84,7 @@
 /* this is the blog index wrapper */
 .blogs {
   grid-area: main;
+  max-width: 600px;
 }
 
 .blog-content__wrapper {
@@ -242,6 +243,10 @@ They are: notes, code blocks, lists */
 }
 .blog-content ul {
   margin: 0 0 0 1.45rem;
+}
+/* ahhh the pains of global selectors...my own fault */
+.blog-content .social-icons__list {
+    margin: 0;
 }
 .blog-content aside {
   margin: 20px 0 30px 0;
