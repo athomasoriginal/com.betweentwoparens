@@ -430,7 +430,7 @@ ol :target {
     grid-template-areas:
       'header header'
       '...... main';
-    grid-template-columns: minmax(0, 240px)f 1fr;
+    grid-template-columns: minmax(0, 240px) 1fr;
     grid-template-rows: 1fr 1fr;
     column-gap: 80px;
   }
@@ -454,13 +454,12 @@ ol :target {
   }
 
   .blog-content__heading {
-    grid-area: blog-title;
+    grid-area: blog-heading;
   }
 
   /* this is the wrapper for the actual blog content */
   .blog-content {
     grid-area: blog-content;
-    margin: 0;
   }
 
   .blog-content__toc-wrapper {
