@@ -161,8 +161,6 @@
 }
 
 .header__nav-list {
-  list-style-type: none;
-  padding: 0px;
   display: flex;
   justify-content: space-between;
   margin: 0 0 16px 0;
