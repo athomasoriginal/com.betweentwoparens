@@ -56,7 +56,9 @@
   grid-template-areas:
     'header'
     'main';
-  grid-template-columns: 1fr;
+  /* prevent overflowing content */
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
   height: 100vh;
 }
 
@@ -79,35 +81,41 @@
   padding-top: 15px;
 }
 
-.main {
+/* this is the blog index wrapper */
+.blogs {
   grid-area: main;
 }
 
-.aside {
-  grid-area: aside;
-}
-
-.blog-index {
-  grid-area: main;
-  /* prevent the blog-content index items from touching the edges of the screen
-  mobile */
-  margin: 0 15px 0 15px;
-}
-
-.blog-content {
+.blog-content__wrapper {
   grid-area: main;
   display: grid;
   grid-template-areas:
     'content-title'
-    'content-body'
-    'content-footer';
-  grid-template-columns: 1fr;
+    'content-aside'
+    'content-body';
+  /* prevent overflowing content */
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto auto auto;
+}
+
+.blog-content__heading {
+  grid-area: content-title;
+}
+
+.blog-content {
+  grid-area: content-body;
   counter-reset: footnotes;
   margin-top: 20px;
   font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
-  margin: 0 30px 0 30px;
+}
+
+.blog-content__toc-wrapper {
+  grid-area: content-aside;
+}
+
+.aside {
+  grid-area: aside;
 }
 
 /* header */
@@ -118,7 +126,7 @@
   align-items: flex-end;
   /* @note this has to be in sync with the margin-right of header__nav */
   margin-left: 50px;
-  margin-bottom: 16px;
+  margin-bottom: 28px;
 }
 
 .header__tagline {
@@ -226,6 +234,20 @@
    Blog Content
    -------------------------------------------------------------------------- */
 
+/* handle the layout for mobile devices - add space around content for mobile,
+but notice that the elements below the main ones are exceptions to the rule.
+They are: notes, code blocks */
+.blog-content > * {
+  margin: 0 10px 0 10px;
+}
+.blog-content aside {
+  margin: 20px 0 30px 0;
+}
+.blog-content .gatsby-highlight {
+  border-radius: 0;
+  margin: 0;
+}
+
 .blog-content__headline {
   grid-area: content-title;
   margin: 40px 0 20px 0;
@@ -306,8 +328,7 @@
 
 /* Links */
 
-.blog-content a,
-.blog-content__link {
+.blog-content a {
   color: black;
   font-weight: bold;
   background: linear-gradient(
@@ -318,21 +339,19 @@
   text-decoration: none;
 }
 
-.blog-content a:hover,
-.blog-content__link:hover {
+.blog-content a:hover {
   background: rgba(97, 130, 237, 0.3);
 }
 
-/* Anchors
+/* We are resetting the style of anchor links because they automatically inherit
+   from the above styles which we only want applied to inline text links */
 
-   We are resetting the style of anchor links because they automatically inherit
-   from the above styles which we only want applied to inline text links
-*/
-
-.blog-content__link {
+.blog-content .blog-content__link,
+.blog-content .social-icons__list-item-link {
   background: initial;
 }
-.blog-content__link:hover {
+.blog-content .blog-content__link:hover,
+.blog-content .social-icons__list-item-link:hover {
   background: initial;
 }
 
@@ -407,10 +426,9 @@ ol :target {
     grid-template-areas:
       'header header'
       '...... main';
-    grid-template-columns: minmax(150px, 240px) 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: minmax(150px, 240px)f 1fr;
+    grid-template-rows: 1fr 1fr;
     column-gap: 80px;
-    height: 100vh;
   }
 
   .header {
@@ -420,30 +438,25 @@ ol :target {
     column-gap: 90px;
   }
 
-  /* this is the blog index wrapper */
-  .blogs {
-    grid-area: main;
-    width: 600px;
-  }
-
   .blog-content__wrapper {
     grid-area: main;
     display: grid;
     grid-template-areas:
       'blog-heading blog-heading-aside'
       'blog-content blog-content-aside';
-    grid-template-columns: 600px 1fr;
+    grid-template-columns: minmax(400px, 600px) 1fr;
     grid-template-rows: auto auto;
     column-gap: 40px;
   }
 
   .blog-content__heading {
-    grid-area: blog-heading;
+    grid-area: blog-title;
   }
 
   /* this is the wrapper for the actual blog content */
   .blog-content {
     grid-area: blog-content;
+    margin: 0;
   }
 
   .blog-content__toc-wrapper {
