@@ -430,7 +430,7 @@ ol :target {
     grid-template-areas:
       'header header'
       '...... main';
-    grid-template-columns: minmax(150px, 240px)f 1fr;
+    grid-template-columns: minmax(0, 240px)f 1fr;
     grid-template-rows: 1fr 1fr;
     column-gap: 80px;
   }
@@ -448,7 +448,7 @@ ol :target {
     grid-template-areas:
       'blog-heading blog-heading-aside'
       'blog-content blog-content-aside';
-    grid-template-columns: minmax(400px, 600px) 1fr;
+    grid-template-columns: minmax(0, 600px) 1fr;
     grid-template-rows: auto auto;
     column-gap: 40px;
   }
