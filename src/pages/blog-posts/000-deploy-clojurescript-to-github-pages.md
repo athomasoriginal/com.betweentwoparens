@@ -38,7 +38,7 @@ org.clojure/spec.alpha 0.2.176
 org.clojure/core.specs.alpha 0.2.44
 ```
 
-<aside class="blog-post__note">Don't worry if your versions are different from mine.</aside>
+<aside class="blog-content__note">Don't worry if your versions are different from mine.</aside>
 
 ### Setting up your HTML
 
@@ -60,7 +60,7 @@ For those that went through the Github Pages quickstart, you should have a repo 
 </html>
 ```
 
-<aside class="blog-post__note">You will notice that we have added a reference to a js and css file in our HTML. We will add those later. Please also note that where it says "demo-clojurescript-gh-pages" in the script tag above, it should be the name of your Github project repo.</aside>
+<aside class="blog-content__note">You will notice that we have added a reference to a js and css file in our HTML. We will add those later. Please also note that where it says "demo-clojurescript-gh-pages" in the script tag above, it should be the name of your Github project repo.</aside>
 
 ### Setting up your CSS
 
@@ -108,7 +108,7 @@ To do _anything_ with ClojureScript, we need to configure our project to use it.
 {:deps {org.clojure/clojurescript {:mvn/version "1.10.597"}}}
 ```
 
-<aside class="blog-post__note">If you are coming from JavaScript it can be helpful to think of the <code class="gatsby-code-text">deps.edn</code> as similar to <code class="gatsby-code-text">package.json</code>. The purpose of this file is to tell <code class="gatsby-code-text">clojure</code> which version of <code class="gatsby-code-text">ClojureScript</code> we want to use.</aside>
+<aside class="blog-content__note">If you are coming from JavaScript it can be helpful to think of the <code class="gatsby-code-text">deps.edn</code> as similar to <code class="gatsby-code-text">package.json</code>. The purpose of this file is to tell <code class="gatsby-code-text">clojure</code> which version of <code class="gatsby-code-text">ClojureScript</code> we want to use.</aside>
 
 Let's recap a bit. At this point, your directory structure should look like <a href="#fn-step-3-commit" aria-describedby="footnote-label" id="fn-step-3-commit-ref">this:</a>
 
@@ -149,7 +149,7 @@ In the above steps, we have built a minimal site using HTML, CSS and ClojureScri
 clj -m cljs.main -d "demo-clojurescript-gh-pages/out"  -c demo.static-website -r
 ```
 
-<aside class="blog-post__note">You want to run the above command from the same place as your <code class="gatsby-code-text">deps.edn</code>.  Further, if you're curious above the above command and what things like `-d` or `-c` means you can check these out in your terminal by running  <code class="gatsby-code-text">clj -m cljs.main --help</code></aside>
+<aside class="blog-content__note">You want to run the above command from the same place as your <code class="gatsby-code-text">deps.edn</code>.  Further, if you're curious above the above command and what things like `-d` or `-c` means you can check these out in your terminal by running  <code class="gatsby-code-text">clj -m cljs.main --help</code></aside>
 
 The above command will take a moment to run. When completed, a browser tab will automatically open and serve your HTM, CSS and ClojureScript. If everything worked you should see a site that looks like this:
 
@@ -157,7 +157,7 @@ The above command will take a moment to run. When completed, a browser tab will 
 
 Further, if you open your browser console you should see "Hello, Github Pages!"
 
-<aside class="blog-post__note">If you are not seeing your ClojureScript in the browser console, please veryify that your <code class="gatsby-code-text">index.html</code> file is using your Github project name and the string following the <code class="gatsby-code-text">-d</code> in the above command, <code class="gatsby-code-text">demo-clojurescript-gh-pages</code>, is also using your Github project <a href="#fn-project-name" aria-describedby="footnote-label" id="fn-project-name-ref">name</a>.</aside>
+<aside class="blog-content__note">If you are not seeing your ClojureScript in the browser console, please veryify that your <code class="gatsby-code-text">index.html</code> file is using your Github project name and the string following the <code class="gatsby-code-text">-d</code> in the above command, <code class="gatsby-code-text">demo-clojurescript-gh-pages</code>, is also using your Github project <a href="#fn-project-name" aria-describedby="footnote-label" id="fn-project-name-ref">name</a>.</aside>
 
 ### Build production bundle
 

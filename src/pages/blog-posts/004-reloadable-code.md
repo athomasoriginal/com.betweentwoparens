@@ -42,16 +42,15 @@ The reason we do this is because:
 
 But `HMR` is not a feature that comes with a language.  This is why we use "special programs" as I mentioned above.  Examples of these "special programs" are [figwheel](https://github.com/bhauman/figwheel-main), [shadow-cljs](https://github.com/thheller/shadow-cljs) or [webpack](https://webpack.js.org/)<a href="#build-tools" aria-describedby="footnote-label" id="build-tools-ref">.</a>
 
-<aside class="blog-post__note">Each of the above tools does far more than just <code class="gatsby-code-text">HMR</code>, but <code class="gatsby-code-text">HMR</code> is one of their standout features.</aside>
+<aside class="blog-content__note">Each of the above tools does far more than just <code class="gatsby-code-text">HMR</code>, but <code class="gatsby-code-text">HMR</code> is one of their standout features.</aside>
 
 As I mentioned earlier, just because you use `figwheel` or `shadow-cljs` and the HMR mechanism they provide, does not mean you can take advantage of all the powers of HMR.  You first have to architect your code in a particular way.  Specifically, you have to control your side effects.  In other words, you have to write `reloadale code`.
 
-<aside class="blog-post__note">The exception to the above paragraph is if you are using <code class="gatsby-code-text">React</code>.  If you use <code class="gatsby-code-text">React</code>, then HMR will pretty much work for free.  This article is for developers who want use HMR with their vanilla CLJS or JavaScript code.  Yet, even if you are writing <code class="gatsby-code-text">React</code> this article is still a good overview and will hopefully provide a deeper appreciation for the architectural decisions of React.</aside>
+<aside class="blog-content__note">The exception to the above paragraph is if you are using <code class="gatsby-code-text">React</code>.  If you use <code class="gatsby-code-text">React</code>, then HMR will pretty much work for free.  This article is for developers who want use HMR with their vanilla CLJS or JavaScript code.  Yet, even if you are writing <code class="gatsby-code-text">React</code> this article is still a good overview and will hopefully provide a deeper appreciation for the architectural decisions of React.</aside>
 
 Okay, now that we have reviewed what HMR is doing, lets dive into the code and transform it into `reloadable code`.
 
 <aside class="blog-post__note">Again the <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-reloadable-code" target=" _blank" rel="noopener noreferrer">source code</a> is available and if you are following along, all you have to do to trigger a <code class="gatsby-code-text">reload</code> is save a <code class="gatsby-code-text">.cljs</code> file in the <code class="gatsby-code-text">src</code> dir.</aside>
-
 
 ## "Submit" Event Listeners
 
@@ -106,7 +105,7 @@ Before we go further, lets breakdown what the above is doing.  `teardown` and `s
 
 When figwheel sees these particular pieces of metdata infront of a function it knows that it has to run our functions before and after the CLJS reloads.
 
-<aside class="blog-post__note">Please note that like any function you can rename  <code class="gatsby-code-text">teardown</code> and  <code class="gatsby-code-text">setup</code> to whatever you like.</aside>
+<aside class="blog-content__note">Please note that like any function you can rename  <code class="gatsby-code-text">teardown</code> and  <code class="gatsby-code-text">setup</code> to whatever you like.</aside>
 
 Now that we know we can write code that runs before and after load we just have to figure out what we should put in these functions to make our code `reloadable code`.
 
@@ -143,7 +142,7 @@ What we did:
 
 You might have also noticed that I snuck in a little something extra: `initial-load`.  Remember how we said that `before-load` happens before a reload and `after-load` happens after a reload?  This means those are _only_ triggered when a reload is triggered.  If we left it like that, our code would not work when we first visit the app.  So we add a `defonce` so that the code which runs on the  _first_, and only the first time, your app loads in the browser.
 
-<aside class="blog-post__note">If you're following allong with the code, I encourage you to comment out <code class="gatsby-code-text">initial-load</code> and see what happens.  Also note that you do not need to call <code class="gatsby-code-text">setup</code> in <code class="gatsby-code-text">initial-load</code>, you could write a totally separate function.  I just did the above to keep the example cleaner</aside>
+<aside class="blog-content__note">If you're following allong with the code, I encourage you to comment out <code class="gatsby-code-text">initial-load</code> and see what happens.  Also note that you do not need to call <code class="gatsby-code-text">setup</code> in <code class="gatsby-code-text">initial-load</code>, you could write a totally separate function.  I just did the above to keep the example cleaner</aside>
 
 With the above in place go ahead and try to trigger some reloads.  If everything worked, no matter how many time you trigger a reload only 1 `Calendar Event` should ever be created.
 
@@ -161,7 +160,7 @@ Here is the second opportunity for making our code `reloadable code`.  Similar t
   update-event-end-dropdown!)
 ```
 
-<aside class="blog-post__note">If you have the code infront stop for a moment.  Read the src code for <code class="gatsby-code-text">update-event-end-dropdown!</code> and try to see what the bug is.</aside>
+<aside class="blog-content__note">If you have the code infront stop for a moment.  Read the src code for <code class="gatsby-code-text">update-event-end-dropdown!</code> and try to see what the bug is.</aside>
 
 If you read the code, or even ran the code, you will see that this code is not a problem.  Yes, if we `reload` our app 5 times it would do this:
 

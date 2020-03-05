@@ -3,27 +3,39 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import BlogPost from '../components/blog-post'
+import Blog from '../components/blog'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
-const EmptyIndexScreenMsg = ({ msg }) => (
-  <p className="no-blog-posts-msg">{msg}</p>
-)
-
-const BlogPosts = ({ blogPosts }) => {
-  return blogPosts.map(blogPost => {
+const Blogs = ({ blogPosts, emptyBlogMsg, footerLinks, license }) => {
+  if (blogPosts && blogPosts.length) {
     return (
-      <BlogPost
-        key={blogPost.node.id}
-        title={blogPost.node.frontmatter.title}
-        author={blogPost.node.frontmatter.author}
-        date={blogPost.node.frontmatter.date}
-        description={blogPost.node.frontmatter.summary}
-        url={blogPost.node.fields.slug}
-      />
+      <div className="blogs">
+        {blogPosts.map(blogPost => {
+          return (
+            <Blog
+              key={blogPost.node.id}
+              title={blogPost.node.frontmatter.title}
+              author={blogPost.node.frontmatter.author}
+              date={blogPost.node.frontmatter.date}
+              description={blogPost.node.frontmatter.summary}
+              url={blogPost.node.fields.slug}
+            />
+          )
+        })}
+        <Footer
+          links={footerLinks}
+          license={license}
+        />
+      </div>
     )
-  })
+  } else {
+    return (
+      <div className="blogs">
+        <p className="no-blog-posts-msg">{emptyBlogMsg}</p>
+      </div>
+    )
+  }
 }
 
 const IndexPage = ({ data }) => {
@@ -47,14 +59,12 @@ const IndexPage = ({ data }) => {
         interests={siteMetadata.seokeywords}
         navList={siteMetadata.headerLinks}
       />
-      <div className="blog-posts">
-        {blogPosts && blogPosts.length ? (
-          <BlogPosts blogPosts={blogPosts} />
-        ) : (
-          <EmptyIndexScreenMsg msg="No blog posts yet" />
-        )}
-        <Footer links={siteMetadata.footerlinks} license={siteMetadata.license} />
-      </div>
+      <Blogs
+        blogPosts={blogPosts}
+        emptyBlogMsg={'No blog posts yet'}
+        footerLinks={siteMetadata.footerlinks}
+        license={siteMetadata.license}
+      />
     </Layout>
   )
 }

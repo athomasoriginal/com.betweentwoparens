@@ -91,7 +91,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
-              className: 'blog-post__anchor',
+              className: 'blog-content__link',
             },
           },
           {

@@ -32,7 +32,7 @@ As you can imagine, this is a common software development problem and for every 
 
 ## Installing jEnv
 
-<aside class="blog-post__note">Please note that at the time of this writing I have two versions of the JDK installed right now: <strong>AdoptOpenJDK 11</strong> and <strong>AdoptOpenJDK 13</strong>.  I'm also running MacOS 10.15.2.  If you are using a different OS please head over to <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://www.jenv.be/">The official jEnv guide</a> to see how to install <code class="gatsby-code-text">jEnv</code> on linux.</aside>
+<aside class="blog-content__note">Please note that at the time of this writing I have two versions of the JDK installed right now: <strong>AdoptOpenJDK 11</strong> and <strong>AdoptOpenJDK 13</strong>.  I'm also running MacOS 10.15.2.  If you are using a different OS please head over to <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://www.jenv.be/">The official jEnv guide</a> to see how to install <code class="gatsby-code-text">jEnv</code> on linux.</aside>
 
 The first thing we have to do is install `jEnv`.
 
@@ -40,7 +40,7 @@ The first thing we have to do is install `jEnv`.
 brew install jenv
 ```
 
-<aside class="blog-post__note">The above is actually the only step that is different for linux.  So macos and linux users can follow everything that comes next together</aside>
+<aside class="blog-content__note">The above is actually the only step that is different for linux.  So macos and linux users can follow everything that comes next together</aside>
 
 and now let's do a sanity check to see if it's installed correctly.  Run:
 
@@ -57,7 +57,7 @@ and if the above worked you should see something like this:
 [ERROR]	To fix : cat eval "$(jenv init -)" >> /Users/# ...
 ```
 
-<aside class="blog-post__note">Note that the above output is truncated because I am choosing to focus on what I consider the important details.  Further, the pieces I truncated may be specific to my machine.  For example, i'm using <code class="gatsby-code-text">zsh</code>.  If you're using <code class="gatsby-code-text">bash</code>, then your output on line 3 will read <code class="gatsby-code-text">bash</code>.  Everything truncated is identified with <code class="gatsby-code-text"># ...</code></aside>
+<aside class="blog-content__note">Note that the above output is truncated because I am choosing to focus on what I consider the important details.  Further, the pieces I truncated may be specific to my machine.  For example, i'm using <code class="gatsby-code-text">zsh</code>.  If you're using <code class="gatsby-code-text">bash</code>, then your output on line 3 will read <code class="gatsby-code-text">bash</code>.  Everything truncated is identified with <code class="gatsby-code-text"># ...</code></aside>
 
 Assuming the above worked, we can move onto actually configuring `jEnv`.  This means that the next step is to add `jEnv` to our `PATH`.
 
@@ -69,7 +69,7 @@ echo $0
 
 If you are using `bash`, the above will print out `-bash` and if you're using `zsh` the above will print out `-zsh`.  Once you discover which shell you are using, please choose the associated code block below and run the code inside of it line by line:
 
-<aside class="blog-post__note">In other words, you only have to run the code from <strong>one</strong> of the following blocks</aside>
+<aside class="blog-content__note">In other words, you only have to run the code from <strong>one</strong> of the following blocks</aside>
 
 **zsh shell**
 
@@ -125,7 +125,7 @@ Not sure if you have a Java JDK installed?  No worries, we will find out togethe
 ```bash
 /usr/libexec/java_home -V
 ```
-<aside class="blog-post__note">Note that the <code class="gatsby-code-text">V</code> above is uppercase.</aside>
+<aside class="blog-content__note">Note that the <code class="gatsby-code-text">V</code> above is uppercase.</aside>
 
 and that will print something like this:
 
@@ -137,7 +137,7 @@ Matching Java Virtual Machines (2):
 
 If you see something like the above, where your JDK's are listed out, it means you have one installed and can continue on with this section.
 
-<aside class="blog-post__note">Also note that the above is specific to me.  So while you may have JDk's installed, they may be different distributions and versions compared to mine.</aside>
+<aside class="blog-content__note">Also note that the above is specific to me.  So while you may have JDk's installed, they may be different distributions and versions compared to mine.</aside>
 
 Now we can go ahead and add JDK's to `jEnv` so it can manage them for us.  Run the following command
 
@@ -145,7 +145,7 @@ Now we can go ahead and add JDK's to `jEnv` so it can manage them for us.  Run t
 jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-13.jdk/Contents/Home
 ```
 
-<aside class="blog-post__note">Again, the path you use might be different.  The trick to finding the path you need to provide <code class="gatsby-code-text">jenv add</code>  is to use the path after each JDK name.  e.g. <code class="gatsby-code-text">"AdoptOpenJDK 13"</code> is followed by a path.  Copy that and provide it to the <code class="gatsby-code-text">jenv add</code> command</aside>
+<aside class="blog-content__note">Again, the path you use might be different.  The trick to finding the path you need to provide <code class="gatsby-code-text">jenv add</code>  is to use the path after each JDK name.  e.g. <code class="gatsby-code-text">"AdoptOpenJDK 13"</code> is followed by a path.  Copy that and provide it to the <code class="gatsby-code-text">jenv add</code> command</aside>
 
 
 When you run the above, you will see something like this returned:
