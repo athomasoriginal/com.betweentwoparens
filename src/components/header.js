@@ -42,7 +42,7 @@ const Header = ({ title, description, name, interests, picture, navList }) => (
     )}
 
     <nav className="header__nav">
-      <ul className="header__nav-list">
+      <ul className="ul header__nav-list">
         {navList.map(listItem => {
           if (listItem.internalLink) {
             return (
