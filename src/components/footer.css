@@ -2,15 +2,10 @@
   color: var(--color-black);
   font-weight: bold;
   text-decoration: none;
-  margin-right: 10px;
 }
 
 .footer__link:hover {
   background: var(--color-purple-30);
-}
-
-.footer__license .footer__link {
-  margin-right: 0px;
 }
 
 .footer-license__description {
@@ -41,10 +36,6 @@
 @media (min-width: 760px) {
   .footer {
     margin: 10px 0 0 0;
-  }
-
-  .footer__link {
-    margin-right: 10px;
   }
 
   .social-icons__list-item:not(:last-child)  {
