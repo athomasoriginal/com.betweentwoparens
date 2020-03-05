@@ -236,16 +236,20 @@
 
 /* handle the layout for mobile devices - add space around content for mobile,
 but notice that the elements below the main ones are exceptions to the rule.
-They are: notes, code blocks */
+They are: notes, code blocks, lists */
 .blog-content > * {
-  margin: 0 10px 0 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.blog-content ul {
+  margin: 0 0 0 1.45rem;
 }
 .blog-content aside {
   margin: 20px 0 30px 0;
 }
 .blog-content .gatsby-highlight {
   border-radius: 0;
-  margin: 0;
+  margin: 0 0 25px 0;
 }
 
 .blog-content__headline {
