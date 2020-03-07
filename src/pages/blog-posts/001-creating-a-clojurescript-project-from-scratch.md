@@ -7,9 +7,9 @@ author: 'Thomas Mattacchione'
 keywords: ['clojurescript', 'start', 'new']
 ---
 
-Building apps is hard AF. Choosing a language like Clojure(Script) can remove some of the pain, but the fact remains that when we are starting out, just knowing where to begin is a frustrating experience.
+Building apps is hard AF. Choosing a language like Clojure(Script) can remove _some_ of the pain, but the fact remains that no matter which language you choose, when we start out with a web app just knowing where to begin is a frustrating experience.
 
-My goal is to provide comfort, guidance and context into the initial phases of writing a ClojureScript app. We'll work to assuage your fears & stresses and alleviate those overwhelming thoughts about doing things the right or wrong way to get you to a point where you can do what matters: writing sweet sweet Clojure(Script).
+My goal with this post is to provide a step by step guide into writing a ClojureScript app. We'll work to assuage your fears & stresses and alleviate those overwhelming thoughts about doing things the "right" or "wrong" way by showing a common way to start a Clojure(Script) app and provide context for why we are making each decision.
 
 Through this guide we will cover the steps I take when starting a new ClojureScript app from scratch.
 
@@ -154,7 +154,7 @@ As you may have guessed, `clj` is my build tool of choice and what we will use i
 
 <aside class="blog-post__note">If this is your first time working with Clojure(Script) you will need to be sure you have <code class="gatsby-code-text">clojure</code> installed on your local machine before going further.  Not sure?  Want to know how?  I recommend taking a look at my free <a class="blog-post__link" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA" target="_blank" rel="noopener noreferrer">Getting Started with ClojureScript</a> Youtube series which will take you through the whole process or checkout the official written <a class="blog-post__link" href="https://clojurescript.org/guides/quick-start" target="_blank" rel="noopener noreferrer">ClojureScript Quickstart Guide</a> </aside>
 
-To use `clj` we need to `configure` it. clj is configured using a file called `deps.edn`. Begin by creating a `deps.edn` file in the root of our project and then make it look like this<a href="#build-tools-deps" aria-describedby="footnote-label" id="build-tools-deps-ref">:</a>
+To use `clj` we need to `configure` it. `clj` is configured using a file called `deps.edn`. Begin by creating a `deps.edn` file in the root of our project and then make it look like this<a href="#build-tools-deps" aria-describedby="footnote-label" id="build-tools-deps-ref">:</a>
 
 ```clojure
 {:paths
