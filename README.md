@@ -2,6 +2,7 @@
 - [Configuration](#configuration)
   - [Environment Variables](#environment-variables)
   - [Upgrading Dependencies](#upgrading-dependencies)
+  - [Images](#images)
 - [Blog Post Formatting Guidelines](#blog-post-formatting-guidelines)
   - [Date](#date)
   - [Summary](#summary)
@@ -79,6 +80,10 @@ yarn upgrade --latest --pattern "gatsby-"
 ```
 
 > Replace "gatsby-" with the common pattern.
+
+### Images
+
+Images used directly in the blog are currently found in the `static` directory.  This strategy forgoes image optimization.  Normally this is not the best choice because we forgo image optimization can Gatsby can provide.  However, I went this route because for the time being I only have 1 image to use and most everything else is an SVG.  See [Official Gatsby Guide](https://www.gatsbyjs.org/docs/static-folder/) for more details.
 
 ## Blog Post Formatting Guidelines
 
