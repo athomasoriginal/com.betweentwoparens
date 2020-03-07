@@ -141,7 +141,7 @@ To run, develop and build a production version of our app we need what developer
 [boot](https://boot-clj.com/) is a definite improvement over lein. It has learned from many of lein's shortcomings and managed to gather the attention of a strong minority of Clojure(Script) developers. Even so, the feeling can often be that boot does not offer enough to trade in lein.
 
 [clj](https://clojure.org/guides/deps_and_cli) is magicked down to us by the maintainers of Clojure. It was initially met with confusion, but over the past year has come to be seen by many, including myself, as the build tool we deserve. Instead of following in the path of lein or boot the goal of clj is do three things well:
-
+s
 1. run clojure programs
 2. manage dependencies
 3. build classpaths
@@ -152,7 +152,7 @@ As you may have guessed, `clj` is my build tool of choice and what we will use i
 
 ### Step 6 - Add deps file
 
-<aside class="blog-post__note">If this is your first time rocking Clojure(Script) you will need to setup <code class="gatsby-code-text">clj</code>.  The best way to do this is to work through the <a class="blog-post__link" href="https://clojurescript.org/guides/quick-start" target="_blank" rel="noopener noreferrer">ClojureScript Quickstart</a> </aside>
+<aside class="blog-post__note">If this is your first time working with Clojure(Script) you will need to be sure you have <code class="gatsby-code-text">clojure</code> installed on your local machine before going further.  Not sure?  Want to know how?  I recommend taking a look at my free <a class="blog-post__link" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA" target="_blank" rel="noopener noreferrer">Getting Started with ClojureScript</a> Youtube series which will take you through the whole process or checkout the official written <a class="blog-post__link" href="https://clojurescript.org/guides/quick-start" target="_blank" rel="noopener noreferrer">ClojureScript Quickstart Guide</a> </aside>
 
 To use `clj` we need to `configure` it. clj is configured using a file called `deps.edn`. Begin by creating a `deps.edn` file in the root of our project and then make it look like this<a href="#build-tools-deps" aria-describedby="footnote-label" id="build-tools-deps-ref">:</a>
 
