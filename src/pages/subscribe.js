@@ -41,7 +41,7 @@ const SubscribePage = ({ data }) => {
 
   const fields = [userField, listField, firstNameField, emailField]
   return (
-    <Layout>
+    <Layout className="app-subscribe">
       <SEO />
       <div className="subscribe">
         <h1 className="">Join Us</h1>
