@@ -21,7 +21,7 @@ Through this guide we will cover the steps I take when starting a new ClojureScr
 
 To get us into the headspace, imagine that we are a company called `tallex` and we are building an app called `time dive`. This excercise will prove useful when learning how to structure/name our files/folders.
 
-<aside class="blog-post__note">In case you get stuck at any point, I have a <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app" target="_blank" rel="noopener noreferrer">demo project</a> which you can reference as you work through this post.  There won't be too much ClojureScript code because we are focusing on setup, but if at any point you feel overwhelmed by the ClojureScript syntax I recommend this <a class="blog-post__link" href="https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes" target="_blank" rel="noopener noreferrer">quick 15 minute primer to the syntax of Clojure</a>.</aside>
+<aside class="blog-post__note">In case you get stuck at any point, I have a <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app" target="_blank" rel="noopener noreferrer">demo project</a> which you can reference as you work through this post.  There won't be too much ClojureScript code because we are focusing on setup, but if at any point you feel overwhelmed by the ClojureScript syntax I recommend this <a class="blog-post__link" href="https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes" target="_blank" rel="noopener noreferrer">quick 15 minute primer to the syntax of Clojure</a>.</aside>
 
 ## Setup Project Structure
 
@@ -161,7 +161,7 @@ To use `clj` we need to `configure` it. `clj` is configured using a file called 
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.520"}}
+ {org.clojure/clojurescript {:mvn/version "1.10.597"}}
 
  :aliases
  {:dev {:main-opts ["-m"  "cljs.main"
@@ -197,7 +197,7 @@ wait a bit and `:dev` will compile our code, automatically open a browser tab an
 
 ![screenshot of time dive app](./images/001-time-dive-app.png)
 
-<aside class="blog-post__note">I also want to draw your attention towards two new directories that were auto generated for you when you ran <code class="gatsby-code-text">clj -A:dev</code>: <code class="gatsby-code-text">.cpcache/</code> and <code class="gatsby-code-text">out/</code>. I bring this up because it's a good practice to avoid version controlling these folders.  If you are wondering what this might look like I have done this as an <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app/commit/0ac3e591339241e41444eae12d82998810d9493a" target="_blank" rel="noopener noreferrer">extra step</a></aside>
+<aside class="blog-post__note">I also want to draw your attention towards two new directories that were auto generated for you when you ran <code class="gatsby-code-text">clj -A:dev</code>: <code class="gatsby-code-text">.cpcache/</code> and <code class="gatsby-code-text">out/</code>. I bring this up because it's a good practice to avoid version controlling these folders.  If you are wondering what this might look like I have done this as an <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/0cef20e6773ab5d2f93253926dafb4e05e0673f7" target="_blank" rel="noopener noreferrer">extra step</a></aside>
 
 Before we jump over to the next section I want to draw your attention to the fact that we have zero dependencies. Think about this: our files are being watched, code is recompiled on save, we are greeted with a browser repl and all of this with zero dependencies. Yes, we are still missing a few niceties, but we are not done yet. We will get you to hero toolchain status soon.
 
@@ -225,9 +225,9 @@ It starts by adding figwheel as a dependency. We do this by opening the `deps.ed
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.520"}
+ {org.clojure/clojurescript {:mvn/version "1.10.597"}
 
-  com.bhauman/figwheel-main {:mvn/version "0.2.0"}}
+  com.bhauman/figwheel-main {:mvn/version "0.2.3"}}
 
  ; ...
  }
@@ -266,9 +266,9 @@ The command we were using to run our app, `clj -A:dev`, is still not using figwh
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.520"}}
+ {org.clojure/clojurescript {:mvn/version "1.10.597"}}
 
-  com.bhauman/figwheel-main {:mvn/version "0.2.0"}
+  com.bhauman/figwheel-main {:mvn/version "0.2.3"}
 
  :aliases
  {:dev {:main-opts ["-m"  "figwheel.main" "--build" "dev" "--repl"]}}}
@@ -371,11 +371,11 @@ In addition to adding Reagent we are going to update our `deps.edn`, `html`, `cs
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.520"}
+ {org.clojure/clojurescript {:mvn/version "1.10.597"}
 
-  com.bhauman/figwheel-main {:mvn/version "0.2.0"}
+  com.bhauman/figwheel-main {:mvn/version "0.2.3"}
 
-  reagent                   {:mvn/version "0.8.1"}}
+  reagent                   {:mvn/version "0.10.0"}}
 
 
  :aliases
@@ -456,7 +456,7 @@ At this point we have created a ClojureScript app from scratch and provided a so
 
 - [Example Reagent App](https://github.com/robert-stuttaford/bridge)
 - [Example Full Featured Clojure(Script) App](https://github.com/juxt/edge)
-- [ClojureScript 30](https://github.com/tkjone/clojurescript-30)
+- [ClojureScript 30](https://github.com/athomasoriginal/clojurescript-30)
 - [Lambda Island - ClojureScript Tutorials](https://lambdaisland.com/)
 - [Purely Functional TV - Clojure(Script) Tutorials](https://purelyfunctional.tv/)
 - [Getting Clojure](https://pragprog.com/book/roclojure/getting-clojure)
@@ -476,19 +476,19 @@ These resources are great next steps for learning to work with Clojure(Script).
       <a href="#project-structure-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="project-structure-commit">
-      <strong>Sanity Check</strong>: your project should look like this: commit <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app/tree/96fafa51dfa8cb2e1ea208961c1ff2a3e4eb663a" target="_blank" rel="noopener noreferrer">96fafa5</a>
+      <strong>Sanity Check</strong>: your project should look like this: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/96fafa51dfa8cb2e1ea208961c1ff2a3e4eb663a" target="_blank" rel="noopener noreferrer">96fafa5</a>
       <a href="#project-structure-commit-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="resources-dir">
-      You will notice HTML, CSS, Images etc will go in our <code class="gatsby-code-text">Resources</code> dir.  This is not a hard and fast rule, but it is a helpful convention.  Also, <strong>sanity Check</strong>:  <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app/commit/58975cc17d779a6f4c7947c9c21a468a6711671e" target="_blank" rel="noopener noreferrer">58975cc</a>
+      You will notice HTML, CSS, Images etc will go in our <code class="gatsby-code-text">Resources</code> dir.  This is not a hard and fast rule, but it is a helpful convention.  Also, <strong>sanity Check</strong>:  <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/58975cc17d779a6f4c7947c9c21a468a6711671e" target="_blank" rel="noopener noreferrer">58975cc</a>
       <a href="#resources-dir-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-css">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app/commit/3aab28449076fb0d80e801d0a1f8cf0c5d8c5e42" target="_blank" rel="noopener noreferrer">3aab284</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/3aab28449076fb0d80e801d0a1f8cf0c5d8c5e42" target="_blank" rel="noopener noreferrer">3aab284</a>
       <a href="#sanity-check-css-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-cljs">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app/commit/863278997d8dd23e3c56dbb61cab7c5138aa423c" target="_blank" rel="noopener noreferrer">8632789</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/863278997d8dd23e3c56dbb61cab7c5138aa423c" target="_blank" rel="noopener noreferrer">8632789</a>
       <a href="#sanity-check-cljs-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="entry-point-conventions">
@@ -496,11 +496,11 @@ These resources are great next steps for learning to work with Clojure(Script).
       <a href="#entry-point-conventions-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-cljs-test">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app/commit/90a576f927947fcd620c6bcb340d3dc0427d2b06" target="_blank" rel="noopener noreferrer">90a576f</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/90a576f927947fcd620c6bcb340d3dc0427d2b06" target="_blank" rel="noopener noreferrer">90a576f</a>
       <a href="#sanity-check-cljs-test-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="build-tools-deps">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app/commit/288a24c68a285e295ba9ae80992d3539582ed308" target="_blank" rel="noopener noreferrer">288a24c</a>s
+      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/ba182b9a2b7f5b753bb7b16bb5ff4bf8384ab0bd" target="_blank" rel="noopener noreferrer">288a24c</a>s
       <a href="#build-tools-deps-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="what-is-dev-toolchain">
@@ -512,7 +512,7 @@ These resources are great next steps for learning to work with Clojure(Script).
       <a href="#toolchain-tools-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-toolchain">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app/commit/27a54a3cdf826a951bbecd0205c74420b78a265a" target="_blank" rel="noopener noreferrer">27a54a3</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/7d642c5416413da13c9cbebd31e33a563e917c90" target="_blank" rel="noopener noreferrer">27a54a3</a>
       <a href="#sanity-check-toolchain-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="package-repos">
@@ -524,19 +524,19 @@ These resources are great next steps for learning to work with Clojure(Script).
       <a href="#build-config-options-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-build-config">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app/commit/980f18f52936862ac34d71c4a9cb12f734576ede" target="_blank" rel="noopener noreferrer">980f18f</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/46e46990726d61638e9b80f6345e4b6683ac1e70" target="_blank" rel="noopener noreferrer">980f18f</a>
       <a href="#sanity-check-build-config-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-resources-restruct">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app/commit/da3dbb53c054163527ce5ef98ad766779536b379" target="_blank" rel="noopener noreferrer">da3dbb5</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/4b6b656323ea5cda9edb9265e61e49de6d9f7cfc" target="_blank" rel="noopener noreferrer">da3dbb5</a>
       <a href="#sanity-check-resources-restruct-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-reagent">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app/commit/205c680d3155983a1b5ef09ce02d42a5e91d3af6" target="_blank" rel="noopener noreferrer">205c680</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/4c8cbd67dcc24d0365feb25bf511e03cba0fcf36" target="_blank" rel="noopener noreferrer">205c680</a>
       <a href="#sanity-check-reagent-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-reagent-two">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-app/commit/f13ee9b6512873e0ba91061e6874cc655e2168e9" target="_blank" rel="noopener noreferrer">f13ee9b</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/e1cf66d7ed1973d4fa1ec1091c0cbe16e61cf4b4" target="_blank" rel="noopener noreferrer">f13ee9b</a>
       <a href="#sanity-check-reagent-two-ref" aria-label="Back to content">↩</a>
     </li>
   </ol>
