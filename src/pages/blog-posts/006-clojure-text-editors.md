@@ -101,7 +101,7 @@ I have always found that to be productive with Clojure you don't need many tools
 - [Chlorine](https://atom.io/packages/chlorine)
 
   - **Description:** Integrate your Clojure REPL into your editor.
-  - **Configuration:** Add the Chlorine hotkeys.  [Here is an example](https://github.com/tkjone/dotfiles/blob/master/atom/keymap.cson#L34) of where to put them.
+  - **Configuration:** Add the Chlorine hotkeys.  [Here is an example](https://github.com/athomasoriginal/dotfiles/blob/master/atom/keymap.cson#L34) of where to put them.
 
 - [Parinfer](https://atom.io/packages/parinfer)
 
