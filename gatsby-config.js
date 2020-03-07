@@ -72,6 +72,32 @@ module.exports = {
         iconName: 'rss',
       },
     ],
+    subscribe: {
+      postUrl: 'https://betweentwoparens.us19.list-manage.com/subscribe/post',
+      userField: {
+        type: 'hidden',
+        name: 'u',
+        value: 'd3adf3b6f4d0d994623f9925f',
+      },
+      listField: {
+        type: 'hidden',
+        name: 'id',
+        value: 'c6998a1564',
+      },
+      firstNameField: {
+        label: 'First Name: ',
+        type: 'text',
+        name: 'MERGE1',
+        id: 'MERGE1',
+      },
+      emailField: {
+        label: 'Email: ',
+        type: 'email',
+        name: 'MERGE0',
+        id: 'MERGE0',
+      },
+      submitBtn: 'Subscribe',
+    }
   },
   plugins: [
     `gatsby-plugin-feed`,
