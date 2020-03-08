@@ -7,19 +7,21 @@ author: 'Thomas Mattacchione'
 keywords: ['clojurescript tutorial', 'atom github clojurescript', 'atom clojure']
 ---
 
-<aside class="blog-post__note">Interested in jumping right to my editor setup? <a class="blog-post__link" href="#my-text-editor-setup">click here</a> or you can checkout my <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp">Youtube video series</a> of this post</aside>
+<aside class="blog-post__note">Interested in jumping right to my editor setup? <a class="blog-post__link" href="#my-text-editor-setup">click here</a> or you can checkout my free <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp">Atom Setup Guide Video Series</a>.</aside>
 
-I'd been a professional software developer for a number of years before I came to Clojure.  So, it's fair to say that by the time I went all-in on Clojure I had, thankfully, seen some things and started to form opinions around what I felt was the "best" way to practice software development.
+Becoming a great software developer probably has more to do with ones ability to accept opportunities to revisit and refine _opinions_ and _beliefs_ than we would initially think.
 
-One of the tenets of my model?  I should always be capable of growth.  To me, this means accepting the opportunity to revisit and refine my _opinions_ and _beliefs_.  One great way to do this as a programmer is to be "new" at something again.  For example, learn a **different** programming language.  Clojure was that language.  I chose it because it would expose me to new ideas like [functional programming](https://www.geeksforgeeks.org/functional-programming-paradigm/), [lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)) etc.
+In order to get to a point where this is possible, my strategy is usually to be "new" at something again.  For example, learn a **different** programming language.
 
-With the language chosen, I just needed to start coding Clojure.  At the time, my mindset was total assimilation: I would [think](https://www.youtube.com/watch?v=f84n5oFoZBc) as they do and use the same tools as them. This meant [emacs](https://www.gnu.org/software/emacs/) because all my research and conversations up until this point with other Clojurists led me to the opinion that `emacs` was _the_ tool for a Clojure developer.
+Clojure is great for this because it gives you a break from common paradigms and exposes you to [functional programming](https://www.geeksforgeeks.org/functional-programming-paradigm/) and this sexy moon man language called [lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)).
 
-<aside class="blog-post__note">Take note of the line <code class="gatsby-code-text">conversations up until this point with other Clojurists</code>.  While "use emacs" is how I interpreted what they were saying, and some even used those very words, it was not actually what they were saying.  By the end of this post I will hopefully transcribe the real message as I now understand it.</aside>
+So now that I was at a point where I was ready to learn Clojure I needed to use a "Clojure Editor".  I wanted to do this because I wanted to [think](https://www.youtube.com/watch?v=f84n5oFoZBc) as a Clojurist and use the same tools as them. This meant [emacs](https://www.gnu.org/software/emacs/) because all my research and conversations up until this point with other Clojurists led me to the opinion that `emacs` was _the_ "Clojure Editor".
 
-Turns out that for me, choosing [emacs](https://www.gnu.org/software/emacs/) was not a great choice (more on that later) and I should have stuck with the editor I knew best.  This would have allowed me to spend more time focusing on Clojure.
+<aside class="blog-post__note">Take note of the line <code class="gatsby-code-text">conversations up until this point with other Clojurists</code>.  While "use emacs" is how I interpreted what they were saying, and some even used those words, it was not actually what they were saying.  By the end of this post I will hopefully transcribe the real message as I now understand it.</aside>
 
-This is how it goes though.  These are the lessons.  It's with this in mind that I will hopefully help the next person interested in Clojure, aspiring or experienced, by walking through some of the Text Editors of Clojure.
+Turns out that choosing emacs was not a great choice for me.  I should have stuck with the editor I knew best so that I could focus on being new at one thing at a time.  More on that later.
+
+All of this is to say, here is an article that outlines the landscape of Clojure Editors which will hopefully help to inform your initial steps into Clojure land.
 
 The rest of this article will be [bikeshed](https://www.urbandictionary.com/define.php?term=bikeshed) city. The hope? By documenting the thoughts and providing a few words of encouragement we can save some future Clojure developer some time.  With that, this post will cover the following topics:
 
@@ -32,7 +34,7 @@ The rest of this article will be [bikeshed](https://www.urbandictionary.com/defi
 
 ## Clojure Text Editors
 
-Let's start by introducing the top Text Editors for Clojure(Script) development bases on the 2020 Clojure Survey Results<a href="#popular-editors" aria-describedby="footnote-label" id="popular-editors-ref">:</a>
+Let's start by introducing the top Text Editors for Clojure(Script) development based on the 2020 Clojure Survey Results<a href="#popular-editors" aria-describedby="footnote-label" id="popular-editors-ref">:</a>
 
 1. [Emacs](https://www.gnu.org/software/emacs/)
 1. [IntelliJ](https://www.jetbrains.com/idea/)
@@ -60,27 +62,25 @@ To figure out which editor to use for Clojure development try to answer the foll
 
 If you chose **A.** stick with the editor your currently using.  If you chose **B.** try `Atom` or `VS Code`.  Continue reading to find out why!
 
-A Text Editor is one of a developer's primary tools because we spend most of our work life inside of it.  Given the time we work with our Text Editors, there is something to be said for the satisfaction we derive from using it.
+A Text Editor is one of a developer's primary tools because we spend most of our work life inside of it.  Given the time we spend in our Text Editor there is something to be said for the satisfaction we derive from using it and its impact on our productivity.
 
 Over time, this satisfaction grows and we begin to associate the qualities of the developer with the editor itself.  It becomes a [zero sum game](https://www.merriam-webster.com/dictionary/zero-sum%20game).
 
-There are some obvious problems with this mentality and it begins with the fact that tools are tools.  They either help us be productive, or they don't.  Further, the productivity one human gains from a tool, the satisfaction as we called it earlier, is likely going to be different from the next person.  You do you.
+There are some problems with this mentality and it begins with the fact that tools are tools.  They either facilitate productivity, or they don't.  Further, the productivity one human gains from a tool, the satisfaction as we called it earlier, is likely going to be different from the next person.  You do you.
 
-Knowing this, let's put the cards on the table and review the qualities that allow me to feel satisfied with the Text Editor I choose.  I alluded to this earlier, but for me it's mainly how productive I can be in my tool of choice.  How I define productivity is by the `startup cost` and `utility` of the editor itself.  What do each of these mean to me?
+Knowing this, here's how I define productivity: low `startup cost` + the `utility` of the editor itself.  Here's what I mean by this:
 
 `Startup cost` is about whether or not I can use the editor regardless of my operating system and how much configuration I need to get it going on a new development environment.
 
-`Utlity` is performance and customizability of the Editor.  For performance, I mean that when I do things like search, open large files or use plugins the editor does not eat all of my system resources and grind to a halt.  This would be intrusive to my workflow.  When it comes to customization, I like it when I can configure my editor easily with languages and tool chains I already know.
+`Utlity` is performance and customizability of the Editor.  For performance, what I mean is that when I do things like search, open large files or use plugins that are supposed to make me more productive, but I have to literally stop what I am doing and wait for the editor sort itself out, this is no bueno.
 
-As you may have gathered, my definition of satisfaction has led me to prefer a spartan editor environment.  Yet, this is not always how I felt.  I only realized this was how I liked to work when I saw truly productive developers operate in environments devoid of frills.
+Then there is customization.  This is a worthwhile optimization which, to me, means I can add features to the editor to improve my workflow.  It also helps when I can do this with languages and tool chains I already know.
 
-All of this is to say that this is my preference.  This preference is one I have built through years of experimentation and questioning my workflow.  If you have been developing for a while, you will also go through this learning process.  This is a beautiful part of the journey because it really is about you, your likes and dislikes and how far you want to go.
+All of this is to say that these are my preferences that I have built through years of experimentation.  If you have been developing for a while, you will have likely gone through a similar process.  But let's go back to the original question of "which text editor to choose?".
 
-And now we're back to the original question about which editor you should use.  I said earlier that if you're experience, go with the editor you already know.  If you are a new programmer and don't have deep roots with any particular editor, choose `Atom` or `VS Code`.
+As I said earlier, if you're an experienced developer, go with the editor you know.  If you are a new programmer and don't have deep ties to any particular editor, choose `Atom` or `VS Code`.  The reason for this recommendation is because these editors are easy to use, work on all operating systems, have active and easy to access communities and support all the modern Clojure tooling one could ever want.
 
-My rationale?  All of these editors are easy to use, work on all operating systems, have active and easy to access communities and support all the modern Clojure tooling one could ever want.  But there is also a more significant reason.  I have learned that when learning something you should focus on learning that one thing.
-
-Choosing editors like Emacs, Vim, or Intellij mean you are going to spend more time learning and configuring the editors than programming.  It's going to get in the way of the learning journey.  So do yourself a favour and focus on learning Clojure.  You can always try the other editors when you develop some sensibilities around the workflow you want to pursue.  But that is more of an optimization strategy than a tactic which will enable you to improve the learning process.
+Im comparison, if you choose an editor like Emacs, Vim, or Intellij you are going to spend more time learning and configuring the editors than learning Clojure.  You can always try these editors when you feel more accomplished with Clojure and want to optimize your workflow.  But at least when you get to this point you will have a frame of reference.
 
 Knowing this, lets move onto how I setup Atom for my development workflow.
 
@@ -88,7 +88,7 @@ Knowing this, lets move onto how I setup Atom for my development workflow.
 
 As mentioned, `Atom` is _currently_ my preferred text editor for Clojure development.  The reason? it's portable, easy to setup and customize.
 
-Below you will find an outline of how I setup Atom for Clojure development.  I have also released a [Clojure Text Editors](https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp) Youtube series where I walk you through how to setup Atom for Clojure development from scratch.
+<aside class="blog-post__note">My Atom setup can be found below, but if you find video tutorials more helpful checkout my youtube video series <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp">Setup Atom for Clojure Development</a> where I go through everything from installing Atom to installing, configuring and demoing each tool I use.</aside>
 
 ### Plugins and Configuration
 
