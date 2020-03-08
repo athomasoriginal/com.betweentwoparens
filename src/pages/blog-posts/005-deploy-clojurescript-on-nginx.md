@@ -61,9 +61,9 @@ We will create our ClojureScript app using [Create Reagent App](https://github.c
 
 ```bash
 clj -Sdeps '{:deps
-              {seancorfield/clj-new {:mvn/version "0.7.7"}}}' \
+              {seancorfield/clj-new {:mvn/version "0.9.0"}}}' \
   -m clj-new.create \
-  https://github.com/athomasoriginale/create-reagent-app@4444cb8d4192bbfc6ba1304381c62fe3aa46ea17 \
+  https://github.com/athomasoriginale/create-reagent-app@8c17f0f454f631f9238aed6be19aa1ca3c78f0d4 \
   demo-clojurescript-nginx/demo-clojurescript-nginx
 ```
 
