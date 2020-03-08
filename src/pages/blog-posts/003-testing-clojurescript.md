@@ -28,9 +28,9 @@ To begin, we need a demo ClojureScript project to work from.  To do this I have 
 
 ```bash
 clj -Sdeps '{:deps
-              {seancorfield/clj-new {:mvn/version "0.7.7"}}}' \
+              {seancorfield/clj-new {:mvn/version "0.9.0"}}}' \
   -m clj-new.create \
-  https://github.com/athomasoriginale/create-reagent-app@8e42eae253b8950aaf7a5db394f17d82267497e8 \
+  https://github.com/athomasoriginale/create-reagent-app@8c17f0f454f631f9238aed6be19aa1ca3c78f0d4 \
   tallex/time-dive
 ```
 
@@ -402,11 +402,11 @@ Now from here we need to create an alias in our `deps.edn` file:
  ["src" "test" "resources" "target"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.520"}
+ {org.clojure/clojurescript {:mvn/version "1.10.597"}
 
-  com.bhauman/figwheel-main {:mvn/version "0.2.0"}
+  com.bhauman/figwheel-main {:mvn/version "0.2.3"}
 
-  reagent                   {:mvn/version "0.8.1"}}
+  reagent                   {:mvn/version "0.10.0"}}
 
  :aliases
  {:dev
