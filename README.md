@@ -19,7 +19,7 @@
 1. **Clone blog**
 
    ```sh-
-   git clone git@github.com:tkjone/blog.git
+   git clone git@github.com:athomasoriginal/blog.git
    ```
 
 1. **Install blog dependencies**

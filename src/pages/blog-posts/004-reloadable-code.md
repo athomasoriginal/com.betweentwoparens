@@ -11,7 +11,7 @@ About two years ago I built a small ClojureScript app that looks like this:
 
 ![calendar app](./images/004-01-calendar-app-intro.png)
 
-<aside class="blog-post__note">The source code can be found <a class="blog-post__link" href="https://github.com/tkjone/demo-reloadable-code" rel="noopener noreferrer">here</a>.</aside>
+<aside class="blog-post__note">The source code can be found <a class="blog-post__link" href="https://github.com/athomasoriginale/demo-reloadable-code" rel="noopener noreferrer">here</a>.</aside>
 
 This app was meant to be a bite sized learning project to level up my ClojureScript interop skills.
 
@@ -56,7 +56,7 @@ As I mentioned earlier, just because you use `figwheel` or `shadow-cljs` and the
 
 Okay, now that we have reviewed what HMR is doing, lets dive into the code and transform it into `reloadable code`.
 
-<aside class="blog-post__note">Again the <a class="blog-post__link" href="https://github.com/tkjone/demo-reloadable-code" target=" _blank" rel="noopener noreferrer">source code</a> is available and if you are following along, all you have to do to trigger a <code class="gatsby-code-text">reload</code> is save a <code class="gatsby-code-text">.cljs</code> file in the <code class="gatsby-code-text">src</code> dir.</aside>
+<aside class="blog-post__note">Again the <a class="blog-post__link" href="https://github.com/athomasoriginale/demo-reloadable-code" target=" _blank" rel="noopener noreferrer">source code</a> is available and if you are following along, all you have to do to trigger a <code class="gatsby-code-text">reload</code> is save a <code class="gatsby-code-text">.cljs</code> file in the <code class="gatsby-code-text">src</code> dir.</aside>
 
 
 ## "Submit" Event Listeners
@@ -65,7 +65,7 @@ If you save `calendar.cljs` 5 times and then press the `Add` button in the Calen
 
 If we inspect the console we can see that there are actually 5 event listeners attached to the `submit` event.  So it seems that when we click `Add` 5 event handlers are fired one after the other<a href="#debugging-event-listeners" aria-describedby="footnote-label" id="debugging-event-listeners-ref">.</a>
 
-Why is this happening?  As it turns out, if you look to the [code here](https://github.com/tkjone/demo-reloadable-code/commit/b26c1aac8e9c9d6e2d5c7407cc1806dac9b92724#diff-9f16cf6f6db4d58c84ae2d61fd54ec7fR168):
+Why is this happening?  As it turns out, if you look to the [code here](https://github.com/athomasoriginale/demo-reloadable-code/commit/b26c1aac8e9c9d6e2d5c7407cc1806dac9b92724#diff-9f16cf6f6db4d58c84ae2d61fd54ec7fR168):
 
 ```clojure
 (events/listen
@@ -140,7 +140,7 @@ The following is what the above looks like in our code:
 (defonce initial-load (setup))
 ```
 
-<aside class="blog-post__note">See the <a class="blog-post__link" href="https://github.com/tkjone/demo-reloadable-code/commit/ceb1ae2b907eb8c04befcb30c21e9bab81706000" target=" _blank" rel="noopener noreferrer">code</a>.</aside>
+<aside class="blog-post__note">See the <a class="blog-post__link" href="https://github.com/athomasoriginale/demo-reloadable-code/commit/ceb1ae2b907eb8c04befcb30c21e9bab81706000" target=" _blank" rel="noopener noreferrer">code</a>.</aside>
 
 What we did:
 
@@ -200,12 +200,12 @@ Having said this, for this scenario I am going to play it safe and show you how 
     update-event-end-dropdown!))
 ```
 
-You can see the above change [here](https://github.com/tkjone/demo-reloadable-code/commit/c87c9b13562856191c3374ffe521c5d97875f281).  In the next section we are going to explore more subjective goodness.
+You can see the above change [here](https://github.com/athomasoriginale/demo-reloadable-code/commit/c87c9b13562856191c3374ffe521c5d97875f281).  In the next section we are going to explore more subjective goodness.
 
 
 ## Populating Dropdown Options
 
-Reading [along with the code](https://github.com/tkjone/demo-reloadable-code/blob/c87c9b13562856191c3374ffe521c5d97875f281/src/demo_reloadable_code/calendar.cljs#L188) in Calendar App, we have another invokation when the `ns` loads.
+Reading [along with the code](https://github.com/athomasoriginale/demo-reloadable-code/blob/c87c9b13562856191c3374ffe521c5d97875f281/src/demo_reloadable_code/calendar.cljs#L188) in Calendar App, we have another invokation when the `ns` loads.
 
 ```clojure
 (set! (.. start-time-dropdown -innerHTML) (time-option-list (time-range)))

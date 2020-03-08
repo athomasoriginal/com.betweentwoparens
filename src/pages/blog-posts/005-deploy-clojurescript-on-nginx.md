@@ -20,7 +20,7 @@ My [first blog post](https://betweentwoparens.com/deoploy-clojurescript-to-githu
 
 By the time we are finished I hope to have clarified the general steps involved in hosting your own ClojureScript app (**spoiler:** it's the same as hosting a JavaScript app).
 
-<aside class="blog-post__note">Beyond creating a simple ClojureScript app, this post is not really about ClojureScript. I see it's role as clearing up the process of deploying a static site.  Specifically, we will focus on deploying ClojureScript to a webserver (<a class="blog-post__link" href="https://www.nginx.com/" target="_blank" rel="noopener noreferrer">Nginx</a>).  If you are following along, you can see the <a class="blog-post__link" href="https://github.com/tkjone/demo-clojurescript-nginx" target="_blank" rel="noopener noreferrer">source code here</a>.</aside>
+<aside class="blog-post__note">Beyond creating a simple ClojureScript app, this post is not really about ClojureScript. I see it's role as clearing up the process of deploying a static site.  Specifically, we will focus on deploying ClojureScript to a webserver (<a class="blog-post__link" href="https://www.nginx.com/" target="_blank" rel="noopener noreferrer">Nginx</a>).  If you are following along, you can see the <a class="blog-post__link" href="https://github.com/athomasoriginale/demo-clojurescript-nginx" target="_blank" rel="noopener noreferrer">source code here</a>.</aside>
 
 ## The Deploy Process
 
@@ -57,13 +57,13 @@ If you are going to follow along with this post please make sure you have the fo
 
 <aside class="blog-post__note">This whole process starts with a ClojureScript app.  If you already have an app you can skip this part.  If you don't have an app, please follow along with this section and we will set you up with your very own ClojureScript app.</aside>
 
-We will create our ClojureScript app using [Create Reagent App](https://github.com/tkjone/create-reagent-app).  This is a tool which automatically builds a modern ClojureScript/Reagent (READ: React) app for us.  All you need to do is move to a directory where you want your project to live and run the following command:
+We will create our ClojureScript app using [Create Reagent App](https://github.com/athomasoriginale/create-reagent-app).  This is a tool which automatically builds a modern ClojureScript/Reagent (READ: React) app for us.  All you need to do is move to a directory where you want your project to live and run the following command:
 
 ```bash
 clj -Sdeps '{:deps
               {seancorfield/clj-new {:mvn/version "0.7.7"}}}' \
   -m clj-new.create \
-  https://github.com/tkjone/create-reagent-app@4444cb8d4192bbfc6ba1304381c62fe3aa46ea17 \
+  https://github.com/athomasoriginale/create-reagent-app@4444cb8d4192bbfc6ba1304381c62fe3aa46ea17 \
   demo-clojurescript-nginx/demo-clojurescript-nginx
 ```
 
