@@ -32,29 +32,33 @@ The rest of this article will be [bikeshed](https://www.urbandictionary.com/defi
 
 ## Clojure Text Editors
 
-Let's start by introducing the top Text Editors for Clojure(Script) development by usage<a href="#popular-editors" aria-describedby="footnote-label" id="popular-editors-ref">:</a>
+Let's start by introducing the top Text Editors for Clojure(Script) development bases on the 2020 Clojure Survey Results<a href="#popular-editors" aria-describedby="footnote-label" id="popular-editors-ref">:</a>
 
 1. [Emacs](https://www.gnu.org/software/emacs/)
-2. [IntelliJ](https://www.jetbrains.com/idea/)
-3. [Vim](https://www.vim.org/)
-4. [VS code](https://code.visualstudio.com/)
-5. [Atom](https://atom.io/)
-6. [Sublime](https://www.sublimetext.com/)
-7. [Eclipse](https://www.eclipse.org/downloads/)
-8. [Light Table](http://lighttable.com/)
+1. [IntelliJ](https://www.jetbrains.com/idea/)
+1. [VS code](https://code.visualstudio.com/)
+1. [Vim](https://www.vim.org/)
+1. [Atom](https://atom.io/)
+1. [Sublime](https://www.sublimetext.com/)
+1. [Eclipse](https://www.eclipse.org/downloads/)
+1. [Light Table](http://lighttable.com/)
 
-There is nothing special about the above list.  Yet, where it starts to feel prohibitive is the idea that you have to use one of the first 3 Text Editors in order to be productive in Clojure.  So, if you read no further, take this with you:  you **don't** need to use Emacs, IntelliJ or Vim to learn or be good at Clojure.
+For professional and hobby developers, the above list contains the editors you might expect to see.  The issue is that for newcomers and developers without a strong idea of language specific tooling the above list can feel prohibitive.
 
-This leads to the next part:  which editor should you use?  To answer that, try to answer the following questions:
+One reason for this feeling is that since the majority of the Clojure developers are using the first 3, those must be the ones to use in order to be productive with Clojure.
 
-1. Are you an experienced developer through hobby or profession?
-1. Are you new to the programming game?
+If you feel this way and don't read any further please take this with you:  You **DO NOT** need to use Emacs or IntelliJ to learn or become excellent at Clojure.
 
-If your answered yes to the **first** question, the choice is simple:  Stick with the editor you're comfortable with!
-
-If you answered yes to the **second** question, my recommendation is to choose `Atom` or `VS Code`.  Read on to find out why!
+This leads to the next part:  which editor should you use?
 
 ## Which Text Editor to Use
+
+To figure out which editor to use for Clojure development try to answer the following question.  Are you:
+
+- **A**. Experience developer (serious hobbyist or professional)
+- **B**. New(ish) to programming
+
+If you chose **A.** stick with the editor your currently using.  If you chose **B.** try `Atom` or `VS Code`.  Continue reading to find out why!
 
 A Text Editor is one of a developer's primary tools because we spend most of our work life inside of it.  Given the time we work with our Text Editors, there is something to be said for the satisfaction we derive from using it.
 
@@ -118,7 +122,7 @@ Remember that no matter what language you choose, there are going to be a ton of
   <h3>Footnotes</h3>
   <ol>
     <li id="popular-editors">
-      This list is based on the <a class="blog-post__link" href="https://www.surveymonkey.com/results/SM-S9JVNXNQV/" target="_blank" rel="noopener noreferrer">2019 State of Clojure Survey</a> conducted earlier this year.
+      This list is based on the <a class="blog-post__link" href="https://clojure.org/news/2020/02/20/state-of-clojure-2020" target="_blank" rel="noopener noreferrer">2020 State of Clojure Survey</a>.
       <a href="#popular-editors-ref" aria-label="Back to content">↩</a>
     </li>
   </ol>
