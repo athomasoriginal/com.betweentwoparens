@@ -270,7 +270,7 @@ What the above shows is that `Welcome` is not a child of `React.component` even 
 
 Second, by `copying` rather than `linking` prototypes we could inccur a performance cost but again, in our case this cost is negligible.
 
-<aside class="blog-post__note">For those who want to know why the Reagent team chose to modify the pseudoclassical instantiation pattern I do not really have an answer.  At the end of the day, they do more or less the same things without any significant downsides. </aside>
+<aside class="blog-post__note">For those who want to know why the Reagent team chose to modify the pseudoclassical instantiation pattern I do not really have an answer.  At the end of the day, they do more or less the same things without any significant downsides.<a href="#why-modify" aria-describedby="footnote-label" id="why-modify-ref">?</a></aside>
 
 ## Conclusion
 
@@ -298,6 +298,10 @@ As a final point, this again illustrates one of Clojures super powers:  It's hos
     <li id="javascript-es6-classes">
       It is important to note that even with ES6 class syntax JavaScript still does not have classes in the traditional sense.
       <a href="#javascript-es6-classes-ref" aria-label="Back to content">↩</a>
+    </li>
+    <li id="why-modify">
+      If your curious as to why there is an <a class="blog-post__link" href="https://github.com/reagent-project/reagent/pull/437#issuecomment-520943315" target="_blank" rel="noopener noreferrer">official response</a> from the current maintainer of the Reagent to this post.
+      <a href="#why-modify-ref" aria-label="Back to content">↩</a>
     </li>
   </ol>
 </aside>
