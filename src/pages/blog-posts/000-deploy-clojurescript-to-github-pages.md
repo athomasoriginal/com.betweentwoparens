@@ -34,8 +34,8 @@ you should see a response like this:
 
 ```bash
 org.clojure/clojure 1.10.0
-  org.clojure/spec.alpha 0.2.176
-  org.clojure/core.specs.alpha 0.2.44
+org.clojure/spec.alpha 0.2.176
+org.clojure/core.specs.alpha 0.2.44
 ```
 
 <aside class="blog-post__note">Don't worry if your versions are different from mine.</aside>
@@ -105,7 +105,7 @@ Now that we have our HTML and CSS, we need to add ClojureScript.
 To do _anything_ with ClojureScript, we need to configure our project to use it. This begins by adding ClojureScript as a dependency. The way we do this in Clojure land is by creating a file called `deps.edn` at the same level as our <a href="#fn-deps" aria-describedby="footnote-label" id="fn-deps-ref"><code class="gatsby-code-text">index.html</code></a>. Once you have created your `deps.edn`, open it and add the following code:
 
 ```clojure
-{:deps {org.clojure/clojurescript {:mvn/version "1.10.520"}}}
+{:deps {org.clojure/clojurescript {:mvn/version "1.10.597"}}}
 ```
 
 <aside class="blog-post__note">If you are coming from JavaScript it can be helpful to think of the <code class="gatsby-code-text">deps.edn</code> as similar to <code class="gatsby-code-text">package.json</code>. The purpose of this file is to tell <code class="gatsby-code-text">clojure</code> which version of <code class="gatsby-code-text">ClojureScript</code> we want to use.</aside>
@@ -191,7 +191,7 @@ As I noted in the beginning, this is a minimal example without 3rd party build t
       <a href="#fn-deps-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="fn-step-3-commit">
-      <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commit/5d2c548cd995b4053ae677d5a6c64ccd2c3b58c6" target="_blank" rel="noopener noreferrer">Commit</a>
+      <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commit/575c634dc770da7000787e6feb0ed7757e505309" target="_blank" rel="noopener noreferrer">Commit</a>
       <a href="#fn-step-3-commit-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="fn-src-dir">
@@ -199,7 +199,7 @@ As I noted in the beginning, this is a minimal example without 3rd party build t
       <a href="#fn-src-dir-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="fn-step-4-commit">
-      <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commit/d0f31e3c2c981c0a736252f73b5f79a00ae08bb4" target="_blank" rel="noopener noreferrer">Commit</a>
+      <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commit/347c5580c55a80352179c39f2ce37d164bbc860c" target="_blank" rel="noopener noreferrer">Commit</a>
       <a href="#fn-step-4-commit-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="fn-project-name">
