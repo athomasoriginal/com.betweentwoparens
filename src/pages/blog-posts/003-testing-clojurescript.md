@@ -30,7 +30,7 @@ To begin, we need a demo ClojureScript project to work from.  To do this I have 
 clj -Sdeps '{:deps
               {seancorfield/clj-new {:mvn/version "0.9.0"}}}' \
   -m clj-new.create \
-  https://github.com/athomasoriginale/create-reagent-app@8c17f0f454f631f9238aed6be19aa1ca3c78f0d4 \
+  https://github.com/athomasoriginal/create-reagent-app@8c17f0f454f631f9238aed6be19aa1ca3c78f0d4 \
   tallex/time-dive
 ```
 
@@ -114,7 +114,7 @@ Now is a good time to note that `cljs.test` is not the only testing library in t
 - [midje](https://github.com/marick/Midje)
 - [fudje](https://github.com/jimpil/fudje)
 
-And you can even lean on the JavaScript ecosystem if you like.  For example, I was able to get [Jest working with ClojureScript](https://github.com/athomasoriginale/demo-clojurescript-jest)<a href="#jest-clojurescript" aria-describedby="footnote-label" id="jest-clojurescript-ref">.</a>
+And you can even lean on the JavaScript ecosystem if you like.  For example, I was able to get [Jest working with ClojureScript](https://github.com/athomasoriginal/demo-clojurescript-jest)<a href="#jest-clojurescript" aria-describedby="footnote-label" id="jest-clojurescript-ref">.</a>
 
 For now I recommend sticking with `cljs.test` and then look into one of the above when/if the need arises.
 
