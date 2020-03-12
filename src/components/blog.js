@@ -18,7 +18,7 @@ const Blog = ({ title, author, date, description, url }) => (
     <p className="blog__meta">
       <time className="blog__date">{date}</time>
       <span className="hide">posted on</span>
-      <span className=""> BY </span>
+      <span className="blog__by"> BY </span>
       <span className="blog__author">{author}</span>
     </p>
   </article>
