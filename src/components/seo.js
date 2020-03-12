@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import favicon from '../assets/Thomas.ico';
+import favicon from '../assets/thomas.ico';
 
 function SEO({ description, lang, meta, keywords, title, author, ogURL }) {
   return (

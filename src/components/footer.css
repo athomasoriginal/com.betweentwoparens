@@ -11,6 +11,7 @@
 .footer-license__description {
   font-size: 12px;
   color: var(--color-black);
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .social-icons__list {
