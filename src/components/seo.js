@@ -21,7 +21,7 @@ function SEO({ description, lang, meta, keywords, title, author, ogURL }) {
           rel: 'stylesheet'
         },
         {
-          href: 'https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap',
+          href: 'https://fonts.googleapis.com/css?family=Roboto:300i,700&display=swap',
           rel: 'stylesheet'
         }
       ]}
