@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import favicon from '../assets/thomas.ico';
+import favicon from '../assets/Thomas.ico';
 
 function SEO({ description, lang, meta, keywords, title, author, ogURL }) {
   return (
@@ -43,6 +43,10 @@ function SEO({ description, lang, meta, keywords, title, author, ogURL }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: `thomas.svg`,
         },
         {
           property: `og:url`,

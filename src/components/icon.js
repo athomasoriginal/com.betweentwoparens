@@ -11,7 +11,7 @@ import LinkedinIcon from './icon/linkedin'
 import RssIcon from './icon/rss'
 import TwitterIcon from './icon/twitter'
 import YoutubeIcon from './icon/youtube'
-import ThomasIcon from './icon/Thomas'
+import ThomasIcon from './icon/thomas'
 
 const icon = {
   git: GitIcon,
