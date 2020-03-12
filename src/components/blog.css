@@ -35,9 +35,14 @@
   color: var(--color-black);
 }
 
+.blog__by {
+  font-family: 'Noto Sans', sans-serif;
+}
+
 .blog__description {
   font-size: 18px;
   margin: 0;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .blog__description-hr {
