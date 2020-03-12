@@ -236,6 +236,12 @@ Linking header github style is a feature we want. However, this will not happen 
 
 I appreciate everyone who has helped to improve this blog whenever possible. Shoutouts:
 
+### Illustrstions
+
+- [syungb](https://github.com/syungb)
+
+### Content
+
 - [anantpaatra](https://github.com/anantpaatra/)
 - [syungb](https://github.com/syungb)
 - [lokeh](https://github.com/Lokeh)
