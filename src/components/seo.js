@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import favicon from '../assets/thomas.ico';
 
 function SEO({ description, lang, meta, keywords, title, author, ogURL }) {
   return (
@@ -23,7 +24,8 @@ function SEO({ description, lang, meta, keywords, title, author, ogURL }) {
         {
           href: 'https://fonts.googleapis.com/css?family=Roboto:300i,700&display=swap',
           rel: 'stylesheet'
-        }
+        },
+        { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
       ]}
       meta={[
         {
