@@ -241,6 +241,10 @@ Linking header github style is a feature we want. However, this will not happen 
 
 I appreciate everyone who has helped to improve this blog whenever possible. Shoutouts:
 
+### Design
+
+- [Chelsea Murray](https://www.linkedin.com/in/chelseamurraydesign/)
+
 ### Illustrations
 
 - [syungb](https://github.com/syungb)
