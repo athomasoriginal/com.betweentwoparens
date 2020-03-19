@@ -57,6 +57,10 @@ function SEO({ description, lang, meta, keywords, title, author, ogURL }) {
           content: `summary`,
         },
         {
+          name: `twitter:image`,
+          content: `https://betweentwoparens.com/thomas-cartoon.jpeg`
+        },
+        {
           name: `twitter:creator`,
           content: author,
         },
