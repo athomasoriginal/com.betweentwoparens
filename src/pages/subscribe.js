@@ -53,12 +53,14 @@ const SubscribePage = ({ data }) => {
     submitBtn,
   } = data.site.siteMetadata.subscribe
 
+  const siteMetadata = data.site.siteMetadata
+
   const fields = [userField, listField, firstNameField, emailField]
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [warning, setWarning] = useState('')
-  const warningMsg = "Please complete both the name and email field"
+  const warningMsg = 'Please complete both the name and email field'
 
   // @note perform a quick validation for empty values and when values provided
   // we will just continue to submit the form.
@@ -72,7 +74,14 @@ const SubscribePage = ({ data }) => {
 
   return (
     <Layout className="app-subscribe">
-      <SEO title="title"/>
+      <SEO
+        title={siteMetadata.seoTitle}
+        description={siteMetadata.seoDescription}
+        author={siteMetadata.author}
+        lang={siteMetadata.seoLang}
+        ogURL={siteMetadata.ogURL}
+        keywords={siteMetadata.seokeywords}
+      />
       <div className="subscribe">
         <h1 className="h__base h__1 subscribe__title">Join Us</h1>
         <div className="subscribe__description">
@@ -115,12 +124,10 @@ const SubscribePage = ({ data }) => {
             value={email}
             onChange={e => setEmail(e.target.value)}
           />
-          <button className="btn subscribe__btn">
-            {submitBtn}
-          </button>
+          <button className="btn subscribe__btn">{submitBtn}</button>
         </form>
         <p className="subscribe__help-text">
-          {warning ? warning : "You can unsubscribe at any time"}
+          {warning ? warning : 'You can unsubscribe at any time'}
         </p>
       </div>
     </Layout>
@@ -131,6 +138,14 @@ export const query = graphql`
   query {
     site {
       siteMetadata {
+        title
+        description
+        seoTitle
+        seoDescription
+        seoLang
+        seokeywords
+        ogURL
+
         subscribe {
           postUrl
           submitBtn
