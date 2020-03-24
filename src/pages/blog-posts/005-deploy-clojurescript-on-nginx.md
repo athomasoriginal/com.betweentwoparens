@@ -20,7 +20,7 @@ My [first blog post](https://betweentwoparens.com/deoploy-clojurescript-to-githu
 
 By the time we are finished I hope to have clarified the general steps involved in hosting your own ClojureScript app (**spoiler:** it's the same as hosting a JavaScript app).
 
-<aside class="blog-post__note">Beyond creating a simple ClojureScript app, this post is not really about ClojureScript. I see it's role as clearing up the process of deploying a static site.  Specifically, we will focus on deploying ClojureScript to a webserver (<a class="blog-post__link" href="https://www.nginx.com/" target="_blank" rel="noopener noreferrer">Nginx</a>).  If you are following along, you can see the <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-nginx" target="_blank" rel="noopener noreferrer">source code here</a>.</aside>
+<aside class="blog-content__note">Beyond creating a simple ClojureScript app, this post is not really about ClojureScript. I see it's role as clearing up the process of deploying a static site.  Specifically, we will focus on deploying ClojureScript to a webserver (<a class="blog-content__link" href="https://www.nginx.com/" target="_blank" rel="noopener noreferrer">Nginx</a>).  If you are following along, you can see the <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-nginx" target="_blank" rel="noopener noreferrer">source code here</a>.</aside>
 
 ## The Deploy Process
 

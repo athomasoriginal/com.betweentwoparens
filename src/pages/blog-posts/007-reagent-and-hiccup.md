@@ -44,7 +44,7 @@ The above, my friends, is `Reagent Hiccup` and it's a common way to _represent_ 
 
 If you're like me when I first started writing ClojureScript, `Hiccup` can seem a little confusing.  How is it possible to use `Hiccup` without importing a library or adding a plugin to our build tools?  How does React know what to do with `Reagent Hiccup`?  These, and more, are questions I hope to answer in this post.
 
-<aside class="blog-content__note">This post is geared toward beginner and intermediate ClojureScript developers who want to understand a little more about how <code class="gatsby-code-text">Reagent Hiccup</code> works.  As a result, we won't cover how to write Hiccup, but if that's your goal, please see this <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://purelyfunctional.tv/guide/reagent/#hiccup">Guide to Writing Hiccup</a>.</aside>
+<aside class="blog-content__note">This post is geared toward beginner and intermediate ClojureScript developers who want to understand a little more about how <code class="gatsby-code-text">Reagent Hiccup</code> works.  As a result, we won't cover how to write Hiccup, but if that's your goal, please see this <a class="blog-content__link" target="_blank" rel="noopener noreferrer" href="https://purelyfunctional.tv/guide/reagent/#hiccup">Guide to Writing Hiccup</a>.</aside>
 
 ## Reagent Hiccup
 
@@ -188,7 +188,7 @@ The reason we use Hiccup in Reagent is similar to the reasons for using JSX in R
 - Accessibility: easier to read and write than `React.createElement`
 - Expressivity: it's a Clojure data structure, so we have the full power of Clojure
 
-<aside class="blog-content__note">The above is a summary of the design goals of the React team when they introduced JSX.  What I have done is adapted the rationale for Clojure.  For more information, I encourage you to watch <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=x7cQ3mrcKaY">React: Rethinking Best Practices</a>.  Note that this talk is for React, but the design principles are still valid and applicable to Clojure</aside>
+<aside class="blog-content__note">The above is a summary of the design goals of the React team when they introduced JSX.  What I have done is adapted the rationale for Clojure.  For more information, I encourage you to watch <a class="blog-content__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=x7cQ3mrcKaY">React: Rethinking Best Practices</a>.  Note that this talk is for React, but the design principles are still valid and applicable to Clojure</aside>
 
 The second point, _Accessibility_, is particularly interesting.  One of the things I mean by this is that because Hiccup is a popular DSL in Clojure land, and not specific to `Reagent`, it can be quickly be adopted by developers already familiar with Hiccup.
 

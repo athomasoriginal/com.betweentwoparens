@@ -7,7 +7,7 @@ author: 'Thomas Mattacchione'
 keywords: ['clojurescript tutorial', 'atom github clojurescript', 'atom clojure']
 ---
 
-<aside class="blog-post__note">Interested in jumping right to my editor setup? <a class="blog-post__link" href="#my-text-editor-setup">click here</a> or you can checkout my free <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp">Atom Setup Guide Video Series</a>.</aside>
+<aside class="blog-content__note">Interested in jumping right to my editor setup? <a class="blog-content__link" href="#my-text-editor-setup">click here</a> or you can checkout my free <a class="blog-content__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp">Atom Setup Guide Video Series</a>.</aside>
 
 Becoming a great software developer probably has more to do with ones ability to accept opportunities to revisit and refine _opinions_ and _beliefs_ than we would initially think.
 
@@ -17,7 +17,7 @@ Clojure is great for this because it gives you a break from common paradigms and
 
 So now that I was at a point where I was ready to learn Clojure I needed to use a "Clojure Editor".  I wanted to do this because I wanted to [think](https://www.youtube.com/watch?v=f84n5oFoZBc) as a Clojurist and use the same tools as them. This meant [emacs](https://www.gnu.org/software/emacs/) because all my research and conversations up until this point with other Clojurists led me to the opinion that `emacs` was _the_ "Clojure Editor".
 
-<aside class="blog-post__note">Take note of the line <code class="gatsby-code-text">conversations up until this point with other Clojurists</code>.  While "use emacs" is how I interpreted what they were saying, and some even used those words, it was not actually what they were saying.  By the end of this post I will hopefully transcribe the real message as I now understand it.</aside>
+<aside class="blog-content__note">Take note of the line <code class="gatsby-code-text">conversations up until this point with other Clojurists</code>.  While "use emacs" is how I interpreted what they were saying, and some even used those words, it was not actually what they were saying.  By the end of this post I will hopefully transcribe the real message as I now understand it.</aside>
 
 Turns out that choosing emacs was not a great choice for me.  I should have stuck with the editor I knew best so that I could focus on being new at one thing at a time.  More on that later.
 
@@ -83,13 +83,13 @@ Knowing this, lets move onto how I setup Atom for my development workflow.
 
 As mentioned, `Atom` is _currently_ my preferred text editor for Clojure development.  The reason? it's portable, easy to setup and customize.
 
-<aside class="blog-post__note">My Atom setup can be found below, but if you find video tutorials more helpful checkout my youtube video series <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp">Setup Atom for Clojure Development</a> where I go through everything from installing Atom to installing, configuring and demoing each tool I use.</aside>
+<aside class="blog-content__note">My Atom setup can be found below, but if you find video tutorials more helpful checkout my youtube video series <a class="blog-content__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp">Setup Atom for Clojure Development</a> where I go through everything from installing Atom to installing, configuring and demoing each tool I use.</aside>
 
 ### Plugins and Configuration
 
 I have always found that to be productive with Clojure you don't need many tools. This is great because it means I can keep a relatively spartan setup for my Text Editor.  Now, let's take a look at the plugins I use and how I configure them.
 
-<aside class="blog-content__note">For each of the plugins listed below you will have to install them.  If you have never installed packages with Atom it's straightforward, but if you need additional help <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://flight-manual.atom.io/using-atom/sections/atom-packages/">Checkout this guide</a>.
+<aside class="blog-content__note">For each of the plugins listed below you will have to install them.  If you have never installed packages with Atom it's straightforward, but if you need additional help <a class="blog-content__link" target="_blank" rel="noopener noreferrer" href="https://flight-manual.atom.io/using-atom/sections/atom-packages/">Checkout this guide</a>.
 </aside>
 
 - [Ink](https://atom.io/packages/ink)
@@ -117,7 +117,7 @@ Remember that no matter what language you choose, there are going to be a ton of
   <h3>Footnotes</h3>
   <ol>
     <li id="popular-editors">
-      This list is based on the <a class="blog-post__link" href="https://clojure.org/news/2020/02/20/state-of-clojure-2020" target="_blank" rel="noopener noreferrer">2020 State of Clojure Survey</a>.
+      This list is based on the <a class="blog-content__link" href="https://clojure.org/news/2020/02/20/state-of-clojure-2020" target="_blank" rel="noopener noreferrer">2020 State of Clojure Survey</a>.
       <a href="#popular-editors-ref" aria-label="Back to content">↩</a>
     </li>
   </ol>
