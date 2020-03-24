@@ -11,7 +11,7 @@ About two years ago I built a small ClojureScript app that looks like this:
 
 ![calendar app](./images/004-01-calendar-app-intro.png)
 
-<aside class="blog-post__note">The source code can be found <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-reloadable-code" rel="noopener noreferrer">here</a>.</aside>
+<aside class="blog-content__note">The source code can be found <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-reloadable-code" rel="noopener noreferrer">here</a>.</aside>
 
 This app was meant to be a bite sized learning project to level up my ClojureScript interop skills.
 
@@ -50,7 +50,7 @@ As I mentioned earlier, just because you use `figwheel` or `shadow-cljs` and the
 
 Okay, now that we have reviewed what HMR is doing, lets dive into the code and transform it into `reloadable code`.
 
-<aside class="blog-post__note">Again the <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-reloadable-code" target=" _blank" rel="noopener noreferrer">source code</a> is available and if you are following along, all you have to do to trigger a <code class="gatsby-code-text">reload</code> is save a <code class="gatsby-code-text">.cljs</code> file in the <code class="gatsby-code-text">src</code> dir.</aside>
+<aside class="blog-content__note">Again the <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-reloadable-code" target=" _blank" rel="noopener noreferrer">source code</a> is available and if you are following along, all you have to do to trigger a <code class="gatsby-code-text">reload</code> is save a <code class="gatsby-code-text">.cljs</code> file in the <code class="gatsby-code-text">src</code> dir.</aside>
 
 ## "Submit" Event Listeners
 
@@ -133,7 +133,7 @@ The following is what the above looks like in our code:
 (defonce initial-load (setup))
 ```
 
-<aside class="blog-post__note">See the <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-reloadable-code/commit/ceb1ae2b907eb8c04befcb30c21e9bab81706000" target=" _blank" rel="noopener noreferrer">code</a>.</aside>
+<aside class="blog-content__note">See the <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-reloadable-code/commit/ceb1ae2b907eb8c04befcb30c21e9bab81706000" target=" _blank" rel="noopener noreferrer">code</a>.</aside>
 
 What we did:
 
@@ -252,7 +252,7 @@ Hopefully this provides a decent example set with which to start your reloadable
       <a href="#full-savage-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="what-hmr">
-      Two points here: <strong>First,</strong> <code class="gatsby-code-text">HMR</code> is not specific to ClojureScript.  It can be done in JavaScript, C++ etc.  I am only referencing ClojureScript because that is the focus of this article.  These techiques can be shared 1:1 with JavaScript, but I have not tried yet.  <strong>Second,</strong> When I said that app state is exactly where we left it, this is <i>only</i> true when you setup your reloadable code to work this way. I write about this in the <a class="blog-post__link" href="#managing-app-state">Managing App State</a> section of this post.
+      Two points here: <strong>First,</strong> <code class="gatsby-code-text">HMR</code> is not specific to ClojureScript.  It can be done in JavaScript, C++ etc.  I am only referencing ClojureScript because that is the focus of this article.  These techiques can be shared 1:1 with JavaScript, but I have not tried yet.  <strong>Second,</strong> When I said that app state is exactly where we left it, this is <i>only</i> true when you setup your reloadable code to work this way. I write about this in the <a class="blog-content__link" href="#managing-app-state">Managing App State</a> section of this post.
       <a href="#what-hmr-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="build-tools">

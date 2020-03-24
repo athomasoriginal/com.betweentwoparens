@@ -26,7 +26,7 @@ class Welcome extends React.Component {
 }
 ```
 
-<aside class="blog-content__note">To be clear, Reagent components do not specifically turn into an <a class="blog-post__link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" rel="noopener noreferrer">ES6 class syntax</a>.  This is my way of illustrating that Reagent components are class components to React.</aside>
+<aside class="blog-content__note">To be clear, Reagent components do not specifically turn into an <a class="blog-content__link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" rel="noopener noreferrer">ES6 class syntax</a>.  This is my way of illustrating that Reagent components are class components to React.</aside>
 
 While the fact that all Reagent components become class components is an interesting piece of trivia, the part that blew my mind was  _how_ they actually become <a href="#reagent-components-are-cray" aria-describedby="footnote-label" id="reagent-components-are-cray-ref">`class components`</a>.  Once I understood this, a few other things became clearer like:
 
@@ -93,7 +93,7 @@ class Welcome extends React.Component {
 }
 ```
 
-<aside class="blog-content__note">Yup, ES6 class syntax is a sexier pseudoclassical instantiation pattern and also a good example of what developers mean when they say <code class="gatsby-code-text">syntactic sugar</code>.  I should also mention that there are some differences between the two approaches which means they are not 100% equivalent, but for most developers the differences are academic.  <strong>Fun time bonus:</strong> I encourage you checkout <a  class="blog-post__link" href="https://codesandbox.io/s/pseudoclassical-instantiation-pattern-sc0fk" target="_blank" rel="noopener noreferrer">this code sandbox</a> where I have setup live examples of both.</aside>
+<aside class="blog-content__note">Yup, ES6 class syntax is a sexier pseudoclassical instantiation pattern and also a good example of what developers mean when they say <code class="gatsby-code-text">syntactic sugar</code>.  I should also mention that there are some differences between the two approaches which means they are not 100% equivalent, but for most developers the differences are academic.  <strong>Fun time bonus:</strong> I encourage you checkout <a  class="blog-content__link" href="https://codesandbox.io/s/pseudoclassical-instantiation-pattern-sc0fk" target="_blank" rel="noopener noreferrer">this code sandbox</a> where I have setup live examples of both.</aside>
 
 If the live code sandbox was not enough, we can use JavaScript's built-in introspection tools to compare the `pseudoclassical instantiation pattern` to the `ES6 class` syntax.
 
@@ -263,7 +263,7 @@ What the above shows is that `Welcome` is not a child of `React.component` even 
 
 Second, by `copying` rather than `linking` prototypes we could inccur a performance cost but again, in our case this cost is negligible.
 
-<aside class="blog-post__note">For those who want to know why the Reagent team chose to modify the pseudoclassical instantiation pattern I do not really have an answer.  At the end of the day, they do more or less the same things without any significant downsides.<a href="#why-modify" aria-describedby="footnote-label" id="why-modify-ref">?</a></aside>
+<aside class="blog-content__note">For those who want to know why the Reagent team chose to modify the pseudoclassical instantiation pattern I do not really have an answer.  At the end of the day, they do more or less the same things without any significant downsides.<a href="#why-modify" aria-describedby="footnote-label" id="why-modify-ref">?</a></aside>
 
 ## Conclusion
 
@@ -281,7 +281,7 @@ As a final point, this again illustrates one of Clojures super powers:  It's hos
   <h3>Footnotes</h3>
   <ol>
     <li id="reagent-components">
-      This is <a class="blog-post__link" href="https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#final-note" target="_blank" rel="noopener noreferrer">briefly touched on</a> in Reagents component guide but they do not explicitly use the words <code class="gatsby-code-text">React class component</code> which means that it is easy to miss the implication of this point. Hence this blog post.
+      This is <a class="blog-content__link" href="https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#final-note" target="_blank" rel="noopener noreferrer">briefly touched on</a> in Reagents component guide but they do not explicitly use the words <code class="gatsby-code-text">React class component</code> which means that it is easy to miss the implication of this point. Hence this blog post.
       <a href="#reagent-components-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="reagent-components-are-cray">
@@ -293,7 +293,7 @@ As a final point, this again illustrates one of Clojures super powers:  It's hos
       <a href="#javascript-es6-classes-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="why-modify">
-      If your curious as to why there is an <a class="blog-post__link" href="https://github.com/reagent-project/reagent/pull/437#issuecomment-520943315" target="_blank" rel="noopener noreferrer">official response</a> from the current maintainer of the Reagent to this post.
+      If your curious as to why there is an <a class="blog-content__link" href="https://github.com/reagent-project/reagent/pull/437#issuecomment-520943315" target="_blank" rel="noopener noreferrer">official response</a> from the current maintainer of the Reagent to this post.
       <a href="#why-modify-ref" aria-label="Back to content">↩</a>
     </li>
   </ol>

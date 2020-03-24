@@ -32,7 +32,7 @@ As you can imagine, this is a common software development problem and for every 
 
 ## Installing jEnv
 
-<aside class="blog-content__note">Please note that at the time of this writing I have two versions of the JDK installed right now: <strong>AdoptOpenJDK 11</strong> and <strong>AdoptOpenJDK 13</strong>.  I'm also running MacOS 10.15.2.  If you are using a different OS please head over to <a class="blog-post__link" target="_blank" rel="noopener noreferrer" href="https://www.jenv.be/">The official jEnv guide</a> to see how to install <code class="gatsby-code-text">jEnv</code> on linux.</aside>
+<aside class="blog-content__note">Please note that at the time of this writing I have two versions of the JDK installed right now: <strong>AdoptOpenJDK 11</strong> and <strong>AdoptOpenJDK 13</strong>.  I'm also running MacOS 10.15.2.  If you are using a different OS please head over to <a class="blog-content__link" target="_blank" rel="noopener noreferrer" href="https://www.jenv.be/">The official jEnv guide</a> to see how to install <code class="gatsby-code-text">jEnv</code> on linux.</aside>
 
 The first thing we have to do is install `jEnv`.
 

@@ -11,7 +11,7 @@ ClojureScript rewards you for having more than a passing acquaintance with softw
 
 Because we are focusing on the early steps of test toolchain setup this post will not discuss testing strategies like TDD, best practices, how to use libraries or even writing ClojureScript.  We are dedicated to understanding _how_ to setup our toolchain.
 
-<aside class="blog-content__note">If you are following along please make sure you have Clojure setup on your local machine.  To do this, visit the <a  class="blog-post__link" href="https://clojurescript.org/guides/quick-start" target="_blank" rel="noopener noreferrer">ClojureScript Quickstart</a> and follow the instructions there.</aside>
+<aside class="blog-content__note">If you are following along please make sure you have Clojure setup on your local machine.  To do this, visit the <a  class="blog-content__link" href="https://clojurescript.org/guides/quick-start" target="_blank" rel="noopener noreferrer">ClojureScript Quickstart</a> and follow the instructions there.</aside>
 
 ## ClojureScript Project Setup
 
@@ -25,7 +25,7 @@ clj -Sdeps '{:deps
   tallex/time-dive
 ```
 
-<aside class="blog-content__note">The above command uses <a  class="blog-post__link" href="https://github.com/seancorfield/clj-new" target="_blank" rel="noopener noreferrer">clj-new</a> to generate a modern ClojureScript app. Think of it like the ClojureScript version of <a class="blog-post__link" href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer">create-react-app</a>. If you're curious about this project template your can read more about it in an earlier post I wrote here: <a  class="blog-post__link" href="https://betweentwoparens.com/start-a-clojurescript-app-from-scratch" target="_blank" rel="noopener noreferrer">Start a ClojureScript App from Scratch</a>.</aside>
+<aside class="blog-content__note">The above command uses <a  class="blog-content__link" href="https://github.com/seancorfield/clj-new" target="_blank" rel="noopener noreferrer">clj-new</a> to generate a modern ClojureScript app. Think of it like the ClojureScript version of <a class="blog-content__link" href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer">create-react-app</a>. If you're curious about this project template your can read more about it in an earlier post I wrote here: <a  class="blog-content__link" href="https://betweentwoparens.com/start-a-clojurescript-app-from-scratch" target="_blank" rel="noopener noreferrer">Start a ClojureScript App from Scratch</a>.</aside>
 
 Once the above command finishes running you will have a project called `time-dive`.  It should look like this:
 
@@ -86,7 +86,7 @@ Now let's write a test for our `add` function.  Open `time_dive_test.cljs` and w
   (is (= (time-dive/add 1 1) 2)))
 ```
 
-<aside class="blog-content__note">Two notes about the implicit: <strong>First</strong>, for every Clojure(Script) file we will have a corresponding test file. The test file will share the name of the ClojureScript file it is testing.  The only difference is that we suffix it with <code class="gatsby-code-text">_test</code>.  This a common convention.  <strong>Secondly</strong>, notice that we are able to use <code class="gatsby-code-text">cljs.test</code> but we did not import it? This is because <code class="gatsby-code-text">cljs.test</code> is <a class="blog-post__link" href="https://clojurescript.org/tools/testing" target="_blank" rel="noopener noreferrer">shipped with ClojureScript</a>.</aside>
+<aside class="blog-content__note">Two notes about the implicit: <strong>First</strong>, for every Clojure(Script) file we will have a corresponding test file. The test file will share the name of the ClojureScript file it is testing.  The only difference is that we suffix it with <code class="gatsby-code-text">_test</code>.  This a common convention.  <strong>Secondly</strong>, notice that we are able to use <code class="gatsby-code-text">cljs.test</code> but we did not import it? This is because <code class="gatsby-code-text">cljs.test</code> is <a class="blog-content__link" href="https://clojurescript.org/tools/testing" target="_blank" rel="noopener noreferrer">shipped with ClojureScript</a>.</aside>
 
 `cljs.test` is a minimal library with everything you need to test ClojureScript<a href="#cljs-test" aria-describedby="footnote-label" id="cljs-test-ref">.</a>  Specifically it comes with **assertion library** and **test runner** tools.  The above test introduces you to the following **assertion library** syntax and helpers:
 
@@ -217,7 +217,7 @@ For our purposes we are going to use [jsdom](https://github.com/jsdom/jsdom) whi
 
 What I will illustrate in this section is how to setup figwheel to run your ClojureScript tests in `jsdom` and then how to run them from the command line.  This section is going to be a little more interesting because we need to lean on the javascript ecosystem so I will try to be as clear as possible.
 
-<aside class="blog-content__note">housekeeping: ensure you have <a class="blog-post__link" href="https://yarnpkg.com/en/docs/getting-started" target="_blank" rel="noopener noreferrer">yarn</a> and <a class="blog-post__link" href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">node</a> installed before continuing. You can also swap out <code class="gatsby-code-text">yarn</code> for <code class="gatsby-code-text">npm</code>.</aside>
+<aside class="blog-content__note">housekeeping: ensure you have <a class="blog-content__link" href="https://yarnpkg.com/en/docs/getting-started" target="_blank" rel="noopener noreferrer">yarn</a> and <a class="blog-content__link" href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">node</a> installed before continuing. You can also swap out <code class="gatsby-code-text">yarn</code> for <code class="gatsby-code-text">npm</code>.</aside>
 
 ### Step 1 Add JavaScript Dependencies
 
@@ -371,7 +371,7 @@ Create a new file in `test` called `tallex.clj` and add the following code:
 ```
 
 <aside class="blog-content__note">For those not familiar with <code class="gatsby-code-text">clojure.java.shell</code> it is going to return a map with an <code class="gatsby-code-text">:exit</code> code of <code class="gatsby-code-text">0</code> or <code class="gatsby-code-text">1</code>.  If it is <code class="gatsby-code-text">1</code> that means something has gone wrong and your process will just hang and tell you nothing about what went wrong.  For example, pretend you skipped step 1 - 2 of this section.  If you run the above, node will throw an error saying that you do not have jsdom installed.  However, you will not know this because <code class="gatsby-code-text">clojure.java.shell</code> will silently eat that message and
-<a class="blog-post__link" href="https://clojureverse.org/t/why-doesnt-my-program-exit/3754/1" target="_blank" rel="noopener noreferrer">just do nothing</a>.  So what we do is provide a little developer convenience and add a check.  If anything goes wrong we print it and then kill the program.</aside>
+<a class="blog-content__link" href="https://clojureverse.org/t/why-doesnt-my-program-exit/3754/1" target="_blank" rel="noopener noreferrer">just do nothing</a>.  So what we do is provide a little developer convenience and add a check.  If anything goes wrong we print it and then kill the program.</aside>
 
 When we call `run-js-test-environment` it is ultimatley responsible for running `node test_environment.js file.js url` like we illustrated in [Step 2 Setup a JSDOM Environment](#step-2-setup-a-jsdom-environment).
 

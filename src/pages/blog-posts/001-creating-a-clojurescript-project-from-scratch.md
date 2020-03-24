@@ -13,7 +13,7 @@ My goal with this post is to provide a step by step guide into writing a Clojure
 
 To get us into the headspace, imagine that we are a company called `tallex` and we are building an app called `time dive`. This excercise will prove useful when learning how to structure/name our files/folders.
 
-<aside class="blog-post__note">In case you get stuck at any point, I have a <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app" target="_blank" rel="noopener noreferrer">demo project</a> which you can reference as you work through this post.  There won't be too much ClojureScript code because we are focusing on setup, but if at any point you feel overwhelmed by the ClojureScript syntax I recommend this <a class="blog-post__link" href="https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes" target="_blank" rel="noopener noreferrer">quick 15 minute primer to the syntax of Clojure</a>.</aside>
+<aside class="blog-content__note">In case you get stuck at any point, I have a <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app" target="_blank" rel="noopener noreferrer">demo project</a> which you can reference as you work through this post.  There won't be too much ClojureScript code because we are focusing on setup, but if at any point you feel overwhelmed by the ClojureScript syntax I recommend this <a class="blog-content__link" href="https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes" target="_blank" rel="noopener noreferrer">quick 15 minute primer to the syntax of Clojure</a>.</aside>
 
 ## Setup Project Structure
 
@@ -39,7 +39,7 @@ The goal of this section is to build out the above folder structure.
 
 Go ahead and create each file and folder exactly as seen in the above code <a href="#project-structure-commit" aria-describedby="footnote-label" id="project-structure-commit-ref">block.</a>
 
-<aside class="blog-content__note">Notice how the files and folders in the <code class="gatsby-code-text">src</code> and <code class="gatsby-code-text">tests</code> dirs have underscores in their names?  This is called <a class="blog-post__link" href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake case</a> and and we do this when naming files and folder because it is a <a class="blog-post__link" href="https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html" target="_blank" rel="noopener noreferrer">java convention</a>.  Yes, even if you are writing a ClojureScript project we follow this convention.</aside>
+<aside class="blog-content__note">Notice how the files and folders in the <code class="gatsby-code-text">src</code> and <code class="gatsby-code-text">tests</code> dirs have underscores in their names?  This is called <a class="blog-content__link" href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake case</a> and and we do this when naming files and folder because it is a <a class="blog-content__link" href="https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html" target="_blank" rel="noopener noreferrer">java convention</a>.  Yes, even if you are writing a ClojureScript project we follow this convention.</aside>
 
 ### Step 2 - Add HTML
 
@@ -110,7 +110,7 @@ Now we finally get to write some ClojureScript. Open `time_dive.cljs` and sprink
 The above defines a `namespace` called `tallex.time-dive`. This `namespace` is going to be the `entry point` of our app<a href="#entry-point-conventions" aria-describedby="footnote-label" id="entry-point-conventions-ref">.</a>
 
 <aside class="blog-content__note">A <code class="gatsby-code-text">namespace</code> is the <code class="gatsby-code-text">tallex.time-dive</code> part.  There are a few implicit details which I want to highlight.  <strong>Firstly</strong>, namespaces follow the folder path structure.  <strong>Secondly</strong>, if your namespace has multiple words like <code class="gatsby-code-text">time-dive</code> we use dashes not underscores to separate them.  <strong>Lastly</strong>, best practice is to multi-segment our namespace name.  A multi-segmented name is when we have multipe words/phrases separated by dots.  For example, <code class="gatsby-code-text">tallex.time-dive</code> is multi-segmented.  The first segment is <code class="gatsby-code-text">tallex</code> and the second is
-<code class="gatsby-code-text">time-dive</code>.  Best practice is to have two or more segments. If we only have one segment it can lead to name conflicts.  Having said this, it's not the end of the world if you only have a single-segment namespace. For example, there are respected developers who use <a class="blog-post__link" href="https://github.com/ztellman/virgil" target="_blank" rel="noopener noreferrer">single-segmented namespaces</a>.</aside>
+<code class="gatsby-code-text">time-dive</code>.  Best practice is to have two or more segments. If we only have one segment it can lead to name conflicts.  Having said this, it's not the end of the world if you only have a single-segment namespace. For example, there are respected developers who use <a class="blog-content__link" href="https://github.com/ztellman/virgil" target="_blank" rel="noopener noreferrer">single-segmented namespaces</a>.</aside>
 
 ### Step 5 - Add ClojureScript Tests
 
@@ -144,7 +144,7 @@ As you may have guessed, `clj` is my build tool of choice and what we will use i
 
 ### Step 6 - Add deps file
 
-<aside class="blog-post__note">If this is your first time working with Clojure(Script) you will need to be sure you have <code class="gatsby-code-text">clojure</code> installed on your local machine before going further.  Not sure?  Want to know how?  I recommend taking a look at my free <a class="blog-post__link" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA" target="_blank" rel="noopener noreferrer">Getting Started with ClojureScript</a> Youtube series which will take you through the whole process or checkout the official written <a class="blog-post__link" href="https://clojurescript.org/guides/quick-start" target="_blank" rel="noopener noreferrer">ClojureScript Quickstart Guide</a> </aside>
+<aside class="blog-content__note">If this is your first time working with Clojure(Script) you will need to be sure you have <code class="gatsby-code-text">clojure</code> installed on your local machine before going further.  Not sure?  Want to know how?  I recommend taking a look at my free <a class="blog-content__link" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA" target="_blank" rel="noopener noreferrer">Getting Started with ClojureScript</a> Youtube series which will take you through the whole process or checkout the official written <a class="blog-content__link" href="https://clojurescript.org/guides/quick-start" target="_blank" rel="noopener noreferrer">ClojureScript Quickstart Guide</a> </aside>
 
 To use `clj` we need to `configure` it. `clj` is configured using a file called `deps.edn`. Begin by creating a `deps.edn` file in the root of our project and then make it look like this<a href="#build-tools-deps" aria-describedby="footnote-label" id="build-tools-deps-ref">:</a>
 
@@ -189,7 +189,7 @@ wait a bit and `:dev` will compile our code, automatically open a browser tab an
 
 ![screenshot of time dive app](./images/001-time-dive-app.png)
 
-<aside class="blog-post__note">I also want to draw your attention towards two new directories that were auto generated for you when you ran <code class="gatsby-code-text">clj -A:dev</code>: <code class="gatsby-code-text">.cpcache/</code> and <code class="gatsby-code-text">out/</code>. I bring this up because it's a good practice to avoid version controlling these folders.  If you are wondering what this might look like I have done this as an <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/0cef20e6773ab5d2f93253926dafb4e05e0673f7" target="_blank" rel="noopener noreferrer">extra step</a></aside>
+<aside class="blog-content__note">I also want to draw your attention towards two new directories that were auto generated for you when you ran <code class="gatsby-code-text">clj -A:dev</code>: <code class="gatsby-code-text">.cpcache/</code> and <code class="gatsby-code-text">out/</code>. I bring this up because it's a good practice to avoid version controlling these folders.  If you are wondering what this might look like I have done this as an <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/0cef20e6773ab5d2f93253926dafb4e05e0673f7" target="_blank" rel="noopener noreferrer">extra step</a></aside>
 
 Before we jump over to the next section I want to draw your attention to the fact that we have zero dependencies. Think about this: our files are being watched, code is recompiled on save, we are greeted with a browser repl and all of this with zero dependencies. Yes, we are still missing a few niceties, but we are not done yet. We will get you to hero toolchain status soon.
 
@@ -225,7 +225,7 @@ It starts by adding figwheel as a dependency. We do this by opening the `deps.ed
  }
 ```
 
-<aside class="blog-content__note">Clojure libraries are generally found in <a class="blog-post__link" href="https://clojars.org" target="_blank" rel="noopener noreferrer">Clojars</a> which is a popular Clojure package repository.  This is where you can go to find packages and examples of how to use the packages in our projects<a href="#package-repos" aria-describedby="footnote-label" id="package-repos-ref">.</a>  Also note that when you add new dependencies to your project you will also have to stop and restart your app.</aside>
+<aside class="blog-content__note">Clojure libraries are generally found in <a class="blog-content__link" href="https://clojars.org" target="_blank" rel="noopener noreferrer">Clojars</a> which is a popular Clojure package repository.  This is where you can go to find packages and examples of how to use the packages in our projects<a href="#package-repos" aria-describedby="footnote-label" id="package-repos-ref">.</a>  Also note that when you add new dependencies to your project you will also have to stop and restart your app.</aside>
 
 ### Step 8 - Add build configuration
 
@@ -345,7 +345,7 @@ Now when you try to run the app you will notice that the `console.log` does not 
 - [^:figwheel-hooks]() - `meta data` telling figwheel we want to use hooks in our namespace
 - [^:after-load]() - `meta data` telling figwheel that we want it to run the function we specified above, `re-render`, after each compile
 
-<aside class="blog-content__note">ClojureScript provides this great mechanism called <a class="blog-post__link" href="https://clojure.org/reference/metadata" target="_blank" rel="noopener noreferrer">metadata</a> to our vars, functions etc.</aside>
+<aside class="blog-content__note">ClojureScript provides this great mechanism called <a class="blog-content__link" href="https://clojure.org/reference/metadata" target="_blank" rel="noopener noreferrer">metadata</a> to our vars, functions etc.</aside>
 
 This is a rich topic so my hope is that I was able to illustrate the fact that HMR and React are not linked, and provide a little insight into how you can use this feature outside of React.
 
@@ -468,19 +468,19 @@ These resources are great next steps for learning to work with Clojure(Script).
       <a href="#project-structure-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="project-structure-commit">
-      <strong>Sanity Check</strong>: your project should look like this: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/96fafa51dfa8cb2e1ea208961c1ff2a3e4eb663a" target="_blank" rel="noopener noreferrer">96fafa5</a>
+      <strong>Sanity Check</strong>: your project should look like this: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/96fafa51dfa8cb2e1ea208961c1ff2a3e4eb663a" target="_blank" rel="noopener noreferrer">96fafa5</a>
       <a href="#project-structure-commit-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="resources-dir">
-      You will notice HTML, CSS, Images etc will go in our <code class="gatsby-code-text">Resources</code> dir.  This is not a hard and fast rule, but it is a helpful convention.  Also, <strong>sanity Check</strong>:  <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/58975cc17d779a6f4c7947c9c21a468a6711671e" target="_blank" rel="noopener noreferrer">58975cc</a>
+      You will notice HTML, CSS, Images etc will go in our <code class="gatsby-code-text">Resources</code> dir.  This is not a hard and fast rule, but it is a helpful convention.  Also, <strong>sanity Check</strong>:  <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/58975cc17d779a6f4c7947c9c21a468a6711671e" target="_blank" rel="noopener noreferrer">58975cc</a>
       <a href="#resources-dir-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-css">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/3aab28449076fb0d80e801d0a1f8cf0c5d8c5e42" target="_blank" rel="noopener noreferrer">3aab284</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/3aab28449076fb0d80e801d0a1f8cf0c5d8c5e42" target="_blank" rel="noopener noreferrer">3aab284</a>
       <a href="#sanity-check-css-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-cljs">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/863278997d8dd23e3c56dbb61cab7c5138aa423c" target="_blank" rel="noopener noreferrer">8632789</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/863278997d8dd23e3c56dbb61cab7c5138aa423c" target="_blank" rel="noopener noreferrer">8632789</a>
       <a href="#sanity-check-cljs-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="entry-point-conventions">
@@ -488,11 +488,11 @@ These resources are great next steps for learning to work with Clojure(Script).
       <a href="#entry-point-conventions-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-cljs-test">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/90a576f927947fcd620c6bcb340d3dc0427d2b06" target="_blank" rel="noopener noreferrer">90a576f</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/90a576f927947fcd620c6bcb340d3dc0427d2b06" target="_blank" rel="noopener noreferrer">90a576f</a>
       <a href="#sanity-check-cljs-test-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="build-tools-deps">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/ba182b9a2b7f5b753bb7b16bb5ff4bf8384ab0bd" target="_blank" rel="noopener noreferrer">288a24c</a>s
+      <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/ba182b9a2b7f5b753bb7b16bb5ff4bf8384ab0bd" target="_blank" rel="noopener noreferrer">288a24c</a>s
       <a href="#build-tools-deps-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="what-is-dev-toolchain">
@@ -500,15 +500,15 @@ These resources are great next steps for learning to work with Clojure(Script).
       <a href="#what-is-dev-toolchain-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="toolchain-tools">
-       There is also <a class="blog-post__link" href="http://shadow-cljs.org/" target="_blank" rel="noopener noreferrer">shadow-cljs</a> which does some great stuff.  However, for me, Figwheel does what I need, provides <a class="blog-post__link" href="https://figwheel.org/" target="_blank" rel="noopener noreferrer">excellent documentation</a> and was recently rewritten to overcome some of it's age.  This is not to say that shadow-cljs is not amazing, it is.  This is just my preference.
+       There is also <a class="blog-content__link" href="http://shadow-cljs.org/" target="_blank" rel="noopener noreferrer">shadow-cljs</a> which does some great stuff.  However, for me, Figwheel does what I need, provides <a class="blog-content__link" href="https://figwheel.org/" target="_blank" rel="noopener noreferrer">excellent documentation</a> and was recently rewritten to overcome some of it's age.  This is not to say that shadow-cljs is not amazing, it is.  This is just my preference.
       <a href="#toolchain-tools-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-toolchain">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/7d642c5416413da13c9cbebd31e33a563e917c90" target="_blank" rel="noopener noreferrer">27a54a3</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/7d642c5416413da13c9cbebd31e33a563e917c90" target="_blank" rel="noopener noreferrer">27a54a3</a>
       <a href="#sanity-check-toolchain-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="package-repos">
-      <code class="gatsby-code-text">Clojars</code> is not the only way to find versions, or even gain access to libraries.  Another place to look is on Github where the source code for your packages live.  Further, you can even specify a speific hash to download the packages directly from github.  Feel read to read more about that <a class="blog-post__link" href="https://clojure.org/reference/deps_and_cli#_dependencies" target="_blank" rel="noopener noreferrer">here</a>.
+      <code class="gatsby-code-text">Clojars</code> is not the only way to find versions, or even gain access to libraries.  Another place to look is on Github where the source code for your packages live.  Further, you can even specify a speific hash to download the packages directly from github.  Feel read to read more about that <a class="blog-content__link" href="https://clojure.org/reference/deps_and_cli#_dependencies" target="_blank" rel="noopener noreferrer">here</a>.
       <a href="#package-repos-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="build-config-options">
@@ -516,19 +516,19 @@ These resources are great next steps for learning to work with Clojure(Script).
       <a href="#build-config-options-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-build-config">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/46e46990726d61638e9b80f6345e4b6683ac1e70" target="_blank" rel="noopener noreferrer">980f18f</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/46e46990726d61638e9b80f6345e4b6683ac1e70" target="_blank" rel="noopener noreferrer">980f18f</a>
       <a href="#sanity-check-build-config-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-resources-restruct">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/4b6b656323ea5cda9edb9265e61e49de6d9f7cfc" target="_blank" rel="noopener noreferrer">da3dbb5</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/4b6b656323ea5cda9edb9265e61e49de6d9f7cfc" target="_blank" rel="noopener noreferrer">da3dbb5</a>
       <a href="#sanity-check-resources-restruct-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-reagent">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/4c8cbd67dcc24d0365feb25bf511e03cba0fcf36" target="_blank" rel="noopener noreferrer">205c680</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/4c8cbd67dcc24d0365feb25bf511e03cba0fcf36" target="_blank" rel="noopener noreferrer">205c680</a>
       <a href="#sanity-check-reagent-ref" aria-label="Back to content">↩</a>
     </li>
     <li id="sanity-check-reagent-two">
-      <strong>Sanity Check</strong>: commit <a class="blog-post__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/e1cf66d7ed1973d4fa1ec1091c0cbe16e61cf4b4" target="_blank" rel="noopener noreferrer">f13ee9b</a>
+      <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/e1cf66d7ed1973d4fa1ec1091c0cbe16e61cf4b4" target="_blank" rel="noopener noreferrer">f13ee9b</a>
       <a href="#sanity-check-reagent-two-ref" aria-label="Back to content">↩</a>
     </li>
   </ol>
