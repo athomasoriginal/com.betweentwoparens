@@ -5,24 +5,24 @@
   "version": "0.1.0",
   "author": "Thomas Mattacchione <thomasmattacchione@gmail.com>",
   "dependencies": {
-    "gatsby": "2.19.27",
-    "gatsby-cli": "^2.8.22",
-    "gatsby-plugin-feed": "2.3.27",
-    "gatsby-plugin-google-analytics": "2.1.36",
-    "gatsby-plugin-manifest": "2.2.42",
-    "gatsby-plugin-offline": "3.0.35",
-    "gatsby-plugin-react-helmet": "3.1.22",
-    "gatsby-plugin-sharp": "2.4.5",
-    "gatsby-remark-autolink-headers": "2.1.24",
+    "gatsby": "2.20.4",
+    "gatsby-cli": "^2.11.1",
+    "gatsby-plugin-feed": "2.4.1",
+    "gatsby-plugin-google-analytics": "2.2.1",
+    "gatsby-plugin-manifest": "2.3.2",
+    "gatsby-plugin-offline": "3.1.1",
+    "gatsby-plugin-react-helmet": "3.2.1",
+    "gatsby-plugin-sharp": "2.5.3",
+    "gatsby-remark-autolink-headers": "2.2.1",
     "gatsby-remark-external-links": "0.0.4",
-    "gatsby-remark-images": "3.1.44",
-    "gatsby-remark-prismjs": "3.3.32",
-    "gatsby-source-filesystem": "2.1.48",
-    "gatsby-transformer-remark": "2.6.53",
+    "gatsby-remark-images": "3.2.1",
+    "gatsby-remark-prismjs": "3.4.1",
+    "gatsby-source-filesystem": "2.2.2",
+    "gatsby-transformer-remark": "2.7.1",
     "prismjs": "1.19.0",
     "prop-types": "15.7.2",
-    "react": "16.13.0",
-    "react-dom": "^16.12.0",
+    "react": "16.13.1",
+    "react-dom": "^16.13.1",
     "react-helmet": "5.2.1"
   },
   "keywords": [
@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.2"
   },
   "repository": {
     "type": "git",
