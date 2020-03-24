@@ -395,11 +395,11 @@ They are: notes, code blocks, lists */
 /* We are resetting the style of anchor links because they automatically inherit
    from the above styles which we only want applied to inline text links */
 
-.blog-content .blog-content__link,
+.blog-content .blog-content__section-link,
 .blog-content .social-icons__list-item-link {
   background: initial;
 }
-.blog-content .blog-content__link:hover,
+.blog-content .blog-content__section-link:hover,
 .blog-content .social-icons__list-item-link:hover {
   background: initial;
 }
