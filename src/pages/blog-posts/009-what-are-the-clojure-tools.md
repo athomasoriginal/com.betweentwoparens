@@ -25,13 +25,13 @@ So, in this post I want to share some of my knowledge of what the `clj/clojure` 
 
 Before we begin, let's review what the Clojure CLI tool is.  If you installed clojure using the [official guide] you will be using the clojure CLI tool.  This is the fancy name for the `clj` or `clojure` commands.
 
-This tool was officially released as part of Clojure 1.9.  A few interesting notes about it.  Firstly, `clj` and `clojure` are just bash scripts.  Secondly, both `clj` and `clojure` actually do the same thing under the hood<a href="#clj-calls-clojure-note" aria-describedby="footnote-label" id="clj-calls-clojure--ref">.</a>  This second point was confusing for me, so I will explain it a little.
+This tool was officially released as part of Clojure 1.9.  A few interesting notes about it.  Firstly, `clj` and `clojure` are just bash scripts.  Secondly, both `clj` and `clojure` actually do the same thing under the hood<a href="#clj-calls-clojure-note" aria-describedby="footnote-label" id="clj-calls-clojure-ref">.</a>  This second point was confusing for me, so I will explain it a little.
 
-Calling the `clj` command will call the `clojure` command.  The difference is that when you call `clj` it wraps the `clojure` command with a tool called [rlwrap].  Effectively, this adds [readline] support to the `clojure` command.  Translation:  It makes it nicer to type in the Clojure REPL via the terminal.  For this reason, you will be encouraged to use `clj` during development, but in production scripts you will see `clojure` used.
+Calling the `clj` command will call the `clojure` command.  The difference is that when you call `clj` it wraps the `clojure` command with a tool called [rlwrap].  Effectively, this adds [readline] support to the `clojure` command.  Translation:  It makes it nicer to type in the Clojure REPL via the terminal.  For this reason, you will be encouraged to use `clj` during development, where as `clojure` is more commonly used on production scripts<a href="#when-to-use-clojure-script" aria-describedby="footnote-label" id="when-to-use-clojure-script-ref">.</a>
 
 <aside class="blog-content__note">For the rest of this post I am going to refer to the <code class="gatsby-code-text">clj/clojure</code> tool as just <code class="gatsby-code-text">clj</code></aside>
 
-Now that were friendly with the `clj` tool, let's dive into what it can do:
+Now that we're friendly with the `clj` tool, let's dive into what it can do:
 
 **Run** a clojure repl and programs respectively
 
@@ -136,9 +136,9 @@ The first point is that you will choose one of the three tools (`clj`, `lein`, o
 
 If you're curious which to choose, I think it's obvious that I would suggest `clj`.  The reason I like `clj` is because the tool is simple and easy to use.  You can read through `clj` and `tools.deps.alpha` in an afternoon and understand what they are doing if you had to.  If the same occurs with `lein` or `boot`, you will not have any such luck.
 
-Secondly, and most importantly, the Clojure community is really leaning into building tools for `clj`.  For example, where `lein` used to have significantly more functionality, the community has built a ton of [incredible tools] that will cover all your requirements.
+Secondly, and most importantly, the Clojure community is really leaning into building tools for `clj`.  For example, where `lein` used to have significantly more functionality, the community has built a ton of [incredible tools] that will cover many of your essential requirements.
 
-Finally, when it comes to managing your project configurations and building out maintainable organizational structures (monorepo) it doesn't get easier than `clj`.
+Finally, when it comes to managing your project configurations and building out maintainable organizational structures (monorepo) it doesn't get easier than `clj`<a href="#monorepo-comment" aria-describedby="footnote-label" id="monorepo-comment-ref">.</a>
 
 So yes, `clj` for the win.
 
@@ -148,6 +148,14 @@ So yes, `clj` for the win.
     <li id="clj-calls-clojure-note">
       You can see this <a class="blog-content__link" href="https://github.com/clojure/brew-install/blob/1.10.1/src/main/resources/clj#L4" target="_blank" rel="noopener noreferrer">here</a>.
       <a href="#clj-calls-clojure-note-ref" aria-label="Back to content">↩</a>
+    </li>
+    <li id="when-to-use-clojure-script">
+      Of course, production scripts are not the only times you would want to use the <code class="gatsby-code-text">clojure</code> command.  Other times include when you are combining it with other tools e.g. emacs.  In general, if you are finding the <code class="gatsby-code-text">clj</code> command is causing some headaches when composing tools, give <code class="gatsby-code-text">clojure</code> a try.  Thanks, sogaiu for the tip!
+      <a href="#when-to-use-clojure-script-ref" aria-label="Back to content">↩</a>
+    </li>
+    <li id="monorepo-comment">
+      Just some clarification aroud the "monorepo" point. Choosing a sane structure for your monorepo is important to mmaking this work.  Having said this, I have a personal project which has 4 or 5 sub-projects and I have not run into any issues as of yet.  I also know that others in the community have done similar things.  So in this case, it would be important to further look into my structure...but that can be fore another post.
+      <a href="#monorepo-comment-ref" aria-label="Back to content">↩</a>
     </li>
   </ol>
 </aside>
