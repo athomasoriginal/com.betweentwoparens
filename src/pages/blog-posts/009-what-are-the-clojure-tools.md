@@ -46,7 +46,7 @@ clj -m your-clojure-program
 **build** a java classpath + resolve dependencies
 
 ```bash
-clj -Sdeps '{:deps {clj-time {:mvn/version "0.14.2"}}}'
+clj -Sdeps '{:deps {bidi {:mvn/version "2.1.6"}}}'
 ```
 
 This brings us to the third factoid about the `clj` tool.  While it appears `clj` is running clojure programs - building classpaths and resolving dependencies - it actually only cares about running clojure programs.
