@@ -134,7 +134,7 @@ The first point is that you will choose one of the three tools (`clj`, `lein`, o
 
 <aside class="blog-content__note">This is not 100% true because the "build" story for <code class="gatsby-code-text">clj</code> is not as "easy" as <code class="gatsby-code-text">lein</code> which has led to examples of <a class="blog-content__link" href="https://github.com/oakes/full-stack-clj-example" rel="noopener noreferrer">clj calling to lein</a> just for the production builds of their apps</aside>
 
-If your curious which to choose, I think it's obvious that I would suggest `clj`.  The reason I like `clj` is because the tool is simple and easy to use.  You can read through `clj` and `tools.deps.alpha` in an afternoon and understand what they are doing if you had to.  If the same occurs with `lein` or `boot`, you will not have any such luck.
+If you're curious which to choose, I think it's obvious that I would suggest `clj`.  The reason I like `clj` is because the tool is simple and easy to use.  You can read through `clj` and `tools.deps.alpha` in an afternoon and understand what they are doing if you had to.  If the same occurs with `lein` or `boot`, you will not have any such luck.
 
 Secondly, and most importantly, the Clojure community is really leaning into building tools for `clj`.  For example, where `lein` used to have significantly more functionality, the community has built a ton of [incredible tools] that will cover all your requirements.
 
