@@ -381,7 +381,8 @@ They are: notes, code blocks, lists */
 
 /* Links */
 
-.blog-content a {
+.blog-content a,
+.blog-content__toc ul li a {
   color: black;
   font-weight: bold;
   background: linear-gradient(
@@ -392,7 +393,8 @@ They are: notes, code blocks, lists */
   text-decoration: none;
 }
 
-.blog-content a:hover {
+.blog-content a:hover,
+.blog-content__toc ul li a:hover {
   background: rgba(97, 130, 237, 0.3);
 }
 
