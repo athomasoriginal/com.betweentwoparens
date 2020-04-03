@@ -100,8 +100,6 @@ module.exports = {
     }
   },
   plugins: [
-    `gatsby-plugin-feed`,
-    `gatsby-plugin-sharp`,
     /**
      * Analytics
      */
@@ -117,6 +115,8 @@ module.exports = {
         // respectDNT: true,
       },
     },
+    `gatsby-plugin-feed`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
