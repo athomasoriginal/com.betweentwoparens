@@ -100,21 +100,6 @@ module.exports = {
     }
   },
   plugins: [
-    /**
-     * Analytics
-     */
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: process.env.GATSBY_GA_TRACKING_ID,
-    //     // Puts tracking script in the head instead of the body
-    //     head: true,
-    //     // Setting this parameter is optional
-    //     // anonymize: true,
-    //     // Setting this parameter is also optional
-    //     // respectDNT: true,
-    //   },
-    // },
     `gatsby-plugin-feed`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
