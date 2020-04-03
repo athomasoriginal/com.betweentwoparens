@@ -215,6 +215,10 @@
   margin-top: 2px;
 }
 
+.header__nav-item-text:hover {
+  border-bottom: 3px solid var(--color-yellow-53);;
+}
+
 /* nav list item styles */
 .header__nav-item-text a {
   text-decoration: none;
