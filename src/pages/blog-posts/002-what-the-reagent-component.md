@@ -282,19 +282,19 @@ As a final point, this again illustrates one of Clojures super powers:  It's hos
   <ol>
     <li id="reagent-components">
       This is <a class="blog-content__link" href="https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#final-note" target="_blank" rel="noopener noreferrer">briefly touched on</a> in Reagents component guide but they do not explicitly use the words <code class="gatsby-code-text">React class component</code> which means that it is easy to miss the implication of this point. Hence this blog post.
-      <a href="#reagent-components-ref" aria-label="Back to content">↩</a>
+      <a href="#reagent-components-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="reagent-components-are-cray">
       The part that blew my hair back was the process of understanding exactly what was happening to transform a Reagent component to a class component and then applying context to why they were doing it in the way they were.
-      <a href="#reagent-components-are-cray-ref" aria-label="Back to content">↩</a>
+      <a href="#reagent-components-are-cray-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="javascript-es6-classes">
       It is important to note that even with ES6 class syntax JavaScript still does not have classes in the traditional sense.
-      <a href="#javascript-es6-classes-ref" aria-label="Back to content">↩</a>
+      <a href="#javascript-es6-classes-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="why-modify">
       If your curious as to why there is an <a class="blog-content__link" href="https://github.com/reagent-project/reagent/pull/437#issuecomment-520943315" target="_blank" rel="noopener noreferrer">official response</a> from the current maintainer of the Reagent to this post.
-      <a href="#why-modify-ref" aria-label="Back to content">↩</a>
+      <a href="#why-modify-ref" aria-label="Back to content">Back</a>
     </li>
   </ol>
 </aside>

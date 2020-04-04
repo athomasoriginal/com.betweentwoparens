@@ -444,23 +444,23 @@ In all seriousness though, this is just a starting point.  Set this up for yours
   <ol>
     <li id="intro-to-testing">
       This might be redundant because you need to have this knowledge no matter what you are doing with programming, but I have always felt testing requires a greater understanding than just slapping down application code.
-      <a href="#intro-to-testing-ref" aria-label="Back to content">↩</a>
+      <a href="#intro-to-testing-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="cljs-test">
       It is also maintained by the ClojureScript core team you can feel confident that it is a healthy tool to use.
-      <a href="#cljs-test-ref" aria-label="Back to content">↩</a>
+      <a href="#cljs-test-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="test-add-fn">
       You can name the test anything you like. There are many idiomatic conventions for this so I recommend you do a little research into naming/structuring tests and find one that aligns with your sensibilities.
-      <a href="#test-add-fn-ref" aria-label="Back to content">↩</a>
+      <a href="#test-add-fn-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="jest-clojurescript">
       This is a viable option, but probably needs a little work for it perform well as your project scales.  The other downside is you are opting out of the ClojureScript ecosystem a little can be frustrating.  This is the reason that while I explored this option, I opted for stay in the CLJS ecosystem.
-      <a href="#jest-clojurescript-ref" aria-label="Back to content">↩</a>
+      <a href="#jest-clojurescript-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="doo">
       I don't mean to sound like I am throwing Doo under the bus, but Doo is often mentioned hand-in-hand with ClojureScript and test-runners so I wanted to make the distinction early that Doo is one of many tools, but really is not needed to setup your test workflow.
-      <a href="#doo-ref" aria-label="Back to content">↩</a>
+      <a href="#doo-ref" aria-label="Back to content">Back</a>
     </li>
   </ol>
 </aside>
