@@ -164,7 +164,7 @@ Footnotes are great when you have additional clarifying comments or want to cred
   <ol>
     <li id="footnotes">
       This is the footnote about methods
-      <a href="#footnotes-ref" aria-label="Back to content">↩</a>
+      <a href="#footnotes-ref" aria-label="Back to content">Back</a>
     </li>
   </ol>
 </aside>

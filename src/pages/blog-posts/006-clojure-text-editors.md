@@ -118,7 +118,7 @@ Remember that no matter what language you choose, there are going to be a ton of
   <ol>
     <li id="popular-editors">
       This list is based on the <a class="blog-content__link" href="https://clojure.org/news/2020/02/20/state-of-clojure-2020" target="_blank" rel="noopener noreferrer">2020 State of Clojure Survey</a>.
-      <a href="#popular-editors-ref" aria-label="Back to content">↩</a>
+      <a href="#popular-editors-ref" aria-label="Back to content">Back</a>
     </li>
   </ol>
 </aside>

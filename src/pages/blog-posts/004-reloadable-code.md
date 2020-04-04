@@ -249,19 +249,19 @@ Hopefully this provides a decent example set with which to start your reloadable
   <ol>
     <li id="full-savage">
       In my head I was a heroic.  Crushing out code.  Delivering... I was a Titan in that moment.  The truth is this is savagery at its finest.
-      <a href="#full-savage-ref" aria-label="Back to content">↩</a>
+      <a href="#full-savage-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="what-hmr">
       Two points here: <strong>First,</strong> <code class="gatsby-code-text">HMR</code> is not specific to ClojureScript.  It can be done in JavaScript, C++ etc.  I am only referencing ClojureScript because that is the focus of this article.  These techiques can be shared 1:1 with JavaScript, but I have not tried yet.  <strong>Second,</strong> When I said that app state is exactly where we left it, this is <i>only</i> true when you setup your reloadable code to work this way. I write about this in the <a class="blog-content__link" href="#managing-app-state">Managing App State</a> section of this post.
-      <a href="#what-hmr-ref" aria-label="Back to content">↩</a>
+      <a href="#what-hmr-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="build-tools">
       You do not use all of these tools, you only need to choose one.
-      <a href="#build-tools-ref" aria-label="Back to content">↩</a>
+      <a href="#build-tools-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="debugging-event-listeners">
       If you like to debug using <code class="gatsby-code-text">console.log</code> statements you are going to run into a bug while debugging like this.  If you run the app, add a <code class="gatsby-code-text">console.log</code> to <code class="gatsby-code-text">handle-add-event!</code> and save you will trigger a reload.  Then, if you click the <code class="gatsby-code-text">add</code> button you will notice that even though you have 2 event listeners attached, only 1  <code class="gatsby-code-text">console.log</code> will fire.  This is because the first event listener has the old <code class="gatsby-code-text">handle-add-event!</code> function without the <code class="gatsby-code-text">console.log</code>.  So it will seem like your only 1 event listeners is firing.  You can verify this again by saving the file, without making changes, and now you should see 2 logs fire.
-      <a href="#debugging-event-listeners-ref" aria-label="Back to content">↩</a>
+      <a href="#debugging-event-listeners-ref" aria-label="Back to content">Back</a>
     </li>
   </ol>
 </aside>

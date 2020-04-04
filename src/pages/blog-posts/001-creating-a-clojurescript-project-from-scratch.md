@@ -461,75 +461,75 @@ These resources are great next steps for learning to work with Clojure(Script).
   <ol>
     <li id="clojurescript-spelling">
       You will notice I spell ClojureScript in two ways: <code class="gatsby-code-text">ClojureScript</code> or <code class="gatsby-code-text">Clojure(Script)</code>.  The difference: The first is me saying "Just ClojureScript" and the second is me saying "this applies to both Clojure and ClojureScript".  The purpose is because Clojure and ClojureScript are 95% the same language, same build tools etc.  I have found it helpful to make this clear early on.
-      <a href="#clojurescript-spelling-ref" aria-label="Back to content">↩</a>
+      <a href="#clojurescript-spelling-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="project-structure">
       Technically the <code class="gatsby-code-text">README</code>, <code class="gatsby-code-text">Resources</code> and <code class="gatsby-code-text">tests</code> files/dirs are not needed.  These are a minimum for my projects and most Clojure(Script) apps.  Don't like it?  Structure yours as you please.
-      <a href="#project-structure-ref" aria-label="Back to content">↩</a>
+      <a href="#project-structure-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="project-structure-commit">
       <strong>Sanity Check</strong>: your project should look like this: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/96fafa51dfa8cb2e1ea208961c1ff2a3e4eb663a" target="_blank" rel="noopener noreferrer">96fafa5</a>
-      <a href="#project-structure-commit-ref" aria-label="Back to content">↩</a>
+      <a href="#project-structure-commit-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="resources-dir">
       You will notice HTML, CSS, Images etc will go in our <code class="gatsby-code-text">Resources</code> dir.  This is not a hard and fast rule, but it is a helpful convention.  Also, <strong>sanity Check</strong>:  <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/58975cc17d779a6f4c7947c9c21a468a6711671e" target="_blank" rel="noopener noreferrer">58975cc</a>
-      <a href="#resources-dir-ref" aria-label="Back to content">↩</a>
+      <a href="#resources-dir-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="sanity-check-css">
       <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/3aab28449076fb0d80e801d0a1f8cf0c5d8c5e42" target="_blank" rel="noopener noreferrer">3aab284</a>
-      <a href="#sanity-check-css-ref" aria-label="Back to content">↩</a>
+      <a href="#sanity-check-css-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="sanity-check-cljs">
       <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/863278997d8dd23e3c56dbb61cab7c5138aa423c" target="_blank" rel="noopener noreferrer">8632789</a>
-      <a href="#sanity-check-cljs-ref" aria-label="Back to content">↩</a>
+      <a href="#sanity-check-cljs-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="entry-point-conventions">
        The dominant convention is to name your entry point <code class="gatsby-code-text">core.cljs</code>. This is something that comes from the build tool <code class="gatsby-code-text">lein</code> and it's a silly convention because it provides us with no semantics.  It's easy to want to do this though because other languages like  JavaScript do this with their <code class="gatsby-code-text">index.js</code> and python with <code class="gatsby-code-text">main.py</code> and so on.  Resist the urge and try to give your <code class="gatsby-code-text">entry point</code> a meaningful name.
-      <a href="#entry-point-conventions-ref" aria-label="Back to content">↩</a>
+      <a href="#entry-point-conventions-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="sanity-check-cljs-test">
       <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/90a576f927947fcd620c6bcb340d3dc0427d2b06" target="_blank" rel="noopener noreferrer">90a576f</a>
-      <a href="#sanity-check-cljs-test-ref" aria-label="Back to content">↩</a>
+      <a href="#sanity-check-cljs-test-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="build-tools-deps">
       <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/ba182b9a2b7f5b753bb7b16bb5ff4bf8384ab0bd" target="_blank" rel="noopener noreferrer">288a24c</a>s
-      <a href="#build-tools-deps-ref" aria-label="Back to content">↩</a>
+      <a href="#build-tools-deps-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="what-is-dev-toolchain">
        When I say "toolchain" I mean things like build the app for production and dev, HMR, live CSS reloading.  All the things needed to make development life easy and get your app from your local environment to a production ready state.
-      <a href="#what-is-dev-toolchain-ref" aria-label="Back to content">↩</a>
+      <a href="#what-is-dev-toolchain-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="toolchain-tools">
        There is also <a class="blog-content__link" href="http://shadow-cljs.org/" target="_blank" rel="noopener noreferrer">shadow-cljs</a> which does some great stuff.  However, for me, Figwheel does what I need, provides <a class="blog-content__link" href="https://figwheel.org/" target="_blank" rel="noopener noreferrer">excellent documentation</a> and was recently rewritten to overcome some of it's age.  This is not to say that shadow-cljs is not amazing, it is.  This is just my preference.
-      <a href="#toolchain-tools-ref" aria-label="Back to content">↩</a>
+      <a href="#toolchain-tools-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="sanity-check-toolchain">
       <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/7d642c5416413da13c9cbebd31e33a563e917c90" target="_blank" rel="noopener noreferrer">27a54a3</a>
-      <a href="#sanity-check-toolchain-ref" aria-label="Back to content">↩</a>
+      <a href="#sanity-check-toolchain-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="package-repos">
       <code class="gatsby-code-text">Clojars</code> is not the only way to find versions, or even gain access to libraries.  Another place to look is on Github where the source code for your packages live.  Further, you can even specify a speific hash to download the packages directly from github.  Feel read to read more about that <a class="blog-content__link" href="https://clojure.org/reference/deps_and_cli#_dependencies" target="_blank" rel="noopener noreferrer">here</a>.
-      <a href="#package-repos-ref" aria-label="Back to content">↩</a>
+      <a href="#package-repos-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="build-config-options">
       I believe the difference between ClojureScript and Figwheel options is a great source of confusion for new ClojureScript developers.  I feel this way because it requires an understanding of where one library ends and the other begins.  Just know that Figwheel is going to be running the <code class="gatsby-code-text">ClojureScript Compiler</code> for you which is why both options can all look like one thing.  If you are ever not sure, visit the links.
-      <a href="#build-config-options-ref" aria-label="Back to content">↩</a>
+      <a href="#build-config-options-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="sanity-check-build-config">
       <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/46e46990726d61638e9b80f6345e4b6683ac1e70" target="_blank" rel="noopener noreferrer">980f18f</a>
-      <a href="#sanity-check-build-config-ref" aria-label="Back to content">↩</a>
+      <a href="#sanity-check-build-config-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="sanity-check-resources-restruct">
       <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/4b6b656323ea5cda9edb9265e61e49de6d9f7cfc" target="_blank" rel="noopener noreferrer">da3dbb5</a>
-      <a href="#sanity-check-resources-restruct-ref" aria-label="Back to content">↩</a>
+      <a href="#sanity-check-resources-restruct-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="sanity-check-reagent">
       <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/4c8cbd67dcc24d0365feb25bf511e03cba0fcf36" target="_blank" rel="noopener noreferrer">205c680</a>
-      <a href="#sanity-check-reagent-ref" aria-label="Back to content">↩</a>
+      <a href="#sanity-check-reagent-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="sanity-check-reagent-two">
       <strong>Sanity Check</strong>: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/e1cf66d7ed1973d4fa1ec1091c0cbe16e61cf4b4" target="_blank" rel="noopener noreferrer">f13ee9b</a>
-      <a href="#sanity-check-reagent-two-ref" aria-label="Back to content">↩</a>
+      <a href="#sanity-check-reagent-two-ref" aria-label="Back to content">Back</a>
     </li>
   </ol>
 </aside>
