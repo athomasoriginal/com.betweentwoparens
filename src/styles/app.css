@@ -294,7 +294,7 @@ They are: notes, code blocks, lists */
   margin-left: 10px;
 }
 .blog-content ul {
-  margin: 0 0 0 1.45rem;
+  margin: 0 0 0 2.45rem;
 }
 /* ahhh the pains of global selectors...my own fault */
 .blog-content .social-icons__list {
