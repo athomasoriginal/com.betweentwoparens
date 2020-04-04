@@ -1,19 +1,18 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Icon from './icon'
 
 import './footer.css'
 
 const FooterLink = ({ title, url }) => (
-  <OutboundLink
+  <a
     className="footer__link link__underline"
     href={url}
     target="__blank"
     rel="noopener noreferrer"
   >
     {title}
-  </OutboundLink>
+  </a>
 )
 
 const SocialLinksList = ({ links }) => {
@@ -26,14 +25,14 @@ const SocialLinksList = ({ links }) => {
 
         return (
           <li key={link.title} className="social-icons__list-item">
-            <OutboundLink
+            <a
               className="social-icons__list-item-link"
               href={link.url}
               target="__blank"
               rel="noopener noreferrer"
             >
               <Icon name={link.iconName} />
-            </OutboundLink>
+            </a>
           </li>
         )
       })}
