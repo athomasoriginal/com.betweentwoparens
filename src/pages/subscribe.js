@@ -55,8 +55,6 @@ const SubscribePage = ({ data }) => {
 
   const siteMetadata = data.site.siteMetadata
 
-  const fields = [userField, listField, firstNameField, emailField]
-
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [warning, setWarning] = useState('')

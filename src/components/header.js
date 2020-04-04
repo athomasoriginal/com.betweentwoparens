@@ -1,7 +1,6 @@
 import React from 'react'
 import Icon from './icon'
 import { Link } from 'gatsby'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const HeaderLinkInternal = ({ url, title }) => {
   return (
@@ -20,9 +19,9 @@ const HeaderLinkExnternal = ({ url, title, iconName }) => {
 
   return (
     <li className={classes}>
-      <OutboundLink href={url} target={target} rel="nofollow noopener">
+      <a href={url} target={target} rel="nofollow noopener">
         {iconName === '' ? title : <Icon name={iconName} />}
-      </OutboundLink>
+      </a>
     </li>
   )
 }
