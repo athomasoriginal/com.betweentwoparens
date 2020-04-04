@@ -31,7 +31,7 @@ const HeaderLinkExnternal = ({ url, title, iconName }) => {
 const Header = ({ title, description, name, interests, picture, navList }) => (
   <div className="header">
     <div className="header__logo">
-      <Icon name="thomas" />
+      <Icon name="betweenTwoParensLogo" />
 
       <h1 className="h__base header__title">
         <span className="header__title-line-1">Between</span>

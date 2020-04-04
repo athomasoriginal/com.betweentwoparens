@@ -11,7 +11,7 @@ import LinkedinIcon from './icon/linkedin'
 import RssIcon from './icon/rss'
 import TwitterIcon from './icon/twitter'
 import YoutubeIcon from './icon/youtube'
-import ThomasIcon from './icon/thomas'
+import BetweenTwoParensLogo from './icon/between-two-parens-logo'
 
 const icon = {
   git: GitIcon,
@@ -19,7 +19,7 @@ const icon = {
   rss: RssIcon,
   twitter: TwitterIcon,
   youtube: YoutubeIcon,
-  thomas: ThomasIcon,
+  betweenTwoParensLogo: BetweenTwoParensLogo,
 }
 
 const Icon = ({ name }) => {
