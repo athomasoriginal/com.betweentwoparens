@@ -136,6 +136,12 @@
   margin-right: 10px;
 }
 
+.header__logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 .header__title {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 16px;
