@@ -31,12 +31,14 @@ const HeaderLinkExnternal = ({ url, title, iconName }) => {
 const Header = ({ title, description, name, interests, picture, navList }) => (
   <div className="header">
     <div className="header__logo">
-      <Icon name="betweenTwoParensLogo" />
+      <Link to="/" className="header__logo-link">
+        <Icon name="betweenTwoParensLogo" />
 
-      <h1 className="h__base header__title">
-        <span className="header__title-line-1">Between</span>
-        <span className="header__title-line-2">Two Parens</span>
-      </h1>
+        <h1 className="h__base header__title">
+          <span className="header__title-line-1">Between</span>
+          <span className="header__title-line-2">Two Parens</span>
+        </h1>
+      </Link>
     </div>
 
     {description ? (
