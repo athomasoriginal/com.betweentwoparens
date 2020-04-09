@@ -46,7 +46,7 @@ function SEO({ description, lang, meta, keywords, title, author, ogURL }) {
         },
         {
           property: `og:image`,
-          content: `thomas.svg`,
+          content: `https://betweentwoparens.com/thomas-cartoon.jpeg`,
         },
         {
           property: `og:url`,
