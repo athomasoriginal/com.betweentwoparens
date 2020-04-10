@@ -7,17 +7,21 @@ author: 'Thomas Mattacchione'
 keywords: ['clojurescript', 'start', 'new']
 ---
 
-Building apps is hard AF. Choosing a language like Clojure(Script) can remove _some_ of the pain, but the fact remains that no matter which language you choose, when we start out with a web app just knowing where to begin is a frustrating experience.
+Welcome to my step by step guide to setting up a ClojureScript app. We'll work to assuage your fears & stresses and alleviate those nagging thoughts about doing things the "right" or "wrong" way.
 
-My goal with this post is to provide a step by step guide into writing a ClojureScript app. We'll work to assuage your fears & stresses and alleviate those overwhelming thoughts about doing things the "right" or "wrong" way by showing a common way to start a Clojure(Script) app and provide context for why we are making each decision.
+This post will walk through a battle tested approach to starting a <a href="#clojurescript-spelling" aria-describedby="footnote-label" id="clojurescript-spelling-ref">Clojure(Script)</a> app and describe the rationale for each decision we make.
 
-To get us into the headspace, imagine that we are a company called `tallex` and we are building an app called `time dive`. This excercise will prove useful when learning how to structure/name our files/folders.
-
-<aside class="blog-content__note">In case you get stuck at any point, I have a <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app" target="_blank" rel="noopener noreferrer">demo project</a> which you can reference as you work through this post.  There won't be too much ClojureScript code because we are focusing on setup, but if at any point you feel overwhelmed by the ClojureScript syntax I recommend this <a class="blog-content__link" href="https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes" target="_blank" rel="noopener noreferrer">quick 15 minute primer to the syntax of Clojure</a>.</aside>
+<aside class="blog-content__note">Never worked with Clojure or ClojureScript?  Checkout <a class="blog-content__link" href="https://youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA" target="_blank" rel="noopener noreferrer">Getting Started with Clojure(Script)</a>.  Further, if you're following along and get stuck at any point, I have a <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app" target="_blank" rel="noopener noreferrer">demo project</a> which you can reference as you work through this post.  We won't write too much ClojureScript code in this post, but if at any point you to quickly learn a bit of ClojureScript syntax I recommend this <a class="blog-content__link" href="https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes" target="_blank" rel="noopener noreferrer">quick 15 minute primer to the syntax of Clojure</a>.</aside>
 
 ## Setup Project Structure
 
-Generally speaking, <a href="#clojurescript-spelling" aria-describedby="footnote-label" id="clojurescript-spelling-ref">Clojure(Script)</a> web apps look like this<a href="#project-structure" aria-describedby="footnote-label" id="project-structure-ref">:</a>
+This section is about the folder structure of our application.  Whenever I name a Clojure(Script) project I will use the `company` name and then the `app` name to help name the folder structure.
+
+For example, we can pretend that our `company` is called `tallex` and we are building an app called `time dive`.
+
+### Step 1 - Add the Files and Folders
+
+With this in mind, go ahead and create each file and folder exactly as seen below<a href="#project-structure" aria-describedby="footnote-label" id="project-structure-ref">:</a>
 
 ```bash
 .
@@ -33,17 +37,12 @@ Generally speaking, <a href="#clojurescript-spelling" aria-describedby="footnote
         └── time_dive_tests.cljs
 ```
 
-The goal of this section is to build out the above folder structure.
-
-### Step 1 - Add the Files and Folders
-
-Go ahead and create each file and folder exactly as seen in the above code <a href="#project-structure-commit" aria-describedby="footnote-label" id="project-structure-commit-ref">block.</a>
 
 <aside class="blog-content__note">Notice how the files and folders in the <code class="gatsby-code-text">src</code> and <code class="gatsby-code-text">tests</code> dirs have underscores in their names?  This is called <a class="blog-content__link" href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake case</a> and and we do this when naming files and folder because it is a <a class="blog-content__link" href="https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html" target="_blank" rel="noopener noreferrer">java convention</a>.  Yes, even if you are writing a ClojureScript project we follow this convention.</aside>
 
 ### Step 2 - Add HTML
 
-This is a browser app and like all browser apps the HTML is the "bones". Open your `index.html` file and add the following<a href="#resources-dir" aria-describedby="footnote-label" id="resources-dir-ref">:</a>
+Time for some code.  We are building a web app and like all web apps we need `HTML`.  `HTML` is the  "bones" of your web app. Open your `index.html` file and add the following<a href="#resources-dir" aria-describedby="footnote-label" id="resources-dir-ref">:</a>
 
 ```html
 <!DOCTYPE html>
@@ -63,7 +62,7 @@ This is a browser app and like all browser apps the HTML is the "bones". Open yo
 
 ### Step 3 - Add CSS
 
-Next up: the "clothes" of our app: CSS. Open `style.css` and slam down these styles<a href="#sanity-check-css" aria-describedby="footnote-label" id="sanity-check-css-ref">:</a>
+Next up: the "clothes" of our app: `CSS`. Open `style.css` and slam down these styles<a href="#sanity-check-css" aria-describedby="footnote-label" id="sanity-check-css-ref">:</a>
 
 ```css
 :root {
@@ -109,7 +108,7 @@ Now we finally get to write some ClojureScript. Open `time_dive.cljs` and sprink
 
 The above defines a `namespace` called `tallex.time-dive`. This `namespace` is going to be the `entry point` of our app<a href="#entry-point-conventions" aria-describedby="footnote-label" id="entry-point-conventions-ref">.</a>
 
-<aside class="blog-content__note">A <code class="gatsby-code-text">namespace</code> is the <code class="gatsby-code-text">tallex.time-dive</code> part.  There are a few implicit details which I want to highlight.  <strong>Firstly</strong>, namespaces follow the folder path structure.  <strong>Secondly</strong>, if your namespace has multiple words like <code class="gatsby-code-text">time-dive</code> we use dashes not underscores to separate them.  <strong>Lastly</strong>, best practice is to multi-segment our namespace name.  A multi-segmented name is when we have multipe words/phrases separated by dots.  For example, <code class="gatsby-code-text">tallex.time-dive</code> is multi-segmented.  The first segment is <code class="gatsby-code-text">tallex</code> and the second is
+<aside class="blog-content__note">The <code class="gatsby-code-text">namespace</code> is the <code class="gatsby-code-text">tallex.time-dive</code> part.  There are a few implicit details which I want to highlight.  <strong>Firstly</strong>, namespaces follow the folder path structure.  <strong>Secondly</strong>, if your namespace has multiple words like <code class="gatsby-code-text">time-dive</code> we use dashes not underscores to separate them.  <strong>Lastly</strong>, best practice is to multi-segment our namespace name.  A multi-segmented name is when we have multipe words/phrases separated by dots.  For example, <code class="gatsby-code-text">tallex.time-dive</code> is multi-segmented.  The first segment is <code class="gatsby-code-text">tallex</code> and the second is
 <code class="gatsby-code-text">time-dive</code>.  Best practice is to have two or more segments. If we only have one segment it can lead to name conflicts.  Having said this, it's not the end of the world if you only have a single-segment namespace. For example, there are respected developers who use <a class="blog-content__link" href="https://github.com/ztellman/virgil" target="_blank" rel="noopener noreferrer">single-segmented namespaces</a>.</aside>
 
 ### Step 5 - Add ClojureScript Tests
@@ -122,31 +121,29 @@ Good tests are the Alfred to a software engineers Batman. Open up that `time_div
 (js/console.log "Hello, Time Dive Tests!")
 ```
 
-This concludes setting up the project structure and boilerplate code. The next step is to configure our build tools.
+This concludes setting up the project structure and boilerplate code. The next step is about setting ourselves up with tools we need to run our Clojure(Script) app.
 
-## Build Tools
+## Running and Developing ClojureScript
 
-To run, develop and build a production version of our app we need what developers call `build tools`. The most popular build tools in Clojure land are `lein`, `boot` and `clj`. Before I reveal which tool we are going to use, let me provide a quick rundown of each of them.
+To develop and run our app the most popular tools in Clojure land are `lein`, `boot` and `clj`. The good news is you only need to choose one of these.  Before I reveal which we are going to use, let me provide a quick overview of each of them.
 
-[lein](https://leiningen.org/) is the grandfather and most popular Clojure(Script) build tool. If I had to compare it to something it would be as if `npm` and `webpack` made a Clojure baby. You will see lein used in most all projects created prior to mid-2018. Yet, it has started to show its age. So members of the Clojure(Script) community went off to build a better lein and they called it boot.
+[lein](https://leiningen.org/) is the grandfather and most popular Clojure(Script) build tool. If I had to compare it to something it would be as if `npm` and `webpack` made a Clojure baby. You will see lein used in most all projects created prior to mid-2018. Yet, it has started to show its age. So members of the Clojure(Script) community went off to build a better lein and they called it `boot`.
 
-[boot](https://boot-clj.com/) is a definite improvement over lein. It has learned from many of lein's shortcomings and managed to gather the attention of a strong minority of Clojure(Script) developers. Even so, the feeling can often be that boot does not offer enough to trade in lein.
+[boot](https://boot-clj.com/) is a definite improvement over lein. It learned from many of lein's shortcomings and managed to gather the attention of a strong minority of Clojure(Script) developers.
 
-[clj](https://clojure.org/guides/deps_and_cli) is magicked down to us by the maintainers of Clojure. It was initially met with confusion, but over the past year has come to be seen by many, including myself, as the build tool we deserve. Instead of following in the path of lein or boot the goal of clj is do three things well:
-s
-1. run clojure programs
-2. manage dependencies
-3. build classpaths
+[clj](https://clojure.org/guides/deps_and_cli), also known as the clojure cli tool, is magicked down to us by the maintainers of Clojure. It was initially met with confusion, but over the past year has come to be seen by many, including myself, as _the_ tool to run and develop our clojure(script) programs. Where `lein` and `boot` are complex and often reach in their scope, the `clj` tool is about 3 things:
 
-what makes clj special is that it's begineer oriented and also powerful enough for advanced Clojurists. Further, because clj is focused on doing less it's easier to understand which means that when things go wrong it's easier to debug. It also encourages us to compose libraries instead of buying into a framework.
+ - run clojure programs
+ - resolve transitive dependencies
+ - build classpaths
 
-As you may have guessed, `clj` is my build tool of choice and what we will use in this app.  If you are the type who is looking for a deeper understanding of these build tools Sean Corfield has written an excellent [overview of clojure's build tools](https://corfield.org/blog/2018/04/18/all-the-paths/).  Further, if you are interested in the usage breakdown of the build tools checkout the [2019 State of Clojure Community Report](https://www.surveymonkey.com/results/SM-S9JVNXNQV/)
+ Ultimatley, `clj` is simple, oriented towards beginners and yet powerful enough to support advanced users.  If you're interested in learning more, checkout out the [clojure tools](https://betweentwoparens.com/what-are-the-clojure-tools) post.  Also feel free to checkout the [2019 State of Clojure Community Report](https://www.surveymonkey.com/results/SM-S9JVNXNQV/) to see which tools the Clojure community uses most.
 
 ### Step 6 - Add deps file
 
 <aside class="blog-content__note">If this is your first time working with Clojure(Script) you will need to be sure you have <code class="gatsby-code-text">clojure</code> installed on your local machine before going further.  Not sure?  Want to know how?  I recommend taking a look at my free <a class="blog-content__link" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA" target="_blank" rel="noopener noreferrer">Getting Started with ClojureScript</a> Youtube series which will take you through the whole process or checkout the official written <a class="blog-content__link" href="https://clojurescript.org/guides/quick-start" target="_blank" rel="noopener noreferrer">ClojureScript Quickstart Guide</a> </aside>
 
-To use `clj` we need to `configure` it. `clj` is configured using a file called `deps.edn`. Begin by creating a `deps.edn` file in the root of our project and then make it look like this<a href="#build-tools-deps" aria-describedby="footnote-label" id="build-tools-deps-ref">:</a>
+To run our Clojure(Script) project with `clj` we first need to setup our `deps.edn` file. Start by creating a `deps.edn` file in the root of our project and then make it look like this<a href="#build-tools-deps" aria-describedby="footnote-label" id="build-tools-deps-ref">:</a>
 
 ```clojure
 {:paths
@@ -163,21 +160,21 @@ To use `clj` we need to `configure` it. `clj` is configured using a file called 
                     "-r"]}}}
 ```
 
-<aside class="blog-content__note">Unlike other files in our Clojure project we don't get to choose what we call our configuration file.  <code class="gatsby-code-text">deps.edn</code> is the name that <code class="gatsby-code-text">clj</code> looks for.  Further, you will notice that the extension of this file is <code class="gatsby-code-text">edn</code>. This is the Clojure(Script) equivalent of <code class="gatsby-code-text">json</code>.</aside>
+<aside class="blog-content__note">Unlike other files in our Clojure project we don't get to choose what we call the <code class="gatsby-code-text">deps.edn</code>  file.  <code class="gatsby-code-text">deps.edn</code> is the name that <code class="gatsby-code-text">clj</code> looks for.  Further, you will notice that the extension of this file is <code class="gatsby-code-text">.edn</code>. You can think of this as the Clojure(Script) equivalent of <code class="gatsby-code-text">json</code>.</aside>
 
-Before we continue we should be familiar with what the configuration file is doing:
+Before we continue we should be familiar with what we're doing in our `deps.edn` file:
 
-- [:paths](https://clojure.org/reference/deps_and_cli#_paths) tells clj where to look for clojure code. Also known as a `classpath`
-- [:deps](https://clojure.org/reference/deps_and_cli#_dependencies) tells clj which dependencies our app needs. Right now our only dependency is ClojureScript.
-- [:aliases](https://clojure.org/reference/deps_and_cli#_aliases) commands we can write to modify how we build our app.
+- [:paths](https://clojure.org/reference/deps_and_cli#_paths) tells `clj` where to look for clojure code. Also known as a `classpath`
+- [:deps](https://clojure.org/reference/deps_and_cli#_dependencies) tells `clj` which dependencies our app needs. Right now our only dependency is ClojureScript.
+- [:aliases](https://clojure.org/reference/deps_and_cli#_aliases) are like shortcuts.  We can store long commands, or alternate dependencies in these.
 
-When we run our app for prod, dev or test we may need to run the app differently. That is why we use aliases. In our case, we specified a `:dev` alias and configured it to:
+When we run our app for `prod`, `dev` or `test` we may need to run the app differently. That is why we use aliases. In our case, we specified a `:dev` alias and configured it to:
 
-- ["-m"](https://clojure.org/reference/deps_and_cli#_usage) run clojurescript.
-- ["-ro"](https://clojurescript.org/reference/repl-options) teach the repl where to find static files like html and css.
-- ["-w"](https://clojurescript.org/reference/repl-and-main) watch all files in our `src` dir for changes and recompile on save.
-- ["-c"](https://clojurescript.org/reference/repl-and-main) run our app: `tallex.time-dive`.
-- ["-r"](https://clojurescript.org/reference/repl-and-main) run a browser connected REPL.
+- ["-m"](https://clojure.org/reference/deps_and_cli#_usage) run `cljs.main` (run clojurescript).
+- ["-ro"](https://clojurescript.org/reference/repl-options) teach the repl where to find `static files` e.g. html, css etc.
+- ["-w"](https://clojurescript.org/reference/repl-and-main) watch all files in `src` dir and recompile when they are changed.
+- ["-c"](https://clojurescript.org/reference/repl-and-main) compile our app: `tallex.time-dive`.
+- ["-r"](https://clojurescript.org/reference/repl-and-main) run a REPL and connect it to the browser.
 
 Now that we have a rough idea of what is going on we are ready to take our app for a test drive. Open a terminal, move into the root of the app and run the following command:
 
@@ -189,7 +186,7 @@ wait a bit and `:dev` will compile our code, automatically open a browser tab an
 
 ![screenshot of time dive app](./images/001-time-dive-app.png)
 
-<aside class="blog-content__note">I also want to draw your attention towards two new directories that were auto generated for you when you ran <code class="gatsby-code-text">clj -A:dev</code>: <code class="gatsby-code-text">.cpcache/</code> and <code class="gatsby-code-text">out/</code>. I bring this up because it's a good practice to avoid version controlling these folders.  If you are wondering what this might look like I have done this as an <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/0cef20e6773ab5d2f93253926dafb4e05e0673f7" target="_blank" rel="noopener noreferrer">extra step</a></aside>
+<aside class="blog-content__note">I also want to draw your attention towards two new directories that were auto generated for you when you ran <code class="gatsby-code-text">clj -A:dev</code>: <code class="gatsby-code-text">.cpcache/</code> and <code class="gatsby-code-text">out/</code>. I bring this up because it's a good practice to avoid version controlling these folders.  If you are wondering how to version control them see this <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/0cef20e6773ab5d2f93253926dafb4e05e0673f7" target="_blank" rel="noopener noreferrer">extra step</a></aside>
 
 Before we jump over to the next section I want to draw your attention to the fact that we have zero dependencies. Think about this: our files are being watched, code is recompiled on save, we are greeted with a browser repl and all of this with zero dependencies. Yes, we are still missing a few niceties, but we are not done yet. We will get you to hero toolchain status soon.
 
@@ -225,7 +222,7 @@ It starts by adding figwheel as a dependency. We do this by opening the `deps.ed
  }
 ```
 
-<aside class="blog-content__note">Clojure libraries are generally found in <a class="blog-content__link" href="https://clojars.org" target="_blank" rel="noopener noreferrer">Clojars</a> which is a popular Clojure package repository.  This is where you can go to find packages and examples of how to use the packages in our projects<a href="#package-repos" aria-describedby="footnote-label" id="package-repos-ref">.</a>  Also note that when you add new dependencies to your project you will also have to stop and restart your app.</aside>
+<aside class="blog-content__note">Clojure libraries are generally found in <a class="blog-content__link" href="https://clojars.org" target="_blank" rel="noopener noreferrer">Clojars</a> which is a popular Clojure package repository.  This is where you can go to find packages and examples of how to use the packages in our projects<a href="#package-repos" aria-describedby="footnote-label" id="package-repos-ref">.</a>  Also note that when you add new dependencies to your project you will also have to stop and restart your app.  Finally, if you run into any issues with <code class="gatsby-code-text">0.2.3</code> of figwheel try updating the version to <code class="gatsby-code-text">0.2.4-SNAHPSHOT</code></aside>
 
 ### Step 8 - Add build configuration
 
@@ -247,7 +244,7 @@ Okay. We have specified build configuration options. What does all of it mean?
 2. [:css-dirs](https://figwheel.org/config-options#css-dirs) - when `css` files change in the `resources` directory figwheel recompiles and re-loads them in the browser
 3. [:main](https://clojurescript.org/reference/compiler-options#main) - This is an option that figwheel passes to the `ClojureScript compiler` which tells the compiler which file is our apps `entry point`.
 
-With our `dev build configuration` in place, we have one last step
+As you may have guessed, `Fighwheel` is going to replace the need for us to use `-w`, `-r` and `-c` above.  It is a separate program that provides richer versions of those built-in commands.  With our `dev build configuration` in place, we have one last step.
 
 ### Step 9 - Update :dev Alias
 
@@ -321,7 +318,7 @@ The toolchain is now in place, but we are still missing the great and powerful H
 
 Hot Module Reloading (HMR) is the holy grail of React development. So much so that it is often spoken in the same breath as if the two are co-dependent, yet the two are not joined in any way.
 
-As long as you write [reloadable code](https://figwheel.org/docs/reloadable_code.html) you can take advantage of HMR. This is the catch though: writing reloadable code can be tricky and time consuming. Writing reloadable code is made much eaiser when your write your code using React. This is likely part of the reason the two are seen as linked.
+As long as you write [reloadable code](https://figwheel.org/docs/reloadable_code.html) you can take advantage of HMR. This is the catch though: writing reloadable code can be [tricky and time consuming](/students-of-the-game-reloadable-code). Writing reloadable code is made much eaiser when your write your code using React. This is likely part of the reason the two are seen as linked.
 
 The point is that figwheel offers a framework / library agnostic mechanism to support your ability to write HMR in your toolchain.
 
@@ -351,7 +348,7 @@ This is a rich topic so my hope is that I was able to illustrate the fact that H
 
 ## Add Reagent
 
-You could use any JS framework in ClojureScript, but the ClojureScript community loves React and the community has made wrappers to make React easier to use in ClojureScript. While there are many wrappers the most popular React wrapper is currently [Reagent](https://reagent-project.github.io/) so we will show you how to use that.
+You could use most any JS framework in ClojureScript, but the ClojureScript community loves React and the community has made wrappers to make React easier to use in ClojureScript. While there are many wrappers the most popular React wrapper is currently [Reagent](https://reagent-project.github.io/) so we will show you how to use that.
 
 ### Step 12 - Refactor for Reagent
 
@@ -397,7 +394,7 @@ Finally open our `time-dive` namespace and add a few things:
 ```clojure
 (ns ^:figwheel-hooks tallex.time-dive
   (:require
-    [reagent.core :as r]))
+    [reagent.dom :as r.dom]))
 
 
 (defn app []
@@ -406,7 +403,7 @@ Finally open our `time-dive` namespace and add a few things:
 
 
 (defn mount []
-  (r/render [app] (js/document.getElementById "root")))
+  (r.dom/render [app] (js/document.getElementById "root")))
 
 
 (defn ^:after-load re-render []
@@ -464,12 +461,8 @@ These resources are great next steps for learning to work with Clojure(Script).
       <a href="#clojurescript-spelling-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="project-structure">
-      Technically the <code class="gatsby-code-text">README</code>, <code class="gatsby-code-text">Resources</code> and <code class="gatsby-code-text">tests</code> files/dirs are not needed.  These are a minimum for my projects and most Clojure(Script) apps.  Don't like it?  Structure yours as you please.
+      Technically the <code class="gatsby-code-text">README</code>, <code class="gatsby-code-text">Resources</code> and <code class="gatsby-code-text">tests</code> files/dirs are not needed, but I always include them by default because to me, taking the time to setup things well in the beginning saves us time later.  Also keep in mind that you don't have to follow my structure.  There is no real science here other than this is a sane structure I have evolved and come to trust through use in production.  <strong>Sanity Check</strong>: your project should look like this: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/96fafa51dfa8cb2e1ea208961c1ff2a3e4eb663a" target="_blank" rel="noopener noreferrer">96fafa5</a>
       <a href="#project-structure-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="project-structure-commit">
-      <strong>Sanity Check</strong>: your project should look like this: commit <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/96fafa51dfa8cb2e1ea208961c1ff2a3e4eb663a" target="_blank" rel="noopener noreferrer">96fafa5</a>
-      <a href="#project-structure-commit-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="resources-dir">
       You will notice HTML, CSS, Images etc will go in our <code class="gatsby-code-text">Resources</code> dir.  This is not a hard and fast rule, but it is a helpful convention.  Also, <strong>sanity Check</strong>:  <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/58975cc17d779a6f4c7947c9c21a468a6711671e" target="_blank" rel="noopener noreferrer">58975cc</a>
