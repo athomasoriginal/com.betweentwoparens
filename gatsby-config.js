@@ -31,6 +31,12 @@ module.exports = {
         isInternalLink: true
       },
       {
+        title: 'Subscribe',
+        url: '/subscribe',
+        iconName: '',
+        isInternalLink: true
+      },
+      {
         title: 'Contact',
         url: 'mailto:thomasmattacchione@gmail.com?Subject=Hi%20Thomas',
         iconName: '',
