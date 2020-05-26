@@ -13,6 +13,11 @@
   - [Images](#images)
   - [Edits](#edits)
   - [Header Links](#header-links)
+- [Updating Blog Posts](#updating-blog-posts)
+  - [ClojureScript Versions](#clojureScript-versions)
+  - [Figwheel Versions](#figwheel-versions)
+  - [Clojure Survey](#clojure-survey)
+  - [Create Reagent App Versions](#create-reagent-app-versions)
 - [Special Thanks](#special-thanks)
 
 ## Quick start
@@ -236,6 +241,37 @@ Once completed, make a PR. The PR is to deploy a preview.
 ### Header Links
 
 Linking header github style is a feature we want. However, this will not happen automatically so we require an [additional plugin](https://www.gatsbyjs.org/packages/gatsby-remark-autolink-headers/) to provide this support. Now, whenever we have `H*` level headers they automatically recieve links.
+
+## Updating Blog Posts
+
+Keeping blog posts updated is important because it ensure that the work stays relevant and therefore useful to future readers.  With CLJ(s) this is easier because of the stability of the ecosystem.  Either way though, here is an outline of artifacts that need to be updated:
+
+### ClojureScript Versions
+
+- post - 000 - deploy cljs github
+- demo - https://github.com/athomasoriginal/demo-clojurescript-gh-pages
+- post - 001 - cljs app from scratch
+- post - 003 - cljs tests
+- video - 016 - figwheel
+
+### Figwheel Versions
+
+- post - 001 - cljs app from scratch
+- post - 003 - cljs tests
+
+### Clojure Survey
+
+- post - 001 - cljs app from scratch
+
+### Create Reagent App Versions
+
+- post - 003 - cljs tests
+- post - 005 - deploy cljs nginx
+
+### Atom Editor
+
+- post - 006 - chlorine (e.g. no longer depends on Ink)
+- video - https://www.youtube.com/watch?v=mEcOwtRt0f4
 
 ## Special Thanks
 
