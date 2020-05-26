@@ -94,6 +94,8 @@ I have always found that to be productive with Clojure you don't need many tools
 
 - [Ink](https://atom.io/packages/ink)
 
+  - Ink only required if your using a version of Chlorine under ` 0.7.2`.  Having said this, it doesn't hurt to have Ink installed because a lot of other Atom plugins require it anyways
+
   - **Description:** Chlorine depends on this.
   - **Configuration:** None required.
 
