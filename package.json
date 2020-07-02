@@ -4,6 +4,9 @@
   "description": "Between two parens official blog",
   "version": "0.1.0",
   "author": "Thomas Mattacchione <thomasmattacchione@gmail.com>",
+  "resolutions": {
+    "xstate": "4.10.0"
+  },
   "dependencies": {
     "gatsby": "2.23.17",
     "gatsby-cli": "^2.12.56",
