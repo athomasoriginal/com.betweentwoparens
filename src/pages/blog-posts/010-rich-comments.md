@@ -35,7 +35,36 @@ The second type of comment is a [discard comment]
 (-> 5 inc #_ inc inc)  ; 7
 ```
 
-In the above code, the `#_` makes it as if the second `inc` doesn't exist<a href="#wonderful-life" aria-describedby="footnote-label" id="wonderful-life-ref">.</a>  This is great for debugging because the `discard` comment doesn't return a value.
+In the above code, the `#_` makes it as if the second `inc` doesn't exist<a href="#wonderful-life" aria-describedby="footnote-label" id="wonderful-life-ref">.</a>  This is great for debugging because the `discard` comment doesn't return a value.  In addition to this, there are two additional usage notes about the `discard comment`.
+
+The first is that they nest:
+
+```clojure
+(-> 5 #_ inc #_ inc inc) ; you could discard each form in turn
+(-> 5 #_ #_ inc inc inc) ; or you could stack them
+```
+
+An example of where you might find this useful is in a `let`:
+
+```clojure
+(let [my-number 5
+      #_ #_ another-number 13]
+  ;...
+  )
+```
+
+The second take away is that you don't have to add spaces after the `discard comment`:
+
+```clojure
+;; these all produce the same result
+(-> 5 #_ inc #_ inc inc) ; space
+(-> 5 #_inc #_inc inc)   ; no space
+
+(-> 5 #_ #_ inc inc inc) ; space
+(-> 5 #_#_inc inc inc)   ; no space
+```
+
+The difference between adding the space or removing the space is which one _you_ find more readable<a href="#discard-comment-credit" aria-describedby="footnote-label" id="discard-comment-credit-ref">.</a>
 
 ## Rich Comment
 
@@ -124,6 +153,10 @@ These are just a few examples of how to use a `Rich Comment Block`.  The most in
     <li id="wonderful-life">
       #itsAWonderfulLife
       <a href="#wonderful-life-ref" aria-label="Back to content">Back</a>
+    </li>
+    <li id="discard-comment-credit">
+      Much love to <a class="blog-content__link" href="https://twitter.com/seancorfield" target="_blank" rel="noopener noreferrer">Sean Corfield</a> for pointing out nesting and the spacing points for the discard comment.  Very cool!
+      <a href="#discard-comment-credit-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="example-comments">
       Each example I provided in this post are really just my interpretations of how they may be used.  The author may have had a different intent.
