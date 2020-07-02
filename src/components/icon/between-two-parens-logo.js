@@ -17,7 +17,7 @@ const BetweenTwoParensLogo = () => {
       width="393px"
       height="347px"
       viewBox="0 0 393 347"
-      enable-background="new 0 0 393 347"
+      enableBackground="new 0 0 393 347"
 
     >
       <path
