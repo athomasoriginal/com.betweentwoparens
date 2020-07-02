@@ -6,6 +6,7 @@
 
 // todo prevent empty press click and handle post manually
 
+/* eslint-disable */
 import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
