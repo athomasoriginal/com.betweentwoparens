@@ -11,7 +11,7 @@ Welcome to my step by step guide to setting up a ClojureScript app. We'll work t
 
 This post will walk through a battle tested approach to starting a <a href="#clojurescript-spelling" aria-describedby="footnote-label" id="clojurescript-spelling-ref">Clojure(Script)</a> app and describe the rationale for each decision we make.
 
-<aside class="blog-content__note">Never worked with Clojure or ClojureScript?  Checkout <a class="blog-content__link" href="https://youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA" target="_blank" rel="noopener noreferrer">Getting Started with Clojure(Script)</a>.  Further, if you're following along and get stuck at any point, I have a <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app" target="_blank" rel="noopener noreferrer">demo project</a> which you can reference as you work through this post.  We won't write too much ClojureScript code in this post, but if at any point you to quickly learn a bit of ClojureScript syntax I recommend this <a class="blog-content__link" href="https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes" target="_blank" rel="noopener noreferrer">quick 15 minute primer to the syntax of Clojure</a>.</aside>
+<aside class="blog-content__note">Never worked with Clojure or ClojureScript?  Checkout <a class="blog-content__link" href="https://youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA" target="_blank" rel="noopener noreferrer">Getting Started with Clojure(Script)</a>.  In addition, if you're following along and get stuck at any point, I have a <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app" target="_blank" rel="noopener noreferrer">demo project</a> which you can reference as you work through this post.  We won't write too much ClojureScript code in this post, but if at any point you to quickly learn a bit of ClojureScript syntax I recommend this <a class="blog-content__link" href="https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes" target="_blank" rel="noopener noreferrer">quick 15 minute primer to the syntax of Clojure</a>.</aside>
 
 ## Setup Project Structure
 
@@ -375,7 +375,7 @@ Next we can open our `index.html` file and modify as follows:
 
 ```html
 <!-- highlight-range{8,10} -->cnt	40
-list	
+list
 <!DOCTYPE html>
 <html>
   <head>
@@ -502,7 +502,7 @@ These resources are great next steps for learning to work with Clojure(Script).
       <a href="#sanity-check-toolchain-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="package-repos">
-      <code class="gatsby-code-text">Clojars</code> is not the only way to find versions, or even gain access to libraries.  Another place to look is on Github where the source code for your packages live.  Further, you can even specify a specific hash to download the packages directly from github.  Feel read to read more about that <a class="blog-content__link" href="https://clojure.org/reference/deps_and_cli#_dependencies" target="_blank" rel="noopener noreferrer">here</a>.
+      <code class="gatsby-code-text">Clojars</code> is not the only way to find versions, or even gain access to libraries.  Another place to look is on Github where the source code for your packages live.  In addition, you can even specify a specific hash to download the packages directly from github.  Feel read to read more about that <a class="blog-content__link" href="https://clojure.org/reference/deps_and_cli#_dependencies" target="_blank" rel="noopener noreferrer">here</a>.
       <a href="#package-repos-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="build-config-options">
