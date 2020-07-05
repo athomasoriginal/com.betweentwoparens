@@ -9,13 +9,13 @@ keywords: ['clojurescript', 'start', 'new']
 
 Welcome to my step by step guide to setting up a ClojureScript app. We'll work to assuage your fears & stresses and alleviate those nagging thoughts about doing things the "right" or "wrong" way.
 
-This post will walk through a battle tested approach to starting a <a href="#clojurescript-spelling" aria-describedby="footnote-label" id="clojurescript-spelling-ref">Clojure(Script)</a> app and describe the rationale for each decision we make.
+In this post we will walk through a battle tested approach to setting up a <a href="#clojurescript-spelling" aria-describedby="footnote-label" id="clojurescript-spelling-ref">Clojure(Script)</a> app and describe the rationale for each decision we make.
 
 <aside class="blog-content__note">Never worked with Clojure or ClojureScript?  Checkout <a class="blog-content__link" href="https://youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA" target="_blank" rel="noopener noreferrer">Getting Started with Clojure(Script)</a>.  In addition, if you're following along and get stuck at any point, I have a <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app" target="_blank" rel="noopener noreferrer">demo project</a> which you can reference as you work through this post.  We won't write too much ClojureScript code in this post, but if at any point you to quickly learn a bit of ClojureScript syntax I recommend this <a class="blog-content__link" href="https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes" target="_blank" rel="noopener noreferrer">quick 15 minute primer to the syntax of Clojure</a>.</aside>
 
 ## Setup Project Structure
 
-This section is about the folder structure of our application.  Whenever I name a Clojure(Script) project I will use the `company` name and then the `app` name to help name the folder structure.
+This section is about the folder structure of our application.  Whenever I name a Clojure(Script) project I will use the `company` name and then the `app` name to inform the naming of our app's folders.
 
 For example, we can pretend that our `company` is called `tallex` and we are building an app called `time dive`.
 
@@ -38,7 +38,7 @@ With this in mind, go ahead and create each file and folder exactly as seen belo
 ```
 
 
-<aside class="blog-content__note">Notice how the files and folders in the <code class="gatsby-code-text">src</code> and <code class="gatsby-code-text">tests</code> dirs have underscores in their names?  This is called <a class="blog-content__link" href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake case</a> and and we do this when naming files and folder because it is a <a class="blog-content__link" href="https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html" target="_blank" rel="noopener noreferrer">java convention</a>.  Yes, even if you are writing a ClojureScript project we follow this convention.</aside>
+<aside class="blog-content__note">Notice how the files and folders in the <code class="gatsby-code-text">src</code> and <code class="gatsby-code-text">tests</code> dirs have underscores in their names?  This is a general name formatting convention called <a class="blog-content__link" href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake case</a> and and we do this when naming files and folders in a Clojure project because it's a <a class="blog-content__link" href="https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html" target="_blank" rel="noopener noreferrer">java convention</a>.  Yes, even if you are writing a ClojureScript project we follow this convention.</aside>
 
 ### Step 2 - Add HTML
 
@@ -62,7 +62,7 @@ Time for some code.  We are building a web app and like all web apps we need `HT
 
 ### Step 3 - Add CSS
 
-Next up: the "clothes" of our app: `CSS`. Open `style.css` and slam down these styles<a href="#sanity-check-css" aria-describedby="footnote-label" id="sanity-check-css-ref">:</a>
+Next up, we give our app some "clothes": `CSS`. Open the `style.css` file and slam down these styles<a href="#sanity-check-css" aria-describedby="footnote-label" id="sanity-check-css-ref">:</a>
 
 ```css
 :root {
