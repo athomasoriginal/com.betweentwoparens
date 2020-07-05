@@ -374,8 +374,7 @@ In addition to adding Reagent we are going to update our `deps.edn`, `html`, `cs
 Next we can open our `index.html` file and modify as follows:
 
 ```html
-<!-- highlight-range{8,10} -->cnt	40
-list
+<!-- highlight-range{8,10} -->
 <!DOCTYPE html>
 <html>
   <head>
