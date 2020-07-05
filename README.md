@@ -293,3 +293,4 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 - [skidding](https://github.com/skidding)
 - [@henrikeneroth](https://twitter.com/henrikeneroth?lang=en)
 - [holyjak](https://github.com/holyjak)
+- [rogererens](https://github.com/rogererens)
