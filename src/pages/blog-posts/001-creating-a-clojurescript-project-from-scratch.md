@@ -160,7 +160,7 @@ To run our Clojure(Script) project with `clj` we first need to setup our `deps.e
                     "-r"]}}}
 ```
 
-<aside class="blog-content__note">Unlike other files in our Clojure project we don't get to choose what we call the <code class="gatsby-code-text">deps.edn</code>  file.  <code class="gatsby-code-text">deps.edn</code> is the name that <code class="gatsby-code-text">clj</code> looks for.  Further, you will notice that the extension of this file is <code class="gatsby-code-text">.edn</code>. You can think of this as the Clojure(Script) equivalent of <code class="gatsby-code-text">json</code>.</aside>
+<aside class="blog-content__note">Unlike other files in our Clojure project we don't get to choose what we call the <code class="gatsby-code-text">deps.edn</code>  file.  <code class="gatsby-code-text">deps.edn</code> is the name that <code class="gatsby-code-text">clj</code> looks for.  Furthermore, you will notice that the extension of this file is <code class="gatsby-code-text">.edn</code>. You can think of this as the Clojure(Script) equivalent of <code class="gatsby-code-text">json</code>.</aside>
 
 Before we continue we should be familiar with what we're doing in our `deps.edn` file:
 
@@ -222,7 +222,7 @@ It starts by adding figwheel as a dependency. We do this by opening the `deps.ed
  }
 ```
 
-<aside class="blog-content__note">Clojure libraries are generally found in <a class="blog-content__link" href="https://clojars.org" target="_blank" rel="noopener noreferrer">Clojars</a> which is a popular Clojure package repository.  This is where you can go to find packages and examples of how to use the packages in our projects<a href="#package-repos" aria-describedby="footnote-label" id="package-repos-ref">.</a>  Also note that when you add new dependencies to your project you will also have to stop and restart your app.  Finally, if you run into any issues with <code class="gatsby-code-text">0.2.6</code> of figwheel try updating the version to <code class="gatsby-code-text">0.2.4-SNAHPSHOT</code></aside>
+<aside class="blog-content__note">Clojure libraries are generally found in <a class="blog-content__link" href="https://clojars.org" target="_blank" rel="noopener noreferrer">Clojars</a> which is a popular Clojure package repository.  This is where you can go to find packages and examples of how to use the packages in our projects<a href="#package-repos" aria-describedby="footnote-label" id="package-repos-ref">.</a>  Also note that when you add new dependencies to your project you will also have to stop and restart your app.  Finally, if you run into any issues with <code class="gatsby-code-text">0.2.6</code> of figwheel try updating the version to <code class="gatsby-code-text">0.2.4-SNAPSHOT</code></aside>
 
 ### Step 8 - Add build configuration
 
@@ -318,7 +318,7 @@ The toolchain is now in place, but we are still missing the great and powerful H
 
 Hot Module Reloading (HMR) is the holy grail of React development. So much so that it is often spoken in the same breath as if the two are co-dependent, yet the two are not joined in any way.
 
-As long as you write [reloadable code](https://figwheel.org/docs/reloadable_code.html) you can take advantage of HMR. This is the catch though: writing reloadable code can be [tricky and time consuming](/students-of-the-game-reloadable-code). Writing reloadable code is made much eaiser when your write your code using React. This is likely part of the reason the two are seen as linked.
+As long as you write [reloadable code](https://figwheel.org/docs/reloadable_code.html) you can take advantage of HMR. This is the catch though: writing reloadable code can be [tricky and time consuming](/students-of-the-game-reloadable-code). Writing reloadable code is made much easier when you write your code using React. This is likely part of the reason the two are seen as linked.
 
 The point is that figwheel offers a framework / library agnostic mechanism to support your ability to write HMR in your toolchain.
 
@@ -326,7 +326,7 @@ Specifically, figwheel gives us `hooks` which we specify in the namespace where 
 
 <aside class="blog-content__note">The hooks I am referring to are figwheel hooks and have nothing to do with React Hooks.</aside>
 
-### Step 11 - Refactor for Reagent
+### Step 11 - Refactor for Figwheel
 
 We can demonstrate how to use figwheel hooks in the `time-dive` namespace. Our `time-dive` namespace is logging "Hello, Time Dive" on each reload. We could however only have it log on re-compile by adding a hook like this<a href="#sanity-check-reagent" aria-describedby="footnote-label" id="sanity-check-reagent-ref">:</a>
 
@@ -340,7 +340,7 @@ We can demonstrate how to use figwheel hooks in the `time-dive` namespace. Our `
 Now when you try to run the app you will notice that the `console.log` does not log the first time, but only after each save. Things to take note of:
 
 - [^:figwheel-hooks]() - `meta data` telling figwheel we want to use hooks in our namespace
-- [^:after-load]() - `meta data` telling figwheel that we want it to run the function we specified above, `re-render`, after each compile
+- [^:after-load]() - `meta data` telling figwheel that we want it to run the function, `re-render`, after each compile
 
 <aside class="blog-content__note">ClojureScript provides this great mechanism called <a class="blog-content__link" href="https://clojure.org/reference/metadata" target="_blank" rel="noopener noreferrer">metadata</a> to our vars, functions etc.</aside>
 
@@ -374,7 +374,8 @@ In addition to adding Reagent we are going to update our `deps.edn`, `html`, `cs
 Next we can open our `index.html` file and modify as follows:
 
 ```html
-<!-- highlight-range{8,10} -->
+<!-- highlight-range{8,10} -->cnt	40
+list	
 <!DOCTYPE html>
 <html>
   <head>
@@ -416,8 +417,8 @@ Finally open our `time-dive` namespace and add a few things:
 A little about the above:
 
 - `app` is our first example of a [Reagent component](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md).
-- `mount` a function. When called will display our `time-dive` app
-- `re-render` a function with a hook. When called, reloads our app. It supports the HMR part
+- `mount` a function. When called, it will display our `time-dive` app
+- `re-render` a function with a hook. When called, it reloads our app. It supports the HMR part
 
 <aside class="blog-content__note">Remember figwheel hooks from the previous section?  The above is us using them with Reagent to achieve HMR.</aside>
 
@@ -501,7 +502,7 @@ These resources are great next steps for learning to work with Clojure(Script).
       <a href="#sanity-check-toolchain-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="package-repos">
-      <code class="gatsby-code-text">Clojars</code> is not the only way to find versions, or even gain access to libraries.  Another place to look is on Github where the source code for your packages live.  Further, you can even specify a speific hash to download the packages directly from github.  Feel read to read more about that <a class="blog-content__link" href="https://clojure.org/reference/deps_and_cli#_dependencies" target="_blank" rel="noopener noreferrer">here</a>.
+      <code class="gatsby-code-text">Clojars</code> is not the only way to find versions, or even gain access to libraries.  Another place to look is on Github where the source code for your packages live.  Further, you can even specify a specific hash to download the packages directly from github.  Feel read to read more about that <a class="blog-content__link" href="https://clojure.org/reference/deps_and_cli#_dependencies" target="_blank" rel="noopener noreferrer">here</a>.
       <a href="#package-repos-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="build-config-options">
