@@ -19,7 +19,7 @@ ReactDOM.render(
 and now let's rewrite it in Reagent (a popular ClojureScript React wrapper)
 
 ```clojure{numberLines: true}
-(reagent.core/render-component
+(reagent.dom/render
   [:h1 {:class "welcome"} "Hello, world!"] ; <-- Hiccup
   (.. js/document (getElementById  "root")))
 ```
@@ -51,14 +51,14 @@ If you're like me when I first started writing ClojureScript, `Hiccup` can seem 
 Let's return to the code snippet we started this post with:
 
 ```clojure
-(reagent.core/render-component
+(reagent.dom/render
   [:h1 {:class "welcome"} "Hello, world!"] ; <-- hiccup
   (.. js/document (getElementById  "root")))
 ```
 
 On **line 2** we have an unassuming Clojure vector, or is it?  In truth, that's exactly what it is.  It's just a vector, but it's also known as `Reagent Hiccup`.  This might lead one to ask, _"If it's just a vector, how is it also `Reagent Hiccup`?"_.
 
-The reason is because `reagent.core/render-component`, the entry point for a Reagent app, accepts either `Reagent Hiccup` or a `React Element` as the first argument.  So by providing a `vector`, Reagent automatically treats it like `Reagent Hiccup`.  This means that Reagent also expects it to be written in a specific way.
+The reason is because `reagent.dom/render`, the entry point for a Reagent app, accepts either `Reagent Hiccup` or a `React Element` as the first argument.  So by providing a `vector`, Reagent automatically treats it like `Reagent Hiccup`.  This means that Reagent also expects it to be written in a specific way.
 
 To be considered valid `Reagent Hiccup`, the vector you pass to Reagent needs to take one of the following shapes:
 
@@ -92,9 +92,9 @@ What allows Reagent to understand Hiccup without us needing to import a library 
 
 ### Reagent Hiccup to React Element
 
-As we mentioned, all components are passed into `reagent.core/render-component` and it's this function that's responsible for turning Hiccup into something that React understands.
+As we mentioned, all components are passed into `reagent.dom/render` and it's this function that's responsible for turning Hiccup into something that React understands.
 
-The process begins by Reagent passing the `component` given to `reagent.core/render-component` to a function called `create-class`.
+The process begins by Reagent passing the `component` given to `reagent.dom/render` to a function called `create-class`.
 
 `create-class` has [other jobs](https://betweentwoparens.com/what-the-reagent-component) aside from handling Hiccup, but nonetheless one of it's jobs is to compile `Reagent Hiccup` to `React.createElement` calls.  This step is handled by the [as-element](https://github.com/reagent-project/reagent/blob/88e9833be9c3135548d760286ffd84d88a0a0489/src/reagent/impl/template.cljs#L382) function.
 
@@ -139,7 +139,7 @@ Understanding that everything is turned into `React.createElement` calls you mig
 Similar to React and JSX, you can use plain old `React.createElement` to create `Reagent Components`.  For example, where we wrote the original example as:
 
 ```clojure
-(reagent.core/render-component
+(reagent.dom/render
   [:h1 {:class "welcome"} "Hello, world!"]
   (.. js/document (getElementById  "root")))
 ```
@@ -147,7 +147,7 @@ Similar to React and JSX, you can use plain old `React.createElement` to create 
 we could also use `reagent.core/create-element` to write a `Reagent component` like this:
 
 ```clojure
-(reagent.core/render-component
+(reagent.dom/render
   (reagent.core/create-element
     "h1"
     #js{:className "welcome"}
