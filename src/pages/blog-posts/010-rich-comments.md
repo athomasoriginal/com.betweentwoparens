@@ -44,13 +44,17 @@ The first is that they nest:
 (-> 5 #_ #_ inc inc inc) ; or you could stack them
 ```
 
-An example of where you might find this useful is in a `let`:
+Here are some examples of where you might find the `discard comment` useful:
 
 ```clojure
+(or #_ (int? 2) (nil? "Thomas"))
+
 (let [my-number 5
       #_ #_ another-number 13]
   ;...
   )
+
+{#_ #_ :name "Between Two Parens" :host "Thomas"}
 ```
 
 The second take away is that you don't have to add spaces after the `discard comment`:
