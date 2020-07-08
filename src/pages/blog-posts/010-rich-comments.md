@@ -68,6 +68,8 @@ The second take away is that you don't have to add spaces after the `discard com
 (-> 5 #_#_inc inc inc)   ; no space
 ```
 
+<aside class="blog-content__note">You may have noticed that I used <code class="gatsby-code-text">;;</code> and <code class="gatsby-code-text">;</code> in the above code block.  This is a common idiom when writing Clojure and is often used to denote a hierarchy.  You can find more information about this convention in <a class="blog-content__link" href="https://github.com/bbatsov/clojure-style-guide#comments" target="_blank" rel="noopener noreferrer">bbatsov's community clojure style guide</a></aside>
+
 The difference between adding the space or removing the space is which one _you_ find more readable<a href="#discard-comment-credit" aria-describedby="footnote-label" id="discard-comment-credit-ref">.</a>
 
 ## Rich Comment
