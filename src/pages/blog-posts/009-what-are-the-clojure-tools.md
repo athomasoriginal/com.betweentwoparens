@@ -15,9 +15,9 @@ When I start learning a new language I like to begin by understanding the toolin
 - How do I **configure** a Clojure project?
 - How do I **build** Clojure for production?
 
-Now, when I first came to clojure, the answer to the above questions was, _"use [lein] or [boot]"_. Then, around the end of 2017, a third option came along: the [Clojure CLI tool]. Admitedly, it took me  a bit to "get it".  Yet, when I finally pieced it together, I was onboard.  It's my tool of choice.
+Now, when I first came to clojure, the answer to the above questions were, _"use [lein] or [boot]"_. Then, around the end of 2017, a third option came along: the [Clojure Tools]. Admitedly, it took me a while to understand their purpose and how to use them.  Now, I feel this was true for me because their role in the Clojure ecosystem tooling setup is deceptively simple.
 
-So, in this post I want to share some of my learnings RE: what the `Clojure CLI tool` is, the problem it solves and how it compares to `lein` and `boot`.
+So, in this post my goal is to share my knowledge around the [Clojure Tools] by outlining the problem they solve and how they compare to other tools like `lein` and `boot`.
 
 ## Clojure CLI Tool
 
@@ -168,6 +168,7 @@ So yes, `clj` for the win.
 [official guide]: https://clojurescript.org/guides/quick-start
 [Clojure]: https://clojure.org/guides/getting_started
 [ClojureScript]: https://clojurescript.org/guides/quick-start
+[Clojure Tools]: https://clojure.org/guides/deps_and_cli
 [Clojure cli tool]: https://clojure.org/guides/deps_and_cli
 [Clojure cli tools]: https://clojure.org/guides/deps_and_cli
 [clj/clojure]: https://github.com/clojure/brew-install
