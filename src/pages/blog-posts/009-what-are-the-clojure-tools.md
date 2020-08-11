@@ -15,21 +15,25 @@ When I start learning a new language I like to begin by understanding the toolin
 - How do I **configure** a Clojure project?
 - How do I **build** Clojure for production?
 
-Now, when I first came to clojure, the answer to the above questions were, _"use [lein] or [boot]"_. Then, around the end of 2017, a third option came along: the [Clojure Tools]. Admitedly, it took me a while to understand their purpose and how to use them.  Now, I feel this was true for me because their role in the Clojure ecosystem tooling setup is deceptively simple.
+Now, when I first came to clojure, the answer to the above questions were, _"use [lein] or [boot]"_. Then, around the end of 2017, a third option came along: the [Clojure Tools]. Admitedly, it took me a while to understand their purpose and how to use them and that's where this post comes in<a href="#clojure-tools-simple" aria-describedby="footnote-label" id="clojure-tools-simple-ref">.</a>
 
-So, in this post my goal is to share my knowledge around the [Clojure Tools] by outlining the problem they solve and how they compare to other tools like `lein` and `boot`.
+My goal with this post is to share my knowledge around the [Clojure Tools] by outlining the problem they solve and how they compare to other tools like `lein` and `boot`.
 
-## Clojure CLI Tool
+## Clojure Tools
 
-If you installed Clojure using the [official guide] you already have the `Clojure CLI tool`.  Now, the `Clojure CLI tool` is a mouthful so the community often just refers to it as `clj`.  Thus, For the rest of this post I'm going to say `clj`.
+If you installed Clojure using the [official guide] you likely already have the `Clojure Tools` installed are are using them.  Having said this, the `Clojure Tools` can go by a number of names, and people often refer to the sub-tools within the `Clojure Tools` suite.  Thus, before we go on, let's nail down some naming conventions.
 
-Now that we're friendly with the `clj` tool, let's see how you might perform some common tasks:
+`Clojure Tools` is an umbrella name and may not even be the official one.  It includes tools like `clj`, `clojure`, `deps.edn` and `tools.deps.alpha`.  Thus, you will often here members of the Clojure community referring to each one of these individually.  When they are, they are often (context is important here) referring to what I am calling the `Clojure Tools`.  For brevity, I will refer to them all as `clj` going forward.
 
-**Run** a clojure repl and programs respectively
+Alright, so we have `clj` available to us, what does it do and how can we use it?  Here are some common tasks:
+
+**Run** a clojure repl
 
 ```bash
 clj
 ```
+
+**Run** a clojure repl program
 
 ```bash
 clj -m your-clojure-program
@@ -47,7 +51,7 @@ If we were to just look at the above commands, it appears that `clj` is doing ma
 - [deps.edn] - an edn file
 - [tools.deps.alpha] -  a clojure program
 
-Once I understood the above, it became easier to follow along with Clojurians slack conversations and research the tool in general.  The reason for this is because when the community discusses the `clj` tool it can seem that `clj`, `deps.edn` and `tools.deps.alpha` are used interchangeably.  In truth, they are all separate things that are wrapped by the `clj` tool.
+Once I understood the above, it became easier to follow along with conversations on forums like Clojurians and understanding the tool was more straightforward.  The reason for this is because when the community discusses the `clj` tool it can seem that `clj`, `deps.edn` and `tools.deps.alpha` are used interchangeably.  In truth, they are all separate things that are wrapped by the `clj` tool.
 
 The next few sections will discuss each of the above tools in more detail and how they all come together.
 
@@ -147,6 +151,10 @@ So yes, `clj` for the win.
     <li id="my-way">
       This point is more nuanced than it appears and could also warrant a post of it's own.  Just note that this is my process.  I don't recommend it to everyone.
       <a href="#my-way-ref" aria-label="Back to content">Back</a>
+    </li>
+    <li id="clojure-tools-simple">
+      I feel this was true for me because their role in the Clojure ecosystem tooling setup is deceptively simple and focused.
+      <a href="#clojure-tools-simple-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="clj-calls-clojure-note">
       You can see this <a class="blog-content__link" href="https://github.com/clojure/brew-install/blob/1.10.1/src/main/resources/clj#L4" target="_blank" rel="noopener noreferrer">here</a>.
