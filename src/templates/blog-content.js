@@ -63,7 +63,6 @@ export default ({ data }) => {
         description={frontmatter.summary}
         author={frontmatter.author}
         lang={siteMetadata.seoLang}
-        googleStructuredData={''}
         ogURL={`${siteMetadata.ogURL}/${frontmatter.slug}`}
         datePublished={frontmatter.datePublished}
         dateModified={frontmatter.dateModified}
@@ -127,7 +126,6 @@ export const query = graphql`
         slug
         datePublished(formatString: "DD MMMM, YYYY")
         dateModified(formatString: "DD MMMM, YYYY")
-        keywords
       }
     }
   }
