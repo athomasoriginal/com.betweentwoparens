@@ -1,6 +1,7 @@
 ---
 title: 'Clojure Text Editors'
-date: '2019-11-30'
+datePublished: '2019-11-30'
+dateModified: '2020-05-26'
 slug: clojure-text-editors
 summary: Focus on learning and writing Clojure!
 author: 'Thomas Mattacchione'

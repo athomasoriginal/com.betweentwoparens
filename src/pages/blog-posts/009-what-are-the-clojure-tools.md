@@ -1,6 +1,7 @@
 ---
 title: 'What are the Clojure Tools?'
-date: '2020-03-31'
+datePublished: '2020-03-31'
+dateModified: '2020-08-10'
 slug: what-are-the-clojure-tools
 summary: It's not a build tool, it's clj
 author: 'Thomas Mattacchione'

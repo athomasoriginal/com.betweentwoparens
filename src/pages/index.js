@@ -17,7 +17,7 @@ const Blogs = ({ blogPosts, emptyBlogMsg, footerLinks, license }) => {
               key={blogPost.node.id}
               title={blogPost.node.frontmatter.title}
               author={blogPost.node.frontmatter.author}
-              date={blogPost.node.frontmatter.date}
+              date={blogPost.node.frontmatter.datePublished}
               description={blogPost.node.frontmatter.summary}
               url={blogPost.node.fields.slug}
             />
@@ -97,7 +97,7 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___datePublished], order: DESC }) {
       totalCount
       edges {
         node {
@@ -105,7 +105,7 @@ export const query = graphql`
           frontmatter {
             title
             author
-            date(formatString: "DD MMMM, YYYY")
+            datePublished(formatString: "DD MMMM, YYYY")
             summary
           }
           fields {

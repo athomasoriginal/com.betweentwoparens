@@ -1,6 +1,7 @@
 ---
 title: 'Rich Comment Blocks'
-date: '2020-07-02'
+datePublished: '2020-07-02'
+dateModified: '2020-07-08'
 slug: rich-comment-blocks
 summary: Your coding life doesn't have to be a Rogue Like
 author: 'Thomas Mattacchione'

@@ -109,6 +109,13 @@ Images used directly in the blog are currently found in the `static` directory. 
 
 > For a blog post to have properly formatted dates you must include the date in the blog posts markdown frontmatter
 
+Note there are two types of dates associated to each blog post:
+
+- datePublished
+- dateModified
+
+The motivation for these is to help the reader assess the relevance of the content.  My goal is to have posts that will continue to be useful as the blog ages so I don't have to continue rewriting everything as I go.
+
 ### Summary
 
 `gatsby-transformer-remark` will provide you with what they call an `excerpt` of the content in your markdown file. The `excerpt` is the first 140 characters of your markdown file. While you can set it to be whatever you like, I prefer custom excerpts. Thus, to add a custom excerpt you must add a `summary` field to your `frontmatter`. Please limit to 140 characters.

@@ -24,15 +24,20 @@ const TableOfContents = ({ toc }) => {
   )
 }
 
-const BlogHeading = ({ title, date }) => {
+const BlogHeading = ({ title, datePublished, dateModified }) => {
   return (
     <div className="blog-content__heading">
       <h2 className="blog-content__headline">{title}</h2>
-      <p className="blog-content__byline">
-        <span className="hide">posted on</span>
-        <time className="blog-content__byline-time">{date}</time>
+      <div className="blog-content__byline">
+        <div className="blog-content__byline-time-wrapper">
+          <p className="">posted on
+            <time className="blog-content__byline-time"> {datePublished} </time>
+            and last updated
+            <time className="blog-content__byline-time"> {dateModified} </time>
+          </p>
+        </div>
         <span className="blog-content__byline-divider" />
-      </p>
+      </div>
     </div>
   )
 }
@@ -67,7 +72,11 @@ export default ({ data }) => {
         navList={siteMetadata.headerLinks}
       />
       <div className="blog-content__wrapper">
-        <BlogHeading title={frontmatter.title} date={frontmatter.date} />
+        <BlogHeading
+          title={frontmatter.title}
+          datePublished={frontmatter.datePublished}
+          dateModified={frontmatter.dateModified}
+        />
         <TableOfContents toc={data.markdownRemark.tableOfContents} />
         <BlogContent
           html={data.markdownRemark.html}
@@ -112,7 +121,8 @@ export const query = graphql`
         summary
         author
         slug
-        date(formatString: "DD MMMM, YYYY")
+        datePublished(formatString: "DD MMMM, YYYY")
+        dateModified(formatString: "DD MMMM, YYYY")
         keywords
       }
     }

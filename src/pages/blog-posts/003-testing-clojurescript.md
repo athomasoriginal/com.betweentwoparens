@@ -1,6 +1,7 @@
 ---
 title: 'ClojureScript Test Setup'
-date: '2019-08-26'
+datePublished: '2019-08-26'
+dateModified: '2020-05-26'
 slug: clojurescript-test-setup
 summary: Setup a ClojureScript Test Toolchain like a Boss
 author: 'Thomas Mattacchione'
