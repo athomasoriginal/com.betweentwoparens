@@ -12,6 +12,7 @@
   - [Images](#images)
   - [Edits](#edits)
   - [Header Links](#header-links)
+  - [Code Blocks](#code-blocks)
 - [Updating Blog Posts](#updating-blog-posts)
   - [ClojureScript Versions](#clojureScript-versions)
   - [Figwheel Versions](#figwheel-versions)
@@ -234,6 +235,16 @@ Once completed, make a PR. The PR is to deploy a preview.
 ### Header Links
 
 Linking header github style is a feature we want. However, this will not happen automatically so we require an [additional plugin](https://www.gatsbyjs.org/packages/gatsby-remark-autolink-headers/) to provide this support. Now, whenever we have `H*` level headers they automatically recieve links.
+
+### Code Blocks
+
+When writing code blocks you can do a few cool things to help improve their quality.  Here are some of the ones I have used below and see [gatsby-remark-prism](https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/) for a reference of what can be done.
+
+- [Line Numbers](https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/#line-numbering)
+  Usefil when we want to reference line numbers.  I like to use this if I have to reference a specific line number in the text.
+
+- [Line Highlighting](https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/#line-highlighting)
+  Useful when we want to assist readers and draw their attention to a line.  This is different from the line numbers because we likely just want to focus on a change, but won't need to discuss the change in the text below the code block.
 
 ## Updating Blog Posts
 
