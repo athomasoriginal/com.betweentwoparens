@@ -326,11 +326,16 @@ They are: notes, code blocks, lists */
   margin: 0;
   color: var(--color-black);
   text-align: center;
-  text-transform: uppercase;
+}
+
+.blog-content__byline-time-wrapper {
+  display: flex;
+  margin-bottom: 20px;
 }
 
 .blog-content__byline-time {
-  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .blog-content__byline-divider {

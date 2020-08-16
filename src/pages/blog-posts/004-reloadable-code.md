@@ -1,6 +1,7 @@
 ---
 title: 'Students of the Game: Reloadable Code'
-date: '2019-09-29'
+datePublished: '2019-09-29'
+dateModified: '2020-04-03'
 slug: students-of-the-game-reloadable-code
 summary: This is for the students of the game, the ones who want to reloadable code.
 author: 'Thomas Mattacchione'

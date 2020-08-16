@@ -1,6 +1,7 @@
 ---
 title: 'Manage your Java JDKs'
-date: '2020-01-31'
+datePublished: '2020-01-31'
+dateModified: '2020-03-24'
 slug: jenv
 summary: Live like Jay
 author: 'Thomas Mattacchione'

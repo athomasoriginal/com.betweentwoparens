@@ -1,6 +1,7 @@
 ---
 title: 'Reagent & Hiccup'
-date: '2019-12-31'
+datePublished: '2019-12-31'
+dateModified: '2020-07-06'
 slug: reagent-and-hiccup
 summary: Hiccup is the Ryan Atwood to JSX's Seth Cohen
 author: 'Thomas Mattacchione'
