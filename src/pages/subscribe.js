@@ -79,7 +79,6 @@ const SubscribePage = ({ data }) => {
         author={siteMetadata.author}
         lang={siteMetadata.seoLang}
         ogURL={siteMetadata.ogURL}
-        keywords={siteMetadata.seokeywords}
       />
       <div className="subscribe">
         <h1 className="h__base h__1 subscribe__title">Join Us</h1>
@@ -142,7 +141,6 @@ export const query = graphql`
         seoTitle
         seoDescription
         seoLang
-        seokeywords
         ogURL
 
         subscribe {
