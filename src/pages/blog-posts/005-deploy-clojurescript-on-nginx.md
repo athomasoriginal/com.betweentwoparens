@@ -5,7 +5,6 @@ dateModified: '2020-05-26'
 slug: deploy-clojurescript-on-nginx
 summary: Learn how to serve a ClojureScript project on Nginx
 author: 'Thomas Mattacchione'
-keywords: ['clojurescript tutorial', 'docker clojurescript', 'clojurescript nginx']
 ---
 
 My [first blog post](https://betweentwoparens.com/deoploy-clojurescript-to-github-pages) outlined how to deploy a static ClojureScript website to Github Pages. This is an excellent choice for personal websites, or an open source project's documentation because you get free hosting infrastructure with relatively little effort.  Having said this, what happens if you can't use static hosting providers like Github Pages or [Netlify](https://www.netlify.com/)?  What if you need to control more of the hosting service?  This post will show you how to deploy your ClojureScript site on a webserver you control.  Specifically, we will cover the following topics:

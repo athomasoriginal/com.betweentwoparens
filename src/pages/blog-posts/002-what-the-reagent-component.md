@@ -5,7 +5,6 @@ dateModified: '2020-04-03'
 slug: what-the-reagent-component
 summary: It's time to uncover the truth about Reagent components
 author: 'Thomas Mattacchione'
-keywords: ['reagent', 'class components', 'clojurescript']
 ---
 
 Did you know that when you write a [form-1](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-1-a-simple-function), [form-2](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-2--a-function-returning-a-function) or [form-3](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-3-a-class-with-life-cycle-methods) Reagent component they all become React `class components`<a href="#reagent-components" aria-describedby="footnote-label" id="reagent-components-ref">?</a>

@@ -5,7 +5,6 @@ dateModified: '2020-08-10'
 slug: what-are-the-clojure-tools
 summary: It's not a build tool, it's clj
 author: 'Thomas Mattacchione'
-keywords: ['clojure tutorial', 'clojurescript beginner guide', 'clojure tools', 'clj']
 ---
 
 When I start learning a new language I like to begin by understanding the tooling ecosystem.  For me, having a handle on the tools enables me to confidently focus on learning the language itself<a href="#my-way" aria-describedby="footnote-label" id="my-way-ref">.</a>  For example, when I came to Clojure my questions went something like this:

@@ -5,7 +5,6 @@ dateModified: '2020-07-08'
 slug: rich-comment-blocks
 summary: Your coding life doesn't have to be a Rogue Like
 author: 'Thomas Mattacchione'
-keywords: ['clojure comment', 'Clojure Guide', 'Rich Hickey', 'Rich Comment']
 ---
 
 The three main types of comments in Clojure are
