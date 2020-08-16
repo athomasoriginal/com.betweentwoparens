@@ -180,7 +180,7 @@ Also used for the SEO `ogURL`
 
 ### Footnotes
 
-Footnotes are great when you have additional clarifying comments or want to credit someone else work etc. For this reason, I provide a quick way of adding footnotes to your blog posts.
+Footnotes are great when you have additional comments to make which are valuable to reveal nuance, but not so valuable as to be front and center with the main content.
 
 ```html
 <a href="#footnotes" aria-describedby="footnote-label" id="footnotes-ref"
@@ -198,15 +198,23 @@ Footnotes are great when you have additional clarifying comments or want to cred
 </aside>
 ```
 
-We provide aria-labels for everything and we also add an `aside` at the bottom which is where we put the footers.
+We provide aria-labels for everything and we also add an `aside` at the bottom which is where we put the footnotes.
 
-Note that you do not need to manually add numbers to the footnotes. This is because we have setup the CSS to dynamically count your footnotes. Having said this, you do need to put them in the correct order in the aside section at the bottom.
+**How do I number footnotes?**
+
+You don't.  We do this programmatically with CSS.  Having said this, you do need to be sure everything is in the correct order.
 
 ### Article Notes
 
-These are marked up as `<asides/>` and used in blog posts to make a clarification inline. When should a clarification be made inline vs. in a footnote? Just ask yourself how important is it to have the additional information highlighting inline. Its subjective.
+These are the large yellow blocks of text in our `blog-posts`.  We use this to bring attention to a particular detail.  For example, clarifying an assumption, or giving the reader additional directions to make the article clearer.
 
-Also keep in mind that if you use `<aside/>` the text inside will not be parsed correctly so things like backticks or links will not be formatted. To regain formatting, please use
+Theare are marked up as follows:
+
+```html
+<aside class="blog-content__note">immport text here</aside>
+```
+
+Also keep in mind that if you use `<aside/>` the text inside will not be parsed correctly so things like `backticks` or `links` will not be formatted. To regain formatting, please use
 
 ```html
 <code class="gatsby-code-text">...</code>
@@ -220,9 +228,10 @@ Also keep in mind that if you use `<aside/>` the text inside will not be parsed 
 
 ### Images
 
-- All blog images should live in `pages/blog/images`.
-- Please prefix each image with the same 3 digit code as your blog post. For example, if your blog is `001-...` your image name should also begin with `001-image-name-0f-your-choosing`.
-- Example of how to reference your images in a blog post
+- Image that appear in a blog post should go in: `pages/blog/images`.
+- Images should be prefixed with the same 3 digit code as your blog-post.
+  For example, if your blog is `001-...` your image should be titled `001-image-name-0f-your-choosing`.
+- Example of referencing an image in a blog post
 
   ```markdown
   ![screenshot of example hello clojurescript site](/001-image-hello-cljs-dev-example.png)
@@ -230,27 +239,33 @@ Also keep in mind that if you use `<aside/>` the text inside will not be parsed 
 
 ### Edits
 
-I want to work to keep these posts updated so that they remain relevant. To do this, we should have a consistent system to handle edits/updaes. For example, when we make an update we should do so on a separate branch which follows these naming conventions:
+It's fine to edit blog posts.  Please do so on a separate branch.  Title your branch with the following format:
 
 ```bash
-000-edit-round-1-deploy-clojurescript-to-github-pages
+# article format
+update > Blog Post ID > purpose
+
+# example
+update-000-cleanup-links
 ```
 
-> article-id > edit > round # - article name
-
-Each commit should follow a convention like
+And then each commit should follow a convention like
 
 ```bash
-000 - blog post - edit - add note about Gotchas
+# commit format
+Verb > Blog Post ID > Note about changes
+
+# example
+Update Post - 000 - add note about Gotchas
 ```
 
-> article-id > type > edit - summary of change
-
-Once completed, make a PR. The PR is to deploy a preview.
+Once completed, make a PR.
 
 ### Header Links
 
-Linking header github style is a feature we want. However, this will not happen automatically so we require an [additional plugin](https://www.gatsbyjs.org/packages/gatsby-remark-autolink-headers/) to provide this support. Now, whenever we have `H*` level headers they automatically recieve links.
+A header link is when the headers each have their own hyperlink associated to them to make bookmmarking and quick navigation through the post possible.
+
+We achieve this through an [additional plugin](https://www.gatsbyjs.org/packages/gatsby-remark-autolink-headers/) which automatically adds this functionality.
 
 ### Code Blocks
 
@@ -264,7 +279,7 @@ When writing code blocks you can do a few cool things to help improve their qual
 
 ## Updating Blog Posts
 
-Keeping blog posts updated is important because it ensure that the work stays relevant and therefore useful to future readers.  With CLJ(s) this is easier because of the stability of the ecosystem.  Either way though, here is an outline of artifacts that need to be updated:
+Keeping blog posts updated is important because it ensures that the work stays relevant and therefore useful to future readers.  With CLJ(s) this is easier because of the stability of the ecosystem.  Either way though, here is an outline of artifacts that need to be updated:
 
 ### ClojureScript Versions
 
