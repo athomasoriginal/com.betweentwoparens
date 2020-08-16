@@ -3,10 +3,11 @@
   - [Environment Variables](#environment-variables)
   - [Upgrading Dependencies](#upgrading-dependencies)
   - [Images](#images)
-- [Blog Post Formatting Guidelines](#blog-post-formatting-guidelines)
-  - [Date](#date)
-  - [Summary](#summary)
-  - [Slug](#slug)
+- [Blog Post Guidelines](#blog-post-formatting-guidelines)
+  - [Frontmatter](#frontmatter)
+    - [Date](#date)
+    - [Summary](#summary)
+    - [Slug](#slug)
   - [Footnotes](#footnotes)
   - [Article Notes](#article-notes)
   - [Images](#images)
@@ -88,43 +89,58 @@ yarn upgrade --latest --pattern "gatsby-"
 
 ### Images
 
-Images used directly in the blog are currently found in the `static` directory.  This strategy forgoes image optimization.  Normally this is not the best choice because we forgo image optimization can Gatsby can provide.  However, I went this route because for the time being I only have 1 image to use and most everything else is an SVG.  See [Official Gatsby Guide](https://www.gatsbyjs.org/docs/static-folder/) for more details.
+Images used directly in the blog are currently found in the `static` directory.  This strategy forgoes image optimization.  Normally this is not the best choice, but I went this route because for the time being I only have 1 image.  See [Official Gatsby Guide](https://www.gatsbyjs.org/docs/static-folder/) for more details.
 
-## Blog Post Formatting Guidelines
+## Blog Post Guidelines
 
-### Date
+### Frontmatter
 
-- Date Formatting
+[Frontmatter](https://www.scribendi.com/academy/articles/front_matter.en.html) is the stuff at the beginning of our `blog-post` markfown files.  The required keys are:
 
-  ```bash
-  # no bueno
-  February 09, 2018
+```markdown
+---
+title: 'Students of the Game: Reloadable Code'
+datePublished: '2019-09-29'
+dateModified: '2020-04-03'
+slug: students-of-the-game-reloadable-code
+summary: This is for the students of the game, the ones who want to reloadable code.
+author: 'Thomas Mattacchione'
+---
+```
 
-  # no bueno
-  2019, 09 February
+The rest of this section will dig into each of the items and any guidelines to consider.
 
-  # good
-  09 February 2019
-  ```
+#### Date
 
-> For a blog post to have properly formatted dates you must include the date in the blog posts markdown frontmatter
+There are two keys for `dates` in the frontmatter:
 
-Note there are two types of dates associated to each blog post:
+- `datePublished` - the original publication date
+- `dateModified` - the date the post was last updated
 
-- datePublished
-- dateModified
+The reason for both is to help the reader assess the relevance of the content.  My goal is to have posts that will continue to be useful as the blog ages so I don't have to continue rewriting everything as I go.
 
-The motivation for these is to help the reader assess the relevance of the content.  My goal is to have posts that will continue to be useful as the blog ages so I don't have to continue rewriting everything as I go.
+Dates are programmatically formatted, but if there is a need to manually write them be sure that they are formatted as follows:
 
-### Summary
+```bash
+# good
+09 February 2019
 
-`gatsby-transformer-remark` will provide you with what they call an `excerpt` of the content in your markdown file. The `excerpt` is the first 140 characters of your markdown file. While you can set it to be whatever you like, I prefer custom excerpts. Thus, to add a custom excerpt you must add a `summary` field to your `frontmatter`. Please limit to 140 characters.
+# no bueno
+February 09, 2018
+
+# no bueno
+2019, 09 February
+```
+
+#### Summary
+
+This is a short (140 char max), customm description of the blog post.  I added this because I do not like the `excerpt` provided by `gatsby-transformer-remark` as it's just the first 140 characters of the contents of the post. While you can set it to be whatever you like, I prefer custom excerpts.
 
 Also used for the SEO description
 
-### Slug
+#### Slug
 
-By default Gatsby will use the file path provided and filename to provide your slugs with names. For example, if you have a markdown file structure like:
+By default, Gatsby uses the file path provided and filename to name your slugs. For example, if you have a markdown file structure like:
 
 ```bash
 ├── blog-posts
@@ -146,21 +162,21 @@ with the above, your slug will now look like `www.my-site.com/my-custom-slug/`. 
 - Custom Slugs
 
   ```bash
+  # good
+  my-custom-slug
+
   # no bueno
   my_custom_slug
 
   # no bueno
   myCustomSlug
-
-  # good
-  my-custom-slug
   ```
 
-  > perfer lisp case as I feel it is more readable
+I perfer lisp case because I feel it's more readable.
 
 > @note The URL segments of the URL can be set in `gatsby-node.js`.
 
-Also used for the SEO ogURL
+Also used for the SEO `ogURL`
 
 ### Footnotes
 
@@ -241,7 +257,7 @@ Linking header github style is a feature we want. However, this will not happen 
 When writing code blocks you can do a few cool things to help improve their quality.  Here are some of the ones I have used below and see [gatsby-remark-prism](https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/) for a reference of what can be done.
 
 - [Line Numbers](https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/#line-numbering)
-  Usefil when we want to reference line numbers.  I like to use this if I have to reference a specific line number in the text.
+  Useful when we want to reference line numbers.  I like to use this if I have to reference a specific line number in the text.
 
 - [Line Highlighting](https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/#line-highlighting)
   Useful when we want to assist readers and draw their attention to a line.  This is different from the line numbers because we likely just want to focus on a change, but won't need to discuss the change in the text below the code block.
