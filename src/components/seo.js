@@ -11,8 +11,6 @@ function SEO({
   ogURL,
   datePublished,
   dateModified,
-  // object with keys: title, author, datePublished, description
-  googleStructuredData,
   isBlogPost,
 }) {
   return (
