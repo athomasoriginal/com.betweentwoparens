@@ -51,13 +51,13 @@ function SEO({
         {
             "@context": "http://schema.org",
             "@type": "Article",
-            "name": ${title},
+            "name": "${title}",
             "author": {
               "@type": "Person",
-              "name": ${author}
+              "name": "${author}"
             },
-            "datePublished": ${datePublished},
-            "dateModified": ${dateModified},
+            "datePublished": "${datePublished}",
+            "dateModified": "${dateModified}"
         }
     `}</script>
       ) : (
