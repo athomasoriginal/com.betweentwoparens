@@ -30,7 +30,8 @@ const BlogHeading = ({ title, datePublished, dateModified }) => {
       <h2 className="blog-content__headline">{title}</h2>
       <div className="blog-content__byline">
         <div className="blog-content__byline-time-wrapper">
-          <p className="">posted on
+          <p className="">
+            posted on
             <time className="blog-content__byline-time"> {datePublished} </time>
             and last updated
             <time className="blog-content__byline-time"> {dateModified} </time>
@@ -62,8 +63,11 @@ export default ({ data }) => {
         description={frontmatter.summary}
         author={frontmatter.author}
         lang={siteMetadata.seoLang}
+        googleStructuredData={''}
         ogURL={`${siteMetadata.ogURL}/${frontmatter.slug}`}
-        keywords={frontmatter.keywords}
+        datePublished={frontmatter.datePublished}
+        dateModified={frontmatter.dateModified}
+        isBlogPost={true}
       />
       <Header
         title={siteMetadata.title}

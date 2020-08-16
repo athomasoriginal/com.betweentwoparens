@@ -16,7 +16,7 @@ module.exports = {
     seoLang: `en`,
     seoDescription: `A blog about programming clojure, clojurescript and javascript`,
     ogURL: `https://www.betweentwoparens.com`,
-    seokeywords: [`clojurescript`, `clojure`, `javascript`],
+    interests: [`clojurescript`, `clojure`, `javascript`],
     // added for the RSS feed plugin
     siteUrl: `https://betweentwoparens.com`,
     license: {
