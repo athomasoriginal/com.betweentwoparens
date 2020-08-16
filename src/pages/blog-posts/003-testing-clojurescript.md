@@ -5,7 +5,6 @@ dateModified: '2020-05-26'
 slug: clojurescript-test-setup
 summary: Setup a ClojureScript Test Toolchain like a Boss
 author: 'Thomas Mattacchione'
-keywords: ['test setup', 'test tools', 'clojurescript']
 ---
 
 ClojureScript rewards you for having more than a passing acquaintance with software testing practices. The community has provided great tools, but you do need to know how, why and when to use them<a href="#intro-to-testing" aria-describedby="footnote-label" id="intro-to-testing-ref">.</a>

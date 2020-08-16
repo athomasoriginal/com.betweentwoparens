@@ -5,7 +5,6 @@ dateModified: '2020-03-24'
 slug: jenv
 summary: Live like Jay
 author: 'Thomas Mattacchione'
-keywords: ['java tutorial', 'jenv tutorial', 'java guide']
 ---
 
 Pro tip for anyone working with _any_ programming language: seek out a language version management tool.

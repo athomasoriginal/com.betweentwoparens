@@ -5,7 +5,6 @@ dateModified: '2020-05-26'
 slug: clojure-text-editors
 summary: Focus on learning and writing Clojure!
 author: 'Thomas Mattacchione'
-keywords: ['clojurescript tutorial', 'atom github clojurescript', 'atom clojure']
 ---
 
 <aside class="blog-content__note">Interested in jumping right to my editor setup? <a class="blog-content__link" href="#my-text-editor-setup">click here</a> or you can checkout my free <a class="blog-content__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp">Atom Setup Guide Video Series</a>.</aside>

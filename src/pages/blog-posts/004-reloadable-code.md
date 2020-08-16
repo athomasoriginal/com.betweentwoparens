@@ -5,7 +5,6 @@ dateModified: '2020-04-03'
 slug: students-of-the-game-reloadable-code
 summary: This is for the students of the game, the ones who want to reloadable code.
 author: 'Thomas Mattacchione'
-keywords: ['clojurescript tutorial', 'figwheel', 'clojurescript']
 ---
 
 About two years ago I built a small ClojureScript app that looks like this:

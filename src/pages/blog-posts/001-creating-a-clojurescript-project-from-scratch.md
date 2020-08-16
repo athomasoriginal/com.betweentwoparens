@@ -5,7 +5,6 @@ dateModified: '2020-07-05'
 slug: start-a-clojurescript-app-from-scratch
 summary: 'A guide to setting up a ClojureScript app from scratch without fear or worry.'
 author: 'Thomas Mattacchione'
-keywords: ['clojurescript', 'start', 'new']
 ---
 
 Welcome to my step by step guide to setting up a ClojureScript app. We'll work to assuage your fears & stresses and alleviate those nagging thoughts about doing things the "right" or "wrong" way.

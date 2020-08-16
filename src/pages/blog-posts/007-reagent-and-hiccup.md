@@ -5,7 +5,6 @@ dateModified: '2020-07-06'
 slug: reagent-and-hiccup
 summary: Hiccup is the Ryan Atwood to JSX's Seth Cohen
 author: 'Thomas Mattacchione'
-keywords: ['Reagent Hiccup', 'ClojureScript', 'Hiccup Guide']
 ---
 
 Let's start this post by looking at React's [hello world](https://reactjs.org/docs/hello-world.html) example:
