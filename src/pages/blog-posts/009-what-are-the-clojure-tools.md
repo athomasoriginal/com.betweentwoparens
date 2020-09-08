@@ -1,7 +1,7 @@
 ---
 title: 'What are the Clojure Tools?'
 datePublished: '2020-03-31'
-dateModified: '2020-08-10'
+dateModified: '2020-09-08'
 slug: what-are-the-clojure-tools
 summary: It's not a build tool, it's clj
 author: 'Thomas Mattacchione'
@@ -15,15 +15,15 @@ When I start learning a new language I like to begin by understanding the toolin
 - How do I **configure** a Clojure project?
 - How do I **build** Clojure for production?
 
-Now, when I first came to clojure, the answer to the above questions were, _"use [lein] or [boot]"_. Then, around the end of 2017, a third option came along: the [Clojure Tools]. Admitedly, it took me a while to understand their purpose and how to use them and that's where this post comes in<a href="#clojure-tools-simple" aria-describedby="footnote-label" id="clojure-tools-simple-ref">.</a>
+Now, when I first came to clojure, the answer to the above questions were, _"use [lein] or [boot]"_. Then, around the end of 2017, a third option came along: the [Clojure CLI Tools]<a href="#cli-tool-v-dev-tools" aria-describedby="footnote-label" id="cli-tool-v-dev-tools-ref">.</a>. Admitedly, it took me a while to understand their purpose and how to use them and that's where this post comes in<a href="#clojure-tools-simple" aria-describedby="footnote-label" id="clojure-tools-simple-ref">.</a>
 
-My goal with this post is to share my knowledge around the [Clojure Tools] by outlining the problem they solve and how they compare to other tools like `lein` and `boot`.
+My goal with this post is to share my knowledge around the [Clojure CLI Tools] by outlining the problem they solve and how they compare to other tools like `lein` and `boot`.
 
-## Clojure Tools
+## Clojure CLI Tools
 
-If you installed Clojure using the [official guide] you likely already have the `Clojure Tools` installed are are using them.  Having said this, the `Clojure Tools` can go by a number of names, and people often refer to the sub-tools within the `Clojure Tools` suite.  Thus, before we go on, let's nail down some naming conventions.
+If you installed Clojure using the [official guide] you likely already have the `Clojure CLI Tools` installed are are using them.  Having said this, the `Clojure CLI Tools` can go by a number of names, and people often refer to the sub-tools within the `Clojure CLI Tools` suite.  Thus, before we go on, let's nail down some naming conventions.
 
-`Clojure Tools` is an umbrella name and may not even be the official one.  It includes tools like `clj`, `clojure`, `deps.edn` and `tools.deps.alpha`.  Thus, you will often here members of the Clojure community referring to each one of these individually.  When they are, they are often (context is important here) referring to what I am calling the `Clojure Tools`.  For brevity, I will refer to them all as `clj` going forward.
+`Clojure CLI Tools` is an umbrella name and may not even be the official one.  It includes tools like `clj`, `clojure`, `deps.edn` and `tools.deps.alpha`.  Thus, you will often here members of the Clojure community referring to each one of these individually.  When they are, they are often (context is important here) referring to what I am calling the `Clojure CLI Tools`.  For brevity, I will refer to them all as `clj` going forward.
 
 Alright, so we have `clj` available to us, what does it do and how can we use it?  Here are some common tasks:
 
@@ -111,9 +111,9 @@ This is the file where you define the libraries your project needs, shortcuts an
 
 So what this means is that, in theory, you don't need to use `tools.deps.alpha`.  Instead, you could build your own version of `tools.deps.alpha` which consumes the `deps.edn` file and has it's own way of resolving dependencies.  I'm not encouraging this, i'm just explaining why I see it as standing on it's own.
 
-## Clojure Tools Installer
+## Clojure CLI Tools Installer
 
-"Clojure Tools Installer" is a fancy way of referring to the `brew tap` used to install Clojure on mac and linux machines.  As of February 2020, Clojure started maintaining their own [brew tap].  Thus, if you installed the clojure command line tools via
+"Clojure CLI Tools Installer" is a fancy way of referring to the `brew tap` used to install Clojure on mac and linux machines.  As of February 2020, Clojure started maintaining their own [brew tap].  Thus, if you installed the clojure command line tools via
 
 ```bash
 brew install clojure
@@ -133,13 +133,13 @@ Let's end this conversation with a quick contextualization of `clj`, `lein` and 
 
 <aside class="blog-content__note">I won't dive into the history, for this I recommend the blog post <a class="blog-content__link" href="https://corfield.org/blog/2018/04/18/all-the-paths/" rel="noopener noreferrer">All the Paths</a> by Sean Corfield.</aside>
 
-The first point is that you will choose between _one_ of the three tools (`clj`, `lein`, or `boot`) for your project.  You don't use more than one.  Just like you wouldn't use both `boot` and `lein`, you won't use both `clj` and `boot` or `clj` and `lein`.  Further, none of these tools should conflict with the other.
+The first point is that you will choose between _one_ of the three tools (`clj`, `lein`, or `boot`) for your project.  You don't use more than one.  Just like you wouldn't use both `boot` and `lein`, you won't use both `clj` and `boot` or `clj` and `lein`.  Furthermore, none of these tools should conflict with the other.
 
 <aside class="blog-content__note">Now, when I said that you don't actually combine more than one of these tools, this is not 100% true. Take for example the fact that the "build" story for <code class="gatsby-code-text">clj</code> is not as "easy" as <code class="gatsby-code-text">lein</code> which has led to examples of <a class="blog-content__link" href="https://github.com/oakes/full-stack-clj-example" rel="noopener noreferrer">clj calling to lein</a> just for the production builds of ones apps</aside>
 
 If you're curious which to choose, I think it's obvious that I would suggest `clj`.  The reason I like `clj` is because the tool is simple and easy to use.  You can read through `clj` and `tools.deps.alpha` in an afternoon and understand what they are doing if you had to.  If the same occurs with `lein` or `boot`, you will not have any such luck.
 
-Secondly, and most importantly, the Clojure community is really leaning into building tools for `clj`.  For example, where `lein` used to have significantly more functionality, the community has built a ton of [incredible tools] that will cover many of your essential requirements.
+Secondly, and most importantly, the Clojure community is really leaning into building tools for `clj`.  For example, where `lein` used to have significantly more functionality, the community has built a ton of [incredible tools] that will cover many of your essential requirements.  There is also the fact that `deps.edn` is easier to configure because there are less configuration options and less need to understand what lein is doing as you want to perform more advanced configurations.
 
 Finally, when it comes to managing your project configurations and building out maintainable organizational structures (monorepo) it doesn't get easier than `clj`<a href="#monorepo-comment" aria-describedby="footnote-label" id="monorepo-comment-ref">.</a>
 
@@ -151,6 +151,10 @@ So yes, `clj` for the win.
     <li id="my-way">
       This point is more nuanced than it appears and could also warrant a post of it's own.  Just note that this is my process.  I don't recommend it to everyone.
       <a href="#my-way-ref" aria-label="Back to content">Back</a>
+    </li>
+    <li id="cli-tool-v-dev-tools">
+      In earlier versions of this blog post I referred to the <code class="gatsby-code-text">Clojure CLI Tools</code> as <code class="gatsby-code-text">Clojure Tools</code>.  The reason I now started referring to them as "Clojure CLI Tools" is because on August 21, 2020 it was announced in Clojurians (The official Clojure Slack Org) that cognitect released a free set of tools called <a class="blog-content__link" href="https://cognitect.com/dev-tools/index.html" target="_blank" rel="noopener noreferrer">Cognitect Dev Tools</a>.  Thus, I made the change to be very clear that there is a difference now, but also, if anything changes in the future regarding the naming conventions this post should remain clear in the naming conventions adopted.
+      <a href="#cli-tool-v-dev-tools-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="clojure-tools-simple">
       I feel this was true for me because their role in the Clojure ecosystem tooling setup is deceptively simple and focused.
@@ -176,7 +180,7 @@ So yes, `clj` for the win.
 [official guide]: https://clojurescript.org/guides/quick-start
 [Clojure]: https://clojure.org/guides/getting_started
 [ClojureScript]: https://clojurescript.org/guides/quick-start
-[Clojure Tools]: https://clojure.org/guides/deps_and_cli
+[Clojure CLI Tools]: https://clojure.org/guides/deps_and_cli
 [Clojure cli tool]: https://clojure.org/guides/deps_and_cli
 [Clojure cli tools]: https://clojure.org/guides/deps_and_cli
 [clj/clojure]: https://github.com/clojure/brew-install
