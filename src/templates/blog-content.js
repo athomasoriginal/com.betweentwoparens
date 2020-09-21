@@ -57,7 +57,17 @@ export default ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <Layout>
+    <Layout
+      CustomHeader={
+        <Header
+          title={siteMetadata.title}
+          name={siteMetadata.author}
+          description={false}
+          navList={siteMetadata.headerLinks}
+          isBLogLayout={true}
+        />
+      }
+    >
       <SEO
         title={frontmatter.title}
         description={frontmatter.summary}
@@ -67,12 +77,6 @@ export default ({ data }) => {
         datePublished={frontmatter.datePublished}
         dateModified={frontmatter.dateModified}
         isBlogPost={true}
-      />
-      <Header
-        title={siteMetadata.title}
-        name={siteMetadata.author}
-        description={false}
-        navList={siteMetadata.headerLinks}
       />
       <div className="blog-content__wrapper">
         <BlogHeading
