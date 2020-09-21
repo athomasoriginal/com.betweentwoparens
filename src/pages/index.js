@@ -48,6 +48,7 @@ const IndexPage = ({ data }) => {
           description={siteMetadata.description}
           interests={siteMetadata.interests}
           navList={siteMetadata.headerLinks}
+          isBlogLayout={false}
         />
       }
     >

@@ -88,11 +88,18 @@
    Utilities
    -------------------------------------------------------------------------- */
 
-.wrapper {
+/* TODO shouldn't need separate ones, but right now, based on current structure
+        of the Header, we can't differentiate without this */
+.wrapper,
+.wrapperBlog {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.33rem;
+}
+
+.wrapperBlog .header__main-content > div {
+  justify-content: flex-end;
 }
 
 
