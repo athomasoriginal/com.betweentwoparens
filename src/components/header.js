@@ -32,7 +32,7 @@ const Header = ({ title, description, name, interests, picture, navList, isBlogL
     {console.log(isBlogLayout)}
     <div className="switcher">
       <div>
-        <div className="header__logo">
+        <div>
           <Link to="/" className="header__logo-link">
             <Icon name="betweenTwoParensLogo" />
 
