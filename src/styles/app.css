@@ -46,6 +46,57 @@
 }
 
 /* -----------------------------------------------------------------------------
+   Composition
+   -------------------------------------------------------------------------- */
+
+ .switcher {
+   --threshold: 40rem;
+   --space: 1rem;
+ }
+
+
+.switcher > * {
+  display: flex;
+  flex-wrap: wrap;
+  /* ↓ Multiply by -1 to make negative */
+  margin: calc(var(--space) / 2 * -1);
+}
+
+.switcher > * > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--threshold) - (100% - var(--space))) * 999);
+  /* ↓ Half the value to each element, combining to make the whole */
+  margin: calc(var(--space) / 2);
+}
+
+.switcher > * > .header__main-content {
+  margin-top: 2.2em;
+  flex-grow: 3;
+}
+
+.header__main-content > div {
+  display: flex;
+  align-items: baseline;
+}
+
+.switcher > * > .header__nav {
+  display: flex;
+  flex-grow: 0;
+}
+
+/* -----------------------------------------------------------------------------
+   Utilities
+   -------------------------------------------------------------------------- */
+
+.wrapper {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.33rem;
+}
+
+
+/* -----------------------------------------------------------------------------
    MOBILE STYLES
    -------------------------------------------------------------------------- */
 
@@ -123,12 +174,7 @@
 
 /* header */
 
-.header__logo {
-  grid-area: header-logo;
-  display: flex;
-  justify-content: center;
-  margin-left: 10px;
-}
+.header__logo {}
 
 .header__logo svg {
   width: 90px;
@@ -162,7 +208,6 @@
 }
 
 .header__tagline {
-  grid-area: header-tagline;
   display: none;
   flex-direction: column;
   justify-content: flex-end;
@@ -185,19 +230,11 @@
   margin-top: 18px;
 }
 
-.header__nav {
-  grid-area: header-nav;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  margin: 0 30px 0 10px;
-}
+.header__nav {}
 
 .header__nav-list {
   display: flex;
   justify-content: space-between;
-  margin: 0 0 16px 0;
 }
 
 .header__nav-item {
@@ -593,11 +630,7 @@ a[aria-label='Back to content']:hover {
     column-gap: 90px;
   }
 
-  .header__logo {
-    /* @note this has to be in sync with the margin-right of header__nav */
-    margin-left: 28px;
-    align-items: center;
-  }
+  .header__logo {}
 
   .blog-content__wrapper {
     grid-area: main;
@@ -625,15 +658,10 @@ a[aria-label='Back to content']:hover {
   }
 
   .header__tagline {
-    grid-area: header-tagline;
     display: flex;
   }
 
-  .header__nav {
-    grid-area: header-nav;
-    align-items: flex-end;
-    justify-content: center;
-  }
+  .header__nav {}
 
   .blog-content__note {
     margin: 20px -30px 30px -30px;
