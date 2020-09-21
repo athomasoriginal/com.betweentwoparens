@@ -10,7 +10,7 @@ import Footer from '../components/footer'
 const Blogs = ({ blogPosts, emptyBlogMsg, footerLinks, license }) => {
   if (blogPosts && blogPosts.length) {
     return (
-      <div className="blogs">
+      <div className="stack">
         {blogPosts.map((blogPost) => {
           return (
             <Blog

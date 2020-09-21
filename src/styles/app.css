@@ -49,11 +49,34 @@
    Composition
    -------------------------------------------------------------------------- */
 
- .switcher {
-   --threshold: 40rem;
-   --space: 1rem;
- }
+.stack {
+  --space: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack > * + * {
+  margin-top: var(--space);
+}
+
+.stack > * + * {
+  margin-top: var(--space);
+}
+
+.stack > :nth-child(1) {
+  margin-top: 2em;
+}
+
+.switcher {
+ --threshold: 40rem;
+ --space: 1rem;
+}
 
 .switcher > * {
   display: flex;
@@ -86,10 +109,13 @@
 }
 
 .blog__home {
-  box-sizing: content-box;
+  max-width: 58ch;
+  padding: 0 1.33rem;
   margin-left: auto;
   margin-right: auto;
-  max-width: 55ch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* -----------------------------------------------------------------------------
