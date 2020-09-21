@@ -4,18 +4,6 @@
   position: absolute;
 }
 
-.blog {
-  margin: 32px 20px 38px 20px;
-}
-
-.blog:first-of-type {
-  margin-top: 42px;
-}
-
-.blog:last-of-type {
-  margin-bottom: 88px;
-}
-
 .blog__title {
   font-family: 'Playfair Display', serif;
   font-weight: normal;
@@ -57,10 +45,4 @@
   font-family: 'Noto Sans', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-}
-
-@media (min-width: 760px) {
-  .blog {
-    margin: 32px 0 38px 0;
-  }
 }
