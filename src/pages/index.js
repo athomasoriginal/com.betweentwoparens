@@ -41,6 +41,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout
+      className={"blog__home"}
       CustomHeader={
         <Header
           description={siteMetadata.description}
