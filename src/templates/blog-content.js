@@ -60,8 +60,6 @@ export default ({ data }) => {
     <Layout
       CustomHeader={
         <Header
-          title={siteMetadata.title}
-          name={siteMetadata.author}
           description={false}
           navList={siteMetadata.headerLinks}
           isBLogLayout={true}

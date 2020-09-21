@@ -43,10 +43,7 @@ const IndexPage = ({ data }) => {
     <Layout
       CustomHeader={
         <Header
-          title={siteMetadata.title}
-          name={siteMetadata.author}
           description={siteMetadata.description}
-          interests={siteMetadata.interests}
           navList={siteMetadata.headerLinks}
           isBlogLayout={false}
         />

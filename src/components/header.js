@@ -27,9 +27,8 @@ const HeaderLinkExnternal = ({ url, title, iconName }) => {
 }
 
 // @note description can be false and when it is, we don't show the site tagline
-const Header = ({ title, description, name, interests, picture, navList, isBlogLayout}) => (
+const Header = ({ description, navList, isBlogLayout}) => (
   <div className={`${isBlogLayout || isBlogLayout === undefined  ? "wrapperBlog" : "wrapper"}`}>
-    {console.log(isBlogLayout)}
     <div className="switcher">
       <div>
         <div>
