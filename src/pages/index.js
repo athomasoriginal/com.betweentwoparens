@@ -11,7 +11,7 @@ const Blogs = ({ blogPosts, emptyBlogMsg, footerLinks, license }) => {
   if (blogPosts && blogPosts.length) {
     return (
       <div className="blogs">
-        {blogPosts.map(blogPost => {
+        {blogPosts.map((blogPost) => {
           return (
             <Blog
               key={blogPost.node.id}
@@ -23,10 +23,7 @@ const Blogs = ({ blogPosts, emptyBlogMsg, footerLinks, license }) => {
             />
           )
         })}
-        <Footer
-          links={footerLinks}
-          license={license}
-        />
+        <Footer links={footerLinks} license={license} />
       </div>
     )
   } else {
@@ -99,7 +96,9 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___datePublished], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___datePublished], order: DESC }
+    ) {
       totalCount
       edges {
         node {
