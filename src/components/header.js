@@ -28,51 +28,59 @@ const HeaderLinkExnternal = ({ url, title, iconName }) => {
 
 // @note description can be false and when it is, we don't show the site tagline
 const Header = ({ title, description, name, interests, picture, navList }) => (
-  <div className="header">
-    <div className="header__logo">
-      <Link to="/" className="header__logo-link">
-        <Icon name="betweenTwoParensLogo" />
+  <div className="wrapper">
+    <div className="switcher">
+      <div className="">
+        <div className="header__logo">
+          <Link to="/" className="header__logo-link">
+            <Icon name="betweenTwoParensLogo" />
 
-        <h1 className="h__base header__title">
-          <span className="header__title-line-1">Between</span>
-          <span className="header__title-line-2">Two Parens</span>
-        </h1>
-      </Link>
-    </div>
+            <h1 className="h__base header__title">
+              <span className="header__title-line-1">Between</span>
+              <span className="header__title-line-2">Two Parens</span>
+            </h1>
+          </Link>
+        </div>
 
-    {description ? (
-      <div className="header__tagline">
-        <p className="h__base header__tagline-text">{description}</p>
-        <span className="header__tagline-divider" />
+        <div className="switcher header__main-content">
+          <div>
+            {description ? (
+              <div className="header__tagline">
+                <p className="h__base header__tagline-text">{description}</p>
+                <span className="header__tagline-divider" />
+              </div>
+            ) : (
+              false
+            )}
+
+            <nav className="header__nav">
+              <ul className="ul header__nav-list">
+                {navList.map(listItem => {
+                  if (listItem.internalLink) {
+                    return (
+                      <HeaderLinkInternal
+                        key={listItem.title}
+                        url={listItem.url}
+                        title={listItem.title}
+                      />
+                    )
+                  } else {
+                    return (
+                      <HeaderLinkExnternal
+                        key={listItem.title}
+                        url={listItem.url}
+                        title={listItem.title}
+                        iconName={listItem.iconName}
+                      />
+                    )
+                  }
+                })}
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
-    ) : (
-      false
-    )}
-
-    <nav className="header__nav">
-      <ul className="ul header__nav-list">
-        {navList.map(listItem => {
-          if (listItem.internalLink) {
-            return (
-              <HeaderLinkInternal
-                key={listItem.title}
-                url={listItem.url}
-                title={listItem.title}
-              />
-            )
-          } else {
-            return (
-              <HeaderLinkExnternal
-                key={listItem.title}
-                url={listItem.url}
-                title={listItem.title}
-                iconName={listItem.iconName}
-              />
-            )
-          }
-        })}
-      </ul>
-    </nav>
+    </div>
   </div>
 )
 
