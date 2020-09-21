@@ -617,7 +617,7 @@ a[aria-label='Back to content']:hover {
    TABLET + DESKTOP STYLES
    -------------------------------------------------------------------------- */
 
-@media (min-width: 760px) {
+@media (min-width: 768px) {
   .app {
     display: grid;
     grid-template-areas:
