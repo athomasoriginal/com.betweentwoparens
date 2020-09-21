@@ -43,20 +43,23 @@ const IndexPage = ({ data }) => {
   const blogPosts = data.allMarkdownRemark.edges
 
   return (
-    <Layout>
+    <Layout
+      CustomHeader={
+        <Header
+          title={siteMetadata.title}
+          name={siteMetadata.author}
+          description={siteMetadata.description}
+          interests={siteMetadata.interests}
+          navList={siteMetadata.headerLinks}
+        />
+      }
+    >
       <SEO
         title={siteMetadata.seoTitle}
         description={siteMetadata.seoDescription}
         author={siteMetadata.author}
         lang={siteMetadata.seoLang}
         ogURL={siteMetadata.ogURL}
-      />
-      <Header
-        title={siteMetadata.title}
-        name={siteMetadata.author}
-        description={siteMetadata.description}
-        interests={siteMetadata.interests}
-        navList={siteMetadata.headerLinks}
       />
       <Blogs
         blogPosts={blogPosts}
