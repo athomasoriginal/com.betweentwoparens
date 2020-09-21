@@ -26,9 +26,40 @@ const HeaderLinkExnternal = ({ url, title, iconName }) => {
   )
 }
 
+const NavList = ({ navList }) => (
+  <nav className="header__nav">
+    <ul className="ul header__nav-list">
+      {navList.map((listItem) => {
+        if (listItem.internalLink) {
+          return (
+            <HeaderLinkInternal
+              key={listItem.title}
+              url={listItem.url}
+              title={listItem.title}
+            />
+          )
+        } else {
+          return (
+            <HeaderLinkExnternal
+              key={listItem.title}
+              url={listItem.url}
+              title={listItem.title}
+              iconName={listItem.iconName}
+            />
+          )
+        }
+      })}
+    </ul>
+  </nav>
+)
+
 // @note description can be false and when it is, we don't show the site tagline
-const Header = ({ description, navList, isBlogLayout}) => (
-  <div className={`${isBlogLayout || isBlogLayout === undefined  ? "wrapperBlog" : "wrapper"}`}>
+const Header = ({ description, navList, isBlogLayout }) => (
+  <div
+    className={`${
+      isBlogLayout || isBlogLayout === undefined ? 'wrapperBlog' : 'wrapper'
+    }`}
+  >
     <div className="switcher">
       <div>
         <div>
@@ -42,43 +73,26 @@ const Header = ({ description, navList, isBlogLayout}) => (
           </Link>
         </div>
 
-        <div className="switcher header__main-content">
-          <div>
-            {description ? (
-              <div className="header__tagline">
-                <p className="h__base header__tagline-text">{description}</p>
-                <span className="header__tagline-divider" />
-              </div>
-            ) : (
-              false
-            )}
-
-            <nav className="header__nav">
-              <ul className="ul header__nav-list">
-                {navList.map(listItem => {
-                  if (listItem.internalLink) {
-                    return (
-                      <HeaderLinkInternal
-                        key={listItem.title}
-                        url={listItem.url}
-                        title={listItem.title}
-                      />
-                    )
-                  } else {
-                    return (
-                      <HeaderLinkExnternal
-                        key={listItem.title}
-                        url={listItem.url}
-                        title={listItem.title}
-                        iconName={listItem.iconName}
-                      />
-                    )
-                  }
-                })}
-              </ul>
-            </nav>
+        {isBlogLayout || isBlogLayout === undefined ? (
+          <div class="header__nav-wrapper">
+            <NavList navList={navList} />
           </div>
-        </div>
+        ) : (
+          <div className="switcher header__main-content">
+            <div>
+              {description ? (
+                <div className="header__tagline">
+                  <p className="h__base header__tagline-text">{description}</p>
+                  <span className="header__tagline-divider" />
+                </div>
+              ) : (
+                false
+              )}
+
+              <NavList navList={navList} />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   </div>
