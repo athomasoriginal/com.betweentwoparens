@@ -62,7 +62,7 @@ const Header = ({ description, navList, isBlogLayout }) => (
   >
     <div className="switcher">
       <div>
-        <div>
+        <div className="header__logo-wrapper">
           <Link to="/" className="header__logo-link">
             <Icon name="betweenTwoParensLogo" />
 
