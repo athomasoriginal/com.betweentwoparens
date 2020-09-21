@@ -98,11 +98,6 @@
   padding: 0 1.33rem;
 }
 
-.wrapperBlog .header__main-content > div {
-  justify-content: flex-end;
-}
-
-
 /* -----------------------------------------------------------------------------
    MOBILE STYLES
    -------------------------------------------------------------------------- */
@@ -223,6 +218,19 @@
   background-color: var(--color-yellow-53);
   width: 100px;
   margin-top: 18px;
+}
+
+.header__nav-wrapper {
+  margin-top: 2.2em;
+}
+
+/* only on the blog content screens do we align left */
+.header__nav-wrapper .header__nav {
+  justify-content: flex-end;
+}
+
+.header__nav {
+  display: flex;
 }
 
 .header__nav-list {
