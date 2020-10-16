@@ -1,7 +1,7 @@
 ---
 title: 'Start a ClojureScript App from Scratch'
 datePublished: '2019-06-24'
-dateModified: '2020-07-05'
+dateModified: '2020-10-16'
 slug: start-a-clojurescript-app-from-scratch
 summary: 'A guide to setting up a ClojureScript app from scratch without fear or worry.'
 author: 'Thomas Mattacchione'
@@ -216,13 +216,13 @@ It starts by adding figwheel as a dependency. We do this by opening the `deps.ed
  :deps
  {org.clojure/clojurescript {:mvn/version "1.10.773"}
 
-  com.bhauman/figwheel-main {:mvn/version "0.2.6"}}
+  com.bhauman/figwheel-main {:mvn/version "0.2.11"}}
 
  ; ...
  }
 ```
 
-<aside class="blog-content__note">Clojure libraries are generally found in <a class="blog-content__link" href="https://clojars.org" target="_blank" rel="noopener noreferrer">Clojars</a> which is a popular Clojure package repository.  This is where you can go to find packages and examples of how to use the packages in our projects<a href="#package-repos" aria-describedby="footnote-label" id="package-repos-ref">.</a>  Also note that when you add new dependencies to your project you will also have to stop and restart your app.  Finally, if you run into any issues with <code class="gatsby-code-text">0.2.6</code> of figwheel try updating the version to <code class="gatsby-code-text">0.2.4-SNAPSHOT</code></aside>
+<aside class="blog-content__note">Clojure libraries are generally found in <a class="blog-content__link" href="https://clojars.org" target="_blank" rel="noopener noreferrer">Clojars</a> which is a popular Clojure package repository.  This is where you can go to find packages and examples of how to use the packages in our projects<a href="#package-repos" aria-describedby="footnote-label" id="package-repos-ref">.</a>  Also note that when you add new dependencies to your project you will also have to stop and restart your app.</aside>
 
 ### Step 8 - Add build configuration
 
@@ -257,7 +257,7 @@ The command we were using to run our app, `clj -A:dev`, is still not using figwh
  :deps
  {org.clojure/clojurescript {:mvn/version "1.10.773"}}
 
-  com.bhauman/figwheel-main {:mvn/version "0.2.6"}
+  com.bhauman/figwheel-main {:mvn/version "0.2.11"}
 
  :aliases
  {:dev {:main-opts ["-m"  "figwheel.main" "--build" "dev" "--repl"]}}}
@@ -362,7 +362,7 @@ In addition to adding Reagent we are going to update our `deps.edn`, `html`, `cs
  :deps
  {org.clojure/clojurescript {:mvn/version "1.10.773"}
 
-  com.bhauman/figwheel-main {:mvn/version "0.2.6"}
+  com.bhauman/figwheel-main {:mvn/version "0.2.11"}
 
   reagent                   {:mvn/version "0.10.0"}}
 
