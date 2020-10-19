@@ -86,7 +86,7 @@ Once the above is complete you should have a project that looks like this:
         └── demo_clojurescript_nginx_test.cljs
 ```
 
-<aside class="blog-content__note">This app comes with commands for running the app in <code class="gatsby-code-text">dev</code> and building a <code class="gatsby-code-text">production</code> version of the app.  The commands are <code class="gatsby-code-text">clj -A:dev</code> and <code class="gatsby-code-text">clj -A:prod</code> respectively.  Feel free to play with the app.</aside>
+<aside class="blog-content__note">This app comes with commands for running the app in <code class="gatsby-code-text">dev</code> and building a <code class="gatsby-code-text">production</code> version of the app.  The commands are <code class="gatsby-code-text">clj -M:dev</code> and <code class="gatsby-code-text">clj -M:prod</code> respectively.  Feel free to play with the app.</aside>
 
 ## Sanity Check Webserver
 
@@ -153,7 +153,7 @@ This section is about building production artifacts.  To clear things up, when I
 To create this artifact we have to tell the ClojureScript compiler to build it for us.  We do this with the following command:
 
 ```bash
-clojure -A:prod
+clojure -M:prod
 ```
 
 After the above command is run we can verify that we have a production `artifact` by looking into the `out` directory and finding a file called `dev-main.js`
@@ -280,7 +280,7 @@ WORKDIR /app
 COPY . /app
 
 # build our prod clojurescript artifact
-RUN clojure -A:prod
+RUN clojure -M:prod
 
 # The end.  No need for a CMD to be specified because this is a build
 # docker containers
