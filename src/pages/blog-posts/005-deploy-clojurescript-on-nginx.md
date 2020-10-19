@@ -1,7 +1,7 @@
 ---
 title: 'Deploy ClojureScript on Nginx'
 datePublished: '2019-10-29'
-dateModified: '2020-10-16'
+dateModified: '2020-10-19'
 slug: deploy-clojurescript-on-nginx
 summary: Learn how to serve a ClojureScript project on Nginx
 author: 'Thomas Mattacchione'
