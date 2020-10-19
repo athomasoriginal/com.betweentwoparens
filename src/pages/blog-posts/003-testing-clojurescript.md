@@ -54,7 +54,7 @@ nike-app
 Let's take a beat and make sure everything is working as expected by running the following command from the root of `nike-app`:
 
 ```bash
-clj -A:dev
+clj -M:dev
 ```
 
 If everything worked, a new browser window should automatically open to http://localhost:9500/ and you should see the following:
@@ -148,7 +148,7 @@ The big beautiful takeaway here is that there is nothing special happening here.
 From here, we just have to run the tests.  To do this, go to your terminal and run the test alias:
 
 ```clojure
-clj -A:test
+clj -M:test
 ```
 
 By default your code is compiled, a browser window open automatically and you can see the default ClojureScript `index.html` screen.  But where are the tests?  How do we know what happened?
@@ -220,7 +220,7 @@ What the above does is build and run your tests, like we did with the `:test` al
 To run the above:
 
 ```shell
-clj -A:dev
+clj -M:dev
 ```
 
 and now you can visit your app at http://localhost:9500 and your tests at http://localhost:9500/figwheel-extra-main/testing
@@ -453,7 +453,7 @@ Now from here we need to create an alias in our `deps.edn` file:
                "--main"         "nike.test-runner-headless"]}}}
 ```
 
-That's it.  We are ready to run our headless browser testing setup.  Try it out by running `clj -A:test-headless` in your terminal.
+That's it.  We are ready to run our headless browser testing setup.  Try it out by running `clj -M:test-headless` in your terminal.
 
 If it all worked you should see something like this:
 
