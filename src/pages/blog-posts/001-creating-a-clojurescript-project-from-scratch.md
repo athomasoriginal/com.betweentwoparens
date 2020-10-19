@@ -1,7 +1,7 @@
 ---
 title: 'Start a ClojureScript App from Scratch'
 datePublished: '2019-06-24'
-dateModified: '2020-10-16'
+dateModified: '2020-10-19'
 slug: start-a-clojurescript-app-from-scratch
 summary: 'A guide to setting up a ClojureScript app from scratch without fear or worry.'
 author: 'Thomas Mattacchione'
@@ -179,14 +179,14 @@ When we run our app for `prod`, `dev` or `test` we may need to run the app diffe
 Now that we have a rough idea of what is going on we are ready to take our app for a test drive. Open a terminal, move into the root of the app and run the following command:
 
 ```bash
-clj -A:dev
+clj -M:dev
 ```
 
 wait a bit and `:dev` will compile our code, automatically open a browser tab and present you with what we have so far:
 
 ![screenshot of time dive app](./images/001-time-dive-app.png)
 
-<aside class="blog-content__note">I also want to draw your attention towards two new directories that were auto generated for you when you ran <code class="gatsby-code-text">clj -A:dev</code>: <code class="gatsby-code-text">.cpcache/</code> and <code class="gatsby-code-text">out/</code>. I bring this up because it's a good practice to avoid version controlling these folders.  If you are wondering how to version control them see this <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/0cef20e6773ab5d2f93253926dafb4e05e0673f7" target="_blank" rel="noopener noreferrer">extra step</a></aside>
+<aside class="blog-content__note">I also want to draw your attention towards two new directories that were auto generated for you when you ran <code class="gatsby-code-text">clj -M:dev</code>: <code class="gatsby-code-text">.cpcache/</code> and <code class="gatsby-code-text">out/</code>. I bring this up because it's a good practice to avoid version controlling these folders.  If you are wondering how to version control them see this <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/0cef20e6773ab5d2f93253926dafb4e05e0673f7" target="_blank" rel="noopener noreferrer">extra step</a></aside>
 
 Before we jump over to the next section I want to draw your attention to the fact that we have zero dependencies. Think about this: our files are being watched, code is recompiled on save, we are greeted with a browser repl and all of this with zero dependencies. Yes, we are still missing a few niceties, but we are not done yet. We will get you to hero toolchain status soon.
 
@@ -248,7 +248,7 @@ As you may have guessed, `Fighwheel` is going to replace the need for us to use 
 
 ### Step 9 - Update :dev Alias
 
-The command we were using to run our app, `clj -A:dev`, is still not using figwheel yet. Open `deps.edn` and make it look like this:
+The command we were using to run our app, `clj -M:dev`, is still not using figwheel yet. Open `deps.edn` and make it look like this:
 
 ```clojure{numberLines: true}
 {:paths
@@ -266,7 +266,7 @@ The command we were using to run our app, `clj -A:dev`, is still not using figwh
 Time for sanity check to make sure everything is still working. Run the following command:
 
 ```bash
-clj -A:dev
+clj -M:dev
 ```
 
 Your app should run, but you will notice that you get the following screen:
@@ -309,7 +309,7 @@ We also have to update the `script` tag in our `index.html` file.
 time to run the app again:
 
 ```bash
-clj -A:dev
+clj -M:dev
 ```
 
 The toolchain is now in place, but we are still missing the great and powerful Hot Module Reloading.
@@ -437,7 +437,7 @@ body {
 
 <aside class="blog-content__note">The only reason we do this is because with Reagent we had to change our HTML structure a bit.  Likewise we change our css to reflect the HTML structure changes.</aside>
 
-Ready to see if it all worked? Run `clj -A:dev` and marvel at your ClojureScript SPA.
+Ready to see if it all worked? Run `clj -M:dev` and marvel at your ClojureScript SPA.
 
 ## Conclusion
 
