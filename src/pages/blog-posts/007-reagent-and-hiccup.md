@@ -1,7 +1,7 @@
 ---
 title: 'Reagent & Hiccup'
 datePublished: '2019-12-31'
-dateModified: '2020-07-06'
+dateModified: '2020-10-19'
 slug: reagent-and-hiccup
 summary: Hiccup is the Ryan Atwood to JSX's Seth Cohen
 author: 'Thomas Mattacchione'
@@ -25,7 +25,7 @@ and now let's rewrite it in Reagent (a popular ClojureScript React wrapper)
 ```
 
 
-<aside class="blog-content__note"><code class="gatsby-code-text">render-component</code> is Reagent's version of <code class="gatsby-code-text">ReactDOM.render</code></aside>
+<aside class="blog-content__note"><code class="gatsby-code-text">reagent.dom/render</code> is Reagent's wrapper around <code class="gatsby-code-text">ReactDOM.render</code>.  This was introduced in version <code class="gatsby-code-text">0.10.0</code> of <code class="gatsby-code-text">Reagent</code></aside>
 
 If the above is the first time you're reading ClojureScript or Reagent, it may look foreign, but you might also notice that the overall shape of the code (lines, structure, functions) is more or less the same.  To me, the biggest difference is what happens on **line 2**
 
