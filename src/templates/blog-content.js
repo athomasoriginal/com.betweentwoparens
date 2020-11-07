@@ -120,7 +120,10 @@ export const query = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-      tableOfContents(maxDepth: 2)
+      tableOfContents(
+        maxDepth: 2
+        absolute: false
+      )
       frontmatter {
         title
         summary
