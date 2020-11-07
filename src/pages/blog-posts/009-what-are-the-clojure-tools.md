@@ -1,13 +1,13 @@
 ---
 title: 'What are the Clojure Tools?'
 datePublished: '2020-03-31'
-dateModified: '2020-09-08'
+dateModified: '2020-11-06'
 slug: what-are-the-clojure-tools
 summary: It's not a build tool, it's clj
 author: 'Thomas Mattacchione'
 ---
 
-When I start learning a new language I like to begin by understanding the tooling ecosystem.  For me, having a handle on the tools enables me to confidently focus on learning the language itself<a href="#my-way" aria-describedby="footnote-label" id="my-way-ref">.</a>  For example, when I came to Clojure my questions went something like this:
+When I start learning a new language I like to begin by understanding the tooling ecosystem.  For me, understanding the tools enables me to confidently focus on learning the language itself<a href="#my-way" aria-describedby="footnote-label" id="my-way-ref">.</a>  For example, when I came to Clojure my questions went something like this:
 
 - How do I **install** Clojure?
 - How do I **run** a Clojure program?
@@ -15,17 +15,15 @@ When I start learning a new language I like to begin by understanding the toolin
 - How do I **configure** a Clojure project?
 - How do I **build** Clojure for production?
 
-Now, when I first came to clojure, the answer to the above questions were, _"use [lein] or [boot]"_. Then, around the end of 2017, a third option came along: the [Clojure CLI Tools]<a href="#cli-tool-v-dev-tools" aria-describedby="footnote-label" id="cli-tool-v-dev-tools-ref">.</a>. Admitedly, it took me a while to understand their purpose and how to use them and that's where this post comes in<a href="#clojure-tools-simple" aria-describedby="footnote-label" id="clojure-tools-simple-ref">.</a>
+Now, when I first came to clojure, the answer to the above questions were, _"use [lein] or [boot]"_. Then, around the end of 2017, a third option came along: the [Clojure CLI Tools]<a href="#cli-tool-v-dev-tools" aria-describedby="footnote-label" id="cli-tool-v-dev-tools-ref">.</a>. Admitedly, it took me a bit to understand how they fit into the bigger picture which is  the reason i'm writing this post <a href="#clojure-tools-simple" aria-describedby="footnote-label" id="clojure-tools-simple-ref">.</a>
 
-My goal with this post is to share my knowledge around the [Clojure CLI Tools] by outlining the problem they solve and how they compare to other tools like `lein` and `boot`.
+My goal is to provide an overview of what the [Clojure CLI Tools] are by outlining the problem they solve and how they compare to other tools like `lein` and `boot`.
 
 ## Clojure CLI Tools
 
-If you installed Clojure using the [official guide] you likely already have the `Clojure CLI Tools` installed are are using them.  Having said this, the `Clojure CLI Tools` can go by a number of names, and people often refer to the sub-tools within the `Clojure CLI Tools` suite.  Thus, before we go on, let's nail down some naming conventions.
+If you installed Clojure using the [official guide] you likely already have the `Clojure CLI Tools` installed and are using them.
 
-`Clojure CLI Tools` is an umbrella name and may not even be the official one.  It includes tools like `clj`, `clojure`, `deps.edn` and `tools.deps.alpha`.  Thus, you will often here members of the Clojure community referring to each one of these individually.  When they are, they are often (context is important here) referring to what I am calling the `Clojure CLI Tools`.  For brevity, I will refer to them all as `clj` going forward.
-
-Alright, so we have `clj` available to us, what does it do and how can we use it?  Here are some common tasks:
+To start, when I say `Clojure CLI Tools` I use it as an umbrella term to describe a suite of tools which we access using the `clj` or `clojure` terminal command.  Here are some examples of how to use the `Clojure CLI Tools`.
 
 **Run** a clojure repl
 
@@ -36,50 +34,49 @@ clj
 **Run** a clojure repl program
 
 ```bash
-clj -m your-clojure-program
+clj -M -m your-clojure-program
 ```
 
 **manage** Clojure dependencies
 
 ```bash
-clj -Sdeps '{:deps {bidi {:mvn/version "2.1.6"}}}'
+clj -Sdeps '{:deps {bidi/bidi {:mvn/version "2.1.6"}}}'
 ```
 
-If we were to just look at the above commands, it appears that `clj` is doing many things.  Now, it's okay to think about it like this, but I think it's also important to understand that `clj` itself is a suite of tools which includes:
+If we were to just look at the above commands, it looks like just one tool: `clj`.  While it's fine to think of it like this, it's important to understand that `clj` is a command which calls other tools. The tools it calls under the hood, at the time of this writing, include:
 
-- [clj/clojure] - two _separate_ bash script commands
-- [deps.edn] - an edn file
+- [clojure] - a _separate_ command
+- [deps.edn] - an edn file (just data)
 - [tools.deps.alpha] -  a clojure program
 
-Once I understood the above, it became easier to follow along with conversations on forums like Clojurians and understanding the tool was more straightforward.  The reason for this is because when the community discusses the `clj` tool it can seem that `clj`, `deps.edn` and `tools.deps.alpha` are used interchangeably.  In truth, they are all separate things that are wrapped by the `clj` tool.
+The reason we want to understand the tools behind the command is because it's going to make it easier to participate in Clojure community conversations.  The reason for this is because when discussing the `Clojure CLI Tools` community members will often reference `deps.edn`, `clj`, `clojure` and `tools.deps.alpha` in that context.  Sometimes, they can be used interchangeably and as shorthands.
 
 The next few sections will discuss each of the above tools in more detail and how they all come together.
 
-## clj/clojure
+## clojure
 
-`clj` is the interface to the suite of tools mentioned in the previous section.  As mentioned, when you install the `Clojure CLI tools` you will have access to two commands: `clj` and `clojure`.  They are just bash scripts and both commands, while separate, actually do the same thing under the hood<a href="#clj-calls-clojure-note" aria-describedby="footnote-label" id="clj-calls-clojure-note-ref">:</a>
+When you read the `CLI Tools` [official guide] you will notice that they use `clj` and `clojure` and both accept the same arguments.  Are they the same thing or different?  When do you use one over the other?
+
+First, how are they the same or different?  When you use `clj` it actually calls `clojure` under the hood and `clojure` itself calls something like this:
 
 ```bash
 java [java-opt*] -cp classpath clojure.main [init-opt*] [main-opt] [arg*]
 ```
 
-But wait, if both `clj` and `clojure` do the same thing, why have two commands?  Let's dig into this.
+Yet, you will see that `clj` is more commonly used in development.  The reason for this is because `clj` wraps the `clojure` command with a another tool called [rlwrap].  What `rlwrap` does is add [readline] support to the `clojure` command.  In other words, `clj` makes it easier to type in the Clojure REPL in the terminal.  It's for this reason that you will be encouraged to use `clj` during development, where as `clojure` is more commonly used in a CI or production setting<a href="#when-to-use-clojure-script" aria-describedby="footnote-label" id="when-to-use-clojure-script-ref">.</a>
 
-Calling the `clj` command will call the `clojure` command.  The difference between the two is that when you call `clj` it wraps the `clojure` command with a tool called [rlwrap] and then calls `clojure`.
 
-So why do this?  They do this because `rlwrap` adds [readline] support to the `clojure` command.  Translation:  It makes it nicer to type in the Clojure REPL in the terminal.  It's for this reason that you will be encouraged to use `clj` during development, where as `clojure` is more commonly used in a CI or production setting<a href="#when-to-use-clojure-script" aria-describedby="footnote-label" id="when-to-use-clojure-script-ref">.</a>
+So to recap, `clj` and by extension the `clojure` command are responsible for:
 
-So to recap, the only thing that the `clj` tool does is:
-
-- run clojure programs
-- Provides a standard way to interact with clojure programs
+- running Clojure programs
+- Providing a standard way to interact with Clojure programs
 - Improves the "Getting Started" story
 
-But as we mentioned, it will call out to `tools.deps.alpha` to help resolve dependencies.
+The next topics is: `tools.deps.alpha`.
 
 ## tools.deps.alpha
 
-`tools.deps.alpha` builds a classpath and resolves dependencies.  The longer way of explaining what it does is:
+`tools.deps.alpha` is responsible for understanding which dependencies your project needs and specifying how to get them.  A more detailed way of explaining what it does is:
 
 - reads in dependencies from a `deps.edn` file
 - resolves the dependencies and their transitive dependencies
@@ -87,17 +84,15 @@ But as we mentioned, it will call out to `tools.deps.alpha` to help resolve depe
 
 <aside class="blog-content__note">Note that <strong>NEITHER</strong> <code class="gatsby-code-text">clj</code> or <code class="gatsby-code-text">tools.deps.alpha</code> are "building" clojure artifacts.</aside>
 
-Aside from the above, the best thing you can do to learn more is listen to Alex Miller, the author of `tools.deps.alpha`, speak about it on [Clojure Weekly Podcast].
+There isn't too much else going on here and the library itself is small enough that you can read it in an afternoon.  If you're interested in learning more I highly recommend listening to the [Clojure Weekly Podcast] featuring Alex Miller, the author of `tools.deps.alpha`, speak about the `Clojure CLI Tools`.
 
-Finally, as I mentioned `tools.deps.alpha` knows which dependencies to resolve because it reads in the `deps.edn` file.
+Continuing on, in order for `tools.deps.alpha` to know which dependencies you need you have to write them out.  We do this, and more, in a file called `deps.edn`.
 
 ## deps.edn
 
-`deps.edn` allows you to specify project dependencies and configurations.
+`deps.edn` allows you to specify project dependencies and configurations.  At it's heart, `deps.edn` is just an [edn] file.  You can think of it like Clojure's version of `json`.
 
-This is just an `edn` file where [edn] is like Clojure's version of `json`.
-
-<aside class="blog-content__note">If you're from the JavaScript community it can be helpful to think of this file as the equivalent of a <code class="gatsby-code-text">package.json</code> file</aside>
+<aside class="blog-content__note">If you're from the JavaScript community, it can be helpful to think of this file like a <code class="gatsby-code-text">package.json</code> file</aside>
 
 `deps.edn` is just a [map] which accepts specific keywords.  Here is an example of _some_ of the common keywords:
 
@@ -107,9 +102,11 @@ This is just an `edn` file where [edn] is like Clojure's version of `json`.
  :aliases {...}}
 ```
 
-This is the file where you define the libraries your project needs, shortcuts and where to find your projects code.  Ultimately, it's just a map with some keys.  Now, it might seem odd that I think of this as a separate "tool".  The reason I do this is because this is just an edn map with well defined k/v pairs.
+With this file we describe the dependencies our project needs, where our project should look to find our source code and tests and shortcuts for running our project's code.
 
-So what this means is that, in theory, you don't need to use `tools.deps.alpha`.  Instead, you could build your own version of `tools.deps.alpha` which consumes the `deps.edn` file and has it's own way of resolving dependencies.  I'm not encouraging this, i'm just explaining why I see it as standing on it's own.
+Now, given this is just an `edn` file it can be odd to think of it as a separate "tool".  The reason I believe this is done is because the shape of the `edn` map is well defined.  Which could be seen as acting like a contract.
+
+What this means is that this file is an extensible tool.  In other words, you could write your own `tools.deps.alpha` which knows how to consume this file and be compliant with projects which use it.  Now, there isn't really a need to do this, but it's an example to illustrate why it can be seen as a tool.
 
 ## Clojure CLI Tools Installer
 
@@ -137,7 +134,7 @@ The first point is that you will choose between _one_ of the three tools (`clj`,
 
 <aside class="blog-content__note">Now, when I said that you don't actually combine more than one of these tools, this is not 100% true. Take for example the fact that the "build" story for <code class="gatsby-code-text">clj</code> is not as "easy" as <code class="gatsby-code-text">lein</code> which has led to examples of <a class="blog-content__link" href="https://github.com/oakes/full-stack-clj-example" rel="noopener noreferrer">clj calling to lein</a> just for the production builds of ones apps</aside>
 
-If you're curious which to choose, I think it's obvious that I would suggest `clj`.  The reason I like `clj` is because the tool is simple and easy to use.  You can read through `clj` and `tools.deps.alpha` in an afternoon and understand what they are doing if you had to.  If the same occurs with `lein` or `boot`, you will not have any such luck.
+If you're curious which to choose, I think it's obvious that I would suggest `clj`.  The reason I like `clj` is because the tool is simple _and_ easy to use.  You can read through `clj` and `tools.deps.alpha` in an afternoon and understand what they are doing if you had to.  The same (subjectively of course) cannot be said for `lein` or `boot`.
 
 Secondly, and most importantly, the Clojure community is really leaning into building tools for `clj`.  For example, where `lein` used to have significantly more functionality, the community has built a ton of [incredible tools] that will cover many of your essential requirements.  There is also the fact that `deps.edn` is easier to configure because there are less configuration options and less need to understand what lein is doing as you want to perform more advanced configurations.
 
