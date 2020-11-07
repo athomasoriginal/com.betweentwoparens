@@ -362,7 +362,8 @@ They are: notes, code blocks, lists */
   margin-right: 10px;
   margin-left: 10px;
 }
-.blog-content ul {
+.blog-content ul,
+.blog-content ol {
   margin: 0 0 0 2.45rem;
 }
 /* ahhh the pains of global selectors...my own fault */
