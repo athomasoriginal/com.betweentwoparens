@@ -1,8 +1,6 @@
 {
   "name": "between-two-parens",
-  "private": true,
   "description": "Between two parens official blog",
-  "version": "0.1.0",
   "author": "Thomas Mattacchione <thomasmattacchione@gmail.com>",
   "dependencies": {
     "gatsby": "2.28.2",
@@ -38,12 +36,5 @@
   "devDependencies": {
     "dotenv": "^8.2.0",
     "prettier": "^2.2.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
