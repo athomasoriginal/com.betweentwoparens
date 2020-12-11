@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Thomas Mattacchione <thomasmattacchione@gmail.com>",
   "dependencies": {
-    "gatsby": "2.24.80",
+    "gatsby": "2.28.2",
     "gatsby-cli": "^2.15.1",
     "gatsby-plugin-feed": "2.9.0",
     "gatsby-plugin-manifest": "2.8.0",
