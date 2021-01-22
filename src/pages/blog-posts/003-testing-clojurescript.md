@@ -262,7 +262,7 @@ The importance of the environment is your code, when run in production, is targe
 
 <aside class="blog-content__note">Yes, you can test some code that's agnostic of the environment, but in general, test your code where you expect it to run</aside>
 
-The second point is test performance, as it turns out, it's not always desirable or possible to test your browser code directly in the browser.  For example, you may run into a scenario where you want to run your code in your CI/CD process.  How does this work?  When this is the case, you will want to setup a `Headless Browser Runtime Environment`.  The following section will show you how to do this.
+The second point is test performance. As it turns out, it's not always desirable or possible to test your browser code directly in the browser.  For example, you may run into a scenario where you want to run your code in your CI/CD process.  How does this work?  When this is the case, you will want to setup a `Headless Browser Runtime Environment`.  The following section will show you how to do this.
 
 ### Headless Browser Runtime Environment
 
