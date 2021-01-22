@@ -258,7 +258,7 @@ Up until now, we haven't really discussed "Runtime Environments".  Yet, I feel t
 
 Consider this, when you run code in your ClojureScript REPL, where is that code run?  Is it the browser?  node?  The answer is that it depends on how you run your REPL.  If you run it like we did in the above [run tests with cljs.main](#run-tests-with-cljs-main) section your code will be run in a `Browser Environment`.  If you were to set `--repl-env` to `node` then your code would be run in a `Node Environment`.  This is what we mean by understanding which environment your code is running in.
 
-The importance of the environment is your code, when run in production, is targeting one of these and the API will be different for each and the performance of your tests.  For example, you won't have the `window` object in `Node`, so it wouldn't be a good idea to test your browser code in a Node environment.
+The importance of the environment is your code, when run in production, is targeting one of these and this means that the JS API's you have available to you will be different for each and the performance of your tests.  For example, you won't have the `window` object in `Node`, so it wouldn't be a good idea to test your browser code in a Node environment.
 
 <aside class="blog-content__note">Yes, you can test some code that's agnostic of the environment, but in general, test your code where you expect it to run</aside>
 
