@@ -19,11 +19,13 @@ Now, when I first came to clojure, the answer to the above questions were, _"use
 
 This is where I hope this post will help by providing an overview of what the [Clojure CLI Tools] are, the problem they solve and how they compare to other tools like `lein` and `boot`.
 
+<aside class="blog-content__note">If you're interested in using the <code class="gatsby-code-text">Clojure CLI Tools</code> you can visit the <a class="blog-content__link" href="https://clojure.org/guides/getting_started" target="_blank" rel="noopener noreferrer">Official Getting Started Guide</a> or even <a class="blog-content__link" href="https://www.youtube.com/watch?v=5_q5pLoz9b0" target="_blank" rel="noopener noreferrer">watch this video</a> if you're using mac</aside>
+
 ## Clojure CLI Tools
 
-If you installed Clojure using the [official getting started] you likely already have the `Clojure CLI Tools` installed and are using them.
+To begin, what are the `Clojure CLI Tools`?  They are a CLI tool accessed using the `clj` or `clojure` command.  Furthermore, they are built/maintained by Cognitect, the official maintainers of the Clojure language.
 
-To start, when I say `Clojure CLI Tools` I use it as an umbrella term to describe a suite of tools which we access using the `clj` or `clojure` terminal command.  Here are some examples of how to use the `Clojure CLI Tools`.
+Here are some **simple** examples of how and what you can do with the `Clojure CLI Tools`.
 
 **Run** a clojure repl
 
