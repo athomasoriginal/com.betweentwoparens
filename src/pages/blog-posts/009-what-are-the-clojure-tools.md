@@ -7,7 +7,7 @@ summary: It's not a build tool, it's clj
 author: 'Thomas Mattacchione'
 ---
 
-When I start learning a new language I like to begin by understanding the tooling ecosystem.  For me, understanding the tools enables me to confidently focus on learning the language itself<a href="#my-way" aria-describedby="footnote-label" id="my-way-ref">.</a>  For example, when I came to Clojure my questions went something like this:
+I like to begin learning new languages by understanding the tooling ecosystem.  For me, understanding the tools enables me to confidently focus on learning the language itself<a href="#my-way" aria-describedby="footnote-label" id="my-way-ref">.</a>  Thus, when I approach a new language, e.g. Clojure, I often start by asking questions like this:
 
 - How do I **install** Clojure?
 - How do I **run** a Clojure program?
@@ -15,9 +15,9 @@ When I start learning a new language I like to begin by understanding the toolin
 - How do I **configure** a Clojure project?
 - How do I **build** Clojure for production?
 
-Now, when I first came to clojure, the answer to the above questions were, _"use [lein] or [boot]"_. Then, around the end of 2017, a third option came along: the [Clojure CLI Tools]<a href="#cli-tool-v-dev-tools" aria-describedby="footnote-label" id="cli-tool-v-dev-tools-ref">.</a>. Admittedly, it took me a bit to understand how they fit into the bigger picture which is  the reason i'm writing this post <a href="#clojure-tools-simple" aria-describedby="footnote-label" id="clojure-tools-simple-ref">.</a>
+Now, when I first came to clojure, the answer to the above questions were, _"use [lein] or [boot]"_. Then, around the end of 2017, a third option came along: the [Clojure CLI Tools]<a href="#cli-tool-v-dev-tools" aria-describedby="footnote-label" id="cli-tool-v-dev-tools-ref">.</a>. Admittedly, it took me some time to understand how the `Clojure CLI Tools` fit into the bigger picture.<a href="#clojure-tools-simple" aria-describedby="footnote-label" id="clojure-tools-simple-ref">.</a>
 
-My goal is to provide an overview of what the [Clojure CLI Tools] are by outlining the problem they solve and how they compare to other tools like `lein` and `boot`.
+This is where I hope this post will help by providing an overview of what the [Clojure CLI Tools] are, the problem they solve and how they compare to other tools like `lein` and `boot`.
 
 ## Clojure CLI Tools
 
