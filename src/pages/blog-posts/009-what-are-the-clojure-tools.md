@@ -63,6 +63,8 @@ The next few sections will discuss each of the above tools in more detail and ho
 
 ## clojure
 
+
+
 When you read the `CLI Tools` [official getting started] you will notice that they use `clj` and `clojure` and both accept the same arguments.  Are they the same thing or different?  When do you use one over the other?
 
 First, how are they the same or different?  When you use `clj` it actually calls `clojure` under the hood and `clojure` itself calls something like this:
@@ -73,14 +75,13 @@ java [java-opt*] -cp classpath clojure.main [init-opt*] [main-opt] [arg*]
 
 Yet, you will see that `clj` is more commonly used in development.  The reason for this is because `clj` wraps the `clojure` command with a another tool called [rlwrap].  What `rlwrap` does is add [readline] support to the `clojure` command.  In other words, `clj` makes it easier to type in the Clojure REPL in the terminal.  It's for this reason that you will be encouraged to use `clj` during development, where as `clojure` is more commonly used in a CI or production setting<a href="#when-to-use-clojure-script" aria-describedby="footnote-label" id="when-to-use-clojure-script-ref">.</a>
 
-
-So to recap, `clj` and by extension the `clojure` command are responsible for:
+Okay, so now that we know that `clj` is a convenience wrapper around `clojure`, what does this command do?  Well, it's just a bash script and it orchestrates the other tools.  Thus, `clj` is responsible for:
 
 - running Clojure programs
 - Providing a standard way to interact with Clojure programs
 - Improves the "Getting Started" story
 
-The next topics is: `tools.deps.alpha`.
+As I said, it's a convenience wrapper.  The meat and potatoes of the `clj` tool is `tools.deps.alpha`.
 
 ## tools.deps.alpha
 
