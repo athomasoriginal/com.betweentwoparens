@@ -111,15 +111,15 @@ Continuing on, in order for `tools.deps.alpha` to know which dependencies you ne
  :aliases {...}}
 ```
 
-With this file we describe the dependencies our project needs, where our project should look to find our source code and tests and shortcuts for running our project's code.
+With this file we describe the dependencies our project needs, where our project should look to find our source/tests and shortcuts for running our project's code.
 
 Now, given this is just an `edn` file it can be odd to think of it as a separate "tool".  The reason I believe this is done is because the shape of the `edn` map is well defined.  Which could be seen as acting like a contract.
 
-What this means is that this file is an extensible tool.  In other words, you could write your own `tools.deps.alpha` which knows how to consume this file and be compliant with projects which use it.  Now, there isn't really a need to do this, but it's an example to illustrate why it can be seen as a tool.
+What this means is that this file is an extensible tool.  In other words, you could write your own `tools.deps.alpha` which knows how to consume this file and be compliant with projects which use it.
 
 ## Clojure CLI Tools Installer
 
-"Clojure CLI Tools Installer" is a fancy way of referring to the `brew tap` used to install Clojure on mac and linux machines.  As of February 2020, Clojure started maintaining their own [brew tap].  Thus, if you installed the clojure command line tools via
+"Clojure CLI Tools Installer" is a fancy way of referring to the `brew tap` used to install Clojure on mac and linux machines.  As of February 2020, Clojure started maintaining their own [brew tap].  Thus, if you installed the `Clojure CLI Tools` via
 
 ```bash
 brew install clojure
@@ -139,9 +139,9 @@ Let's end this conversation with a quick contextualization of `clj`, `lein` and 
 
 <aside class="blog-content__note">I won't dive into the history, for this I recommend the blog post <a class="blog-content__link" href="https://corfield.org/blog/2018/04/18/all-the-paths/" rel="noopener noreferrer">All the Paths</a> by Sean Corfield.</aside>
 
-The first point is that you will choose between _one_ of the three tools (`clj`, `lein`, or `boot`) for your project.  You don't use more than one.  Just like you wouldn't use both `boot` and `lein`, you won't use both `clj` and `boot` or `clj` and `lein`.  Furthermore, none of these tools should conflict with the other.
+The first point is that you will choose between _one_ of the three tools (`clj`, `lein`, or `boot`) for your project.  You don't use more than one.  Just like you wouldn't use both `boot` and `lein`, you won't use both `clj` and `boot` or `clj` and `lein`.  Furthermore, none of these tools should conflict with one another.
 
-<aside class="blog-content__note">Now, when I said that you don't actually combine more than one of these tools, this is not 100% true. Take for example the fact that the "build" story for <code class="gatsby-code-text">clj</code> is not as "easy" as <code class="gatsby-code-text">lein</code> which has led to examples of <a class="blog-content__link" href="https://github.com/oakes/full-stack-clj-example" rel="noopener noreferrer">clj calling to lein</a> just for the production builds of ones apps</aside>
+<aside class="blog-content__note">Now, when I said that you don't actually combine more than one of these tools, this is not 100% true. Take for example the fact that the "build" story for <code class="gatsby-code-text">clj</code> is not as "easy" as <code class="gatsby-code-text">lein</code> which has led to examples of <a class="blog-content__link" href="https://github.com/oakes/full-stack-clj-example" rel="noopener noreferrer">clj calling to lein</a> just for the production builds of ones apps.  As of the latest update though, I have not found a need to do this for any of my Clojure or ClojureScript apps.</aside>
 
 If you're curious which to choose, I think it's obvious that I would suggest `clj`.  The reason I like `clj` is because the tool is simple _and_ easy to use.  You can read through `clj` and `tools.deps.alpha` in an afternoon and understand what they are doing if you had to.  The same (subjectively of course) cannot be said for `lein` or `boot`.
 
@@ -175,7 +175,7 @@ So yes, `clj` for the win.
       <a href="#when-to-use-clojure-script-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="monorepo-comment">
-      Just some clarification aroud the "monorepo" point. Choosing a sane structure for your monorepo is important to mmaking this work.  Having said this, I have a personal project which has 4 or 5 sub-projects and I have not run into any issues as of yet.  I also know that others in the community have done similar things.  So in this case, it would be important to further look into my structure...but that can be fore another post.
+      Just some clarification aroud the "monorepo" point. Choosing a sane structure for your monorepo is important to making this work.  Having said this, I have a personal project which has 4 or 5 sub-projects and I have not run into any issues as of yet.  I also know that others in the community have done similar things.  I will eventually write a post on this as well.
       <a href="#monorepo-comment-ref" aria-label="Back to content">Back</a>
     </li>
   </ol>
