@@ -27,13 +27,13 @@ To begin, what are the `Clojure CLI Tools`?  They are a CLI tool accessed using 
 
 Here are some **simple** examples of how and what you can do with the `Clojure CLI Tools`.
 
-**Run** a clojure repl
+**Run** a Clojure repl
 
 ```bash
 clj
 ```
 
-**Run** a clojure repl program
+**Run** a Clojure program
 
 ```bash
 clj -M -m your-clojure-program
