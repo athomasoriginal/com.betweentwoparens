@@ -150,7 +150,7 @@ So yes, `clj` for the win.
       <a href="#my-way-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="cli-tool-v-dev-tools">
-      In earlier versions of this blog post I referred to the <code class="gatsby-code-text">Clojure CLI Tools</code> as <code class="gatsby-code-text">Clojure Tools</code>.  The reason I now started referring to them as "Clojure CLI Tools" is because on August 21, 2020 it was announced in Clojurians (The official Clojure Slack Org) that cognitect released a free set of tools called <a class="blog-content__link" href="https://cognitect.com/dev-tools/index.html" target="_blank" rel="noopener noreferrer">Cognitect Dev Tools</a>.  Thus, I made the change to be very clear that there is a difference now, but also, if anything changes in the future regarding the naming conventions this post should remain clear in the naming conventions adopted.
+      In earlier versions of this blog post I referred to the <code class="gatsby-code-text">Clojure CLI Tools</code> as <code class="gatsby-code-text">Clojure Tools</code>.  The reason I now refer to them as the "Clojure CLI Tools" is because on August 21, 2020 it was announced in Clojurians (The official Clojure Slack Org) that cognitect released a free set of tools called <a class="blog-content__link" href="https://cognitect.com/dev-tools/index.html" target="_blank" rel="noopener noreferrer">Cognitect Dev Tools</a>.  Thus, I made the change to be very clear that there is a difference.
       <a href="#cli-tool-v-dev-tools-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="clojure-tools-simple">
