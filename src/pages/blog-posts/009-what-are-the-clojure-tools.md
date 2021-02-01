@@ -1,7 +1,7 @@
 ---
 title: 'What are the Clojure Tools?'
 datePublished: '2020-03-31'
-dateModified: '2020-11-06'
+dateModified: '2021-01-31'
 slug: what-are-the-clojure-tools
 summary: It's not a build tool, it's clj
 author: 'Thomas Mattacchione'
@@ -21,7 +21,7 @@ My goal is to provide an overview of what the [Clojure CLI Tools] are by outlini
 
 ## Clojure CLI Tools
 
-If you installed Clojure using the [official guide] you likely already have the `Clojure CLI Tools` installed and are using them.
+If you installed Clojure using the [official getting started] you likely already have the `Clojure CLI Tools` installed and are using them.
 
 To start, when I say `Clojure CLI Tools` I use it as an umbrella term to describe a suite of tools which we access using the `clj` or `clojure` terminal command.  Here are some examples of how to use the `Clojure CLI Tools`.
 
@@ -55,7 +55,7 @@ The next few sections will discuss each of the above tools in more detail and ho
 
 ## clojure
 
-When you read the `CLI Tools` [official guide] you will notice that they use `clj` and `clojure` and both accept the same arguments.  Are they the same thing or different?  When do you use one over the other?
+When you read the `CLI Tools` [official getting started] you will notice that they use `clj` and `clojure` and both accept the same arguments.  Are they the same thing or different?  When do you use one over the other?
 
 First, how are they the same or different?  When you use `clj` it actually calls `clojure` under the hood and `clojure` itself calls something like this:
 
@@ -174,7 +174,7 @@ So yes, `clj` for the win.
 
 [lein]: https://leiningen.org/
 [boot]: https://boot-clj.com/
-[official guide]: https://clojurescript.org/guides/quick-start
+[official getting started]: https://clojure.org/guides/getting_started
 [Clojure]: https://clojure.org/guides/getting_started
 [ClojureScript]: https://clojurescript.org/guides/quick-start
 [Clojure CLI Tools]: https://clojure.org/guides/deps_and_cli
