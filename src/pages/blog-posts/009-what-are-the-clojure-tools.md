@@ -45,13 +45,19 @@ clj -M -m your-clojure-program
 clj -Sdeps '{:deps {bidi/bidi {:mvn/version "2.1.6"}}}'
 ```
 
-If we were to just look at the above commands, it looks like just one tool: `clj`.  While it's fine to think of it like this, it's important to understand that `clj` is a command which calls other tools. The tools it calls under the hood, at the time of this writing, include:
+Thus, we can see that `clj` is a very useful tool.  Now, `clj`  itself is just a bash script which itself wraps other tools.  At the time of this writing, it wraps 3 main tools:
 
-- [clojure] - a _separate_ command
+- [clojure] - another bash script program
 - [deps.edn] - an edn file (just data)
 - [tools.deps.alpha] -  a clojure program
 
-The reason we want to understand the tools behind the command is because it's going to make it easier to participate in Clojure community conversations.  The reason for this is because when discussing the `Clojure CLI Tools` community members will often reference `deps.edn`, `clj`, `clojure` and `tools.deps.alpha` in that context.  Sometimes, they can be used interchangeably and as shorthands.
+The reason why I believe it's important to understand this early is because, no matter what part of the learning journey you're on, it will help.
+
+If you're brand new to Clojure, this is going to help you better understand conversations amongst other Clojurians and help guide questions you may have.  For example, if you're ever on [Clojurians Slack] you will notice that there isn't a Clojure CLI Tools channel, but there is a [#tools-deps] channel.  If you ever have questions about the CLI Tools, that's the place to be.
+
+If you're beyond the early learner phase, understanding the nuance is going to help you level up and gather greater context which can act as a stepping stone as you guide your own learning journey.
+
+In summary, the `Clojure CLI Tools` is more of an umbrella term made up of `deps.edn`, `clj`, `clojure` or `tools.deps.alpha`.
 
 The next few sections will discuss each of the above tools in more detail and how they all come together.
 
@@ -197,3 +203,5 @@ So yes, `clj` for the win.
 [brew tap]: https://clojure.org/news/2020/02/28/clojure-tap
 [All The Paths]: https://corfield.org/blog/2018/04/18/all-the-paths/
 [incredible tools]: https://github.com/clojure/tools.deps.alpha/wiki/Tools
+[#tools-deps]: https://clojurians.slack.com/archives/C6QH853H8
+[Clojurians Slack]: https://clojurians.slack.com/?redir=%2Fmessages%2F
