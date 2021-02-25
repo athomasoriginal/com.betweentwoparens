@@ -1,7 +1,7 @@
 ---
 title: 'What are the Clojure Tools?'
 datePublished: '2020-03-31'
-dateModified: '2021-01-31'
+dateModified: '2021-02-25'
 slug: what-are-the-clojure-tools
 summary: It's not a build tool, it's clj
 author: 'Thomas Mattacchione'
@@ -175,7 +175,7 @@ So yes, `clj` for the win.
       <a href="#when-to-use-clojure-script-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="monorepo-comment">
-      Just some clarification aroud the "monorepo" point. Choosing a sane structure for your monorepo is important to making this work.  Having said this, I have a personal project which has 4 or 5 sub-projects and I have not run into any issues as of yet.  I also know that others in the community have done similar things.  I will eventually write a post on this as well.
+      To clarify the "monorepo" comment: Choosing a sane structure for your monorepo is important to making this work.  I have a personal project which has 4 or 5 sub-projects and I have not run into any issues as of yet.  I would eventually love to write about my approach, but until then checkout Sean Corfield's Blog Post about <a class="blog-content__link" href="https://corfield.org/blog/2021/02/23/deps-edn-monorepo/" target="_blank" rel="noopener noreferrer">Clojure Monorepo using Clojure CLI Tools</a>.
       <a href="#monorepo-comment-ref" aria-label="Back to content">Back</a>
     </li>
   </ol>
