@@ -171,7 +171,7 @@ At this point we are ready to return to Reagent's `create-class` function and ex
 
 ## The Reagent Pattern
 
-As noted, the history lesson from the above section should provide a little insight into the tribal knowledge that is informing how `create-class` is being implemented.   Namely this is becausse what `create-class` is doing is implementing a modified version of the `pseudoclassical instantiation pattern`.  The following code snippet is a simplified version of some of the essential bits of `create-class`:
+As noted, the history lesson from the above section should provide a little insight into the tribal knowledge that is informing how `create-class` is being implemented.   Namely this is because what `create-class` is doing is implementing a modified version of the `pseudoclassical instantiation pattern`.  The following code snippet is a simplified version of some of the essential bits of `create-class`:
 
 ```javascript
 function cmp(props, context, updater) {
