@@ -52,7 +52,7 @@ But as I said, prior to ES6 JavaScript did not have a formal syntax for "classes
 
 Of all of these patterns, the `pseudoclassical instantiation pattern` became one of the most popular ways to simulate a class in JavaScript.  This is evidenced by the fact that many of the "first generation" JavaScript libraries and frameworks, like [google closure library](https://developers.google.com/closure/library/) and [backbone](https://backbonejs.org/), are written in this style.
 
-The reason we are going over this history is because the thing about "programming patterns" vs. a programming languages formal syntax is that patterns are not as easy to search, you often need a deeper understanding of the language to understand why the patterns are structured in the way they are and the intent of these patterns is not self evident.  In other words, patterns are often developed and disseminated through tribal knowledge.
+The reason we are going over this history is because the thing about "programming patterns" vs. a programming languages formal syntax is that patterns are not as easy to search, you often need a deeper understanding of the language to understand why the patterns are structured in the way they are and the intent of these patterns is not self evident.  In other words, patterns are often developed and disseminated through "cultural knowledge".
 
 For example, the most common way of writing a React class component is to use ES6 class syntax.  But did you know that ES6 class syntax is little more than syntactic sugar around the `pseudoclassical instantiation pattern`?
 
@@ -171,7 +171,7 @@ At this point we are ready to return to Reagent's `create-class` function and ex
 
 ## The Reagent Pattern
 
-As noted, the history lesson from the above section should provide a little insight into the tribal knowledge that is informing how `create-class` is being implemented.   Namely this is because what `create-class` is doing is implementing a modified version of the `pseudoclassical instantiation pattern`.  The following code snippet is a simplified version of some of the essential bits of `create-class`:
+As noted, the history lesson from the above section should provide a little insight into the "cultural knowledge" that is informing how `create-class` is being implemented.   Namely this is because what `create-class` is doing is implementing a modified version of the `pseudoclassical instantiation pattern`.  The following code snippet is a simplified version of some of the essential bits of `create-class`:
 
 ```javascript
 function cmp(props, context, updater) {
