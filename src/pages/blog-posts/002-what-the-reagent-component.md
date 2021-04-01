@@ -48,7 +48,7 @@ Prior to ES6, JavaScript did not have classes<a href="#javascript-es6-classes" a
 - inheritance
 - polymorphism
 
-But as I said, prior to ES6 JavaScript did not have a formal syntax for "classes".  This led the JavaScript community to develop a [series of instantiation patterns](http://nick.balestra.ch/2015/classes-and-instantiation-patterns-in-javascript/) to help simulate classes.
+But as I said, prior to ES6 JavaScript did not have a formal syntax for "classes".  This led the JavaScript community to develop a [series of instantiation patterns](http://nick.balestra.ch/2015/classes-and-instantiation-patterns-in-javascript/) to help _simulate_ classes.
 
 Of all of these patterns, the `pseudoclassical instantiation pattern` became one of the most popular ways to simulate a class in JavaScript.  This is evidenced by the fact that many of the "first generation" JavaScript libraries and frameworks, like [google closure library](https://developers.google.com/closure/library/) and [backbone](https://backbonejs.org/), are written in this style.
 
