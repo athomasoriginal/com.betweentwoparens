@@ -1,13 +1,13 @@
 ---
 title: 'What the Reagent Component?!'
 datePublished: '2019-07-29'
-dateModified: '2020-04-03'
+dateModified: '2021-04-01'
 slug: what-the-reagent-component
 summary: It's time to uncover the truth about Reagent components
 author: 'Thomas Mattacchione'
 ---
 
-Did you know that when you write a [form-1](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-1-a-simple-function), [form-2](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-2--a-function-returning-a-function) or [form-3](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-3-a-class-with-life-cycle-methods) Reagent component they all become React `class components`<a href="#reagent-components" aria-describedby="footnote-label" id="reagent-components-ref">?</a>
+Did you know that when you write a [form-1](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-1-a-simple-function), [form-2](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-2--a-function-returning-a-function) or [form-3](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-3-a-class-with-life-cycle-methods) Reagent component they all default<a href="#reagent-default-class" aria-describedby="footnote-label" id="reagent-default-class-ref"></a> to becoming React `class components`<a href="#reagent-components" aria-describedby="footnote-label" id="reagent-components-ref">?</a>
 
 For example, if you were to write this `form-1` Reagent component:
 
@@ -28,13 +28,15 @@ class Welcome extends React.Component {
 
 <aside class="blog-content__note">To be clear, Reagent components do not specifically turn into an <a class="blog-content__link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" rel="noopener noreferrer">ES6 class syntax</a>.  This is my way of illustrating that Reagent components are class components to React.</aside>
 
-While the fact that all Reagent components become class components is an interesting piece of trivia, the part that blew my mind was  _how_ they actually become <a href="#reagent-components-are-cray" aria-describedby="footnote-label" id="reagent-components-are-cray-ref">`class components`</a>.  Once I understood this, a few other things became clearer like:
+While the fact that all Reagent components become class components by default is an interesting piece of trivia, the part I found interesting was _how_ they actually become `class components` <a href="#reagent-components-are-cray" aria-describedby="footnote-label" id="reagent-components-are-cray-ref">.</a>  This kind of knowledge is valuable because it means we can better understand
 
-- why we [can't just use hooks with Reagent components](https://github.com/reagent-project/reagent/blob/master/doc/ReactFeatures.md#hooks)
+- JavaScript, ES6 classes and the real meaning of "syntax sugar"
 - React's strategy for [distinguishing class and function components](https://overreacted.io/how-does-react-tell-a-class-from-a-function/).
-- JavaScript "classes"
+- How ClojureScript interacts with JavaScript
 
-<aside class="blog-content__note">I assume readers have a level of familiarity with ClojureScript, JavaScript and React. Please also note that understanding Reagent at this level is not required to be productive in Reagent.</aside>
+The result of all of this "fundamental" learnings is we can more effectively harness JavaScript from within ClojureScript.
+
+<aside class="blog-content__note">I assume readers have a level of familiarity with ClojureScript, JavaScript and React. Please also note that understanding Reagent at this level is not required to be productive in Reagent.  Finally, as of <a class="blog-content__link" href="https://github.com/reagent-project/reagent/blob/master/CHANGELOG.md#100-alpha2-2020-05-13" rel="noopener noreferrer">Reagent 1.0.0</a> Reagent is capable of allowing developers to choose whether they want their components to be <code class="gatsby-code-text">class</code> or <code class="gatsby-code-text">function</code> components.  When this post was originally written, this was not possible and for many in the community it was an assumption that might have gone unnoticed.  None the less, the learnings here are still important!  So, the rest of this post is assuming that you have NOT enabled Reagent components to render as <code class="gatsby-code-text">function</code> components.</aside>
 
 ## A Pseudoclassical Pattern
 
@@ -280,6 +282,10 @@ As a final point, this again illustrates one of Clojures super powers:  It's hos
 <aside>
   <h3>Footnotes</h3>
   <ol>
+    <li id="reagent-default-class">
+      I say "default" because prior to version xx of Reagent you did not have a choice between class or function components.
+      <a href="#reagent-default-class-ref" aria-label="Back to content"s>Back</a>
+    </li>
     <li id="reagent-components">
       This is <a class="blog-content__link" href="https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#final-note" target="_blank" rel="noopener noreferrer">briefly touched on</a> in Reagents component guide but they do not explicitly use the words <code class="gatsby-code-text">React class component</code> which means that it is easy to miss the implication of this point. Hence this blog post.
       <a href="#reagent-components-ref" aria-label="Back to content">Back</a>
