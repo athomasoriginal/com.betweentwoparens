@@ -26,7 +26,7 @@ class Welcome extends React.Component {
 }
 ```
 
-<aside class="blog-content__note">To be clear, Reagent components do not specifically turn into an <a class="blog-content__link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" rel="noopener noreferrer">ES6 class syntax</a>.  This is my way of illustrating that Reagent components are class components to React.</aside>
+<aside class="blog-content__note">To be clear, Reagent components do not turn into <a class="blog-content__link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" rel="noopener noreferrer">ES6 class syntax</a>.  This is just an illustrative tool because ES6 classes are rapidly becoming more common than the alternative forms of writing classes that we shall see later in this post.</aside>
 
 While the fact that all Reagent components become class components by default is an interesting piece of trivia, the part I found interesting was _how_ they actually become `class components` <a href="#reagent-components-are-cray" aria-describedby="footnote-label" id="reagent-components-are-cray-ref">.</a>  This kind of knowledge is valuable because it means we can better understand
 
