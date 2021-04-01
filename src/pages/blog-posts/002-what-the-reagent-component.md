@@ -40,9 +40,7 @@ The result of all of this "fundamental" learnings is we can more effectively har
 
 ## A Pseudoclassical Pattern
 
-The reason all of your Reagent components become `class components` is because all of the code you pass to Reagent is run through an internal Reagent function called [create-class](https://github.com/reagent-project/reagent/blob/88e9833be9c3135548d760286ffd84d88a0a0489/src/reagent/impl/component.cljs#L289).  The interesting part of this is _how_ `create-class` uses JavaScript mechanics to transform the Reagent component you wrote into something that is recognized as a React class component.
-
-There are two ways we can explore this.  The first is by looking into the implementation details of `create-class` and breaking it into its essential pieces.  The second is to not look at the implementation details of `create-class` just yet and learn a little more about JavaScript "classes".  Let's opt for the latter and begin this teachable moment with a little bit of JavaScript class history.
+The reason all of your Reagent components become `class components` is because all of the code you pass to Reagent is run through an internal Reagent function called [create-class](https://github.com/reagent-project/reagent/blob/88e9833be9c3135548d760286ffd84d88a0a0489/src/reagent/impl/component.cljs#L289).  The interesting part of this is _how_ `create-class` uses JavaScript mechanics to transform the Reagent component you wrote into something that is recognized as a React class component.  Before we look into what `create-class` is doing, it's helpful to review how "classes" work in JavaScript.
 
 Prior to ES6, JavaScript did not have classes<a href="#javascript-es6-classes" aria-describedby="footnote-label" id="javascript-es6-classes-ref">.</a>  and this made _some_ JS developers sad because classes are a common pattern used to structure ones code and provide mechanisms for:
 
