@@ -74,7 +74,7 @@ Your site is now running at `http://localhost:8000`!
 - Upgrade specific packages in package.json
 
   ```bash
-  yarn upgrade <package-name> --latest
+  yarn upgrade --latest <package-name>
   ```
 
   > Above is fine if you want to upgrade to latest and to have the package.json also updated.
