@@ -177,7 +177,9 @@ With this in mind, lets look at Reagent's `create-class` function and see what i
 
 ## What Reagent Does
 
-As noted, the history lesson from the above section should provide a little insight into the "cultural knowledge" that is informing how `create-class` is being implemented.   Namely this is because what `create-class` is doing is implementing a modified version of the `pseudoclassical instantiation pattern`.  The following code snippet is a simplified version of some of the essential bits of `create-class`:
+The history lesson from the above section is important because `create-class` uses a modified version of the `pseudoclassical instantiation pattern`.  Let's take a look at what we mean.
+
+The following code sample is a simplified version of Reagent's `create-class` function:
 
 ```javascript
 function cmp(props, context, updater) {
@@ -193,7 +195,7 @@ goog.extend(cmp, React.Component, staticMethods)
 cmp.prototype.constructor = cmp
 ```
 
-<aside class="blog-content__note">We are writing in JavaScript because I feel its easier to understand than the Reagent ClojureScript code as what we are discussing is JavaScript patterns translated into ClojureScript.</aside>
+<aside class="blog-content__note">Note that the above is written in JavaScript where as Reagent's is written in ClojureScript. The reason I have done this is that I feel it can reach a broader audience when written in JS, but most importantly, the reader doesn't have to transform the code in their header from CLJS to JS which allows us to examine the work with less mental overhead.</aside>
 
 What we have above is Reagents take on the `pseudoclassical instantiation pattern` with a few minor tweaks:
 
@@ -269,7 +271,7 @@ What the above shows is that `Welcome` is not a child of `React.component` even 
 
 Second, by `copying` rather than `linking` prototypes we could inccur a performance cost but again, in our case this cost is negligible.
 
-<aside class="blog-content__note">For those who want to know why the Reagent team chose to modify the pseudoclassical instantiation pattern I do not really have an answer.  At the end of the day, they do more or less the same things without any significant downsides.<a href="#why-modify" aria-describedby="footnote-label" id="why-modify-ref">?</a></aside>
+<aside class="blog-content__note">For those who want to know why the Reagent team chose to modify the pseudoclassical instantiation pattern I do not really have an answer.  At the end of the day, they do more or less the same things without any significant downsides<a href="#why-modify" aria-describedby="footnote-label" id="why-modify-ref">?</a></aside>
 
 ## Conclusion
 
