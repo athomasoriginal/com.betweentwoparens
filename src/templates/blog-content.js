@@ -52,7 +52,7 @@ const BlogContent = ({ html, footerLinks, license }) => {
   )
 }
 
-export default ({ data }) => {
+const BlogPage = ({ data }) => {
   const siteMetadata = data.site.siteMetadata
   const { frontmatter } = data.markdownRemark
 
@@ -92,6 +92,8 @@ export default ({ data }) => {
     </Layout>
   )
 }
+
+export default BlogPage
 
 export const query = graphql`
   query($slug: String!) {
