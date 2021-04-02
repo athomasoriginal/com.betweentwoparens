@@ -275,15 +275,11 @@ Second, by `copying` rather than `linking` prototypes we could inccur a performa
 
 ## Conclusion
 
-As you can see we took a journey into the weeds.  At a highlevel, the takeaway for me was that I was able to better understand some of the decision making processes that go into writing Reagent and React.
+I think it's important to dive into the weeds.  In my experience, it's these detours and thorough questioning of topics which has led to considerable improvements in my programming skill and general comfort with increasingly challenging topics.
 
-I felt that while this information is specific, it can be beneficial to both JavaScript and ClojureScript developers.
+However, I think the biggest thing for me is something I referenced a few times in this post: "cultural knowledge".  I have come to see that that is the most powerful tools we have as a species.  It's unfortunate that this kind of information is not always available and my hope is that I could fill some of the gaps with this writing and maybe even open the door to works which can be built ontop of this.
 
-For the JavaScript developers, I imagine it is comforting to know that when you come to Reagent from React there are differences, but things are more familiar than it initially seems.
-
-To the ClojureScript first developers, it is encouraging to know that everything is, generally speaking, React under the hood.  This is a comfort because when we are stuck we should know that we can lean on the JavaScript community to better understand how we can write and optimize our Reagent code.
-
-As a final point, this again illustrates one of Clojures super powers:  It's hosted.  We have the advantage of being able to learn on the host languages, use their libraries and enhance when needed.
+Less philosophically though, I find it encouraging to know that everything is, generally speaking, JavaScript under the hood.  This is important because it allows us to take advantage of what has come before and really dig into interesting ways we can use and manipulate JS from within CLJS.
 
 <aside>
   <h3>Footnotes</h3>
