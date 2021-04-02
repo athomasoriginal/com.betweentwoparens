@@ -4,8 +4,8 @@
   "author": "Thomas Mattacchione <thomasmattacchione@gmail.com>",
   "dependencies": {
     "gatsby": "3.2.1",
-    "gatsby-cli": "^3.2.0",
-    "gatsby-plugin-canonical-urls": "^3.2.0",
+    "gatsby-cli": "3.2.0",
+    "gatsby-plugin-canonical-urls": "3.2.0",
     "gatsby-plugin-feed": "3.2.0",
     "gatsby-plugin-manifest": "3.2.0",
     "gatsby-plugin-offline": "4.2.0",
