@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import Footer from '../components/footer'
 import Header from '../components/header'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import { graphql } from 'gatsby'
 import './prism-syntax-highlighting.css'
 
@@ -66,7 +66,7 @@ export default ({ data }) => {
         />
       }
     >
-      <SEO
+      <Seo
         title={frontmatter.title}
         description={frontmatter.summary}
         author={frontmatter.author}
