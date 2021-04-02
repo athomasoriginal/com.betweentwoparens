@@ -28,13 +28,13 @@ class Welcome extends React.Component {
 
 <aside class="blog-content__note">To be clear, Reagent components do not turn into <a class="blog-content__link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" rel="noopener noreferrer">ES6 class syntax</a>.  This is just an illustrative tool because ES6 classes are rapidly becoming more common than the alternative forms of writing classes that we shall see later in this post.</aside>
 
-While the fact that all Reagent components become class components by default is an interesting piece of trivia, the part I found most interesting was _how_ they actually become `class components` <a href="#reagent-components-are-cray" aria-describedby="footnote-label" id="reagent-components-are-cray-ref">.</a>  This kind of knowledge is valuable because it means we can better understand
+Okay, so, Reagent components become React `Class Components`. Why do we care? This depth of understanding is valuable because it means we can better understand:
 
-- JavaScript, ES6 classes and the real meaning of "syntax sugar"
+- JavaScript, ES6 classes and the idea behind "syntax sugar"
 - React's strategy for [distinguishing class and function components](https://overreacted.io/how-does-react-tell-a-class-from-a-function/).
 - How ClojureScript interacts with JavaScript
 
-The result of all of this "fundamental" learnings is we can more effectively harness JavaScript from within ClojureScript.
+The result of all of this "fundamental" learning is we can more effectively harness JavaScript from within ClojureScript.
 
 <aside class="blog-content__note">I assume readers have a level of familiarity with ClojureScript, JavaScript and React. Please also note that understanding Reagent at this level is not required to be productive in Reagent.  Finally, as of <a class="blog-content__link" href="https://github.com/reagent-project/reagent/blob/master/CHANGELOG.md#100-alpha2-2020-05-13" rel="noopener noreferrer">Reagent 1.0.0</a> Reagent is capable of allowing developers to choose whether they want their components to be <code class="gatsby-code-text">class</code> or <code class="gatsby-code-text">function</code> components.  When this post was originally written, this was not possible and for many in the community it was an assumption that might have gone unnoticed.  None the less, the learnings here are still important!  So, the rest of this post is assuming that you have NOT enabled Reagent components to render as <code class="gatsby-code-text">function</code> components.</aside>
 
@@ -48,11 +48,17 @@ Prior to ES6, JavaScript did not have classes<a href="#javascript-es6-classes" a
 - inheritance
 - polymorphism
 
-But as I said, prior to ES6 JavaScript did not have a formal syntax for "classes".  This led the JavaScript community to develop a [series of instantiation patterns](http://nick.balestra.ch/2015/classes-and-instantiation-patterns-in-javascript/) to help _simulate_ classes.
+But as I said, prior to ES6, JavaScript did not have a formal syntax for "classes".  This led the JavaScript community to develop a [series of instantiation patterns](http://nick.balestra.ch/2015/classes-and-instantiation-patterns-in-javascript/) to help _simulate_ classes.
 
 Of all of these patterns, the `pseudoclassical instantiation pattern` became one of the most popular ways to simulate a class in JavaScript.  This is evidenced by the fact that many of the "first generation" JavaScript libraries and frameworks, like [google closure library](https://developers.google.com/closure/library/) and [backbone](https://backbonejs.org/), are written in this style.
 
-The reason we are going over this history is because the thing about "programming patterns" vs. a programming languages formal syntax is that patterns are not as easy to search, you often need a deeper understanding of the language to understand why the patterns are structured in the way they are and the intent of these patterns is not self evident.  In other words, patterns are often developed and disseminated through "cultural knowledge".
+The reason we are going over this history is because the thing about a programming language is there are "patterns" and "syntax".  The challenge with "patterns" is:
+
+- They are disseminated culturally
+- They are _often_ not easy to search
+- They _often_ require a deeper understanding of the language and problem being solved to understand why the pattern became accepted.
+
+The last point is relevant to our conversation because patterns ultimatley make assumptions. Assumptions like our understanding of the problem being solved and where and when a pattern should itself be used.  The end result is that a pattern can just become a "thing" we do all while forgetting why we started to do it in the first place or what the world could look like without it.
 
 For example, the most common way of writing a React class component is to use ES6 class syntax.  But did you know that ES6 class syntax is little more than syntactic sugar around the `pseudoclassical instantiation pattern`?
 
@@ -83,7 +89,7 @@ Welcome.prototype.render = function render() {
 }
 ```
 
-As I noted, the above is a valid React class component.  As you can see, it's also verbose and error prone.  For these reason JavaScript introduced ES6 classes to the language:
+While the above is a valid React `Class Component`, it's also verbose and error prone.  For these reasons JavaScript introduced ES6 classes to the language:
 
 ```javascript
 class Welcome extends React.Component {
@@ -93,11 +99,11 @@ class Welcome extends React.Component {
 }
 ```
 
-<aside class="blog-content__note">Yup, ES6 class syntax is a sexier pseudoclassical instantiation pattern and also a good example of what developers mean when they say <code class="gatsby-code-text">syntactic sugar</code>.  I should also mention that there are some differences between the two approaches which means they are not 100% equivalent, but for most developers the differences are academic.  <strong>Fun time bonus:</strong> I encourage you checkout <a  class="blog-content__link" href="https://codesandbox.io/s/pseudoclassical-instantiation-pattern-sc0fk" target="_blank" rel="noopener noreferrer">this code sandbox</a> where I have setup live examples of both.</aside>
+<aside class="blog-content__note">Yup, ES6 class syntax is a sexier <code class="gatsby-code-text">pseudoclassical instantiation pattern</code> and also a good example of what developers mean when they say <code class="gatsby-code-text">syntactic sugar</code>.  I should also mention that there are <i>some</i> differences between the two approaches listed above which means they are not 100% equivalent, but for most developers the differences are academic.  <strong>Fun time bonus:</strong> I encourage you checkout <a  class="blog-content__link" href="https://codesandbox.io/s/pseudoclassical-instantiation-pattern-sc0fk" target="_blank" rel="noopener noreferrer">this code sandbox</a> where I have setup live examples of both.</aside>
 
-If the live code sandbox was not enough, we can use JavaScript's built-in introspection tools to compare the `pseudoclassical instantiation pattern` to the `ES6 class` syntax.
+For those looking for further evidence, we can support our claim that `ES6 Classes` result in same thing as what the `pseudoclassical instantiation pattern` produces by using JavaScript's built-in introspection tools to compare the `pseudoclassical instantiation pattern` to the `ES6 class` syntax.
 
-Starting with the pseudoclassical instantiation pattern:
+**pseudoclassical instantiation pattern**:
 
 ```javascript
 function Welcome(props, context, updater) {
@@ -132,7 +138,7 @@ Welcome.prototype.isPrototypeOf(welcome)
 // => true
 ```
 
-and then perform the same tests against the ES6 class
+**ES6 class**
 
 ```javascript
 class Welcome extends React.Component {
@@ -165,11 +171,11 @@ Welcome.prototype.isPrototypeOf(welcome)
 // => true
 ```
 
-The TL;DR for the above is that as far as JavaScript is concerned, both definions of the `Welcome` component are children of `React.Component` and therefore are valid React class components.
+What does all of this mean?  As far as JavaScript and React are concerned, both definions of the `Welcome` component are valid React `Class Components`.
 
-At this point we are ready to return to Reagent's `create-class` function and explore it's implementation details.
+With this in mind, lets look at Reagent's `create-class` function and see what it does.
 
-## The Reagent Pattern
+## What Reagent Does
 
 As noted, the history lesson from the above section should provide a little insight into the "cultural knowledge" that is informing how `create-class` is being implemented.   Namely this is because what `create-class` is doing is implementing a modified version of the `pseudoclassical instantiation pattern`.  The following code snippet is a simplified version of some of the essential bits of `create-class`:
 
@@ -287,10 +293,6 @@ As a final point, this again illustrates one of Clojures super powers:  It's hos
     <li id="reagent-components">
       This is <a class="blog-content__link" href="https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#final-note" target="_blank" rel="noopener noreferrer">briefly touched on</a> in Reagents component guide but they do not explicitly use the words <code class="gatsby-code-text">React class component</code> which means that it is easy to miss the implication of this point. Hence this blog post.
       <a href="#reagent-components-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="reagent-components-are-cray">
-      The part that blew my hair back was the process of understanding exactly what was happening to transform a Reagent component to a class component and then applying context to why they were doing it in the way they were.
-      <a href="#reagent-components-are-cray-ref" aria-label="Back to content">Back</a>
     </li>
     <li id="javascript-es6-classes">
       It is important to note that even with ES6 class syntax JavaScript still does not have classes in the traditional sense.
