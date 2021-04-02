@@ -1,7 +1,7 @@
 ---
 title: 'What the Reagent Component?!'
 datePublished: '2019-07-29'
-dateModified: '2021-04-01'
+dateModified: '2021-04-02'
 slug: what-the-reagent-component
 summary: It's time to uncover the truth about Reagent components
 author: 'Thomas Mattacchione'
