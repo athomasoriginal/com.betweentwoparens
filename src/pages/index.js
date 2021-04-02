@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Blog from '../components/blog'
 import Header from '../components/header'
 import Footer from '../components/footer'
@@ -50,7 +50,7 @@ const IndexPage = ({ data }) => {
         />
       }
     >
-      <SEO
+      <Seo
         title={siteMetadata.seoTitle}
         description={siteMetadata.seoDescription}
         author={siteMetadata.author}
