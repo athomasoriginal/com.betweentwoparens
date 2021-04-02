@@ -1,3 +1,7 @@
+# Between Two Parens
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c8e124ff-8904-4c9b-a8b4-97fefd4a13e4/deploy-status)](https://app.netlify.com/sites/epic-goldwasser-028edc/deploys)
+
 - [Quick Start](#quick-start)
 - [Configuration](#configuration)
   - [Environment Variables](#environment-variables)
