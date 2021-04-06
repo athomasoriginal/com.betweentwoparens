@@ -1,7 +1,7 @@
 ---
 title: 'Clojure Text Editors'
 datePublished: '2019-11-30'
-dateModified: '2020-05-26'
+dateModified: '2021-04-06'
 slug: clojure-text-editors
 summary: Focus on learning and writing Clojure!
 author: 'Thomas Mattacchione'
@@ -119,7 +119,7 @@ Remember that no matter what language you choose, there are going to be a ton of
   <h3>Footnotes</h3>
   <ol>
     <li id="popular-editors">
-      This list is based on the <a class="blog-content__link" href="https://clojure.org/news/2020/02/20/state-of-clojure-2020" target="_blank" rel="noopener noreferrer">2020 State of Clojure Survey</a>.
+      This list is based on the <a class="blog-content__link" href="https://clojure.org/news/2021/04/06/state-of-clojure-2021" target="_blank" rel="noopener noreferrer">2021 State of Clojure Survey</a>.
       <a href="#popular-editors-ref" aria-label="Back to content">Back</a>
     </li>
   </ol>
