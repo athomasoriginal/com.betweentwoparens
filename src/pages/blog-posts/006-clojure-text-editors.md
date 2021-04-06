@@ -9,21 +9,15 @@ author: 'Thomas Mattacchione'
 
 <aside class="blog-content__note">Interested in jumping right to my editor setup? <a class="blog-content__link" href="#my-text-editor-setup">click here</a> or you can checkout my free <a class="blog-content__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp">Atom Setup Guide Video Series</a>.</aside>
 
-Becoming a great software developer probably has more to do with ones ability to accept opportunities to revisit and refine _opinions_ and _beliefs_ than we would initially think.
+A question I and many people have when starting with Clojure is, "which text editor should I use?".
 
-In order to get to a point where this is possible, my strategy is usually to be "new" at something again.  For example, learn a **different** programming language.
-
-Clojure is great for this because it gives you a break from common paradigms and exposes you to [functional programming](https://www.geeksforgeeks.org/functional-programming-paradigm/) and this sexy moon man language called [lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)).
-
-So now that I was at a point where I was ready to learn Clojure I needed to use a "Clojure Editor".  I wanted to do this because I wanted to [think](https://www.youtube.com/watch?v=f84n5oFoZBc) as a Clojurist and use the same tools as them. This meant [emacs](https://www.gnu.org/software/emacs/) because all my research and conversations up until this point with other Clojurists led me to the opinion that `emacs` was _the_ "Clojure Editor".
+In my case, I have this thing with starting things "right".  I heard that Clojurists did things different and I wanted to [think](https://www.youtube.com/watch?v=f84n5oFoZBc) as a Clojurist and use the same tools as them. A little research showed me that this meant using [emacs](https://www.gnu.org/software/emacs/) because all my conversations up until this point with other Clojurists led me to the opinion that `emacs` was _the_ "Clojure Editor".
 
 <aside class="blog-content__note">Take note of the line <code class="gatsby-code-text">conversations up until this point with other Clojurists</code>.  While "use emacs" is how I interpreted what they were saying, and some even used those words, it was not actually what they were saying.  By the end of this post I will hopefully transcribe the real message as I now understand it.</aside>
 
-Turns out that choosing emacs was not a great choice for me.  I should have stuck with the editor I knew best so that I could focus on being new at one thing at a time.  More on that later.
+Turns out that choosing emacs was not a great choice for me.  I should have stuck with the editor I knew best so that I could focus on being new at one thing at a time.  This article will outline some of my learnings when I was just starting with Clojure.
 
-All of this is to say, here is an article that outlines the landscape of Clojure Editors which will hopefully help to inform your initial steps into Clojure land.
-
-The rest of this article will be [bikeshed](https://www.urbandictionary.com/define.php?term=bikeshed) city. The hope? By documenting the thoughts and providing a few words of encouragement we can save some future Clojure developer some time.
+I will work to help new Clojurists by outlining the landscape of "Clojure Editors" which will hopefully help to inform your early journey into Clojure land. My hope is that by documenting my learnings and providing a few words of encouragement we can save some future Clojure developer some time.
 
 <aside class="blog-content__note">Text Editors are a source of furious debate among programmers.  So if the opinions expressed herein enrage, please know that is not my intention.  I love you.  For those who just want to see how I setup my Text Editor for Clojure development, jump to the <a href="#my-text-editor-setup">third section</a> of this post.  Also note that my recommendations are for both Clojure and ClojureScript.</aside>
 
