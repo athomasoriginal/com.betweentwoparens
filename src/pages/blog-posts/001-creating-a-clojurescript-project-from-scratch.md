@@ -1,7 +1,7 @@
 ---
 title: 'Start a ClojureScript App from Scratch'
 datePublished: '2019-06-24'
-dateModified: '2020-10-19'
+dateModified: '2021-04-12'
 slug: start-a-clojurescript-app-from-scratch
 summary: 'A guide to setting up a ClojureScript app from scratch without fear or worry.'
 author: 'Thomas Mattacchione'
@@ -150,7 +150,7 @@ To run our Clojure(Script) project with `clj` we first need to setup our `deps.e
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.773"}}
+ {org.clojure/clojurescript {:mvn/version "1.10.844"}}
 
  :aliases
  {:dev {:main-opts ["-m"  "cljs.main"
@@ -214,9 +214,9 @@ It starts by adding figwheel as a dependency. We do this by opening the `deps.ed
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.773"}
+ {org.clojure/clojurescript {:mvn/version "1.10.844"}
 
-  com.bhauman/figwheel-main {:mvn/version "0.2.11"}}
+  com.bhauman/figwheel-main {:mvn/version "0.2.13"}}
 
  ; ...
  }
@@ -255,9 +255,9 @@ The command we were using to run our app, `clj -M:dev`, is still not using figwh
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.773"}}
+ {org.clojure/clojurescript {:mvn/version "1.10.844"}}
 
-  com.bhauman/figwheel-main {:mvn/version "0.2.11"}
+  com.bhauman/figwheel-main {:mvn/version "0.2.13"}
 
  :aliases
  {:dev {:main-opts ["-m"  "figwheel.main" "--build" "dev" "--repl"]}}}
@@ -360,9 +360,9 @@ In addition to adding Reagent we are going to update our `deps.edn`, `html`, `cs
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.773"}
+ {org.clojure/clojurescript {:mvn/version "1.10.844"}
 
-  com.bhauman/figwheel-main {:mvn/version "0.2.11"}
+  com.bhauman/figwheel-main  {:mvn/version "0.2.13"}
 
   reagent                   {:mvn/version "0.10.0"}}
 
