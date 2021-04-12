@@ -1,7 +1,7 @@
 ---
 title: 'ClojureScript Test Setup'
 datePublished: '2019-08-26'
-dateModified: '2021-01-22'
+dateModified: '2021-04-12'
 slug: clojurescript-test-setup
 summary: Setup a ClojureScript Test Toolchain like a Boss
 author: 'Thomas Mattacchione'
@@ -457,9 +457,9 @@ Now from here we need to create an alias in our `deps.edn` file:
  ["src" "test" "resources" "target"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.773"}
+ {org.clojure/clojurescript {:mvn/version "1.10.844"}
 
-  com.bhauman/figwheel-main {:mvn/version "0.2.11"}
+  com.bhauman/figwheel-main  {:mvn/version "0.2.13"}
 
   reagent                   {:mvn/version "0.10.0"}}
 
