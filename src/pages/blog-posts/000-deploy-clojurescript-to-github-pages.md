@@ -2,7 +2,7 @@
 title: 'Deploy ClojureScript to Github Pages'
 author: Thomas Mattacchione
 datePublished: '2019-05-20'
-dateModified: '2020-05-26'
+dateModified: '2021-04-12'
 slug: deploy-clojurescript-to-github-pages
 summary: How to build a static site in ClojureScript in probably 2.5 minutes
 ---
@@ -33,9 +33,9 @@ clj -Stree
 you should see a response like this:
 
 ```bash
-org.clojure/clojure 1.10.1
-org.clojure/spec.alpha 0.2.176
-org.clojure/core.specs.alpha 0.2.44
+org.clojure/clojure 1.10.2
+org.clojure/spec.alpha 0.2.194
+org.clojure/core.specs.alpha 0.2.56
 ```
 
 <aside class="blog-content__note">Don't worry if your versions are different from mine.</aside>
@@ -105,7 +105,7 @@ Now that we have our HTML and CSS, we need to add ClojureScript.
 To do _anything_ with ClojureScript, we need to configure our project to use it. This begins by adding ClojureScript as a dependency. The way we do this in Clojure land is by creating a file called `deps.edn` at the same level as our <a href="#fn-deps" aria-describedby="footnote-label" id="fn-deps-ref"><code class="gatsby-code-text">index.html</code></a>. Once you have created your `deps.edn`, open it and add the following code:
 
 ```clojure
-{:deps {org.clojure/clojurescript {:mvn/version "1.10.773"}}}
+{:deps {org.clojure/clojurescript {:mvn/version "1.10.844"}}}
 ```
 
 <aside class="blog-content__note">If you are coming from JavaScript it can be helpful to think of the <code class="gatsby-code-text">deps.edn</code> as similar to <code class="gatsby-code-text">package.json</code>. The purpose of this file is to tell <code class="gatsby-code-text">clojure</code> which version of <code class="gatsby-code-text">ClojureScript</code> we want to use.</aside>
