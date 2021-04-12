@@ -1,7 +1,7 @@
 ---
 title: 'Deploy ClojureScript on Nginx'
 datePublished: '2019-10-29'
-dateModified: '2020-10-19'
+dateModified: '2021-04-12'
 slug: deploy-clojurescript-on-nginx
 summary: Learn how to serve a ClojureScript project on Nginx
 author: 'Thomas Mattacchione'
@@ -61,9 +61,9 @@ We will create our ClojureScript app using [Create Reagent App](https://github.c
 
 ```bash
 clj -Sdeps '{:deps
-              {seancorfield/clj-new {:mvn/version "1.1.228"}}}' \
+              {seancorfield/clj-new {:mvn/version "1.1.264"}}}' \
   -X clj-new/create \
-  :template '"https://github.com/tkjone/create-reagent-app@518b9cb0b2c36daff44cc6fe1048512dfd938842"' \
+  :template '"https://github.com/tkjone/create-reagent-app@a7a9968d2164b8562a7802c882dd5447998bd00f"' \
   :name demo-clojurescript-nginx/demo-clojurescript-nginx
 ```
 
