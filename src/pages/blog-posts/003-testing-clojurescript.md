@@ -22,9 +22,9 @@ Start by creating a basic ClojureScript app.  The easiest way to do this is by u
 
 ```bash
 clj -Sdeps '{:deps
-              {seancorfield/clj-new {:mvn/version "1.1.234"}}}' \
+              {seancorfield/clj-new {:mvn/version "1.1.264"}}}' \
   -X clj-new/create \
-  :template '"https://github.com/tkjone/create-reagent-app@f853d75dd79c209e42ffd9f0f0788054ef3e0433"' \
+  :template '"https://github.com/tkjone/create-reagent-app@a7a9968d2164b8562a7802c882dd5447998bd00f"' \
   :name nike/nike-app
 ```
 
