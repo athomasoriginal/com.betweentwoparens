@@ -255,9 +255,9 @@ The command we were using to run our app, `clj -M:dev`, is still not using figwh
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.844"}}
+ {org.clojure/clojurescript {:mvn/version "1.10.844"}
 
-  com.bhauman/figwheel-main {:mvn/version "0.2.13"}
+  com.bhauman/figwheel-main {:mvn/version "0.2.13"}}
 
  :aliases
  {:dev {:main-opts ["-m"  "figwheel.main" "--build" "dev" "--repl"]}}}
