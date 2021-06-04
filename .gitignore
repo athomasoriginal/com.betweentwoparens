@@ -3,6 +3,7 @@
 
 # eleventy stuffs
 _site/
+dist
 
 # ignore JS generated output everywhere
 node_modules
