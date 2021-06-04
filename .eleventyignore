@@ -1,0 +1,5 @@
+# ignore JS deps
+node_modules
+
+# ignore dev specific configs
+DEV-LOG.md

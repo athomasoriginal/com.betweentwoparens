@@ -1,6 +1,10 @@
 const fs = require("fs");
 
 module.exports = function (eleventyConfig) {
+  // @configuration avoid using .gitignore to tell eleventy what should/should
+  // not be watched
+  eleventyConfig.setUseGitIgnore(false);
+
   eleventyConfig.addPassthroughCopy("./src/css");
 
   // Override Browsersync defaults (used only with --serve)
