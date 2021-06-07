@@ -1,11 +1,17 @@
 const fs = require("fs");
 
+const filter = require("./src/filter");
+
 module.exports = function (eleventyConfig) {
   // @configuration avoid using .gitignore to tell eleventy what should/should
   // not be watched
   eleventyConfig.setUseGitIgnore(false);
 
   eleventyConfig.addPassthroughCopy("./src/css");
+
+  eleventyConfig.addFilter("dateFilter", filter.dateFilter);
+
+  eleventyConfig.addFilter("w3cDate", filter.w3cDate);
 
   // Override Browsersync defaults (used only with --serve)
   // ---------------------------------------------------------------------------
