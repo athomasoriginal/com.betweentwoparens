@@ -47,7 +47,9 @@ Be sure to have the following tools installed
 
 - [HTML5 Boilerplate]
 - [Modern CSS Reset]
-
+- A few useful filters:
+  - `dateFilter` & `w3DateFilter`
+-  
 
 ## Project Commands
 
