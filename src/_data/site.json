@@ -1,7 +1,10 @@
 {
   "name": "Eee-O-Eleven",
   "summary": "An Eleventy starter kit.",
-  "url": "https://github.com/athomasoriginal/eee-o-eleven",
+  "url": {
+    "feed": "https://github.com/athomasoriginal/eee-o-eleven/feed.xml",
+    "home": "https://github.com/athomasoriginal/eee-o-eleven"
+  },
   "author": {
     "name": "Thomas Mattacchione",
     "email": "thomasmattacchione@gmail.com"}
