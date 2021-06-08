@@ -2,6 +2,7 @@
   "name": "Eee-O-Eleven",
   "summary": "An Eleventy starter kit.",
   "url": "https://github.com/athomasoriginal/eee-o-eleven",
-  "authorEmail": "thomasmattacchione@gmail.com",
-  "authorName": "Thomas Mattacchione"
+  "author": {
+    "name": "Thomas Mattacchione",
+    "email": "thomasmattacchione@gmail.com"}
 }
