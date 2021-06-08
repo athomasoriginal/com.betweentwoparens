@@ -60,7 +60,7 @@ Be sure to have the following tools installed
 - [Modern CSS Reset]
 - A few useful filters:
   - `dateFilter` & `w3DateFilter`
--  
+- Example Blog Post
 
 ## Project Commands
 

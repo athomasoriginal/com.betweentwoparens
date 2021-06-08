@@ -1,0 +1,19 @@
+---
+layout: html-base
+title: home
+---
+
+{%- for post in collections.post -%}
+  <article class="blog">
+    <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+    <p>{{ post.data.summary }}</p>
+    <time datetime="{{ post.data.createdDate | w3cDate }}">
+      {{ post.data.createdDate | dateFilter }}
+    </time>
+    <p>
+      <span>posted on</span>
+      <span> BY </span>
+      <span>{{ post.data.author }}</span>
+    </p>
+  </article>
+{%- endfor -%}
