@@ -6,7 +6,7 @@ permalink: "/feed.xml"
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ site.name }}</title>
   <subtitle>{{ site.summary }}</subtitle>
-  <link href="{{ site.url.feed }}" rel="self"/>
+  <link href="{{ site.url.feed.link }}" rel="self"/>
   <link href="{{ site.url.home }}"/>
   <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ site.url.home }}</id>

@@ -4,7 +4,10 @@
   "summary": "An Eleventy starter kit.",
   "imageAltText": "Page image for [your site name here]",
   "url": {
-    "feed": "https://github.com/athomasoriginal/eee-o-eleven/feed.xml",
+    "feed": {
+      "description": "Your Site - All Content",
+      "link": "https://github.com/athomasoriginal/eee-o-eleven/feed.xml"
+    },
     "home": "https://github.com/athomasoriginal/eee-o-eleven",
     "image": "https://github.com/athomasoriginal/eee-o-eleven/your-image.png"
   },
