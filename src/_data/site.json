@@ -1,11 +1,17 @@
 {
   "name": "Eee-O-Eleven",
+  "type": "website",
   "summary": "An Eleventy starter kit.",
+  "imageAltText": "Page image for [your site name here]",
   "url": {
     "feed": "https://github.com/athomasoriginal/eee-o-eleven/feed.xml",
-    "home": "https://github.com/athomasoriginal/eee-o-eleven"
+    "home": "https://github.com/athomasoriginal/eee-o-eleven",
+    "image": "https://github.com/athomasoriginal/eee-o-eleven/your-image.png"
   },
   "author": {
     "name": "Thomas Mattacchione",
-    "email": "thomasmattacchione@gmail.com"}
+    "email": "thomasmattacchione@gmail.com"},
+  "handle": {
+    "twitter": "@athomasoriginal"
+  }
 }
