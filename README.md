@@ -10,7 +10,7 @@ Here is an [Eleventy] starter kit.
 
 - [Housekeeping]
 - [Quickstart]
-- [What's Included]
+- [Feature Choices]
 - [Data Usage]
 - [Before Dev]
 - [Before Deploy]
@@ -54,13 +54,17 @@ Be sure to have the following tools installed
   yarn run dev
   ```
 
-## What's Included
+## Feature Choices
+
+This section includes tooling and pattern choices made for this template.
 
 - [HTML5 Boilerplate]
 - [Modern CSS Reset]
 - A few useful filters:
   - `dateFilter` & `w3DateFilter`
 - Example Blog Post
+- RSS feed
+- Trailing slashes
 
 ## Project Commands
 
@@ -98,7 +102,7 @@ There is a priority order for how Data is consumed by Eleventy.  Familarize your
 
 [Housekeeping]: #housekeeping
 [Quickstart]: #quickstart
-[What's Included]: #whats-included
+[Feature Choices]: #feature-choices
 [Data Usage]: #data-usage
 [Before Dev]: #before-dev
 [Before Deploy]: #before-deploy
