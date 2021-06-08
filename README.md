@@ -25,13 +25,23 @@ Be sure to have the following tools installed
 
 ## Quickstart
 
-- Clone this repo
+- Create a project directory
   ```command
-  git clone https://github.com/athomasoriginal/eee-o-eleven.git
+  mkdir your-project-name
   ```
+  > `your-project-name` is whatever you choose to name your project
+- Move into your project directory
+  ```command
+  cd your-project-name
+  ```
+- Clone this repo into your project directory
+  ```command
+  git clone https://github.com/athomasoriginal/eee-o-eleven.git .
+  ```
+  > The `.` at the end of the above command clones the projects root dirs/files
 - Move into the project directory
   ```command
-  cd eee-o-eleven
+  cd your-project-name
   ```
   > You may want to even rename this directory while your at it
 - Install project dependencies
