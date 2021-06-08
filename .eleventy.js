@@ -14,6 +14,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("./src/site.webmanifest");
 
+  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
+
   eleventyConfig.addFilter("dateFilter", filter.dateFilter);
 
   eleventyConfig.addFilter("w3cDate", filter.w3cDate);
