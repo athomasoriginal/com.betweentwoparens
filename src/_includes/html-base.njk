@@ -7,13 +7,22 @@ title: html-base
   <head>
     <meta charset="utf-8">
     <title></title>
-    <meta name="description" content="">
+    <meta name="description" content="{{ site.summary }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:title" content="{{ site.summary }}">
+    <meta property="og:type" content="{{ site.type }}">
+    <meta property="og:url" content="{{ site.url.home }}">
+    <meta property="og:description" content="{{ site.summary }}">
+    <meta property="og:image" content="{{ site.url.image }}">
+    <meta property="og:image:alt" content="{{ site.imageAltText }}">
+
+    <meta name="twitter:creator" content="{{ site.handle.twitter}}">
+    <meta name="twitter:description" content="{{ site.summary }}">
+    <meta name="twitter:image" content="{{ site.url.image }}">
+    <meta name="twitter:image:alt" content="{{ site.imageAltText }}">
+    <meta name="twitter:card" content="summary">
 
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
