@@ -66,7 +66,13 @@ This section includes tooling and pattern choices made for this template.
 - RSS feed
 - Trailing slashes
 - Open Graph Meta Tags
-- Twitter Cards 
+- Twitter Cards
+
+## How things work
+
+- SVGs are inlined for performance and maximum control via css
+  - move the `svgs` into the `svg` directory
+  - reference in templates: `{{ '/src/svg/logo.svg' | svgContents | safe }}`
 
 ## Project Commands
 
