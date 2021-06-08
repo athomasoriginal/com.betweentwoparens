@@ -1,18 +1,18 @@
 {
-  "name": "Eee-O-Eleven",
+  "name": "Between Two Parens",
   "type": "website",
-  "summary": "An Eleventy starter kit.",
+  "summary": "A blog about life between two parens.",
   "url": {
     "feed": {
-      "description": "Your Site - All Content",
+      "description": "Between Two Parens - All Content",
       "link": "https://github.com/athomasoriginal/eee-o-eleven/feed.xml"
     },
     "home": {
-      "description": "",
+      "description": "Between Two Parens",
       "link": "https://github.com/athomasoriginal/eee-o-eleven"
     },
     "image": {
-      "description": "Page image for [your site name here]",
+      "description": "Page image for Between Two Parens",
       "link": "https://github.com/athomasoriginal/eee-o-eleven/your-image.png"
     }
   },
