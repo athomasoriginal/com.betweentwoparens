@@ -7,7 +7,8 @@
   "author": "athomasoriginal <thomasmattacchione@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "0.12.1"
+    "@11ty/eleventy": "0.12.1",
+    "@11ty/eleventy-plugin-rss": "1.1.1"
   },
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",

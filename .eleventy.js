@@ -2,6 +2,9 @@ const fs = require("fs");
 
 const filter = require("./src/filter");
 
+// @note import plugins
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+
 module.exports = function (eleventyConfig) {
   // @configuration avoid using .gitignore to tell eleventy what should/should
   // not be watched
@@ -12,6 +15,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("dateFilter", filter.dateFilter);
 
   eleventyConfig.addFilter("w3cDate", filter.w3cDate);
+
+  // @configuration rock an RSS feed
+  eleventyConfig.addPlugin(pluginRss);
 
   // Override Browsersync defaults (used only with --serve)
   // ---------------------------------------------------------------------------
