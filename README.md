@@ -11,6 +11,7 @@ Here is an [Eleventy] starter kit.
 - [Housekeeping]
 - [Quickstart]
 - [What's Included]
+- [Data Usage]
 - [Before Dev]
 - [Before Deploy]
 
@@ -66,9 +67,13 @@ Be sure to have the following tools installed
   yarn run build
   ```
 
+## Data Usage
+
+There is a priority order for how Data is consumed by Eleventy.  Familarize yourself with that.  The `_data/site.json` is meant to contain reusable, site related global variables.  Example of what this is not for:  post front matter data.
+
 ## Before Dev
 
-- [ ] Update metadata
+- [ ] Update `_data/site.json`
 
 ## Before Deploy
 
@@ -84,6 +89,7 @@ Be sure to have the following tools installed
 [Housekeeping]: #housekeeping
 [Quickstart]: #quickstart
 [What's Included]: #whats-included
+[Data Usage]: #data-usage
 [Before Dev]: #before-dev
 [Before Deploy]: #before-deploy
 
