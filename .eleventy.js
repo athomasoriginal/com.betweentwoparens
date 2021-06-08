@@ -5,6 +5,8 @@ const filter = require("./src/filter");
 // @note import plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
+const svgContents = require("eleventy-plugin-svg-contents");
+
 module.exports = function (eleventyConfig) {
   // @configuration avoid using .gitignore to tell eleventy what should/should
   // not be watched
@@ -22,6 +24,9 @@ module.exports = function (eleventyConfig) {
 
   // @configuration rock an RSS feed
   eleventyConfig.addPlugin(pluginRss);
+
+  // @configuration inline SVG
+  eleventyConfig.addPlugin(svgContents);
 
   // Override Browsersync defaults (used only with --serve)
   // ---------------------------------------------------------------------------
