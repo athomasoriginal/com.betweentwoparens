@@ -21,5 +21,35 @@
     "email": "thomasmattacchione@gmail.com"},
   "handle": {
     "twitter": "@athomasoriginal"
-  }
+  },
+  "navItems": [
+    {
+      "title": "Articles",
+      "link": "/",
+      "iconName": "",
+      "isIconLink": false,
+      "isInternalLink": true
+    },
+    {
+      "title": "Subscribe",
+      "link": "/subscribe",
+      "iconName": "",
+      "isIconLink": false,
+      "isInternalLink": true
+    },
+    {
+      "title": "Contact",
+      "link": "mailto:thomasmattacchione@gmail.com?Subject=Hi%20Thomas",
+      "iconName": "",
+      "isIconLink": false,
+      "isInternalLink": false
+    },
+    {
+      "title": "Youtube",
+      "link": "https://www.youtube.com/channel/UCfBUN43AQoyGiQxmCIDZe2w/featured?view_as=subscriber",
+      "iconPath": "/src/svg/youtube.svg",
+      "isIconLink": true,
+      "isInternalLink": false
+    }
+  ]
 }
