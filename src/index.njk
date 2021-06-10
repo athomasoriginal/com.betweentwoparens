@@ -3,17 +3,28 @@ layout: html-base
 title: home
 ---
 
-{%- for post in collections.post -%}
-  <article class="blog">
-    <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-    <p>{{ post.data.summary }}</p>
-    <time datetime="{{ post.data.createdDate | w3cDate }}">
-      {{ post.data.createdDate | dateFilter }}
-    </time>
-    <p>
-      <span>posted on</span>
-      <span> BY </span>
-      <span>{{ post.data.author }}</span>
-    </p>
-  </article>
-{%- endfor -%}
+<main class="blog__home">
+  <div class="stack">
+    {%- for post in collections.post -%}
+      <article class="blog">
+        <header>
+          <h2 class="blog__title">
+            <a class="blog__link" href="{{ post.url | url }}">{{ post.data.title }}</a>
+          </h2>
+        </header>
+
+        <div>
+          <p class="blog__description">{{ post.data.summary }}</p>
+          <span class="blog__description-hr"/>
+        </div>
+
+        <p class="blog__meta">
+          <time class="blog__date">{{ post.data.createdDate | dateFilter }}</time>
+          <span class="hide">posted on</span>
+          <span class="blog__by"> BY </span>
+          <span class="blog__author">{{ post.data.author }}</span>
+        </p>
+      </article>
+    {%- endfor -%}
+  </div>
+</main>
