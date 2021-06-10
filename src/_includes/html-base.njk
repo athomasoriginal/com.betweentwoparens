@@ -66,7 +66,7 @@ title: html-base
                 <ul class="ul header__nav-list">
                   {%- for navItem in site.navItems -%}
                     <li class="header__nav-item {% if navItem.isIconLink == false %} header__nav-item-text {% endif %}">
-                      <a href="/" target="" rel="nofollow noopener">
+                      <a href="{{ navItem.link }}" target="" rel="nofollow noopener">
                         {% if navItem.isIconLink %}
                           {{ navItem.iconPath | svgContents | safe }}
                         {% else %}
@@ -84,6 +84,8 @@ title: html-base
     </div>
 
     {{ content | safe }}
+
+    <script src="https://unpkg.com/mailgo@0.12.1/dist/mailgo.min.js"></script>
 
   </body>
 </html>
