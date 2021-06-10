@@ -7,10 +7,19 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 const svgContents = require("eleventy-plugin-svg-contents");
 
+// @note custom markdown parsing
 const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
 
 const mdOptions = {
   html: true,
+};
+
+const mdAnchorOpts = {
+  permalink: true,
+  permalinkClass: "anchor-link",
+  permalinkSymbol: "#",
+  level: [2],
 };
 
 module.exports = function (eleventyConfig) {
@@ -35,7 +44,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(svgContents);
 
   // @configuration add custom markdown parsing library
-  eleventyConfig.setLibrary("md", markdownIt(mdOptions));
+  eleventyConfig.setLibrary(
+    "md",
+    markdownIt(mdOptions).use(markdownItAnchor, mdAnchorOpts)
+  );
 
   // Override Browsersync defaults (used only with --serve)
   // ---------------------------------------------------------------------------
