@@ -10,6 +10,7 @@ const svgContents = require("eleventy-plugin-svg-contents");
 // @note custom markdown parsing
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const pluginMarkdownTOC = require("eleventy-plugin-toc");
 
 const mdOptions = {
   html: true,
@@ -42,6 +43,8 @@ module.exports = function (eleventyConfig) {
 
   // @configuration inline SVG
   eleventyConfig.addPlugin(svgContents);
+
+  eleventyConfig.addPlugin(pluginMarkdownTOC);
 
   // @configuration add custom markdown parsing library
   eleventyConfig.setLibrary(
