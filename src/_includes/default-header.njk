@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class="switcher">
+    <div>
+      <div class="header__logo-wrapper">
+        <a class="header__logo-link" href="/">
+          {{ '/src/svg/logo.svg' | svgContents | safe }}
+          <h1 class="h__base header__title">
+            <span class="header__title-line-1">Between</span>
+            <span class="header__title-line-2">Two Parens</span>
+          </h1>
+        </a>
+      </div>
+
+      <div class="switcher header__main-content">
+        <div>
+          <div class="header__tagline">
+            <div class="header__tagline">
+              <p class="h__base header__tagline-text">A blog about life between two parens</p>
+              <span class="header__tagline-divider"></span>
+            </div>
+          </div>
+          <nav class="header__nav">
+            <ul class="ul header__nav-list">
+              {%- for navItem in site.navItems -%}
+                <li class="header__nav-item {% if navItem.isIconLink == false %} header__nav-item-text {% endif %}">
+                  <a href="{{ navItem.link }}" target="" rel="nofollow noopener">
+                    {% if navItem.isIconLink %}
+                      {{ navItem.iconPath | svgContents | safe }}
+                    {% else %}
+                      {{ navItem.title }}
+                    {% endif %}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
