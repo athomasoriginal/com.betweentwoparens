@@ -7,6 +7,12 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 const svgContents = require("eleventy-plugin-svg-contents");
 
+const markdownIt = require("markdown-it");
+
+const mdOptions = {
+  html: true,
+};
+
 module.exports = function (eleventyConfig) {
   // @configuration avoid using .gitignore to tell eleventy what should/should
   // not be watched
@@ -27,6 +33,9 @@ module.exports = function (eleventyConfig) {
 
   // @configuration inline SVG
   eleventyConfig.addPlugin(svgContents);
+
+  // @configuration add custom markdown parsing library
+  eleventyConfig.setLibrary("md", markdownIt(mdOptions));
 
   // Override Browsersync defaults (used only with --serve)
   // ---------------------------------------------------------------------------
