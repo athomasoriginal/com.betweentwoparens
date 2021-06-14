@@ -74,6 +74,8 @@ This section includes tooling and pattern choices made for this template.
 - SVGs are inlined for performance and maximum control via css
   - move the `svgs` into the `svg` directory
   - reference in templates: `{{ '/src/svg/logo.svg' | svgContents | safe }}`
+- Write dates in format: `20 May 2019` for `created` in `posts`
+  - There is an off by one error when writing dates as `2019-05-19` 
 
 ## Project Commands
 
