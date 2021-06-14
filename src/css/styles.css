@@ -73,6 +73,9 @@ body {
   grid-column: main-start;
 }
 
+/* TODO All of this stuff is responsible for layout of typography and this is not how
+we want to space things. */
+
 h1,
 h2,
 h3 {
@@ -86,6 +89,16 @@ p {
   margin-bottom: 1.45rem;
 }
 
+ol, ul {
+  padding: 0;
+  margin: 0 0 1.45rem 1.45rem;
+  list-style-position: outside;
+  list-style-image: none;
+}
+
+li {
+    margin-bottom: .725rem;
+}
 
 /* -----------------------------------------------------------------------------
    Layout
