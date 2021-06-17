@@ -68,6 +68,15 @@ This section includes tooling and pattern choices made for this template.
 - Trailing slashes
 - Open Graph Meta Tags
 - Twitter Cards
+- Mailto Links
+- Blog
+  - Heading Anchors
+  - TOC
+  - Date - Last Modified
+  - Date - Last Updated
+  - Links open in new tab
+  - Custom Markdown
+    - Code Fence + custom code HTML attributes - see `eleventy.js` 
 
 ## How things work
 

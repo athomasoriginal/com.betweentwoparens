@@ -2,10 +2,13 @@ const fs = require("fs");
 
 const filter = require("./src/filter");
 
+const Prism = require("prismjs");
+const PrismLoader = require("prismjs/components/index");
+PrismLoader(["bash", "js", "clojure"]);
+
 // @note import plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const svgContents = require("eleventy-plugin-svg-contents");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const mdOptions = {
   html: true,
@@ -50,7 +53,11 @@ markdownIt.renderer.rules.fence = function (tokens, idx, options, env, slf) {
     langAttrs = arr.slice(2).join("");
   }
 
-  highlighted = markdownIt.utils.escapeHtml(token.content);
+  highlighted = Prism.highlight(
+    token.content,
+    Prism.languages[langName],
+    langName
+  );
 
   if (info) {
     i = token.attrIndex("class");
@@ -114,9 +121,6 @@ module.exports = function (eleventyConfig) {
 
   // @configuration markdown table of contents
   eleventyConfig.addPlugin(pluginMarkdownTOC);
-
-  // @configuration syntax highlighting
-  eleventyConfig.addPlugin(syntaxHighlight);
 
   // @configuration add custom markdown parsing library
   eleventyConfig.setLibrary(
