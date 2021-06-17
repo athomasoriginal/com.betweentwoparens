@@ -76,7 +76,7 @@ This section includes tooling and pattern choices made for this template.
   - Date - Last Updated
   - Links open in new tab
   - Custom Markdown
-    - Code Fence + custom code HTML attributes - see `eleventy.js` 
+    - Code Fence + custom code HTML attributes - see `eleventy.js`
 
 ## How things work
 
@@ -100,6 +100,12 @@ This section includes tooling and pattern choices made for this template.
   ```command
   yarn run build
   ```
+
+## Configuration
+
+### Add New Syntax Languages
+
+- See prismjs + eleventy.js file
 
 ## Data Usage
 
