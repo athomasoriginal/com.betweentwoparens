@@ -35,6 +35,13 @@
   padding: 0.125rem calc(1rem + 15px);
 }
 
+code {
+  margin-bottom: 0;
+  background-color: var(--color-yellow-53-light);
+  padding: .2em 0;
+  font-size: .85rem;
+  line-height: 1.45rem;
+}
 .gatsby-code-text {
   background-color: var(--color-yellow-53-light);
 }
