@@ -1,10 +1,17 @@
 /* -----------------------------------------------------------------------------
- * Blog Post Syntax Highlight Theme
+ * Bride
+ * -----
  *
- * borrowed from reactjs.org.  apply to prismjs.
+ * A Code Syntax Highlight Theme for Prism.  Inspired by reactjs.org syntax
+ * highlight theme
  * ---------------------------------------------------------------------------*/
 
-.eleventy-highlight {
+ .blog-content .bride-highlight {
+   border-radius: 0;
+   margin: 0 0 25px 0;
+ }
+
+.bride-highlight {
   background-color: var(--dark-blue);
   color: var(--color-white);
   border-radius: 10px;
@@ -13,9 +20,9 @@
   margin-bottom: 25px;
 }
 
-.eleventy-highlight code[class*='eleventy-code-'],
-.eleventy-highlight pre[class*='eleventy-code-'],
-.eleventy-highlight pre.prism-code {
+.bride-highlight code[class*='bride-code-'],
+.bride-highlight pre[class*='bride-code-'],
+.bride-highlight pre.prism-code {
   height: auto !important;
   font-size: 13px;
   line-height: 20px;
@@ -24,11 +31,11 @@
   padding-right: 0;
 }
 
-.eleventy-highlight + .eleventy-highlight {
+.bride-highlight + .bride-highlight {
   margin-top: 20px;
 }
 
-.eleventy-highlight-code-line {
+.bride-highlight-code-line {
   background-color: var(--lineHighlight);
   display: block;
   margin: -0.125rem calc(-1rem - 15px);
@@ -42,12 +49,12 @@ code {
   font-size: .85rem;
   line-height: 1.45rem;
 }
-.eleventy-code-text {
+.bride-code-text {
   background-color: var(--color-yellow-53-light);
 }
 /* Remove the extra space after the end of the higlighted piece of inline code
    which sadly bleeds into the next word */
-.eleventy-code-text:after {
+.bride-code-text:after {
   content: '';
 }
 
@@ -175,13 +182,13 @@ code {
 
 /* Line Numbers */
 
-pre[class*='eleventy-code-'].line-numbers {
+pre[class*='bride-code-'].line-numbers {
   position: relative;
   padding-left: 3.8em;
   counter-reset: linenumber;
 }
 
-pre[class*='eleventy-code-'].line-numbers > code {
+pre[class*='bride-code-'].line-numbers > code {
   position: relative;
   white-space: inherit;
 }
@@ -227,14 +234,14 @@ pre[class*='eleventy-code-'].line-numbers > code {
 
 @media (min-width: 760px) {
   /* prevents scrollbar for windows larger than a phone when highlighting */
-  .eleventy-highlight code[class*='eleventy-code-'],
-  .eleventy-highlight pre[class*='eleventy-code-'],
-  .eleventy-highlight pre.prism-code {
+  .bride-highlight code[class*='bride-code-'],
+  .bride-highlight pre[class*='bride-code-'],
+  .bride-highlight pre.prism-code {
     white-space: pre-wrap;
     word-break: break-word;
   }
 
-  .eleventy-highlight-code-line {
+  .bride-highlight-code-line {
     margin: -0.125rem 0 -0.125rem calc(-1rem - 15px);
     padding: 0.125rem 0 0.125rem calc(1rem + 15px);
   }

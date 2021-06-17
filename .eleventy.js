@@ -12,7 +12,7 @@ const svgContents = require("eleventy-plugin-svg-contents");
 
 const mdOptions = {
   html: true,
-  langPrefix: "eleventy-code-",
+  langPrefix: "bride-code-",
 };
 
 // @note custom markdown parsing
@@ -76,7 +76,7 @@ markdownIt.renderer.rules.fence = function (tokens, idx, options, env, slf) {
     };
 
     return (
-      '<div class="eleventy-highlight" ' +
+      '<div class="bride-highlight" ' +
       "> <pre" +
       slf.renderAttrs(tmpToken) +
       "><code" +
