@@ -23,8 +23,11 @@ title: post
 
     <aside class="blog-content__toc-wrapper">
       <div class="blog-content__toc">
-        <p>This post covers the following topics: </p>
-        <div>{{ content | toc | safe }}</div>
+        {% if content | toc %}
+          <p>This post covers the following topics: </p>
+
+          <div>{{ content | toc | safe }}</div>
+        {% endif %}
       </div>
     </aside>
 

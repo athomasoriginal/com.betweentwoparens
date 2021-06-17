@@ -121,8 +121,12 @@ module.exports = function (eleventyConfig) {
   // @configuration inline SVG
   eleventyConfig.addPlugin(svgContents);
 
-  // @configuration markdown table of contents
-  eleventyConfig.addPlugin(pluginMarkdownTOC);
+  // @configuration markdown table of contents.  If you change this, be sure to
+  // also consider changing the anchor links
+  eleventyConfig.addPlugin(pluginMarkdownTOC, {
+    tags: ["h2"],
+    ul: true,
+  });
 
   // @configuration configure and add custom markdown parsing library
   const markdownLibrary = markdownIt
