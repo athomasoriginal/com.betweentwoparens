@@ -75,10 +75,8 @@ markdownIt.renderer.rules.fence = function (tokens, idx, options, env, slf) {
       attrs: tmpAttrs,
     };
 
-    // @note we add data-language
     return (
-      '<div class="eleventy-highlight" data-language=' +
-      langName +
+      '<div class="eleventy-highlight" ' +
       "> <pre" +
       slf.renderAttrs(tmpToken) +
       "><code" +
