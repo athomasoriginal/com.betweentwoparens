@@ -18,6 +18,7 @@ const mdOptions = {
 // @note custom markdown parsing
 const markdownIt = require("markdown-it")(mdOptions);
 const mdIterator = require("markdown-it-for-inline");
+const customContainer = require("markdown-it-container");
 const markdownItAnchor = require("markdown-it-anchor");
 const pluginMarkdownTOC = require("eleventy-plugin-toc");
 
@@ -140,7 +141,28 @@ module.exports = function (eleventyConfig) {
         tokens[idx].attrPush(["rel", "noopener noreferrer"]);
       }
     })
-    .use(markdownItAnchor, mdAnchorOpts);
+    .use(markdownItAnchor, mdAnchorOpts)
+    .use(customContainer, "note", {
+      validate: function (params) {
+        return params.trim() === "note";
+      },
+      // @note this goes word by word and parses them.  So, when it sees
+      // ::: note blah ::: this bit of code will see that there is a ::: note
+      // and lay down the opening HTML structure, put everything inside of the
+      // html, in this case `blah`, into the html structure and then close it off
+      // when it sees :::
+      render: function (tokens, idx) {
+        var m = tokens[idx].info.trim();
+
+        if (tokens[idx].nesting === 1) {
+          // opening tag
+          return '<aside class="blog-content__note">';
+        } else {
+          // closing tag
+          return "</aside>";
+        }
+      },
+    });
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
