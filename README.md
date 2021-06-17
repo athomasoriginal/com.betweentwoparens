@@ -107,6 +107,10 @@ This section includes tooling and pattern choices made for this template.
 
 - See prismjs + eleventy.js file
 
+### Images
+
+- See eleventy.js where we rock `passthrough`
+
 ## Data Usage
 
 There is a priority order for how Data is consumed by Eleventy.  Familarize yourself with that.  The `_data/site.json` is meant to contain reusable, site related global variables.  Example of what this is not for:  post front matter data.
