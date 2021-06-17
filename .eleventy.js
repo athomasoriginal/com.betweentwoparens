@@ -102,6 +102,8 @@ module.exports = function (eleventyConfig) {
   // not be watched
   eleventyConfig.setUseGitIgnore(false);
 
+  eleventyConfig.addPassthroughCopy("./src/images");
+
   eleventyConfig.addPassthroughCopy("./src/css");
 
   eleventyConfig.addPassthroughCopy("./src/site.webmanifest");
