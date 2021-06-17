@@ -12,7 +12,7 @@ const svgContents = require("eleventy-plugin-svg-contents");
 
 const mdOptions = {
   html: true,
-  langPrefix: "gatsby-code-",
+  langPrefix: "eleventy-code-",
 };
 
 // @note custom markdown parsing
@@ -77,7 +77,7 @@ markdownIt.renderer.rules.fence = function (tokens, idx, options, env, slf) {
 
     // @note we add data-language
     return (
-      '<div class="gatsby-highlight" data-language=' +
+      '<div class="eleventy-highlight" data-language=' +
       langName +
       "> <pre" +
       slf.renderAttrs(tmpToken) +

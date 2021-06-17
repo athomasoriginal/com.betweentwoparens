@@ -4,7 +4,7 @@
  * borrowed from reactjs.org.  apply to prismjs.
  * ---------------------------------------------------------------------------*/
 
-.gatsby-highlight {
+.eleventy-highlight {
   background-color: var(--dark-blue);
   color: var(--color-white);
   border-radius: 10px;
@@ -13,9 +13,9 @@
   margin-bottom: 25px;
 }
 
-.gatsby-highlight code[class*='gatsby-code-'],
-.gatsby-highlight pre[class*='gatsby-code-'],
-.gatsby-highlight pre.prism-code {
+.eleventy-highlight code[class*='eleventy-code-'],
+.eleventy-highlight pre[class*='eleventy-code-'],
+.eleventy-highlight pre.prism-code {
   height: auto !important;
   font-size: 13px;
   line-height: 20px;
@@ -24,11 +24,11 @@
   padding-right: 0;
 }
 
-.gatsby-highlight + .gatsby-highlight {
+.eleventy-highlight + .eleventy-highlight {
   margin-top: 20px;
 }
 
-.gatsby-highlight-code-line {
+.eleventy-highlight-code-line {
   background-color: var(--lineHighlight);
   display: block;
   margin: -0.125rem calc(-1rem - 15px);
@@ -42,12 +42,12 @@ code {
   font-size: .85rem;
   line-height: 1.45rem;
 }
-.gatsby-code-text {
+.eleventy-code-text {
   background-color: var(--color-yellow-53-light);
 }
 /* Remove the extra space after the end of the higlighted piece of inline code
    which sadly bleeds into the next word */
-.gatsby-code-text:after {
+.eleventy-code-text:after {
   content: '';
 }
 
@@ -175,13 +175,13 @@ code {
 
 /* Line Numbers */
 
-pre[class*='gatsby-code-'].line-numbers {
+pre[class*='eleventy-code-'].line-numbers {
   position: relative;
   padding-left: 3.8em;
   counter-reset: linenumber;
 }
 
-pre[class*='gatsby-code-'].line-numbers > code {
+pre[class*='eleventy-code-'].line-numbers > code {
   position: relative;
   white-space: inherit;
 }
@@ -227,14 +227,14 @@ pre[class*='gatsby-code-'].line-numbers > code {
 
 @media (min-width: 760px) {
   /* prevents scrollbar for windows larger than a phone when highlighting */
-  .gatsby-highlight code[class*='gatsby-code-'],
-  .gatsby-highlight pre[class*='gatsby-code-'],
-  .gatsby-highlight pre.prism-code {
+  .eleventy-highlight code[class*='eleventy-code-'],
+  .eleventy-highlight pre[class*='eleventy-code-'],
+  .eleventy-highlight pre.prism-code {
     white-space: pre-wrap;
     word-break: break-word;
   }
 
-  .gatsby-highlight-code-line {
+  .eleventy-highlight-code-line {
     margin: -0.125rem 0 -0.125rem calc(-1rem - 15px);
     padding: 0.125rem 0 0.125rem calc(1rem + 15px);
   }
