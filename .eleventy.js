@@ -17,6 +17,7 @@ const mdOptions = {
 
 // @note custom markdown parsing
 const markdownIt = require("markdown-it")(mdOptions);
+const mdIterator = require("markdown-it-for-inline");
 const markdownItAnchor = require("markdown-it-anchor");
 const pluginMarkdownTOC = require("eleventy-plugin-toc");
 
@@ -120,11 +121,26 @@ module.exports = function (eleventyConfig) {
   // @configuration markdown table of contents
   eleventyConfig.addPlugin(pluginMarkdownTOC);
 
-  // @configuration add custom markdown parsing library
-  eleventyConfig.setLibrary(
-    "md",
-    markdownIt.use(markdownItAnchor, mdAnchorOpts)
-  );
+  // @configuration configure and add custom markdown parsing library
+  const markdownLibrary = markdownIt
+    .use(mdIterator, "url_new_win", "link_open", function (tokens, idx) {
+      const [attrName, href] = tokens[idx].attrs.find(
+        (attr) => attr[0] === "href"
+      );
+
+      if (
+        href &&
+        !href.includes("franknoirot.co") &&
+        !href.startsWith("/") &&
+        !href.startsWith("#")
+      ) {
+        tokens[idx].attrPush(["target", "_blank"]);
+        tokens[idx].attrPush(["rel", "noopener noreferrer"]);
+      }
+    })
+    .use(markdownItAnchor, mdAnchorOpts);
+
+  eleventyConfig.setLibrary("md", markdownLibrary);
 
   // Override Browsersync defaults (used only with --serve)
   // ---------------------------------------------------------------------------
