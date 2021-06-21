@@ -1,0 +1,25 @@
+<footer class="footer">
+  <ul class="social-icons__list">
+    {%- for footerItem in site.footer -%}
+      <li class="social-icons__list-item">
+        <a class="social-icons__list-item-link"
+           href="{{ footerItem.link }}"
+           target="__blank"
+           rel="noopener noreferrer">
+          {{ footerItem.iconPath | svgContents | safe }}
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+  <p>
+    <span className="footer-license__description">{{ site.copyright.copy }}</span>
+    <a
+      className="footer__link link__underline"
+      href={{ site.copyright.link }}
+      target="__blank"
+      rel="noopener noreferrer"
+    >
+      {{ site.copyright.linkTitle }}
+    </a>
+  </p>
+</footer>
