@@ -790,6 +790,70 @@ a[aria-label='Back to content']:hover {
 }
 
 /* -----------------------------------------------------------------------------
+   FOOTER STYLES
+   -------------------------------------------------------------------------- */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--color-gray);
+  border-top: 1px solid var(--color-black);
+  margin: 10px 0 0 0;
+  padding-top: 15px;
+}
+
+.footer__link {
+  color: var(--color-black);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  background: var(--color-purple-30);
+}
+
+.footer-license__description {
+  font-size: 12px;
+  color: var(--color-black);
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.social-icons__list {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+}
+
+.social-icons__list-item {
+  padding: 0px;
+  margin: 0px;
+}
+
+.social-icons__list-item:not(:last-child)  {
+  padding-right: 8px;
+}
+
+.social-icons__list-item-link {
+  background-color: transparent;
+}
+
+@media (min-width: 760px) {
+  .footer {
+    margin: 10px 0 0 0;
+  }
+
+  .social-icons__list-item:not(:last-child)  {
+    padding-right: 15px;
+  }
+
+  .footer-license__description {
+    font-size: 16px;
+  }
+}
+
+/* -----------------------------------------------------------------------------
    TABLET + DESKTOP STYLES
    -------------------------------------------------------------------------- */
 

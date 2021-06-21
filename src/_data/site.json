@@ -22,6 +22,45 @@
   "handle": {
     "twitter": "@athomasoriginal"
   },
+  "copyright": {
+    "copy": "© 2021 | Licensed under",
+    "link": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "linkTitle": "CC BY-NC"
+  },
+  "footer": [
+    {
+      "title": "Twitter",
+      "link": "https://twitter.com/athomasoriginal",
+      "iconName": "",
+      "iconPath": "/src/svg/twitter.svg",
+      "isIconLink": true,
+      "isInternalLink": false
+    },
+    {
+      "title": "Github",
+      "link": "https://github.com/athomasoriginal",
+      "iconName": "",
+      "iconPath": "/src/svg/git-square.svg",
+      "isIconLink": true,
+      "isInternalLink": false
+    },
+    {
+      "title": "Linkedin",
+      "link": "https://www.linkedin.com/in/tmattacchione/",
+      "iconName": "",
+      "iconPath": "/src/svg/linkedin.svg",
+      "isIconLink": true,
+      "isInternalLink": false
+    },
+    {
+      "title": "RSS",
+      "link": "/feed.xml",
+      "iconName": "",
+      "iconPath": "/src/svg/rss.svg",
+      "isIconLink": true,
+      "isInternalLink": false
+    }
+  ],
   "navItems": [
     {
       "title": "Articles",
