@@ -84,7 +84,9 @@ This section includes tooling and pattern choices made for this template.
   - move the `svgs` into the `svg` directory
   - reference in templates: `{{ '/src/svg/logo.svg' | svgContents | safe }}`
 - Write dates in format: `20 May 2019` for `created` in `posts`
-  - There is an off by one error when writing dates as `2019-05-19` 
+  - There is an off by one error when writing dates as `2019-05-19`
+- [Custom Signup Form]
+  - Behaviour: when incomplete user is directed to the hosted form screen where they can try again
 
 ## Project Commands
 
@@ -166,3 +168,5 @@ There is a priority order for how Data is consumed by Eleventy.  Familarize your
 [Modern CSS Reset]: https://github.com/andy-piccalilli/modern-css-reset
 [Generate a mailto link]: https://mailtolink.me/
 [blog ux for mailto]: https://css-tricks.com/offering-options-for-mailto-and-tel-links/
+[Custom Signup Form]: https://mailchimp.com/help/host-your-own-signup-forms/
+[Self-Referencing Canonical Link]: https://www.searchenginejournal.com/google-self-referencing-canonicals-are-not-critical/312619/#close

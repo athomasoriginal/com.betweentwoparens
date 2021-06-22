@@ -90,5 +90,21 @@
       "isIconLink": true,
       "isInternalLink": false
     }
-  ]
+  ],
+  "signupForm": {
+    "u": {
+      "name": "u",
+      "value": "d3adf3b6f4d0d994623f9925f"
+    },
+    "id": {
+      "name": "id",
+      "value": "c6998a1564"
+    },
+    "firstName": {
+      "column": "MERGE1"
+    },
+    "lastName": {
+      "column": "MERGE0"
+    }
+  }
 }
