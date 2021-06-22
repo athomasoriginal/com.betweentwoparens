@@ -87,6 +87,8 @@ This section includes tooling and pattern choices made for this template.
   - There is an off by one error when writing dates as `2019-05-19`
 - [Custom Signup Form]
   - Behaviour: when incomplete user is directed to the hosted form screen where they can try again
+- Self Referencing Canonical Links
+  - Built from `site.url.home.link` and the `permalink` and must set `canonical: true` in your blog template. 
 
 ## Project Commands
 
