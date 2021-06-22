@@ -4,6 +4,11 @@
   <meta name="description" content="{{ site.summary }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  {# self referencing cononical link #}
+  {% if canonical %}
+    <link rel="canonical" href="{{ site.url.home.link }}{{ page.url }}" />
+  {% endif %}
+
   <meta property="og:site_name" content="{{ site.name }}">
   <meta property="og:title" content="{{ site.summary }}">
   <meta property="og:type" content="{{ site.type }}">
