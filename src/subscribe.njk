@@ -21,37 +21,37 @@ title: subscribe
           method="POST">
       <input
         type="hidden"
-        name="u"
-        value="d3adf3b6f4d0d994623f9925f"
+        name="{{ site.signupForm.u.name }}"
+        value="{{ site.signupForm.u.value }}"
         class="subscribe__input"
       />
       <input
         type="hidden"
-        name="id"
-        value="c6998a1564"
+        name="{{ site.signupForm.id.name }}"
+        name="{{ site.signupForm.id.value }}"
         class="subscribe__input"
       />
       <div class="subscribe__text-field">
-        <label htmlFor = "MERGE1" class="subscribe__input-label">
+        <label htmlFor = "{{ site.signupForm.firstName.column }}" class="subscribe__input-label">
           First Name:
         </label>
         <input
           type="text"
-          name="MERGE1"
-          id="MERGE1"
+          name="{{ site.signupForm.firstName.column }}"
+          id="{{ site.signupForm.firstName.column }}"
           size="25"
           autocorrect="off"
         />
       </div>
 
       <div class="subscribe__text-field">
-        <label htmlFor = "MERGE0" class="subscribe__input-label">
+        <label htmlFor = "{{ site.signupForm.lastName.column }}" class="subscribe__input-label">
           Email:
         </label>
         <input
           type="email"
-          name="MERGE0"
-          id="MERGE0"
+          name="{{ site.signupForm.lastName.column }}"
+          id="{{ site.signupForm.lastName.column }}"
           size="25"
           autocorrect="off"
         />
