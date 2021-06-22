@@ -5,15 +5,15 @@
   "url": {
     "feed": {
       "description": "Between Two Parens - All Content",
-      "link": "https://github.com/athomasoriginal/eee-o-eleven/feed.xml"
+      "link": "https://betweentwoparens.com/feed.xml"
     },
     "home": {
       "description": "Between Two Parens",
-      "link": "https://github.com/athomasoriginal/eee-o-eleven"
+      "link": "https://betweentwoparens.com"
     },
     "image": {
       "description": "Page image for Between Two Parens",
-      "link": "https://github.com/athomasoriginal/eee-o-eleven/your-image.png"
+      "link": "https://betweentwoparens.com/your-image.png"
     }
   },
   "author": {
