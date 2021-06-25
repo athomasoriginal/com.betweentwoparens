@@ -5,6 +5,7 @@
 - [Housekeeping]
 - [Quickstart]
 - [Feature Choices]
+- [Upgrade Dependencies]
 - [Resources]
 - [Data Usage]
 - [Before Dev]
@@ -71,6 +72,26 @@ This section includes tooling and pattern choices made for this template.
   - Links open in new tab
   - Custom Markdown
     - Code Fence + custom code HTML attributes - see `eleventy.js`
+
+## Upgrade Dependencies
+
+> **Quick note**: `package.json` dependencies are exact versions to prevent accidental bumps.  Yes, JS land is error prone.
+
+- Find outdated packages
+  ```bash
+  yarn outdated
+  ```
+- Upgrade a specific package in package.json
+  ```bash
+  yarn upgrade --latest <package-name>
+  ```
+  > Above is fine if you want to upgrade to latest and to have the package.json also updated.
+- Upgrade all packages matching a pattern in package.json
+  ```bash
+  yarn upgrade --latest --pattern "@11ty-"
+  ```
+  > Replace "gatsby-" with the common pattern.
+
 
 ## How things work
 
@@ -153,6 +174,7 @@ There is a priority order for how Data is consumed by Eleventy.  Familarize your
 [Housekeeping]: #housekeeping
 [Quickstart]: #quickstart
 [Feature Choices]: #feature-choices
+[Upgrade Dependencies]: #upgrade-dependencies
 [Resources]: #resources
 [Data Usage]: #data-usage
 [Before Dev]: #before-dev
