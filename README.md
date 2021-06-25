@@ -10,6 +10,7 @@
 - [Data Usage]
 - [Blog Post Guidelines]
   - [Frontmatter]
+  - [Images]
 - [Before Dev]
 - [Before Deploy]
 
@@ -106,6 +107,9 @@ This section includes tooling and pattern choices made for this template.
   - Behaviour: when incomplete user is directed to the hosted form screen where they can try again
 - Self Referencing Canonical Links
   - Built from `site.url.home.link` and the `permalink` and must set `canonical: true` in your blog template.
+- Images
+  - All images live in the `images` dir and we use passthrough.
+  - SVGs are separate
 
 ## Project Commands
 
@@ -163,6 +167,15 @@ summary: "It's time to uncover the truth about Reagent components."
   - Some titles have special characters which don't format well or you may want the url to be different than the `title`.  In this case you can manually write thw `permalink`
   - Lisp case for title is prefered because I find it more readable
 
+### Images
+
+- Images that appear in a blog post should go in: `src/images`.
+- Images should be prefixed with the same 3 digit code as your blog-post.
+  - For example, if your blog is `001-...` your image should be titled `001-image-name-0f-your-choosing`.
+- Example of referencing an image in a blog post
+  ```markdown
+  ![screenshot of example hello clojurescript site](/001-image-hello-cljs-dev-example.png)
+  ```
 
 
 ## Resources
@@ -210,6 +223,7 @@ summary: "It's time to uncover the truth about Reagent components."
 [Data Usage]: #data-usage
 [Blog Post Guidelines]: #blog-post-guidelines
 [Frontmatter]: #frontmatter
+[Images]: #images
 [Before Dev]: #before-dev
 [Before Deploy]: #before-deploy
 
