@@ -8,6 +8,8 @@
 - [Upgrade Dependencies]
 - [Resources]
 - [Data Usage]
+- [Blog Post Guidelines]
+  - [Frontmatter]
 - [Before Dev]
 - [Before Deploy]
 
@@ -134,6 +136,35 @@ This section includes tooling and pattern choices made for this template.
 
 There is a priority order for how Data is consumed by Eleventy.  Familarize yourself with that.  The `_data/site.json` is meant to contain reusable, site related global variables.  Example of what this is not for:  post front matter data.
 
+## Blog Post Guidelines
+
+### Frontmatter
+
+[Blog Frontmatter] is the stuff at the beginning of our `blog-post` markfown files.
+
+
+```yaml
+author: "Thomas Mattacchione"
+createdDate: '29 July 2019'
+date: Last Modified
+layout: post
+tags:
+  - post
+title: What the Reagent Component?!
+permalink: blog/{{ title | slug }}/index.html
+canonical: true
+summary: "It's time to uncover the truth about Reagent components."
+```
+
+- `createdDate`: the original publication date
+- `date`: the date the post was last updated
+- `summary`: max 140 characters tagline
+- `permalink`: dynamically generate based on the title.
+  - Some titles have special characters which don't format well or you may want the url to be different than the `title`.  In this case you can manually write thw `permalink`
+  - Lisp case for title is prefered because I find it more readable
+
+
+
 ## Resources
 
 - [Generate a mailto link]
@@ -177,6 +208,8 @@ There is a priority order for how Data is consumed by Eleventy.  Familarize your
 [Upgrade Dependencies]: #upgrade-dependencies
 [Resources]: #resources
 [Data Usage]: #data-usage
+[Blog Post Guidelines]: #blog-post-guidelines
+[Frontmatter]: #frontmatter
 [Before Dev]: #before-dev
 [Before Deploy]: #before-deploy
 
@@ -193,3 +226,4 @@ There is a priority order for how Data is consumed by Eleventy.  Familarize your
 [Self-Referencing Canonical Link]: https://www.searchenginejournal.com/google-self-referencing-canonicals-are-not-critical/312619/#close
 [top 10 guide]: https://www.youtube.com/watch?v=Lh9q3h2khlc
 [Make images smaller]: https://squoosh.app/
+[Blog Frontmatter]: https://www.scribendi.com/academy/articles/front_matter.en.html
