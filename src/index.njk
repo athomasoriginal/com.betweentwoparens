@@ -5,7 +5,7 @@ title: home
 
 <main class="blog__home">
   <div class="stack">
-    {%- for post in collections.post -%}
+    {%- for post in collections.post | reverse -%}
       <article class="blog">
         <header>
           <h2 class="blog__title">
