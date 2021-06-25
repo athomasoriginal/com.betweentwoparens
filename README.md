@@ -88,7 +88,7 @@ This section includes tooling and pattern choices made for this template.
 - [Custom Signup Form]
   - Behaviour: when incomplete user is directed to the hosted form screen where they can try again
 - Self Referencing Canonical Links
-  - Built from `site.url.home.link` and the `permalink` and must set `canonical: true` in your blog template. 
+  - Built from `site.url.home.link` and the `permalink` and must set `canonical: true` in your blog template.
 
 ## Project Commands
 
@@ -136,6 +136,9 @@ There is a priority order for how Data is consumed by Eleventy.  Familarize your
 - [ ] Update social media cards - OG, Twitter etc
 - [ ] Add Apple Touch Icon
 - [ ] Populate web.manifest
+- [ ] Performance
+  - [ ] Run through this [top 10 guide] - anything to improve?
+  - [ ] [Make images smaller]
 
 
 ## Decisions
@@ -172,3 +175,5 @@ There is a priority order for how Data is consumed by Eleventy.  Familarize your
 [blog ux for mailto]: https://css-tricks.com/offering-options-for-mailto-and-tel-links/
 [Custom Signup Form]: https://mailchimp.com/help/host-your-own-signup-forms/
 [Self-Referencing Canonical Link]: https://www.searchenginejournal.com/google-self-referencing-canonicals-are-not-critical/312619/#close
+[top 10 guide]: https://www.youtube.com/watch?v=Lh9q3h2khlc
+[Make images smaller]: https://squoosh.app/
