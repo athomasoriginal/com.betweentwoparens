@@ -5,16 +5,17 @@
         <a class="social-icons__list-item-link"
            href="{{ footerItem.link }}"
            target="__blank"
-           rel="noopener noreferrer">
+           rel="noopener noreferrer"
+           aria-label="{{ footerItem.title }}">
           {{ footerItem.iconPath | svgContents | safe }}
         </a>
       </li>
     {%- endfor -%}
   </ul>
   <p>
-    <span className="footer-license__description">{{ site.copyright.copy }}</span>
+    <span class="footer-license__description">{{ site.copyright.copy }}</span>
     <a
-      className="footer__link link__underline"
+      class="footer__link link__underline"
       href={{ site.copyright.link }}
       target="__blank"
       rel="noopener noreferrer"
