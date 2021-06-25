@@ -23,7 +23,10 @@
             <ul class="ul header__nav-list">
               {%- for navItem in site.navItems -%}
                 <li class="header__nav-item {% if navItem.isIconLink == false %} header__nav-item-text {% endif %}">
-                  <a href="{{ navItem.link }}" target="{% if navItem.isInternalLink == false %} __blank {% endif %}" rel="nofollow noopener">
+                  <a href="{{ navItem.link }}"
+                     target="{% if navItem.isInternalLink == false %} __blank {% endif %}"
+                     rel="nofollow noopener"
+                     aria-label="{% if navItem.isIconLink == true %} {{ navItem.title }} {% endif %}">
                     {% if navItem.isIconLink %}
                       {{ navItem.iconPath | svgContents | safe }}
                     {% else %}
