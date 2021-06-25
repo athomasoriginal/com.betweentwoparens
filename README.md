@@ -1,12 +1,6 @@
 # Between Two Parens
 
-> Someday I'll have me a penthouse.
->
-> Stacks and stacks of folding green.
->
-> Eee-o-Eleven
-
-Here is an [Eleventy] starter kit.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c8e124ff-8904-4c9b-a8b4-97fefd4a13e4/deploy-status)](https://app.netlify.com/sites/epic-goldwasser-028edc/deploys)
 
 - [Housekeeping]
 - [Quickstart]
