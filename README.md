@@ -12,6 +12,7 @@
   - [Frontmatter]
   - [Images]
   - [Updating Blog Posts]
+  - [Updating Blog Checklist]
 - [Before Dev]
 - [Before Deploy]
 
@@ -147,6 +148,37 @@ When we write blog posts a key factor in choosing topic to write about and struc
   ```
 - Keep changes isolated and small so the diffs are easy to grok
 
+### Updating Blog Checklist
+
+- Keeping blog posts updated is important because it ensures that the work stays relevant and therefore useful to future readers.  With CLJ(s) this is easier because of the stability of the ecosystem.  Either way though, here is an outline of artifacts that need to be updated:
+
+#### ClojureScript Versions
+
+- post - 000 - deploy cljs github
+- demo - https://github.com/athomasoriginal/demo-clojurescript-gh-pages
+- post - 001 - cljs app from scratch
+- post - 003 - cljs tests
+- video - 016 - figwheel
+
+#### Figwheel Versions
+
+- post - 001 - cljs app from scratch
+- post - 003 - cljs tests
+
+#### Clojure Survey
+
+- post - 001 - cljs app from scratch
+
+#### Create Reagent App Versions
+
+- post - 003 - cljs tests
+- post - 005 - deploy cljs nginx
+
+#### Atom Editor
+
+- post - 006 - chlorine (e.g. no longer depends on Ink)
+- video - https://www.youtube.com/watch?v=mEcOwtRt0f4
+
 
 ## Data Usage
 
@@ -237,6 +269,7 @@ summary: "It's time to uncover the truth about Reagent components."
 [Frontmatter]: #frontmatter
 [Images]: #images
 [Updating Blog Posts]: #updating-blog-posts
+[Updating Blog Checklist]: #updating-blog-checklist
 [Before Dev]: #before-dev
 [Before Deploy]: #before-deploy
 
