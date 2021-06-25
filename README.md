@@ -11,6 +11,7 @@
 - [Blog Post Guidelines]
   - [Frontmatter]
   - [Images]
+  - [Updating Blog Posts]
 - [Before Dev]
 - [Before Deploy]
 
@@ -136,6 +137,17 @@ This section includes tooling and pattern choices made for this template.
 
 - See eleventy.js where we rock `passthrough`
 
+### Updating Blog Posts
+
+When we write blog posts a key factor in choosing topic to write about and structuring the content is ensuring I can keep the content [evergreen].  This choice was made after seeing so many tech blogs which are outdated months after being written.  Another goal is to make it easy for readers to see what changed so when we update blog posts I like to follow some guidelines:
+
+- The commit title should follow this pattern: `Update Blog Post - Blog Post ID - Quick Summary`
+  ```markdown
+  Update Blog Post - 005 - Bump Deps
+  ```
+- Keep changes isolated and small so the diffs are easy to grok
+
+
 ## Data Usage
 
 There is a priority order for how Data is consumed by Eleventy.  Familarize yourself with that.  The `_data/site.json` is meant to contain reusable, site related global variables.  Example of what this is not for:  post front matter data.
@@ -224,6 +236,7 @@ summary: "It's time to uncover the truth about Reagent components."
 [Blog Post Guidelines]: #blog-post-guidelines
 [Frontmatter]: #frontmatter
 [Images]: #images
+[Updating Blog Posts]: #updating-blog-posts
 [Before Dev]: #before-dev
 [Before Deploy]: #before-deploy
 
@@ -241,3 +254,4 @@ summary: "It's time to uncover the truth about Reagent components."
 [top 10 guide]: https://www.youtube.com/watch?v=Lh9q3h2khlc
 [Make images smaller]: https://squoosh.app/
 [Blog Frontmatter]: https://www.scribendi.com/academy/articles/front_matter.en.html
+[evergreen]: https://ahrefs.com/blog/evergreen-content/#:~:text=Evergreen%20content%20is%20content%20that,That%20makes%20sense.
