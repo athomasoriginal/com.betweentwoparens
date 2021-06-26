@@ -24,7 +24,7 @@ Github Pages is a service provided by Github which allows you to freely host you
 With this in mind, let's start coding.
 
 ::: note
-The rest of this article assumes that you have a Github account. If you don't, no worries. Take a moment and [create one for free] or just sit back and enjoy the read. For those who want to adventure with me, go through Github's official [Github Pages Quickstart] for projects and follow it exactly.  Note that throughout this post I will have footnotes referencing my live [demo project] which has each step mirrored by its corresponding [commit]. Please lean on them if you feel lost at any point.
+The rest of this article assumes that you have a Github account. If you don't, no worries. Take a moment and [create one for free] or just sit back and enjoy the read. For those who want to adventure with me, go through Github's official [Github Pages Quickstart] for projects and follow it exactly.  Note that throughout this post I will have footnotes referencing [my demo project] which has each step mirrored by its corresponding [commit]. Please lean on them if you feel lost at any point.
 :::
 
 Let's start by getting Clojure setup on your local machine. To do this, visit the [ClojureScript Quickstart](https://clojurescript.org/guides/quick-start) and follow the instructions there.
@@ -43,7 +43,9 @@ org.clojure/spec.alpha 0.2.194
 org.clojure/core.specs.alpha 0.2.56
 ```
 
-<aside class="blog-content__note">Don't worry if your versions are different from mine.</aside>
+::: note
+Don't worry if your versions are different from mine.
+:::
 
 ### Setting up your HTML
 
@@ -113,7 +115,9 @@ To do _anything_ with ClojureScript, we need to configure our project to use it.
 {:deps {org.clojure/clojurescript {:mvn/version "1.10.844"}}}
 ```
 
-<aside class="blog-content__note">If you are coming from JavaScript it can be helpful to think of the <code class="gatsby-code-text">deps.edn</code> as similar to <code class="gatsby-code-text">package.json</code>. The purpose of this file is to tell <code class="gatsby-code-text">clojure</code> which version of <code class="gatsby-code-text">ClojureScript</code> we want to use.</aside>
+::: note
+If you are coming from JavaScript it can be helpful to think of the `deps.edn` as similar to `package.json`. The purpose of this file is to tell `clojure` which version of `ClojureScript` we want to use.
+:::
 
 Let's recap a bit. At this point, your directory structure should look like <a href="#fn-step-3-commit" aria-describedby="footnote-label" id="fn-step-3-commit-ref">this:</a>
 
@@ -154,7 +158,9 @@ In the above steps, we have built a minimal site using HTML, CSS and ClojureScri
 clj -m cljs.main -d "demo-clojurescript-gh-pages/out"  -c demo.static-website -r
 ```
 
-<aside class="blog-content__note">You want to run the above command from the same place as your <code class="gatsby-code-text">deps.edn</code>.  Further, if you're curious above the above command and what things like `-d` or `-c` means you can check these out in your terminal by running  <code class="gatsby-code-text">clj -m cljs.main --help</code></aside>
+::: note
+You want to run the above command from the same place as your `deps.edn`.  Further, if you're curious above the above command and what things like `-d` or `-c` means you can check these out in your terminal by running  `clj -m cljs.main --help`.
+:::
 
 The above command will take a moment to run. When completed, a browser tab will automatically open and serve your HTM, CSS and ClojureScript. If everything worked you should see a site that looks like this:
 
@@ -162,7 +168,9 @@ The above command will take a moment to run. When completed, a browser tab will 
 
 Further, if you open your browser console you should see "Hello, Github Pages!"
 
-<aside class="blog-content__note">If you are not seeing your ClojureScript in the browser console, please veryify that your <code class="gatsby-code-text">index.html</code> file is using your Github project name and the string following the <code class="gatsby-code-text">-d</code> in the above command, <code class="gatsby-code-text">demo-clojurescript-gh-pages</code>, is also using your Github project <a href="#fn-project-name" aria-describedby="footnote-label" id="fn-project-name-ref">name</a>.</aside>
+::: note
+If you are not seeing your ClojureScript in the browser console, please veryify that your `index.html` file is using your Github project name and the string following the `-d` in the above command, `demo-clojurescript-gh-pages`, is also using your Github project <a href="#fn-project-name" aria-describedby="footnote-label" id="fn-project-name-ref">name</a>.
+:::
 
 ### Build production bundle
 
@@ -178,7 +186,9 @@ Once the above is done, rock a `git push` to your Github project repo and you sh
 
 As I noted in the beginning, this is a minimal example without 3rd party build tools, frameworks, libraries or conveniences and this the point. There are all kinds of routes you can take, but I hope that I have shown that ClojureScript can be an accessible tool for building static websites.
 
-<aside class="blog-content__note">Hopefully you did not run into any issues, but if you did please head over to <a class="blog-content__link"  target="_blank" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages" rel="noopener noreferrer">my demo project</a> where I try to identify and help to resolve some gotchas.  Experience something new?  Please feel free to get in touch and I would be happy to help work through the issue with you.</aside>
+::: note
+Hopefully you did not run into any issues, but if you did please head over to [my demo project] where I try to identify and help to resolve some gotchas.  Experience something new?  Please feel free to get in touch and I would be happy to help work through the issue with you.
+:::
 
 <aside>
   <h3>Footnotes</h3>
@@ -222,5 +232,5 @@ As I noted in the beginning, this is a minimal example without 3rd party build t
 
 [create one for free]: https://help.github.com/en/articles/signing-up-for-a-new-github-account
 [Github Pages Quickstart]: https://pages.github.com/
-[demo project]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages
 [commit]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commits/master
+[my demo project]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages
