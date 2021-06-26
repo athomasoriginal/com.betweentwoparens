@@ -187,6 +187,7 @@ When we write blog posts a key factor in choosing topic to write about and struc
 #### Clojure Survey
 
 - post - 001 - cljs app from scratch
+- post - 006 - clj text editors
 
 #### Create Reagent App Versions
 
