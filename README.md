@@ -265,6 +265,9 @@ Prefer reference links because they are reusable, allow for cleaner reading/edit
 - [ ] Performance
   - [ ] Run through this [top 10 guide] - anything to improve?
   - [ ] [Make images smaller]
+- [ ] Netlify configs
+  - [ ] set yarn env variable
+  - [ ] update build settings
 
 
 
