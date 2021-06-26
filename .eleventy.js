@@ -111,6 +111,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 
+  eleventyConfig.addPassthroughCopy("./src/_redirects");
+
   eleventyConfig.addFilter("dateFilter", filter.dateFilter);
 
   eleventyConfig.addFilter("w3cDate", filter.w3cDate);

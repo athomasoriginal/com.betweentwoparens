@@ -1,0 +1,14 @@
+/rich-comment-blocks                       /blog/rich-comment-blocks/                    301
+/what-are-the-clojure-tools                /blog/what-are-the-clojure-tools              301
+/jenv                                      /blog/jenv                                    301
+/reagent-and-hiccup                        /blog/reagent-and-hiccup                      301
+/clojure-text-editors                      /blog/clojure-text-editors                    301
+/deploy-clojurescript-on-nginx             /blog/deploy-clojurescript-on-nginx           301
+/students-of-the-game-reloadable-code      /blog/students-of-the-game-reloadable-code    301
+/clojurescript-test-setup                  /blog/clojurescript-test-setup                301
+/what-the-reagent-component                /blog/what-the-reagent-component              301
+/start-a-clojurescript-app-from-scratch    /blog/start-a-clojurescript-app-from-scratch  301
+/deploy-clojurescript-to-github-pages      /blog/deploy-clojurescript-to-github-pages    301
+# forgot the redirect originally see 100ddcb1
+/deoploy-clojurescript-to-github-pages     /blog/deploy-clojurescript-to-github-pages    301
+/rss.xml                                   /feed.xml                                     301
