@@ -307,7 +307,7 @@ summary: "It's time to uncover the truth about Reagent components."
      - [x] images broken in the blog post
      - [x] add custom markdown containers for markdownIT
      - [x] custom table of contents
-     - [x] sorting blog posts in reverse order
+     - [x] sorting blog posts in reverse order - this is done in eleventy.
   - [x] Footer
   - [x] Signup Form
   - [x] [Self-Referencing Canonical Link]
