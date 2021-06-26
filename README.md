@@ -326,6 +326,8 @@ summary: "It's time to uncover the truth about Reagent components."
   - [x] Footer
   - [x] Signup Form
   - [x] [Self-Referencing Canonical Link]
+  - [ ] Visiting `*/blog/*` goes to 404
+  - [ ] Redirects
   - [ ] wins
     - [ ] Deps cut in half - we should measure
     - [ ] Less directories and configuration files
