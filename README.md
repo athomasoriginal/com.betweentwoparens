@@ -11,6 +11,7 @@
 - [Blog Post Guidelines]
   - [Frontmatter]
   - [Images]
+  - [Article Notes]
   - [Updating Blog Posts]
   - [Updating Blog Checklist]
 - [Before Dev]
@@ -141,6 +142,20 @@ This section includes tooling and pattern choices made for this template.
 ### Images
 
 - See eleventy.js where we rock `passthrough`
+
+### Article Notes
+
+These are the large yellow blocks of text in our blog-posts. We use this to bring attention to a particular detail. For example, clarifying an assumption, or giving the reader additional directions to make the article clearer.
+
+Theare are marked up as follows:
+
+```markdown
+::: note
+Anything you like `in` here it _all_ works.
+:::
+```
+
+This capability is setup in `eleventy.js`
 
 ### Updating Blog Posts
 
@@ -352,6 +367,7 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 [Blog Post Guidelines]: #blog-post-guidelines
 [Frontmatter]: #frontmatter
 [Images]: #images
+[Article Notes]: #article-notes
 [Updating Blog Posts]: #updating-blog-posts
 [Updating Blog Checklist]: #updating-blog-checklist
 [Before Dev]: #before-dev
