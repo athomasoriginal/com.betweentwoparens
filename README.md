@@ -7,7 +7,6 @@
 - [Project Commands]
 - [Upgrade Dependencies]
 - [Blog Features]
-- [Resources]
 - [Data Usage]
 - [Blog Post Guidelines]
   - [Frontmatter]
@@ -124,11 +123,12 @@ This section outlines the features our blog supports.  This is valuable because 
 - Trailing slashes
 - Open Graph Meta Tags
 - Twitter Cards
-- Mailto Links
 - 404
 - Sort blog posts
 - Signup form
 - Redirects
+- [Generate a mailto link]
+  Simple tool to generate a `mailto` link so you don't have to worry about formatting.
 
 ## How things work
 
@@ -257,11 +257,6 @@ summary: "It's time to uncover the truth about Reagent components."
 
 Prefer reference links because they are reusable, allow for cleaner reading/editing of the post and when you need to update links they are all in one place.  Seriously.  This is a maintenance win.
 
-## Resources
-
-- [Generate a mailto link]
-  Simple tool to generate a `mailto` link so you don't have to worry about formatting.
-
 ## Before Dev
 
 - [x] Update `_data/site.json`
@@ -312,7 +307,6 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 [Project Commands]: #project-commands
 [Upgrade Dependencies]: #upgrade-dependencies
 [Blog Features]: #blog-features
-[Resources]: #resources
 [Data Usage]: #data-usage
 [Blog Post Guidelines]: #blog-post-guidelines
 [Frontmatter]: #frontmatter
