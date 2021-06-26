@@ -31,7 +31,7 @@ I will work to help new Clojurists by outlining the landscape of "Clojure Editor
 
 ## Clojure Text Editors
 
-Let's start by introducing the top Text Editors for Clojure(Script) development based on the 2020 Clojure Survey Results<a href="#popular-editors" aria-describedby="footnote-label" id="popular-editors-ref">:</a>
+Let's start by introducing the top Text Editors for Clojure(Script) development based on the 2021 Clojure Survey Results<a href="#popular-editors" aria-describedby="footnote-label" id="popular-editors-ref">:</a>
 
 1. [Emacs](https://www.gnu.org/software/emacs/)
 1. [IntelliJ](https://www.jetbrains.com/idea/)
