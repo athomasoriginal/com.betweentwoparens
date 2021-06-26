@@ -5,8 +5,8 @@
 - [Housekeeping]
 - [Quickstart]
 - [Project Commands]
-- [Blog Features]
 - [Upgrade Dependencies]
+- [Blog Features]
 - [Resources]
 - [Data Usage]
 - [Blog Post Guidelines]
@@ -76,6 +76,26 @@ Be sure to have the following tools installed
   yarn run build
   ```
 
+## Upgrade Dependencies
+
+> **Quick note**: `package.json` dependencies are exact versions to prevent accidental bumps.  Yes, JS land is error prone.
+
+- Find outdated packages
+  ```bash
+  yarn outdated
+  ```
+- Upgrade a specific package in package.json
+  ```bash
+  yarn upgrade --latest <package-name>
+  ```
+  > Above is fine if you want to upgrade to latest and to have the package.json also updated.
+- Upgrade all packages matching a pattern in package.json
+  ```bash
+  yarn upgrade --latest --pattern "@11ty-"
+  ```
+  > Replace "gatsby-" with the common pattern.
+
+
 ## Blog Features
 
 This section outlines the features our blog supports.  This is valuable because if you ever have to move to a different platform you have a catalogue of the required feature sets.
@@ -109,27 +129,6 @@ This section outlines the features our blog supports.  This is valuable because 
 - Sort blog posts
 - Signup form
 - Redirects
-
-
-## Upgrade Dependencies
-
-> **Quick note**: `package.json` dependencies are exact versions to prevent accidental bumps.  Yes, JS land is error prone.
-
-- Find outdated packages
-  ```bash
-  yarn outdated
-  ```
-- Upgrade a specific package in package.json
-  ```bash
-  yarn upgrade --latest <package-name>
-  ```
-  > Above is fine if you want to upgrade to latest and to have the package.json also updated.
-- Upgrade all packages matching a pattern in package.json
-  ```bash
-  yarn upgrade --latest --pattern "@11ty-"
-  ```
-  > Replace "gatsby-" with the common pattern.
-
 
 ## How things work
 
@@ -311,8 +310,8 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 [Housekeeping]: #housekeeping
 [Quickstart]: #quickstart
 [Project Commands]: #project-commands
-[Blog Features]: #blog-features
 [Upgrade Dependencies]: #upgrade-dependencies
+[Blog Features]: #blog-features
 [Resources]: #resources
 [Data Usage]: #data-usage
 [Blog Post Guidelines]: #blog-post-guidelines
