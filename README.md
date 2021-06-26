@@ -233,11 +233,11 @@ summary: "It's time to uncover the truth about Reagent components."
 
 ## Before Dev
 
-- [ ] Update `_data/site.json`
+- [x] Update `_data/site.json`
 
 ## Before Deploy
 
-- [ ] Add custom favicon
+- [x] Add custom favicon
 - [ ] Publish sitemap
 - [ ] Add analytics tracking
 - [ ] Update social media cards - OG, Twitter etc
