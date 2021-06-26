@@ -4,7 +4,7 @@
 
 - [Housekeeping]
 - [Quickstart]
-- [Feature Choices]
+- [Blog Features]
 - [Upgrade Dependencies]
 - [Resources]
 - [Data Usage]
@@ -60,28 +60,40 @@ Be sure to have the following tools installed
   yarn run dev
   ```
 
-## Feature Choices
+## Blog Features
 
-This section includes tooling and pattern choices made for this template.
+This section outlines the features our blog supports.  This is valuable because if you ever have to move to a different platform you have a catalogue of the required feature sets.
 
 - [HTML5 Boilerplate]
 - [Modern CSS Reset]
-- A few useful filters:
-  - `dateFilter` & `w3DateFilter`
-- Example Blog Post
+- Date Formatting
+  - `dateFilter`
+  - `w3DateFilter`
+- Blog Posts
+  - Heading Anchors
+  - TOC
+  - Created Date
+  - Modified Date
+  - Note
+    - Custom markdown fence - `::: note`
+    - See `eleventy.js`
+  - Code Blocks
+    - Custom Syntax Highlighting
+  - Footnotes
+- Links open in new tab
+- Global data
+  - footer
+  - header
 - RSS feed
 - Trailing slashes
 - Open Graph Meta Tags
 - Twitter Cards
 - Mailto Links
-- Blog
-  - Heading Anchors
-  - TOC
-  - Date - Last Modified
-  - Date - Last Updated
-  - Links open in new tab
-  - Custom Markdown
-    - Code Fence + custom code HTML attributes - see `eleventy.js`
+- 404
+- Sort blog posts
+- Signup form
+- Redirects
+
 
 ## Upgrade Dependencies
 
@@ -369,7 +381,7 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 
 [Housekeeping]: #housekeeping
 [Quickstart]: #quickstart
-[Feature Choices]: #feature-choices
+[Blog Features]: #blog-features
 [Upgrade Dependencies]: #upgrade-dependencies
 [Resources]: #resources
 [Data Usage]: #data-usage
