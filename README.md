@@ -240,6 +240,9 @@ summary: "It's time to uncover the truth about Reagent components."
   ![screenshot of example hello clojurescript site](/001-image-hello-cljs-dev-example.png)
   ```
 
+### Links
+
+Prefer reference links because they are reusable, allow for cleaner reading/editing of the post and when you need to update links they are all in one place.  Seriously.  This is a maintenance win.
 
 ## Resources
 
