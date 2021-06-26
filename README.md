@@ -7,7 +7,6 @@
 - [Project Commands]
 - [Upgrade Dependencies]
 - [Blog Features]
-- [Data Usage]
 - [Blog Post Guidelines]
   - [Frontmatter]
   - [Images]
@@ -119,6 +118,7 @@ This section outlines the features our blog supports.  This is valuable because 
 - Global data
   - footer
   - header
+  - There is a priority order for how Data is consumed by Eleventy.  Familarize yourself with that.  The `_data/site.json` is meant to contain reusable, site related global variables.  Example of what this is not for:  post front matter data.
 - RSS feed
 - Trailing slashes
 - Open Graph Meta Tags
@@ -212,10 +212,6 @@ When we write blog posts a key factor in choosing topic to write about and struc
 - video - https://www.youtube.com/watch?v=mEcOwtRt0f4
 
 
-## Data Usage
-
-There is a priority order for how Data is consumed by Eleventy.  Familarize yourself with that.  The `_data/site.json` is meant to contain reusable, site related global variables.  Example of what this is not for:  post front matter data.
-
 ## Blog Post Guidelines
 
 ### Frontmatter
@@ -307,7 +303,6 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 [Project Commands]: #project-commands
 [Upgrade Dependencies]: #upgrade-dependencies
 [Blog Features]: #blog-features
-[Data Usage]: #data-usage
 [Blog Post Guidelines]: #blog-post-guidelines
 [Frontmatter]: #frontmatter
 [Images]: #images
