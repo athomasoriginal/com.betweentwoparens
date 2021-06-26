@@ -24,7 +24,9 @@ My [first blog post](https://betweentwoparens.com/deploy-clojurescript-to-github
 
 By the time we are finished I hope to have clarified the general steps involved in hosting your own ClojureScript app (**spoiler:** it's the same as hosting a JavaScript app).
 
-<aside class="blog-content__note">Beyond creating a simple ClojureScript app, this post is not really about ClojureScript. I see it's role as clearing up the process of deploying a static site.  Specifically, we will focus on deploying ClojureScript to a webserver (<a class="blog-content__link" href="https://www.nginx.com/" target="_blank" rel="noopener noreferrer">Nginx</a>).  If you are following along, you can see the <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-nginx" target="_blank" rel="noopener noreferrer">source code here</a>.</aside>
+::: note
+Beyond creating a simple ClojureScript app, this post is not really about ClojureScript. I see it's role as clearing up the process of deploying a static site.  Specifically, we will focus on deploying ClojureScript to a webserver ([Nginx]).  If you are following along, you can see the [source code here].
+:::
 
 ## The Deploy Process
 
@@ -48,7 +50,9 @@ In order to illustrate the deploy process we are going to:
 3. use `ClojureScript` for our static website
 4. use [docker](https://www.docker.com/) to make the deploy consistent and predictable
 
-<aside class="blog-content__note">We are using <code class="gatsby-code-text">Nginx</code> because as far as webservers go it's easy to setup, configure and find documentation for.  Finally, because it's ready to use you can use this solution in your workplace today to quickly deploy static documentation or a prototype app.</aside>
+::: note
+We are using `Nginx` because as far as webservers go it's easy to setup, configure and find documentation for.  Finally, because it's ready to use you can use this solution in your workplace today to quickly deploy static documentation or a prototype app.
+:::
 
 ## Housekeeping
 
@@ -59,7 +63,9 @@ If you are going to follow along with this post please make sure you have the fo
 
 ## Create App
 
-<aside class="blog-content__note">This whole process starts with a ClojureScript app.  If you already have an app you can skip this part.  If you don't have an app, please follow along with this section and we will set you up with your very own ClojureScript app.</aside>
+::: note
+This whole process starts with a ClojureScript app.  If you already have an app you can skip this part.  If you don't have an app, please follow along with this section and we will set you up with your very own ClojureScript app.
+:::
 
 We will create our ClojureScript app using [Create Reagent App](https://github.com/athomasoriginal/create-reagent-app).  This is a tool which automatically builds a modern ClojureScript/Reagent (READ: React) app for us.  All you need to do is move to a directory where you want your project to live and run the following command:
 
@@ -90,7 +96,9 @@ Once the above is complete you should have a project that looks like this:
         └── demo_clojurescript_nginx_test.cljs
 ```
 
-<aside class="blog-content__note">This app comes with commands for running the app in <code class="gatsby-code-text">dev</code> and building a <code class="gatsby-code-text">production</code> version of the app.  The commands are <code class="gatsby-code-text">clj -M:dev</code> and <code class="gatsby-code-text">clj -M:prod</code> respectively.  Feel free to play with the app.</aside>
+::: note
+This app comes with commands for running the app in `dev` and building a `production` version of the app.  The commands are `clj -M:dev` and `clj -M:prod` respectively.  Feel free to play with the app.
+:::
 
 ## Sanity Check Webserver
 
@@ -290,7 +298,9 @@ RUN clojure -M:prod
 # docker containers
 ```
 
-<aside class="blog-content__note">In the above the goal is really to keep everything as light as possible. We just want <code class="gatsby-code-text">Java</code> so we can build our project and if you have to build anything with <code class="gatsby-code-text">node</code> you will have to also add that to the docker container.  Stuff you might do with node?  Build your style sheets?  Run tests in a headless environment? etc. It's going to download eveything and then run the container.</aside>
+::: note
+In the above the goal is really to keep everything as light as possible. We just want `Java` so we can build our project and if you have to build anything with `node` you will have to also add that to the docker container.  Stuff you might do with node?  Build your style sheets?  Run tests in a headless environment? etc. It's going to download eveything and then run the container.
+:::
 
 A few things to note:
 - we use `clojure` rather than `clj` as `clj` include `rlwrap`, but they are the same for our purposes.
@@ -314,7 +324,9 @@ docker run -d \
            sleep 20000
 ```
 
-<aside class="blog-content__note">If you curious about the content of your docker build container you can exec into it like this <code class="gatsby-code-text">docker exec -it demo-clojurescript-nginx-build bash</code>.</aside>
+::: note
+If you curious about the content of your docker build container you can exec into it like this `docker exec -it demo-clojurescript-nginx-build bash`.
+:::
 
 ### Move Production Artifacts to Local FileSystem
 
@@ -332,7 +344,9 @@ docker cp demo-clojurescript-nginx-build:app/resources/public/style.css ./temp/s
 docker cp demo-clojurescript-nginx-build:app/out/dev-main.js ./temp/cljs-out/dev-main.js
 ```
 
-<aside class="blog-content__note">Note that if you are running in CI/CD tool like circleci or travis or anything really the whole manual copy things over step does not have to be done because there is a temporary file system there where you can store things.  In our case, we are setting this up to run locally so we will create a holding place in our repo which will act as this temporary file system.</aside>
+::: note
+Note that if you are running in CI/CD tool like circleci or travis or anything really the whole manual copy things over step does not have to be done because there is a temporary file system there where you can store things.  In our case, we are setting this up to run locally so we will create a holding place in our repo which will act as this temporary file system.
+:::
 
 ### Automate Nginx Configuration
 
@@ -405,3 +419,7 @@ Again, my hope is to outline a piece of the process.  Let me know if this helped
     </li>
   </ol>
 </aside>
+
+
+[Nginx]: https://www.nginx.com/
+[source code here]: https://github.com/athomasoriginal/demo-clojurescript-nginx
