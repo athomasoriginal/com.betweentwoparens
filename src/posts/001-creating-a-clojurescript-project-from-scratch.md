@@ -15,7 +15,9 @@ Welcome to my step by step guide to setting up a ClojureScript app. We'll work t
 
 In this post we will walk through a battle tested approach to setting up a <a href="#clojurescript-spelling" aria-describedby="footnote-label" id="clojurescript-spelling-ref">Clojure(Script)</a> app and describe the rationale for each decision we make.
 
-<aside class="blog-content__note">Never worked with Clojure or ClojureScript?  Checkout <a class="blog-content__link" href="https://youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA" target="_blank" rel="noopener noreferrer">Getting Started with Clojure(Script)</a>.  In addition, if you're following along and get stuck at any point, I have a <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app" target="_blank" rel="noopener noreferrer">demo project</a> which you can reference as you work through this post.  We won't write too much ClojureScript code in this post, but if at any point you want to quickly familiarize yourself with the syntax of  ClojureScript I recommend this <a class="blog-content__link" href="https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes" target="_blank" rel="noopener noreferrer">15 minute primer to the syntax of Clojure</a>.</aside>
+::: note
+Never worked with Clojure or ClojureScript?  Checkout [Getting Started with Clojure(Script)].  In addition, if you're following along and get stuck at any point, I have a [demo project] which you can reference as you work through this post.  We won't write too much ClojureScript code in this post, but if at any point you want to quickly familiarize yourself with the syntax of  ClojureScript I recommend this [15 minute primer to the syntax of Clojure].
+:::
 
 ## Setup Project Structure
 
@@ -42,7 +44,9 @@ With this in mind, go ahead and create each file and folder exactly as seen belo
 ```
 
 
-<aside class="blog-content__note">Notice how the files and folders in the <code class="gatsby-code-text">src</code> and <code class="gatsby-code-text">tests</code> dirs have underscores in their names?  This is a general name formatting convention called <a class="blog-content__link" href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener noreferrer">snake case</a> and and we do this when naming files and folders in a Clojure project because it's a <a class="blog-content__link" href="https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html" target="_blank" rel="noopener noreferrer">java convention</a>.  Yes, even if you are writing a ClojureScript project we follow this convention.</aside>
+::: note
+Notice how the files and folders in the `src` and `tests` dirs have underscores in their names?  This is a general name formatting convention called [snake case] and and we do this when naming files and folders in a Clojure project because it's a [java convention].  Yes, even if you are writing a ClojureScript project we ollow this convention.
+:::
 
 ### Step 2 - Add HTML
 
@@ -112,8 +116,10 @@ Now we finally get to write some ClojureScript. Open `time_dive.cljs` and sprink
 
 The above defines a `namespace` called `tallex.time-dive`. This `namespace` is going to be the `entry point` of our app<a href="#entry-point-conventions" aria-describedby="footnote-label" id="entry-point-conventions-ref">.</a>
 
-<aside class="blog-content__note">The <code class="gatsby-code-text">namespace</code> is the <code class="gatsby-code-text">tallex.time-dive</code> part.  There are a few implicit details which I want to highlight.  <strong>Firstly</strong>, namespaces follow the folder path structure.  <strong>Secondly</strong>, if your namespace has multiple words like <code class="gatsby-code-text">time-dive</code> we use dashes not underscores to separate them.  <strong>Lastly</strong>, best practice is to multi-segment our namespace name.  A multi-segmented name is when we have multipe words/phrases separated by dots.  For example, <code class="gatsby-code-text">tallex.time-dive</code> is multi-segmented.  The first segment is <code class="gatsby-code-text">tallex</code> and the second is
-<code class="gatsby-code-text">time-dive</code>.  Best practice is to have two or more segments. If we only have one segment it can lead to name conflicts.  Having said this, it's not the end of the world if you only have a single-segment namespace. For example, there are respected developers who use <a class="blog-content__link" href="https://github.com/ztellman/virgil" target="_blank" rel="noopener noreferrer">single-segmented namespaces</a>.</aside>
+::: note
+The `namespace` is the `tallex.time-dive` part.  There are a few implicit details which I want to highlight.  **Firstly**, namespaces follow the folder path structure.  **Secondly**, if your namespace has multiple words like `time-dive` we use dashes not underscores to separate them.  **Lastly**, best practice is to multi-segment our namespace name.  A multi-segmented name is when we have multipe words/phrases separated by dots.  For example, `tallex.time-dive` is multi-segmented.  The first segment is `tallex` and the second is
+`time-dive`.  Best practice is to have two or more segments. If we only have one segment it can lead to name conflicts.  Having said this, it's not the end of the world if you only have a single-segment namespace. For example, there are respected developers who use `single-segmented namespaces`.
+:::
 
 ### Step 5 - Add ClojureScript Tests
 
@@ -145,7 +151,9 @@ To develop and run our app the most popular tools in Clojure land are `lein`, `b
 
 ### Step 6 - Add deps file
 
-<aside class="blog-content__note">If this is your first time working with Clojure(Script) you will need to be sure you have <code class="gatsby-code-text">clojure</code> installed on your local machine before going further.  Not sure?  Want to know how?  I recommend taking a look at my free <a class="blog-content__link" href="https://www.youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA" target="_blank" rel="noopener noreferrer">Getting Started with ClojureScript</a> Youtube series which will take you through the whole process or checkout the official written <a class="blog-content__link" href="https://clojurescript.org/guides/quick-start" target="_blank" rel="noopener noreferrer">ClojureScript Quickstart Guide</a> </aside>
+::: note
+If this is your first time working with Clojure(Script) you will need to be sure you have `clojure` installed on your local machine before going further.  Not sure?  Want to know how?  I recommend taking a look at my free [Getting Started with Clojure(Script)] Youtube series which will take you through the whole process or checkout the official written [ClojureScript Quickstart Guide].
+:::
 
 To run our Clojure(Script) project with `clj` we first need to setup our `deps.edn` file. Start by creating a `deps.edn` file in the root of our project and then make it look like this<a href="#build-tools-deps" aria-describedby="footnote-label" id="build-tools-deps-ref">:</a>
 
@@ -164,7 +172,9 @@ To run our Clojure(Script) project with `clj` we first need to setup our `deps.e
                     "-r"]}}}
 ```
 
-<aside class="blog-content__note">Unlike other files in our Clojure project we don't get to choose what we call the <code class="gatsby-code-text">deps.edn</code>  file.  <code class="gatsby-code-text">deps.edn</code> is the name that <code class="gatsby-code-text">clj</code> looks for.  Furthermore, you will notice that the extension of this file is <code class="gatsby-code-text">.edn</code>. You can think of this as the Clojure(Script) equivalent of <code class="gatsby-code-text">json</code>.</aside>
+::: note
+Unlike other files in our Clojure project we don't get to choose what we call the `deps.edn` file.  `deps.edn` is the name that `clj` looks for.  Furthermore, you will notice that the extension of this file is `.edn`. You can think of this as the Clojure(Script) equivalent of `json`.
+:::
 
 Before we continue we should be familiar with what we're doing in our `deps.edn` file:
 
@@ -190,11 +200,15 @@ wait a bit and `:dev` will compile our code, automatically open a browser tab an
 
 ![screenshot of time dive app](./images/001-time-dive-app.png)
 
-<aside class="blog-content__note">I also want to draw your attention towards two new directories that were auto generated for you when you ran <code class="gatsby-code-text">clj -M:dev</code>: <code class="gatsby-code-text">.cpcache/</code> and <code class="gatsby-code-text">out/</code>. I bring this up because it's a good practice to avoid version controlling these folders.  If you are wondering how to version control them see this <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-app/commit/0cef20e6773ab5d2f93253926dafb4e05e0673f7" target="_blank" rel="noopener noreferrer">extra step</a></aside>
+::: note
+I also want to draw your attention towards two new directories that were auto generated for you when you ran `.cpcache/` and `out/`. I bring this up because it's a good practice to avoid version controlling these folders.  If you are wondering how to version control them see this [extra step]
+:::
 
 Before we jump over to the next section I want to draw your attention to the fact that we have zero dependencies. Think about this: our files are being watched, code is recompiled on save, we are greeted with a browser repl and all of this with zero dependencies. Yes, we are still missing a few niceties, but we are not done yet. We will get you to hero toolchain status soon.
 
-<aside class="blog-content__note">If you were testing the watch feature and can't see the code changes take affect be sure to try refreshing the browser.</aside>
+::: note
+If you were testing the watch feature and can't see the code changes take affect be sure to try refreshing the browser.
+:::
 
 ## Setup a ClojureScript Toolchain
 
@@ -226,7 +240,9 @@ It starts by adding figwheel as a dependency. We do this by opening the `deps.ed
  }
 ```
 
-<aside class="blog-content__note">Clojure libraries are generally found in <a class="blog-content__link" href="https://clojars.org" target="_blank" rel="noopener noreferrer">Clojars</a> which is a popular Clojure package repository.  This is where you can go to find packages and examples of how to use the packages in our projects<a href="#package-repos" aria-describedby="footnote-label" id="package-repos-ref">.</a>  Also note that when you add new dependencies to your project you will also have to stop and restart your app.</aside>
+::: note
+Clojure libraries are generally found in [Clojars] which is a popular Clojure package repository.  This is where you can go to find packages and examples of how to use the packages in our projects<a href="#package-repos" aria-describedby="footnote-label" id="package-repos-ref">.</a>  Also note that when you add new dependencies to your project you will also have to stop and restart your app.
+:::
 
 ### Step 8 - Add build configuration
 
@@ -240,7 +256,9 @@ Create a new file in the root of our ClojureScript app called `dev.cljs.edn` and
 {:main tallex.time-dive}
 ```
 
-<aside class="blog-content__note">Some details into the above: <strong>1.</strong>  You can name your build configuration anything you like but it needs to include the <code class="gatsby-code-text">.cljs.edn</code> part.  We called ours <code class="gatsby-code-text">dev</code> because it's configuring our code for the development environment.  <strong>2.</strong> You can and will have multiple <code class="gatsby-code-text">build configurations</code>.  This is not a bad thing.  <strong>3.</strong>  when you look at the above it can seem like there is very little configuration, especially when compared to a <code class="gatsby-code-text">webpack</code> config file. The reason for this is because Figwheel makes a lot of sane default choices out of the box.</aside>
+::: note
+Some details into the above: **1.**  You can name your build configuration anything you like but it needs to include the `.cljs.edn` part.  We called ours `dev` because it's configuring our code for the development environment.  **2.** You can and will have multiple `build configurations`.  This is not a bad thing.  **3.**  when you look at the above it can seem like there is very little configuration, especially when compared to a `webpack` config file. The reason for this is because Figwheel makes a lot of sane default choices out of the box.
+:::
 
 Okay. We have specified build configuration options. What does all of it mean?
 
@@ -300,7 +318,9 @@ Go ahead and add a `public` directory to the `resources` dir and move your `inde
         └── time_dive_tests.cljs
 ```
 
-<aside class="blog-content__note">I have not included the <code class="gatsby-code-text">target</code>, <code class="gatsby-code-text">out</code>, or <code class="gatsby-code-text">.cpcache</code> directories in the above topology so don't feel like you've done something wrong if you see those folders.</aside>
+::: note
+I have not included the `target`, `out`, or `.cpcache` directories in the above topology so don't feel like you've done something wrong if you see those folders.
+:::
 
 We also have to update the `script` tag in our `index.html` file.
 
@@ -308,7 +328,9 @@ We also have to update the `script` tag in our `index.html` file.
 <script src="/cljs-out/dev-main.js"></script>
 ```
 
-<aside class="blog-content__note">We updated the script tag because figwheel is going to build your ClojureScript in a different folder than <code class="gatsby-code-text">clj</code> did.</aside>
+::: note
+We updated the script tag because figwheel is going to build your ClojureScript in a different folder than `clj` did.
+:::
 
 time to run the app again:
 
@@ -328,7 +350,9 @@ The point is that figwheel offers a framework / library agnostic mechanism to su
 
 Specifically, figwheel gives us `hooks` which we specify in the namespace where we want to take advantage of HMR. The way it works is when we write HMR we have to tell our app how to tear itself down and setup again when files are re-compiled. We have to write these functions ourselves. What figwheel helps with is providing `hooks` like `:after-load` and `:before-load` which will call our setup and teardown functions.
 
-<aside class="blog-content__note">The hooks I am referring to are figwheel hooks and have nothing to do with React Hooks.</aside>
+::: note
+The hooks I am referring to are figwheel hooks and have nothing to do with React Hooks.
+:::
 
 ### Step 11 - Refactor for Figwheel
 
@@ -346,7 +370,9 @@ Now when you try to run the app you will notice that the `console.log` does not 
 - [^:figwheel-hooks]() - `meta data` telling figwheel we want to use hooks in our namespace
 - [^:after-load]() - `meta data` telling figwheel that we want it to run the function, `re-render`, after each compile
 
-<aside class="blog-content__note">ClojureScript provides this great mechanism called <a class="blog-content__link" href="https://clojure.org/reference/metadata" target="_blank" rel="noopener noreferrer">metadata</a> to our vars, functions etc.</aside>
+::: note
+ClojureScript provides this great mechanism called [metadata] to our vars, functions etc.
+:::
 
 This is a rich topic so my hope is that I was able to illustrate the fact that HMR and React are not linked, and provide a little insight into how you can use this feature outside of React.
 
@@ -423,7 +449,9 @@ A little about the above:
 - `mount` a function. When called, it will display our `time-dive` app
 - `re-render` a function with a hook. When called, it reloads our app. It supports the HMR part
 
-<aside class="blog-content__note">Remember figwheel hooks from the previous section?  The above is us using them with Reagent to achieve HMR.</aside>
+::: note
+Remember figwheel hooks from the previous section?  The above is us using them with Reagent to achieve HMR.
+:::
 
 Last step: open up `style.css` and change the `body` tag to `#root`
 
@@ -439,7 +467,9 @@ body {
 }
 ```
 
-<aside class="blog-content__note">The only reason we do this is because with Reagent we had to change our HTML structure a bit.  Likewise we change our css to reflect the HTML structure changes.</aside>
+::: note
+The only reason we do this is because with Reagent we had to change our HTML structure a bit.  Likewise we change our css to reflect the HTML structure changes.
+:::
 
 Ready to see if it all worked? Run `clj -M:dev` and marvel at your ClojureScript SPA.
 
@@ -530,3 +560,13 @@ These resources are great next steps for learning to work with Clojure(Script).
     </li>
   </ol>
 </aside>
+
+[Getting Started with Clojure(Script)]: https://youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA
+[demo project]: https://github.com/athomasoriginal/demo-clojurescript-app
+[15 minute primer to the syntax of Clojure]: https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes
+[snake case]: https://en.wikipedia.org/wiki/Snake_case
+[java convention]: https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html
+[ClojureScript Quickstart Guide]: https://clojurescript.org/guides/quick-start
+[extra step]: https://github.com/athomasoriginal/demo-clojurescript-app/commit/0cef20e6773ab5d2f93253926dafb4e05e0673f7
+[Clojars]: https://clojars.org
+[metadata]: https://clojure.org/reference/metadata
