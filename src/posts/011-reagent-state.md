@@ -34,11 +34,15 @@ summary: "You know what time it is."
 (ratom/make-reaction f options)
 ```
 
-<aside class="blog-content__note">Note the arg names align to <a class="blog-content__link" href="https://github.com/bbatsov/clojure-style-guide#idiomatic-names" target="_blank" rel="noopener noreferrer">community style guide</a>.  Example, <code class="gatsby-code-text">ks</code> means a sequence of keys.  Example: <code class="gatsby-code-text">[:user :name]</code> or <code class="gatsby-code-text">[:users 1 :name]</code>.</aside>
+::: note
+Note the arg names align to [community style guide].  Example, `ks` means a sequence of keys.  Example: `[:user :name]` or `[:users 1 :name]`.
+:::
 
 But have you ever wondered what these things do?  Why we call things Reactive?  How things work under the hood?  Me too.  So I spent some mapping it out.  Thus, this post is going to explore the topic through a simple Reagent component which uses state.
 
-<aside class="blog-content__note">This post is geared towards intermediate and advanced Clojure(Script) and React Developers.  Having said this, I want people of all skill levels to benefit from this, so I will do my best to provide resources to enable this to be as approachable as possible</aside>
+::: note
+This post is geared towards intermediate and advanced Clojure(Script) and React Developers.  Having said this, I want people of all skill levels to benefit from this, so I will do my best to provide resources to enable this to be as approachable as possible
+:::
 
 ## The Example App
 
@@ -69,7 +73,9 @@ Here is a simple example of what that looks like.
 (r.dom/render [app] (js/document.getElementById "root")))
 ```
 
-<aside class="blog-content__note">The <code class="gatsby-code-text">RAtom</code> can also live outside of the component.  I just kept it in because that I feel the example might be easier to grok.</aside>
+::: note
+The `RAtom` can also live outside of the component.  I just kept it in because that I feel the example might be easier to grok.
+:::
 
 and the app might look like this in the browser
 
@@ -137,7 +143,9 @@ and then when you want to get the value stored inside of them you will use:
 
 - `deref`
 
-<aside class="blog-content__note">When do you use one over the other?  A good rule of thumb is this:  do you need the previous value in order to generate the next value?  Use <code class="gatsby-code-text">swap!</code>.  For more information on the Atom and why it exists in Clojure please read <a class="blog-content__link" href="https://purelyfunctional.tv/mini-guide/atom-code-explanation/" target="_blank" rel="noopener noreferrer">Atom Code Explanation</a></aside>
+::: note
+When do you use one over the other?  A good rule of thumb is this:  do you need the previous value in order to generate the next value?  Use `swap!`.  For more information on the Atom and why it exists in Clojure please read [Atom Code Explanation]
+:::
 
 Perhaps it's best to start by just explaining what happens behind the scenes when we start using `Reagent state`.
 
@@ -242,3 +250,4 @@ This post is going to dive deep into Reagent State and try to explain how it wor
 [ratom/make-reaction]: http://reagent-project.github.io/docs/master/reagent.ratom.html#var-make-reaction
 [@ or deref]: https://clojure.org/guides/weird_characters#_deref
 [core/as-element]: http://reagent-project.github.io/docs/master/reagent.core.html#var-as-element
+[community style guide]: https://github.com/bbatsov/clojure-style-guide#idiomatic-names
