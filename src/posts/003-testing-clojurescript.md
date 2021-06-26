@@ -593,7 +593,7 @@ Finally, there is no "right" or "wrong" testing tool.  Start.  Figure out what w
 [create reagent app]: https://github.com/athomasoriginal/create-reagent-app
 [Setup Clojure(Script)]: https://www.youtube.com/watch?v=P60dMljS-OM&list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA
 [create-react-app]: https://create-react-app.dev/
-[Start a ClojureScript App from Scratch]: https://betweentwoparens.com/start-a-clojurescript-app-from-scratch
+[Start a ClojureScript App from Scratch]: https://betweentwoparens.com/blog/start-a-clojurescript-app-from-scratch
 [comes with ClojureScript]: https://clojurescript.org/tools/testing
 [yarn]: https://yarnpkg.com/en/docs/getting-started
 [node]: https://nodejs.org/en/

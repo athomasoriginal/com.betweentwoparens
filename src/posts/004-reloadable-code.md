@@ -26,7 +26,7 @@ Aside from being gorgeoous, it had only two things to do:
 - User presses the `Add` button and `1` new `Calendar Event` is created
 - User can see a `List` of `Calendar Events`
 
-I started the app [as I always do](http://betweentwoparens.com/start-a-clojurescript-app-from-scratch) which includes running `figwheel` and `Hot Module Reloading` (HMR).  As I'm jamming away on the code I started to notice some interesting behaviour.
+I started the app [as I always do](http://betweentwoparens.com/blog/start-a-clojurescript-app-from-scratch) which includes running `figwheel` and `Hot Module Reloading` (HMR).  As I'm jamming away on the code I started to notice some interesting behaviour.
 
 When I pressed the `Add` button, instead of `1` new `Calendar Event` being added, `5` were added!  I paused for a moment before hard refreshing the browser.  Then I clicked the `Add` button again.  Unlike the first time, everything worked as expected; only `1` new `Calendar Event` was added.  I smiled to myself and marvelled at my incredible detective skills: obviously the problem was `HMR`.
 

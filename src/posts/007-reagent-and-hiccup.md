@@ -104,7 +104,7 @@ As we mentioned, all components are passed into `reagent.dom/render` and it's th
 
 The process begins by Reagent passing the `component` given to `reagent.dom/render` to a function called `create-class`.
 
-`create-class` has [other jobs](https://betweentwoparens.com/what-the-reagent-component) aside from handling Hiccup, but nonetheless one of it's jobs is to compile `Reagent Hiccup` to `React.createElement` calls.  This step is handled by the [as-element](https://github.com/reagent-project/reagent/blob/88e9833be9c3135548d760286ffd84d88a0a0489/src/reagent/impl/template.cljs#L382) function.
+`create-class` has [other jobs](https://betweentwoparens.com/blog/what-the-reagent-component) aside from handling Hiccup, but nonetheless one of it's jobs is to compile `Reagent Hiccup` to `React.createElement` calls.  This step is handled by the [as-element](https://github.com/reagent-project/reagent/blob/88e9833be9c3135548d760286ffd84d88a0a0489/src/reagent/impl/template.cljs#L382) function.
 
 `as-element` accepts `Reagent Hiccup` like this:
 
