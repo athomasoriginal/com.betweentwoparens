@@ -6,13 +6,13 @@
 - [Quickstart]
 - [Project Commands]
 - [Upgrade Dependencies]
-- [Blog Features]
 - [Blog Post Guidelines]
   - [Frontmatter]
   - [Images]
   - [Article Notes]
   - [Updating Blog Posts]
   - [Updating Blog Checklist]
+- [Blog Features]
 - [Before Dev]
 - [Before Deploy]
 - [Special Thanks]
@@ -93,42 +93,6 @@ Be sure to have the following tools installed
   ```
   > Replace "gatsby-" with the common pattern.
 
-
-## Blog Features
-
-This section outlines the features our blog supports.  This is valuable because if you ever have to move to a different platform you have a catalogue of the required feature sets.
-
-- [HTML5 Boilerplate]
-- [Modern CSS Reset]
-- Date Formatting
-  - `dateFilter`
-  - `w3DateFilter`
-- Blog Posts
-  - Heading Anchors
-  - TOC
-  - Created Date
-  - Modified Date
-  - Note
-    - Custom markdown fence - `::: note`
-    - See `eleventy.js`
-  - Code Blocks
-    - Custom Syntax Highlighting
-  - Footnotes
-- Links open in new tab
-- Global data
-  - footer
-  - header
-  - There is a priority order for how Data is consumed by Eleventy.  Familarize yourself with that.  The `_data/site.json` is meant to contain reusable, site related global variables.  Example of what this is not for:  post front matter data.
-- RSS feed
-- Trailing slashes
-- Open Graph Meta Tags
-- Twitter Cards
-- 404
-- Sort blog posts
-- Signup form
-- Redirects
-- [Generate a mailto link]
-  Simple tool to generate a `mailto` link so you don't have to worry about formatting.
 
 ## How things work
 
@@ -253,6 +217,42 @@ summary: "It's time to uncover the truth about Reagent components."
 
 Prefer reference links because they are reusable, allow for cleaner reading/editing of the post and when you need to update links they are all in one place.  Seriously.  This is a maintenance win.
 
+## Blog Features
+
+This section outlines the features our blog supports.  This is valuable because if you ever have to move to a different platform you have a catalogue of the required feature sets.
+
+- [HTML5 Boilerplate]
+- [Modern CSS Reset]
+- Date Formatting
+  - `dateFilter`
+  - `w3DateFilter`
+- Blog Posts
+  - Heading Anchors
+  - TOC
+  - Created Date
+  - Modified Date
+  - Note
+    - Custom markdown fence - `::: note`
+    - See `eleventy.js`
+  - Code Blocks
+    - Custom Syntax Highlighting
+  - Footnotes
+- Links open in new tab
+- Global data
+  - footer
+  - header
+  - There is a priority order for how Data is consumed by Eleventy.  Familarize yourself with that.  The `_data/site.json` is meant to contain reusable, site related global variables.  Example of what this is not for:  post front matter data.
+- RSS feed
+- Trailing slashes
+- Open Graph Meta Tags
+- Twitter Cards
+- 404
+- Sort blog posts
+- Signup form
+- Redirects
+- [Generate a mailto link]
+  Simple tool to generate a `mailto` link so you don't have to worry about formatting.
+
 ## Before Dev
 
 - [x] Update `_data/site.json`
@@ -302,13 +302,13 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 [Quickstart]: #quickstart
 [Project Commands]: #project-commands
 [Upgrade Dependencies]: #upgrade-dependencies
-[Blog Features]: #blog-features
 [Blog Post Guidelines]: #blog-post-guidelines
 [Frontmatter]: #frontmatter
 [Images]: #images
 [Article Notes]: #article-notes
 [Updating Blog Posts]: #updating-blog-posts
 [Updating Blog Checklist]: #updating-blog-checklist
+[Blog Features]: #blog-features
 [Before Dev]: #before-dev
 [Before Deploy]: #before-deploy
 [Special Thanks]: #special-thanks
