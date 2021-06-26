@@ -15,7 +15,7 @@ This blog will guide you through the process of building and deploying a minimal
 
 ### What is ClojureScript?
 
-ClojureScript, like [Elm](https://elm-lang.org) or [Reason](https://reasonml.github.io/), is a compile to js programming language. It's different from JavaScript because its data structures are immutable, its paradigm is functional and it's part of a family of programming languages called [lisp](<https://en.wikipedia.org/wiki/Lisp_(programming_language)>). The tangible benefits are that you can experience a world of web dev where classes of problems influenced by state and questionable language design are significantly reduced. If nothing else, ClojureScript is guarenteed to make you think different.
+ClojureScript, like [Elm] or [Reason], is a compile to js programming language. It's different from JavaScript because its data structures are immutable, its paradigm is functional and it's part of a family of programming languages called [lisp]. The tangible benefits are that you can experience a world of web dev where classes of problems influenced by state and questionable language design are significantly reduced. If nothing else, ClojureScript is guarenteed to make you think different.
 
 ### Github Pages and Static Sites?
 
@@ -230,6 +230,9 @@ Hopefully you did not run into any issues, but if you did please head over to [m
 </aside>
 
 
+[Elm]: https://elm-lang.org
+[Reason]: https://reasonml.github.io/
+[lisp]: <https://en.wikipedia.org/wiki/Lisp_(programming_language)>
 [create one for free]: https://help.github.com/en/articles/signing-up-for-a-new-github-account
 [Github Pages Quickstart]: https://pages.github.com/
 [commit]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commits/master
