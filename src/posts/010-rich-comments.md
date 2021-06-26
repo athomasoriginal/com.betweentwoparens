@@ -72,7 +72,9 @@ The second take away is that you don't have to add spaces after the `discard com
 (-> 5 #_#_inc inc inc)   ; no space
 ```
 
-<aside class="blog-content__note">You may have noticed that I used <code class="gatsby-code-text">;;</code> and <code class="gatsby-code-text">;</code> in the above code block.  This is a common idiom when writing Clojure and is often used to denote a hierarchy.  You can find more information about this convention in <a class="blog-content__link" href="https://github.com/bbatsov/clojure-style-guide#comments" target="_blank" rel="noopener noreferrer">bbatsov's community clojure style guide</a></aside>
+::: note
+You may have noticed that I used `;;` and `;` in the above code block.  This is a common idiom when writing Clojure and is often used to denote a hierarchy.  You can find more information about this convention in [bbatsov's community clojure style guide]
+:::
 
 The difference between adding the space or removing the space is which one _you_ find more readable<a href="#discard-comment-credit" aria-describedby="footnote-label" id="discard-comment-credit-ref">.</a>
 
@@ -88,7 +90,9 @@ Finally, we have the `comment macro` which is more affectionatley known as a `Ri
 
 The first time I heard of a `Rich Comment` was in Stuart Halloway's excellent talk [Running With Scissors] where he notes:
 
-<aside class="blog-content__note">"These comments are rich because they provide rich detail about the development process and because they were written by a person named Rich."</aside>
+::: note
+"These comments are rich because they provide rich detail about the development process and because they were written by a person named Rich."
+:::
 
 Yet, even after watching `Running With Scissors` the use of the `Rich Comment` hadn't started to click yet.  Two more things would need to happen:  The first, I would witness REPL Driven Development used in person by [David Nolen].  The second, I would start to use REPL Driven Development in my own workflow.  When I did these things, I was able to better see the benefits of the `comment macro` as
 
@@ -199,3 +203,4 @@ These are just a few examples of how to use a `Rich Comment Block`.  The most in
 [clj - Example 2]: https://github.com/clojure/clojure/blob/4ef4b1ed7a2e8bb0aaaacfb0942729252c2c3091/src/clj/clojure/set.clj#L158
 [tools.deps.alpha - Example 3]: https://github.com/clojure/tools.deps.alpha/blob/f94815dd55bdf5eb30ac8fa075c39e757cbbcca5/src/main/clojure/clojure/tools/deps/alpha/gen/pom.clj#L141
 [clojure.jdbc Example 4]: https://github.com/clojure/java.jdbc/blob/47a87036376ffa69f64cfa18d1f91cbb7e301199/src/test/clojure/clojure/java/jdbc_test.clj#L1279
+[bbatsov's community clojure style guide]: https://github.com/bbatsov/clojure-style-guide#comments
