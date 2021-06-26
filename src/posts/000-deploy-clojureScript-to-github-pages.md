@@ -23,8 +23,9 @@ Github Pages is a service provided by Github which allows you to freely host you
 
 With this in mind, let's start coding.
 
-<aside class="blog-content__note">The rest of this article assumes that you have a Github account. If you don't, no worries. Take a moment and <a class="blog-content__link" href="https://help.github.com/en/articles/signing-up-for-a-new-github-account" target=" _blank" rel="noopener noreferrer">create one for free</a> or just sit back and enjoy the read. For those who want to adventure with me, go through Github's official <a class="blog-content__link" href="https://pages.github.com/" target=" _blank" rel="noopener noreferrer">Github Pages Quickstart</a> for projects and follow it exactly.  Note that throughout this post I will have footnotes referencing my live <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages" target="_blank" rel="noopener noreferrer">demo project</a> which has each step mirrored by its corresponding
-<a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commits/master" target="_blank" rel="noopener noreferrer">commit</a>. Please lean on them if you feel lost at any point</aside>
+::: note
+The rest of this article assumes that you have a Github account. If you don't, no worries. Take a moment and [create one for free] or just sit back and enjoy the read. For those who want to adventure with me, go through Github's official [Github Pages Quickstart] for projects and follow it exactly.  Note that throughout this post I will have footnotes referencing my live [demo project] which has each step mirrored by its corresponding [commit]. Please lean on them if you feel lost at any point.
+:::
 
 Let's start by getting Clojure setup on your local machine. To do this, visit the [ClojureScript Quickstart](https://clojurescript.org/guides/quick-start) and follow the instructions there.
 
@@ -217,3 +218,9 @@ As I noted in the beginning, this is a minimal example without 3rd party build t
 
   </ol>
 </aside>
+
+
+[create one for free]: https://help.github.com/en/articles/signing-up-for-a-new-github-account
+[Github Pages Quickstart]: https://pages.github.com/
+[demo project]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages
+[commit]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commits/master
