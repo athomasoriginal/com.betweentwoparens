@@ -147,7 +147,7 @@ To develop and run our app the most popular tools in Clojure land are `lein`, `b
  - resolve transitive dependencies
  - build classpaths
 
- Ultimatley, `clj` is simple, oriented towards beginners and yet powerful enough to support advanced users.  If you're interested in learning more, checkout out the [clojure tools] post.  Also feel free to checkout the [2019 State of Clojure Community Report] to see which tools the Clojure community uses most.
+ Ultimatley, `clj` is simple, oriented towards beginners and yet powerful enough to support advanced users.  If you're interested in learning more, checkout out the [clojure tools] post.  Also feel free to checkout the [2021 State of Clojure Community Report] to see which tools the Clojure community uses most.
 
 ### Step 6 - Add deps file
 
@@ -574,7 +574,7 @@ These resources are great next steps for learning to work with Clojure(Script).
 [boot]: https://boot-clj.com/
 [clj]: https://clojure.org/guides/deps_and_cli
 [clojure tools]: https://betweentwoparens.com/blog/what-are-the-clojure-tools
-[2019 State of Clojure Community Report]: https://www.surveymonkey.com/results/SM-S9JVNXNQV/
+[2021 State of Clojure Community Report]: https://clojure.org/news/2021/04/06/state-of-clojure-2021
 [:paths]: https://clojure.org/reference/deps_and_cli#_paths
 [:deps]: https://clojure.org/reference/deps_and_cli#_dependencies
 [:aliases]: https://clojure.org/reference/deps_and_cli#_aliases
