@@ -121,6 +121,14 @@ module.exports = function (eleventyConfig) {
   // @configuration inline SVG
   eleventyConfig.addPlugin(svgContents);
 
+  eleventyConfig.addCollection("blogPosts", function (collectionApi) {
+    return collectionApi.getFilteredByTag("post").sort(function (a, b) {
+      dateA = new Date(b.data.createdDate);
+      dateB = new Date(a.data.createdDate);
+      return dateA - dateB;
+    });
+  });
+
   // @configuration markdown table of contents.  If you change this, be sure to
   // also consider changing the anchor links
   eleventyConfig.addPlugin(pluginMarkdownTOC, {
