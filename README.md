@@ -4,6 +4,7 @@
 
 - [Housekeeping]
 - [Quickstart]
+- [Project Commands]
 - [Blog Features]
 - [Upgrade Dependencies]
 - [Resources]
@@ -58,6 +59,21 @@ Be sure to have the following tools installed
 - Start the project
   ```command
   yarn run dev
+  ```
+
+## Project Commands
+
+- Run development environment
+  ```command
+  yarn run dev
+  ```
+- Run development environment in debug mode
+  ```command
+  yarn run dev:debug
+  ```
+- Build for production
+  ```command
+  yarn run build
   ```
 
 ## Blog Features
@@ -129,21 +145,6 @@ This section outlines the features our blog supports.  This is valuable because 
 - Images
   - All images live in the `images` dir and we use passthrough.
   - SVGs are separate
-
-## Project Commands
-
-- Run development environment
-  ```command
-  yarn run dev
-  ```
-- Run development environment in debug mode
-  ```command
-  yarn run dev:debug
-  ```
-- Build for production
-  ```command
-  yarn run build
-  ```
 
 ## Configuration
 
@@ -309,6 +310,7 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 
 [Housekeeping]: #housekeeping
 [Quickstart]: #quickstart
+[Project Commands]: #project-commands
 [Blog Features]: #blog-features
 [Upgrade Dependencies]: #upgrade-dependencies
 [Resources]: #resources
