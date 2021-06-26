@@ -137,17 +137,17 @@ This concludes setting up the project structure and boilerplate code. The next s
 
 To develop and run our app the most popular tools in Clojure land are `lein`, `boot` and `clj`. The good news is you only need to choose one of these.  Before I reveal which we are going to use, let me provide a quick overview of each of them.
 
-[lein](https://leiningen.org/) is the grandfather and most popular Clojure(Script) build tool. If I had to compare it to something it would be as if `npm` and `webpack` made a Clojure baby. You will see lein used in most all projects created prior to mid-2018. Yet, it has started to show its age. So members of the Clojure(Script) community went off to build a better lein and they called it `boot`.
+[lein] is the grandfather and most popular Clojure(Script) build tool. If I had to compare it to something it would be as if `npm` and `webpack` made a Clojure baby. You will see lein used in most all projects created prior to mid-2018. Yet, it has started to show its age. So members of the Clojure(Script) community went off to build a better lein and they called it `boot`.
 
-[boot](https://boot-clj.com/) is a definite improvement over lein. It learned from many of lein's shortcomings and managed to gather the attention of a strong minority of Clojure(Script) developers.
+[boot] is a definite improvement over lein. It learned from many of lein's shortcomings and managed to gather the attention of a strong minority of Clojure(Script) developers.
 
-[clj](https://clojure.org/guides/deps_and_cli), also known as the clojure cli tool, is magicked down to us by the maintainers of Clojure. It was initially met with confusion, but over the past year has come to be seen by many, including myself, as _the_ tool to run and develop our clojure(script) programs. Where `lein` and `boot` are complex and often reach in their scope, the `clj` tool is about 3 things:
+[clj], also known as the clojure cli tool, is magicked down to us by the maintainers of Clojure. It was initially met with confusion, but over the past year has come to be seen by many, including myself, as _the_ tool to run and develop our clojure(script) programs. Where `lein` and `boot` are complex and often reach in their scope, the `clj` tool is about 3 things:
 
  - run clojure programs
  - resolve transitive dependencies
  - build classpaths
 
- Ultimatley, `clj` is simple, oriented towards beginners and yet powerful enough to support advanced users.  If you're interested in learning more, checkout out the [clojure tools](https://betweentwoparens.com/blog/what-are-the-clojure-tools) post.  Also feel free to checkout the [2019 State of Clojure Community Report](https://www.surveymonkey.com/results/SM-S9JVNXNQV/) to see which tools the Clojure community uses most.
+ Ultimatley, `clj` is simple, oriented towards beginners and yet powerful enough to support advanced users.  If you're interested in learning more, checkout out the [clojure tools] post.  Also feel free to checkout the [2019 State of Clojure Community Report] to see which tools the Clojure community uses most.
 
 ### Step 6 - Add deps file
 
@@ -178,17 +178,17 @@ Unlike other files in our Clojure project we don't get to choose what we call th
 
 Before we continue we should be familiar with what we're doing in our `deps.edn` file:
 
-- [:paths](https://clojure.org/reference/deps_and_cli#_paths) tells `clj` where to look for clojure code. Also known as a `classpath`
-- [:deps](https://clojure.org/reference/deps_and_cli#_dependencies) tells `clj` which dependencies our app needs. Right now our only dependency is ClojureScript.
-- [:aliases](https://clojure.org/reference/deps_and_cli#_aliases) are like shortcuts.  We can store long commands, or alternate dependencies in these.
+- [:paths] tells `clj` where to look for clojure code. Also known as a `classpath`
+- [:deps] tells `clj` which dependencies our app needs. Right now our only dependency is ClojureScript.
+- [:aliases] are like shortcuts.  We can store long commands, or alternate dependencies in these.
 
 When we run our app for `prod`, `dev` or `test` we may need to run the app differently. That is why we use aliases. In our case, we specified a `:dev` alias and configured it to:
 
-- ["-m"](https://clojure.org/reference/deps_and_cli#_usage) run `cljs.main` (run clojurescript).
-- ["-ro"](https://clojurescript.org/reference/repl-options) teach the repl where to find `static files` e.g. html, css etc.
-- ["-w"](https://clojurescript.org/reference/repl-and-main) watch all files in `src` dir and recompile when they are changed.
-- ["-c"](https://clojurescript.org/reference/repl-and-main) compile our app: `tallex.time-dive`.
-- ["-r"](https://clojurescript.org/reference/repl-and-main) run a REPL and connect it to the browser.
+- ["-m"] run `cljs.main` (run clojurescript).
+- ["-ro"] teach the repl where to find `static files` e.g. html, css etc.
+- ["-w"] watch all files in `src` dir and recompile when they are changed.
+- ["-c"] compile our app: `tallex.time-dive`.
+- ["-r"] run a REPL and connect it to the browser.
 
 Now that we have a rough idea of what is going on we are ready to take our app for a test drive. Open a terminal, move into the root of the app and run the following command:
 
@@ -214,7 +214,7 @@ If you were testing the watch feature and can't see the code changes take affect
 
 As I said earlier, we have zero dependencies and already have a powerful toolchain. This section will take our toolchain to another level so we can achieve parity to JavaScript <a href="#what-is-dev-toolchain" aria-describedby="footnote-label" id="what-is-dev-toolchain-ref">standards</a> by introducing just one tool: `Figwheel`.
 
-[figwheel](https://figwheel.org/) is a popular ClojureScript tool and a must have for my workflow<a href="#toolchain-tools" aria-describedby="footnote-label" id="toolchain-tools-ref">.</a> Figwheel has [many features](https://figwheel.org/), but we are only going to focus on the ones that allow us to sync with what JavaScript land is used to. These include:
+[figwheel] is a popular ClojureScript tool and a must have for my workflow<a href="#toolchain-tools" aria-describedby="footnote-label" id="toolchain-tools-ref">.</a> Figwheel has [many features], but we are only going to focus on the ones that allow us to sync with what JavaScript land is used to. These include:
 
 - live ClojureScript and CSS Reloading
 - Informative error messages
@@ -246,7 +246,7 @@ Clojure libraries are generally found in [Clojars] which is a popular Clojure pa
 
 ### Step 8 - Add build configuration
 
-A `build configuration` is where we specify [figwheel](https://figwheel.org/config-options) and [ClojureScript compiler](https://clojurescript.org/reference/compiler-options) <a href="#build-config-options" aria-describedby="footnote-label" id="build-config-options-ref">options.</a> For this guide we will create a `development` build configuration<a href="#sanity-check-build-config" aria-describedby="footnote-label" id="sanity-check-build-config-ref">.</a>
+A `build configuration` is where we specify [figwheel] and [ClojureScript compiler] <a href="#build-config-options" aria-describedby="footnote-label" id="build-config-options-ref">options.</a> For this guide we will create a `development` build configuration<a href="#sanity-check-build-config" aria-describedby="footnote-label" id="sanity-check-build-config-ref">.</a>
 
 Create a new file in the root of our ClojureScript app called `dev.cljs.edn` and add the following code to it:
 
@@ -262,9 +262,9 @@ Some details into the above: **1.**  You can name your build configuration anyth
 
 Okay. We have specified build configuration options. What does all of it mean?
 
-1. [:watch-dirs](https://figwheel.org/config-options#watch-dirs) - when any `cljs` files change in `src` directory figwheel recompiles and re-loads the browser.
-2. [:css-dirs](https://figwheel.org/config-options#css-dirs) - when `css` files change in the `resources` directory figwheel recompiles and re-loads them in the browser
-3. [:main](https://clojurescript.org/reference/compiler-options#main) - This is an option that figwheel passes to the `ClojureScript compiler` which tells the compiler which file is our apps `entry point`.
+1. [:watch-dirs] - when any `cljs` files change in `src` directory figwheel recompiles and re-loads the browser.
+2. [:css-dirs] - when `css` files change in the `resources` directory figwheel recompiles and re-loads them in the browser
+3. [:main] - This is an option that figwheel passes to the `ClojureScript compiler` which tells the compiler which file is our apps `entry point`.
 
 As you may have guessed, `Fighwheel` is going to replace the need for us to use `-w`, `-r` and `-c` above.  It is a separate program that provides richer versions of those built-in commands.  With our `dev build configuration` in place, we have one last step.
 
@@ -344,7 +344,7 @@ The toolchain is now in place, but we are still missing the great and powerful H
 
 Hot Module Reloading (HMR) is the holy grail of React development. So much so that it is often spoken in the same breath as if the two are co-dependent, yet the two are not joined in any way.
 
-As long as you write [reloadable code](https://figwheel.org/docs/reloadable_code.html) you can take advantage of HMR. This is the catch though: writing reloadable code can be [tricky and time consuming](/students-of-the-game-reloadable-code). Writing reloadable code is made much easier when you write your code using React. This is likely part of the reason the two are seen as linked.
+As long as you write [reloadable code] you can take advantage of HMR. This is the catch though: writing reloadable code can be [tricky and time consuming]. Writing reloadable code is made much easier when you write your code using React. This is likely part of the reason the two are seen as linked.
 
 The point is that figwheel offers a framework / library agnostic mechanism to support your ability to write HMR in your toolchain.
 
@@ -367,8 +367,8 @@ We can demonstrate how to use figwheel hooks in the `time-dive` namespace. Our `
 
 Now when you try to run the app you will notice that the `console.log` does not log the first time, but only after each save. Things to take note of:
 
-- [^:figwheel-hooks]() - `meta data` telling figwheel we want to use hooks in our namespace
-- [^:after-load]() - `meta data` telling figwheel that we want it to run the function, `re-render`, after each compile
+- [^:figwheel-hooks] - `meta data` telling figwheel we want to use hooks in our namespace
+- [^:after-load] - `meta data` telling figwheel that we want it to run the function, `re-render`, after each compile
 
 ::: note
 ClojureScript provides this great mechanism called [metadata] to our vars, functions etc.
@@ -378,7 +378,7 @@ This is a rich topic so my hope is that I was able to illustrate the fact that H
 
 ## Add Reagent
 
-You could use most any JS framework in ClojureScript, but the ClojureScript community loves React and the community has made wrappers to make React easier to use in ClojureScript. While there are many wrappers the most popular React wrapper is currently [Reagent](https://reagent-project.github.io/) so we will show you how to use that.
+You could use most any JS framework in ClojureScript, but the ClojureScript community loves React and the community has made wrappers to make React easier to use in ClojureScript. While there are many wrappers the most popular React wrapper is currently [Reagent] so we will show you how to use that.
 
 ### Step 12 - Refactor for Reagent
 
@@ -445,7 +445,7 @@ Finally open our `time-dive` namespace and add a few things:
 
 A little about the above:
 
-- `app` is our first example of a [Reagent component](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md).
+- `app` is our first example of a [Reagent component]
 - `mount` a function. When called, it will display our `time-dive` app
 - `re-render` a function with a hook. When called, it reloads our app. It supports the HMR part
 
@@ -477,13 +477,13 @@ Ready to see if it all worked? Run `clj -M:dev` and marvel at your ClojureScript
 
 At this point we have created a ClojureScript app from scratch and provided a solid foundation which should allow you to take this app in any direction you like. Of course, I did not go into details beyond the initial phase, but if you are interested in possible next steps or sources for inspiration, here are a few that I often recommend.
 
-- [Example Reagent App](https://github.com/robert-stuttaford/bridge)
-- [Example Full Featured Clojure(Script) App](https://github.com/juxt/edge)
-- [ClojureScript 30](https://github.com/athomasoriginal/clojurescript-30)
-- [Lambda Island - ClojureScript Tutorials](https://lambdaisland.com/)
-- [Purely Functional TV - Clojure(Script) Tutorials](https://purelyfunctional.tv/)
-- [Getting Clojure](https://pragprog.com/book/roclojure/getting-clojure)
-- [Elements of Clojure](https://leanpub.com/elementsofclojure)
+- [Example Reagent App]
+- [Example Full Featured Clojure(Script) App]
+- [ClojureScript 30]
+- [Lambda Island - ClojureScript Tutorials]
+- [Purely Functional TV - Clojure(Script) Tutorials]
+- [Getting Clojure]
+- [Elements of Clojure]
 
 These resources are great next steps for learning to work with Clojure(Script).
 
@@ -570,3 +570,34 @@ These resources are great next steps for learning to work with Clojure(Script).
 [extra step]: https://github.com/athomasoriginal/demo-clojurescript-app/commit/0cef20e6773ab5d2f93253926dafb4e05e0673f7
 [Clojars]: https://clojars.org
 [metadata]: https://clojure.org/reference/metadata
+[lein]: https://leiningen.org/
+[boot]: https://boot-clj.com/
+[clj]: https://clojure.org/guides/deps_and_cli
+[clojure tools]: https://betweentwoparens.com/blog/what-are-the-clojure-tools
+[2019 State of Clojure Community Report]: https://www.surveymonkey.com/results/SM-S9JVNXNQV/
+[:paths]: https://clojure.org/reference/deps_and_cli#_paths
+[:deps]: https://clojure.org/reference/deps_and_cli#_dependencies
+[:aliases]: https://clojure.org/reference/deps_and_cli#_aliases
+["-m"]: https://clojure.org/reference/deps_and_cli#_usage
+["-ro"]: https://clojurescript.org/reference/repl-options
+["-w"]: https://clojurescript.org/reference/repl-and-main
+["-c"]: https://clojurescript.org/reference/repl-and-main
+["-r"]: https://clojurescript.org/reference/repl-and-main
+[figwheel]: https://figwheel.org/
+[many features]: https://figwheel.org/
+[figwheel]: https://figwheel.org/config-options
+[ClojureScript compiler]: https://clojurescript.org/reference/compiler-options
+[:watch-dirs]: https://figwheel.org/config-options#watch-dirs
+[:css-dirs]: https://figwheel.org/config-options#css-dirs
+[:main]: https://clojurescript.org/reference/compiler-options#main
+[reloadable code]: https://figwheel.org/docs/reloadable_code.html
+[tricky and time consuming]: /students-of-the-game-reloadable-code
+[Reagent]: https://reagent-project.github.io/
+[Reagent component]: https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md
+[Example Reagent App]: https://github.com/robert-stuttaford/bridge
+[Example Full Featured Clojure(Script) App]: https://github.com/juxt/edge
+[ClojureScript 30]: https://github.com/athomasoriginal/clojurescript-30
+[Lambda Island - ClojureScript Tutorials]: https://lambdaisland.com/
+[Purely Functional TV - Clojure(Script) Tutorials]: https://purelyfunctional.tv/
+[Getting Clojure]: https://pragprog.com/book/roclojure/getting-clojure
+[Elements of Clojure]: https://leanpub.com/elementsofclojure
