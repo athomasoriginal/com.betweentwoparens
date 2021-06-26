@@ -30,7 +30,9 @@ class Welcome extends React.Component {
 }
 ```
 
-<aside class="blog-content__note">To be clear, Reagent components do not turn into <a class="blog-content__link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" rel="noopener noreferrer">ES6 class syntax</a>.  This is just an illustrative tool because ES6 classes are rapidly becoming more common than the alternative forms of writing classes that we shall see later in this post.</aside>
+::: note
+To be clear, Reagent components do not turn into [ES6 class syntax].  This is just an illustrative tool because ES6 classes are rapidly becoming more common than the alternative forms of writing classes that we shall see later in this post.
+:::
 
 Okay, so, Reagent components become React `Class Components`. Why do we care? This depth of understanding is valuable because it means we can better understand:
 
@@ -40,7 +42,9 @@ Okay, so, Reagent components become React `Class Components`. Why do we care? Th
 
 The result of all of this "fundamental" learning is we can more effectively harness JavaScript from within ClojureScript.
 
-<aside class="blog-content__note">I assume readers have a level of familiarity with ClojureScript, JavaScript and React. Please also note that understanding Reagent at this level is not required to be productive in Reagent.  Finally, as of <a class="blog-content__link" href="https://github.com/reagent-project/reagent/blob/master/CHANGELOG.md#100-alpha2-2020-05-13" rel="noopener noreferrer">Reagent 1.0.0</a> Reagent is capable of allowing developers to choose whether they want their components to be <code class="gatsby-code-text">class</code> or <code class="gatsby-code-text">function</code> components.  When this post was originally written, this was not possible and for many in the community it was an assumption that might have gone unnoticed.  None the less, the learnings here are still important!  So, the rest of this post is assuming that you have NOT enabled Reagent components to render as <code class="gatsby-code-text">function</code> components.</aside>
+::: note
+I assume readers have a level of familiarity with ClojureScript, JavaScript and React. Please also note that understanding Reagent at this level is not required to be productive in Reagent.  Finally, as of [Reagent 1.0.0] Reagent is capable of allowing developers to choose whether they want their components to be `class` or `function` components.  When this post was originally written, this was not possible and for many in the community it was an assumption that might have gone unnoticed.  None the less, the learnings here are still important!  So, the rest of this post is assuming that you have NOT enabled Reagent components to render as `function` components.
+:::
 
 ## A Pseudoclassical Pattern
 
@@ -103,7 +107,9 @@ class Welcome extends React.Component {
 }
 ```
 
-<aside class="blog-content__note">Yup, ES6 class syntax is a sexier <code class="gatsby-code-text">pseudoclassical instantiation pattern</code> and also a good example of what developers mean when they say <code class="gatsby-code-text">syntactic sugar</code>.  I should also mention that there are <i>some</i> differences between the two approaches listed above which means they are not 100% equivalent, but for most developers the differences are academic.  <strong>Fun time bonus:</strong> I encourage you checkout <a  class="blog-content__link" href="https://codesandbox.io/s/pseudoclassical-instantiation-pattern-sc0fk" target="_blank" rel="noopener noreferrer">this code sandbox</a> where I have setup live examples of both.</aside>
+::: note
+Yup, ES6 class syntax is a sexier `pseudoclassical instantiation pattern` and also a good example of what developers mean when they say `syntactic sugar`.  I should also mention that there are _some_ differences between the two approaches listed above which means they are not 100% equivalent, but for most developers the differences are academic.  **Fun time bonus:** I encourage you checkout [this code sandbox] where I have setup live examples of both.
+:::
 
 For those looking for further evidence, we can support our claim that `ES6 Classes` result in same thing as what the `pseudoclassical instantiation pattern` produces by using JavaScript's built-in introspection tools to compare the `pseudoclassical instantiation pattern` to the `ES6 class` syntax.
 
@@ -199,7 +205,9 @@ goog.extend(cmp, React.Component, staticMethods)
 cmp.prototype.constructor = cmp
 ```
 
-<aside class="blog-content__note">Note that the above is written in JavaScript where as Reagent's is written in ClojureScript. The reason I have done this is that I feel it can reach a broader audience when written in JS, but most importantly, the reader doesn't have to transform the code in their header from CLJS to JS which allows us to examine the work with less mental overhead.</aside>
+::: note
+Note that the above is written in JavaScript where as Reagent's is written in ClojureScript. The reason I have done this is that I feel it can reach a broader audience when written in JS, but most importantly, the reader doesn't have to transform the code in their header from CLJS to JS which allows us to examine the work with less mental overhead.
+:::
 
 What we have above is Reagents take on the `pseudoclassical instantiation pattern` with a few minor tweaks:
 
@@ -275,7 +283,9 @@ What the above shows is that `Welcome` is not a child of `React.component` even 
 
 Second, by `copying` rather than `linking` prototypes we could inccur a performance cost but again, in our case this cost is negligible.
 
-<aside class="blog-content__note">For those who want to know why the Reagent team chose to modify the pseudoclassical instantiation pattern I do not really have an answer.  At the end of the day, they do more or less the same things without any significant downsides<a href="#why-modify" aria-describedby="footnote-label" id="why-modify-ref">?</a></aside>
+::: note
+For those who want to know why the Reagent team chose to modify the pseudoclassical instantiation pattern I do not really have an answer.  At the end of the day, they do more or less the same things without any significant downsides<a href="#why-modify" aria-describedby="footnote-label" id="why-modify-ref">?</a>
+:::
 
 ## Conclusion
 
@@ -306,3 +316,7 @@ Less philosophically though, I find it encouraging to know that everything is, g
     </li>
   </ol>
 </aside>
+
+[ES6 class syntax]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+[Reagent 1.0.0]: https://github.com/reagent-project/reagent/blob/master/CHANGELOG.md#100-alpha2-2020-05-13
+[this code sandbox]: https://codesandbox.io/s/pseudoclassical-instantiation-pattern-sc0fk
