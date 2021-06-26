@@ -23,7 +23,9 @@ Now, when I first came to clojure, the answer to the above questions were, _"use
 
 This is where I hope this post will help by providing an overview of what the [Clojure CLI Tools] are, the problem they solve and how they compare to other tools like `lein` and `boot`.
 
-<aside class="blog-content__note">If you're interested in using the <code class="gatsby-code-text">Clojure CLI Tools</code> you can visit the <a class="blog-content__link" href="https://clojure.org/guides/getting_started" target="_blank" rel="noopener noreferrer">Official Getting Started Guide</a> or even <a class="blog-content__link" href="https://www.youtube.com/watch?v=5_q5pLoz9b0" target="_blank" rel="noopener noreferrer">watch this video</a> if you're using mac</aside>
+::: note
+If you're interested in using the `Clojure CLI Tools` you can visit the [Official Getting Started Guide] or even [watch this video] if you're using mac
+:::
 
 ## Clojure CLI Tools
 
@@ -95,7 +97,9 @@ As I said, it's a convenience wrapper.  The meat and potatoes of the `clj` tool 
 - resolves the dependencies and their transitive dependencies
 - builds a classpath
 
-<aside class="blog-content__note">Note that <strong>NEITHER</strong> <code class="gatsby-code-text">clj</code> or <code class="gatsby-code-text">tools.deps.alpha</code> are "building" clojure artifacts.</aside>
+::: note
+Note that **NEITHER** `clj` or `tools.deps.alpha` are "building" clojure artifacts.
+:::
 
 There isn't too much else going on here and the library itself is small enough that you can read it in an afternoon.  If you're interested in learning more I highly recommend listening to the [Clojure Weekly Podcast] featuring Alex Miller, the author of `tools.deps.alpha`, speak about the `Clojure CLI Tools`.
 
@@ -105,7 +109,9 @@ Continuing on, in order for `tools.deps.alpha` to know which dependencies you ne
 
 `deps.edn` allows you to specify project dependencies and configurations.  At it's heart, `deps.edn` is just an [edn] file.  You can think of it like Clojure's version of `json`.
 
-<aside class="blog-content__note">If you're from the JavaScript community, it can be helpful to think of this file like a <code class="gatsby-code-text">package.json</code> file</aside>
+::: note
+If you're from the JavaScript community, it can be helpful to think of this file like a `package.json` file
+:::
 
 `deps.edn` is just a [map] which accepts specific keywords.  Here is an example of _some_ of the common keywords:
 
@@ -141,11 +147,15 @@ In all likelihood, you would probably be fine with `brew install clojure`.  The 
 
 Let's end this conversation with a quick contextualization of `clj`, `lein` and `boot`.
 
-<aside class="blog-content__note">I won't dive into the history, for this I recommend the blog post <a class="blog-content__link" href="https://corfield.org/blog/2018/04/18/all-the-paths/" rel="noopener noreferrer">All the Paths</a> by Sean Corfield.</aside>
+::: note
+I won't dive into the history, for this I recommend the blog post [All the Paths] by Sean Corfield.
+:::
 
 The first point is that you will choose between _one_ of the three tools (`clj`, `lein`, or `boot`) for your project.  You don't use more than one.  Just like you wouldn't use both `boot` and `lein`, you won't use both `clj` and `boot` or `clj` and `lein`.  Furthermore, none of these tools should conflict with one another.
 
-<aside class="blog-content__note">Now, when I said that you don't actually combine more than one of these tools, this is not 100% true. Take for example the fact that the "build" story for <code class="gatsby-code-text">clj</code> is not as "easy" as <code class="gatsby-code-text">lein</code> which has led to examples of <a class="blog-content__link" href="https://github.com/oakes/full-stack-clj-example" rel="noopener noreferrer">clj calling to lein</a> just for the production builds of ones apps.  As of the latest update though, I have not found a need to do this for any of my Clojure or ClojureScript apps.</aside>
+::: note
+Now, when I said that you don't actually combine more than one of these tools, this is not 100% true. Take for example the fact that the "build" story for `clj` is not as "easy" as `lein` which has led to examples of [clj calling to lein] just for the production builds of ones apps.  As of the latest update though, I have not found a need to do this for any of my Clojure or ClojureScript apps.
+:::
 
 If you're curious which to choose, I think it's obvious that I would suggest `clj`.  The reason I like `clj` is because the tool is simple _and_ easy to use.  You can read through `clj` and `tools.deps.alpha` in an afternoon and understand what they are doing if you had to.  The same (subjectively of course) cannot be said for `lein` or `boot`.
 
@@ -210,3 +220,6 @@ So yes, `clj` for the win.
 [incredible tools]: https://github.com/clojure/tools.deps.alpha/wiki/Tools
 [#tools-deps]: https://clojurians.slack.com/archives/C6QH853H8
 [Clojurians Slack]: https://clojurians.slack.com/?redir=%2Fmessages%2F
+[Official Getting Started Guide]: https://clojure.org/guides/getting_started
+[watch this video]: https://www.youtube.com/watch?v=5_q5pLoz9b0
+[clj calling to lein]: https://github.com/oakes/full-stack-clj-example
