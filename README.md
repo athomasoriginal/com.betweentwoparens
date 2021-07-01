@@ -54,6 +54,11 @@ Be sure to have the following tools installed
   yarn install
   ```
   > Wait for everything to install before running the next step
+- Create a file called `.env`
+  ```command
+  CMS_URL="<fill-in-with-prismic-stuffs>"
+  ```
+  > create in the root of your repo
 - Start the project
   ```command
   yarn run dev

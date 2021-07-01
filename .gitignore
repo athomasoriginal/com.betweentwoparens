@@ -4,6 +4,7 @@
 # eleventy stuffs
 _site/
 dist
+.env
 
 # ignore JS generated output everywhere
 node_modules
