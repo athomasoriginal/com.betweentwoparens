@@ -21,7 +21,7 @@
     "prismjs": "1.24.0"
   },
   "scripts": {
-    "dev": "npx @11ty/eleventy --serve",
+    "dev": "eleventy --serve --port 8080 --output=dist",
     "dev:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy"
   }
