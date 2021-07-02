@@ -9,3 +9,5 @@ fields:
   label: Page Title
   description: Title of the page
   hidden: false
+pages:
+- src/_data/Home.md
