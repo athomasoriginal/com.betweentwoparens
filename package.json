@@ -1,9 +1,9 @@
 {
-  "name": "eee-o-eleven",
+  "name": "between-two-parens",
   "version": "0.0.0",
-  "description": "An eleventy template",
+  "description": "A site about life between two parens",
   "main": "index.js",
-  "repository": "git@github.com:athomasoriginal/eee-o-eleven.git",
+  "repository": "git@github.com:athomasoriginal/betweentwoparens.com.git",
   "author": "athomasoriginal <thomasmattacchione@gmail.com>",
   "license": "MIT",
   "devDependencies": {
