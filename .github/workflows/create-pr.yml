@@ -1,7 +1,7 @@
 name: Create PR
-on: repository_dispatch
+on: workflow_dispatch
 jobs:
-  createPullRequest:
+  create-pull-request:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
