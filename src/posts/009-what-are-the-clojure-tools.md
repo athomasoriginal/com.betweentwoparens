@@ -11,6 +11,10 @@ canonical: true
 summary: "It's not a build tool, it's clj."
 ---
 
+::: note
+Exciting news!  Cognitect has released a new Clojure Tool called [tools.build].  You can read the [official tools.build announcement] for more information.  When it's no longer in **pre-release** I will update this post to include it. 
+:::
+
 I like to begin learning new languages by understanding the tooling ecosystem.  For me, understanding the tools enables me to confidently focus on learning the language itself<a href="#my-way" aria-describedby="footnote-label" id="my-way-ref">.</a>  Thus, when I approach a new language, e.g. Clojure, I often start by asking questions like this:
 
 - How do I **install** Clojure?
@@ -223,3 +227,5 @@ So yes, `clj` for the win.
 [Official Getting Started Guide]: https://clojure.org/guides/getting_started
 [watch this video]: https://www.youtube.com/watch?v=5_q5pLoz9b0
 [clj calling to lein]: https://github.com/oakes/full-stack-clj-example
+[official tools.build announcement]: https://clojure.org/news/2021/07/09/source-libs-builds
+[tools.build]: https://github.com/clojure/tools.build
