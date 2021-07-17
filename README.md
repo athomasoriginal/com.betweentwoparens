@@ -10,6 +10,7 @@
   - [Frontmatter]
   - [Images]
   - [Article Notes]
+  - [Footnotes]
   - [Updating Blog Posts]
   - [Updating Blog Checklist]
 - [Blog Features]
@@ -121,6 +122,35 @@ Anything you like `in` here it _all_ works.
 ```
 
 This capability is setup in `eleventy.js`
+
+### Footnotes
+
+Footnotes are great when you have additional clarifying comments or want to credit someone else work etc. For this reason, I provide a quick way of adding footnotes to your blog posts.  The first is you need to add a footnote section at the bottom like this:
+
+```markdown
+::: footnotes
+// your footnotes here
+:::
+```
+
+Then you add your footnotes
+
+```markdown
+::: footnotes
+
+->->-> footnote#cljs-test
+content goes here
+->->->
+
+:::
+```
+
+> The `cljs-test` part of `footnote#cljs-test` becomes the html `id` value of the `a` and the `li`.
+
+Additional comments:
+
+- The above should produce an accessible footnote which includes aria-lables.
+- You do not need to manually add numbers to the footnotes. This is because we have setup the CSS to dynamically count your footnotes. Having said this, you do need to put them in the correct order in the aside section at the bottom.
 
 ### Updating Blog Posts
 
@@ -253,6 +283,7 @@ This section outlines the features our blog supports.  This is valuable because 
 - Images
   - All images live in the `images` dir and we use passthrough.
   - SVGs are separate
+- Custom Block - Footnotes
 
 ## Before Dev
 
@@ -307,6 +338,7 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 [Frontmatter]: #frontmatter
 [Images]: #images
 [Article Notes]: #article-notes
+[Footnotes]: #footnotes
 [Updating Blog Posts]: #updating-blog-posts
 [Updating Blog Checklist]: #updating-blog-checklist
 [Blog Features]: #blog-features

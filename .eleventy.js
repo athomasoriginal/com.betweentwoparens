@@ -29,6 +29,10 @@ const mdAnchorOpts = {
   level: [2],
 };
 
+const isEmpty = function (value) {
+  return !value || value == undefined || value == "" || value.length == 0;
+};
+
 // @note it appears that if you want custom fence html wrapping pre, code you
 // must overwrite the fence renderer as follows.  This is outlined in this issue
 // https://github.com/markdown-it/markdown-it/issues/269 and in addition, this is
@@ -169,6 +173,40 @@ module.exports = function (eleventyConfig) {
         } else {
           // closing tag
           return "</aside>";
+        }
+      },
+    })
+    .use(customContainer, "footnotes", {
+      validate: function (params) {
+        return params.trim() === "footnotes";
+      },
+      // @note ::: footnotes :::
+      render: function (tokens, idx) {
+        if (tokens[idx].nesting === 1) {
+          // opening tag
+          return "<aside class='footnote-container'><h3>Footnotes</h3><ol>";
+        } else {
+          // closing tag
+          return "</ol></aside>";
+        }
+      },
+    })
+    .use(customContainer, "footnote", {
+      marker: "->",
+      validate: function (params) {
+        return params.trim().split("#")[0] === "footnote";
+      },
+      // @note ::: footnotes ::: or ::: footnotes#id-arg :::
+      render: function (tokens, idx) {
+        var m = tokens[idx].info.trim().split("#");
+
+        if (tokens[idx].nesting === 1) {
+          // opening tag
+          let openTag = isEmpty(m[1]) ? "<li>" : `<li id=${m[1]}>`;
+          return openTag;
+        } else {
+          // closing tag
+          return `<a href='${m[1]}' aria-label='Back to content'>Back</a></li>`;
         }
       },
     });

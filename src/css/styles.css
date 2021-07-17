@@ -647,6 +647,11 @@ a[aria-label='Back to content']:hover {
   margin-top: 15px;
 }
 
+.footnote-container p {
+  margin-bottom: 0;
+  display: inline;
+}
+
 .blog-content__note p:first-of-type {
   margin-top: 0;
 }
