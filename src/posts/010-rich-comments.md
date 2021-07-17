@@ -157,27 +157,25 @@ The above is the [example Stuart provided] in his talk which provides us with so
 
 These are just a few examples of how to use a `Rich Comment Block`.  The most interesting part of the `Rich Comment Block` for me is that it's a tangible example of the pragmatism of Clojure.  In this case, the `comment macro` provides an additional mechanism for speeding up my workflow and making our code more maintainable overall because of the improved documentation and context we get from these comments.
 
-<aside>
-  <h3>Footnotes</h3>
-  <ol>
-    <li id="comments">
-      Of course, there are arguments on both sides about how much to use comments.  As I see it, don't shy away from them in the pursuit of "self documenting code" and also don't lean on them too heavily.
-      <a href="#comments-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="wonderful-life">
-      #itsAWonderfulLife
-      <a href="#wonderful-life-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="discard-comment-credit">
-      Much love to <a class="blog-content__link" href="https://twitter.com/seancorfield" target="_blank" rel="noopener noreferrer">Sean Corfield</a> for pointing out nesting and the spacing points for the discard comment.  Very cool!
-      <a href="#discard-comment-credit-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="example-comments">
-      Each example I provided in this post are really just my interpretations of how they may be used.  The author may have had a different intent.
-      <a href="#example-comments-ref" aria-label="Back to content">Back</a>
-    </li>
-  </ol>
-</aside>
+::: footnotes
+
+->->-> footnote#comments
+Of course, there are arguments on both sides about how much to use comments.  As I see it, don't shy away from them in the pursuit of "self documenting code" and also don't lean on them too heavily.
+->->->
+
+->->-> footnote#wonderful-life
+#itsAWonderfulLife
+->->->
+
+->->-> footnote#discard-comment-credit
+Much love to [Sean Corfield] for pointing out nesting and the spacing points for the discard comment.  Very cool!
+->->->
+
+->->-> footnote#example-comments
+Each example I provided in this post are really just my interpretations of how they may be used.  The author may have had a different intent.
+->->->
+
+:::
 
 [REPL]: https://clojure.org/guides/repl/introduction
 [immutable data structures]: https://clojure.org/about/functional_programming#_immutable_data_structures
@@ -204,3 +202,4 @@ These are just a few examples of how to use a `Rich Comment Block`.  The most in
 [tools.deps.alpha - Example 3]: https://github.com/clojure/tools.deps.alpha/blob/f94815dd55bdf5eb30ac8fa075c39e757cbbcca5/src/main/clojure/clojure/tools/deps/alpha/gen/pom.clj#L141
 [clojure.jdbc Example 4]: https://github.com/clojure/java.jdbc/blob/47a87036376ffa69f64cfa18d1f91cbb7e301199/src/test/clojure/clojure/java/jdbc_test.clj#L1279
 [bbatsov's community clojure style guide]: https://github.com/bbatsov/clojure-style-guide#comments
+[Sean Corfield]: https://twitter.com/seancorfield
