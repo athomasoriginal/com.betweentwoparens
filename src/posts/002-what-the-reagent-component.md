@@ -11,7 +11,7 @@ canonical: true
 summary: "It's time to uncover the truth about Reagent components."
 ---
 
-Did you know that when you write a [form-1](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-1-a-simple-function), [form-2](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-2--a-function-returning-a-function) or [form-3](https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-3-a-class-with-life-cycle-methods) Reagent component they all default<a href="#reagent-default-class" aria-describedby="footnote-label" id="reagent-default-class-ref"></a> to becoming React `class components`<a href="#reagent-components" aria-describedby="footnote-label" id="reagent-components-ref">?</a>
+Did you know that when you write a [form-1], [form-2] or [form-3] Reagent component they all default<a href="#reagent-default-class" aria-describedby="footnote-label" id="reagent-default-class-ref"></a> to becoming React `class components`<a href="#reagent-components" aria-describedby="footnote-label" id="reagent-components-ref">?</a>
 
 For example, if you were to write this `form-1` Reagent component:
 
@@ -37,7 +37,7 @@ To be clear, Reagent components do not turn into [ES6 class syntax].  This is ju
 Okay, so, Reagent components become React `Class Components`. Why do we care? This depth of understanding is valuable because it means we can better understand:
 
 - JavaScript, ES6 classes and the idea behind "syntax sugar"
-- React's strategy for [distinguishing class and function components](https://overreacted.io/how-does-react-tell-a-class-from-a-function/).
+- React's strategy for [distinguishing class and function components]
 - How ClojureScript interacts with JavaScript
 
 The result of all of this "fundamental" learning is we can more effectively harness JavaScript from within ClojureScript.
@@ -48,7 +48,7 @@ I assume readers have a level of familiarity with ClojureScript, JavaScript and 
 
 ## A Pseudoclassical Pattern
 
-The reason all of your Reagent components become `class components` is because all of the code you pass to Reagent is run through an internal Reagent function called [create-class](https://github.com/reagent-project/reagent/blob/88e9833be9c3135548d760286ffd84d88a0a0489/src/reagent/impl/component.cljs#L289).  The interesting part of this is _how_ `create-class` uses JavaScript mechanics to transform the Reagent component you wrote into something that is recognized as a React class component.  Before we look into what `create-class` is doing, it's helpful to review how "classes" work in JavaScript.
+The reason all of your Reagent components become `class components` is because all of the code you pass to Reagent is run through an internal Reagent function called [create-class].  The interesting part of this is _how_ `create-class` uses JavaScript mechanics to transform the Reagent component you wrote into something that is recognized as a React class component.  Before we look into what `create-class` is doing, it's helpful to review how "classes" work in JavaScript.
 
 Prior to ES6, JavaScript did not have classes<a href="#javascript-es6-classes" aria-describedby="footnote-label" id="javascript-es6-classes-ref">.</a>  and this made _some_ JS developers sad because classes are a common pattern used to structure ones code and provide mechanisms for:
 
@@ -56,9 +56,9 @@ Prior to ES6, JavaScript did not have classes<a href="#javascript-es6-classes" a
 - inheritance
 - polymorphism
 
-But as I said, prior to ES6, JavaScript did not have a formal syntax for "classes".  This led the JavaScript community to develop a [series of instantiation patterns](http://nick.balestra.ch/2015/classes-and-instantiation-patterns-in-javascript/) to help _simulate_ classes.
+But as I said, prior to ES6, JavaScript did not have a formal syntax for "classes".  This led the JavaScript community to develop a [series of instantiation patterns] to help _simulate_ classes.
 
-Of all of these patterns, the `pseudoclassical instantiation pattern` became one of the most popular ways to simulate a class in JavaScript.  This is evidenced by the fact that many of the "first generation" JavaScript libraries and frameworks, like [google closure library](https://developers.google.com/closure/library/) and [backbone](https://backbonejs.org/), are written in this style.
+Of all of these patterns, the `pseudoclassical instantiation pattern` became one of the most popular ways to simulate a class in JavaScript.  This is evidenced by the fact that many of the "first generation" JavaScript libraries and frameworks, like [google closure library] and [backbone], are written in this style.
 
 The reason we are going over this history is because the thing about a programming language is there are "patterns" and "syntax".  The challenge with "patterns" is:
 
@@ -279,7 +279,7 @@ console.log(Welcome.prototype.isPrototypeOf(welcome))
 // is Welcome is the ancestory?
 ```
 
-What the above shows is that `Welcome` is not a child of `React.component` even though it has all the properties and methods that `React.Component` has.  This is why were lucky that React is smart about detecting [class vs. function components](https://overreacted.io/how-does-react-tell-a-class-from-a-function/).
+What the above shows is that `Welcome` is not a child of `React.component` even though it has all the properties and methods that `React.Component` has.  This is why were lucky that React is smart about detecting [class vs. function components].
 
 Second, by `copying` rather than `linking` prototypes we could inccur a performance cost but again, in our case this cost is negligible.
 
@@ -315,6 +315,15 @@ If your curious as to why there is an [official response] from the current maint
 
 :::
 
+[form-1]: https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-1-a-simple-function
+[form-2]: https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-2--a-function-returning-a-function
+[form-3]: https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#form-3-a-class-with-life-cycle-methods
+[distinguishing class and function components]: https://overreacted.io/how-does-react-tell-a-class-from-a-function/
+[create-class]: https://github.com/reagent-project/reagent/blob/88e9833be9c3135548d760286ffd84d88a0a0489/src/reagent/impl/component.cljs#L289
+[series of instantiation patterns]: http://nick.balestra.ch/2015/classes-and-instantiation-patterns-in-javascript/
+[google closure library]: https://developers.google.com/closure/library/
+[backbone]: https://backbonejs.org/
+[class vs. function components]: https://overreacted.io/how-does-react-tell-a-class-from-a-function/
 [ES6 class syntax]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 [Reagent 1.0.0]: https://github.com/reagent-project/reagent/blob/master/CHANGELOG.md#100-alpha2-2020-05-13
 [this code sandbox]: https://codesandbox.io/s/pseudoclassical-instantiation-pattern-sc0fk
