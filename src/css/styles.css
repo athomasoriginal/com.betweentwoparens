@@ -469,9 +469,6 @@ They are: notes, code blocks, lists */
 .blog-content .social-icons__list {
   margin: 0;
 }
-.blog-content aside {
-  margin: 20px 0 30px 0;
-}
 
 .blog-content__headline {
   grid-area: content-title;
