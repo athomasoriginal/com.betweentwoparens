@@ -162,7 +162,7 @@ To run our Clojure(Script) project with `clj` we first need to setup our `deps.e
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.844"}}
+ {org.clojure/clojurescript {:mvn/version "1.10.866"}}
 
  :aliases
  {:dev {:main-opts ["-m"  "cljs.main"
@@ -232,7 +232,7 @@ It starts by adding figwheel as a dependency. We do this by opening the `deps.ed
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.844"}
+ {org.clojure/clojurescript {:mvn/version "1.10.866"}
 
   com.bhauman/figwheel-main {:mvn/version "0.2.13"}}
 
@@ -277,7 +277,7 @@ The command we were using to run our app, `clj -M:dev`, is still not using figwh
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.844"}
+ {org.clojure/clojurescript {:mvn/version "1.10.866"}
 
   com.bhauman/figwheel-main {:mvn/version "0.2.13"}}
 
@@ -390,11 +390,11 @@ In addition to adding Reagent we are going to update our `deps.edn`, `html`, `cs
  ["src" "tests" "resources"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.844"}
+ {org.clojure/clojurescript {:mvn/version "1.10.866"}
 
   com.bhauman/figwheel-main  {:mvn/version "0.2.13"}
 
-  reagent                   {:mvn/version "0.10.0"}}
+  reagent                   {:mvn/version "1.1.0"}}
 
 
  :aliases
