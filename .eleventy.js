@@ -145,12 +145,7 @@ module.exports = function (eleventyConfig) {
         (attr) => attr[0] === "href"
       );
 
-      if (
-        href &&
-        !href.includes("franknoirot.co") &&
-        !href.startsWith("/") &&
-        !href.startsWith("#")
-      ) {
+      if (href && !href.startsWith("/") && !href.startsWith("#")) {
         tokens[idx].attrPush(["target", "_blank"]);
         tokens[idx].attrPush(["rel", "noopener noreferrer"]);
       }
