@@ -125,32 +125,31 @@ This capability is setup in `eleventy.js`
 
 ### Footnotes
 
-Footnotes are great when you have additional clarifying comments or want to credit someone else work etc. For this reason, I provide a quick way of adding footnotes to your blog posts.  The first is you need to add a footnote section at the bottom like this:
+Footnotes are great when you have additional clarifying comments or want to credit someone else work etc. For this reason, I provide a quick way of adding footnotes to your blog posts:
 
-```markdown
-::: footnotes
-// your footnotes here
-:::
-```
+- Add the footnotes section
+  ```markdown
+  ::: footnotes
+  // your footnotes here
+  :::
+  ```
+  > You only need to do this once.
+- Add your footnotes to the footnotes section
+  ```markdown
+  ::: footnotes
 
-Then you add your footnotes
+  ->->-> footnote#cljs-test
+  content goes here
+  ->->->
 
-```markdown
-::: footnotes
-
-->->-> footnote#cljs-test
-content goes here
-->->->
-
-:::
-```
-
-> The `cljs-test` part of `footnote#cljs-test` becomes the html `id` value of the `a` and the `li`.
+  :::
+  ```
+  > The `cljs-test` part of `footnote#cljs-test` becomes the html `id` value of the `a` and the `li`.
 
 Additional comments:
 
 - The above should produce an accessible footnote which includes aria-lables.
-- You do not need to manually add numbers to the footnotes. This is because we have setup the CSS to dynamically count your footnotes. Having said this, you do need to put them in the correct order in the aside section at the bottom.
+- You do not need to manually add numbers to the footnotes. This is because we have setup the CSS to dynamically count your footnotes. Having said this, you do need to put them in the correct order in the `::: footnotes` section at the bottom of the file.
 
 ### Updating Blog Posts
 
