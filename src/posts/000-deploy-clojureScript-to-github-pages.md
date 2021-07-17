@@ -190,44 +190,41 @@ As I noted in the beginning, this is a minimal example without 3rd party build t
 Hopefully you did not run into any issues, but if you did please head over to [my demo project] where I try to identify and help to resolve some gotchas.  Experience something new?  Please feel free to get in touch and I would be happy to help work through the issue with you.
 :::
 
-<aside>
-  <h3>Footnotes</h3>
-  <ol>
-    <li id="fn-step-1-commit">
-      <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commit/90156bf57c1b80bd2e125909e8e7a584a53538c2" target="_blank" rel="noopener noreferrer">Commit</a>
-      <a href="#fn-step-1-commit-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="fn-step-2-commit">
-      <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commit/db9371431ab3288233cc5ec7ecd32f6c449c8d54" target="_blank" rel="noopener noreferrer">Commit</a>
-      <a href="#fn-step-2-commit-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="fn-deps">
-       <code class="gatsby-code-text">deps.edn</code> is a newer, more beginner friendly way of setting up a Clojure(script) project.  Other popular alternatives include using tools like <a class="blog-content__link" href="https://leiningen.org/" target="_blank" rel="noopener noreferrer">lein</a> or <a class="blog-content__link" href="https://boot-clj.com/" target="_blank" rel="noopener noreferrer">boot</a>.  Having said this, I recommend using <code class="gatsby-code-text">deps.edn</code>.
-      <a href="#fn-deps-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="fn-step-3-commit">
-      <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commit/575c634dc770da7000787e6feb0ed7757e505309" target="_blank" rel="noopener noreferrer">Commit</a>
-      <a href="#fn-step-3-commit-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="fn-src-dir">
-      The reason we are creating a  <code class="gatsby-code-text">demo</code> dir nested in a  <code class="gatsby-code-text">src</code> dir is because in Clojure(script) it's preferred to multi-segment our namespaces. This is both for <a class="blog-content__link" href="https://github.com/bbatsov/clojure-style-guide#no-single-segment-namespaces" target=" _blank" rel="noopener noreferrer">stylistic</a>  and <a class="blog-content__link" href="https://stackoverflow.com/questions/13567078/whats-wrong-with-single-segment-namespaces" target=" _blank" rel="noopener noreferrer">technical</a> reasons.
-      <a href="#fn-src-dir-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="fn-step-4-commit">
-      <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commit/347c5580c55a80352179c39f2ce37d164bbc860c" target="_blank" rel="noopener noreferrer">Commit</a>
-      <a href="#fn-step-4-commit-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="fn-project-name">
-      We are referencing  <code class="gatsby-code-text">demo-clojurescript-gh-pages</code> in our <code class="gatsby-code-text">index.html</code> and as the  <a class="blog-content__link" href="https://clojurescript.org/reference/compiler-options#output-dir" target=" _blank" rel="noopener noreferrer">-d or :output-dir flag</a> for our development bundle.  The is because when our code is served from Github Pages it's going to be served from <code class="gatsby-code-text">https://username.github.io/project-name/</code> where <code class="gatsby-code-text">project-name</code> is the name of <a class="blog-content__link" href="https://athomasoriginal.github.io/demo-clojurescript-gh-pages/" target=" _blank" rel="noopener noreferrer">our Github repo</a>.  This means that in order to serve our site in development and production, without having two script tags in our <code class="gatsby-code-text">index.html</code> we sync with what its called in production so we only have to set it once.  There are other ways to achieve this, but with a goal of minimalism in mind, I feel this will do.</a>
-      <a href="#fn-project-name-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="fn-versioned-dependencies">
-      When you run the development or production build commands they will generate a bunch of code we do not need to version control.  For example, a <code class="gatsby-code-text">.cpcache</code>, <code class="gatsby-code-text">demo-clojurescript-gh-pages/out</code> and <code class="gatsby-code-text">out</code> dirs.  The only files you need to version control are the ones I have <a class="blog-content__link" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages/tree/master" target="_blank" rel="noopener noreferrer">here</a>.  The other ones can be ignored.  If you're curious what that that looks like I have created a <a class="blog-content__link"  target="_blank" href="https://github.com/athomasoriginal/demo-clojurescript-gh-pages/tree/level-2-what-to-version-control" rel="noopener noreferrer">level 2</a> branch to show you.
-      <a href="#fn-versioned-dependencies-ref" aria-label="Back to content">Back</a>
-    </li>
+:::footnotes
 
-  </ol>
-</aside>
+->->-> footnote#fn-step-1-commit
+[commit 90156b]
+->->->
+
+->->-> footnote#fn-step-2-commit
+[commit db9371]
+->->->
+
+->->-> footnote#fn-deps
+`deps.edn` is a newer, more beginner friendly way of setting up a Clojure(script) project.  Other popular alternatives include using tools like [leiningen] and [boot] Having said this, I recommend using `deps.edn`.
+->->->
+
+->->-> footnote#fn-step-3-commit
+[commit 575c63]
+->->->
+
+->->-> footnote#fn-src-dir
+The reason we are creating a `demo` dir nested in a `src` dir is because in Clojure(script) it's preferred to multi-segment our namespaces.  This is both for [stylistic] and [technical] reasons.
+->->->
+
+->->-> footnote#fn-step-4-commit
+[commit 347c55]
+->->->
+
+->->-> footnote#fn-project-name
+We are referencing `demo-clojurescript-gh-pages` in our `index.html` and as the [-d or :output-dir flag] for our development bundle.  This is because when our code is served from Github Pages it's going to be served from `https://username.github.io/project-name/` where `project-name` is the name of our [gh pages clojurescript repo]. This means that in order to serve our site in development and production, without having two script tags in our `index.html` we sync with what its called in production so we only have to set it once.  There are other ways to achieve this, but with a goal of minimalism in mind, I feel this will do.
+->->->
+
+->->-> footnote#fn-versioned-dependencies
+When you run the development or production build commands they will generate a bunch of code we do not need to version control.  For example, a `.cpcache`, `demo-clojurescript-gh-pages/out`, and `out` dirs.  The only files you need to version control are the ones I have in [gh pages clojurescript repo].  The other ones can be ignored.  If you're curious what that that looks like I have created a [level 2] branch to show you.
+->->->
+
+:::
 
 
 [Elm]: https://elm-lang.org
@@ -237,3 +234,14 @@ Hopefully you did not run into any issues, but if you did please head over to [m
 [Github Pages Quickstart]: https://pages.github.com/
 [commit]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commits/master
 [my demo project]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages
+[commit 90156b]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commit/90156bf57c1b80bd2e125909e8e7a584a53538c2
+[commit db9371]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commit/db9371431ab3288233cc5ec7ecd32f6c449c8d54
+[commit 575c63]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commit/575c634dc770da7000787e6feb0ed7757e505309
+[leiningen]: https://leiningen.org/
+[boot]: https://boot-clj.com/
+[stylistic]: https://github.com/bbatsov/clojure-style-guide#no-single-segment-namespaces
+[technical]: https://stackoverflow.com/questions/13567078/whats-wrong-with-single-segment-namespaces
+[commit 347c55]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages/commit/347c5580c55a80352179c39f2ce37d164bbc860c
+[-d or :output-dir flag]: https://clojurescript.org/reference/compiler-options#output-dir
+[gh pages clojurescript repo]: https://athomasoriginal.github.io/demo-clojurescript-gh-pages/
+[level 2]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages/tree/level-2-what-to-version-control
