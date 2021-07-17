@@ -12,7 +12,7 @@ summary: "It's not a build tool, it's clj."
 ---
 
 ::: note
-Exciting news!  Cognitect has released a new Clojure Tool called [tools.build].  You can read the [official tools.build announcement] for more information.  When it's no longer in **pre-release** I will update this post to include it. 
+Exciting news!  Cognitect has released a new Clojure Tool called [tools.build].  You can read the [official tools.build announcement] for more information.  When it's no longer in **pre-release** I will update this post to include it.
 :::
 
 I like to begin learning new languages by understanding the tooling ecosystem.  For me, understanding the tools enables me to confidently focus on learning the language itself<a href="#my-way" aria-describedby="footnote-label" id="my-way-ref">.</a>  Thus, when I approach a new language, e.g. Clojure, I often start by asking questions like this:
@@ -169,35 +169,33 @@ Finally, when it comes to managing your project configurations and building out 
 
 So yes, `clj` for the win.
 
-<aside>
-  <h3>Footnotes</h3>
-  <ol>
-    <li id="my-way">
-      This point is more nuanced than it appears and could also warrant a post of it's own.  Just note that this is my process.  I don't recommend it to everyone.
-      <a href="#my-way-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="cli-tool-v-dev-tools">
-      In earlier versions of this blog post I referred to the <code class="gatsby-code-text">Clojure CLI Tools</code> as <code class="gatsby-code-text">Clojure Tools</code>.  The reason I now refer to them as the "Clojure CLI Tools" is because on August 21, 2020 it was announced in Clojurians (The official Clojure Slack Org) that cognitect released a free set of tools called <a class="blog-content__link" href="https://cognitect.com/dev-tools/index.html" target="_blank" rel="noopener noreferrer">Cognitect Dev Tools</a>.  Thus, I made the change to be very clear that there is a difference.
-      <a href="#cli-tool-v-dev-tools-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="clojure-tools-simple">
-      I feel this was true for me because their role in the Clojure ecosystem tooling setup is deceptively simple and focused.
-      <a href="#clojure-tools-simple-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="clj-calls-clojure-note">
-      You can see this <a class="blog-content__link" href="https://github.com/clojure/brew-install/blob/1.10.1/src/main/resources/clj#L4" target="_blank" rel="noopener noreferrer">here</a>.
-      <a href="#clj-calls-clojure-note-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="when-to-use-clojure-script">
-      Of course, production scripts are not the only times you would want to use the <code class="gatsby-code-text">clojure</code> command.  Other times include when you are combining it with other tools e.g. emacs.  In general, if you are finding the <code class="gatsby-code-text">clj</code> command is causing some headaches when composing tools, give <code class="gatsby-code-text">clojure</code> a try.  Thanks, sogaiu for the tip!
-      <a href="#when-to-use-clojure-script-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="monorepo-comment">
-      To clarify the "monorepo" comment: Choosing a sane structure for your monorepo is important to making this work.  I have a personal project which has 4 or 5 sub-projects and I have not run into any issues as of yet.  I would eventually love to write about my approach, but until then checkout Sean Corfield's Blog Post about <a class="blog-content__link" href="https://corfield.org/blog/2021/02/23/deps-edn-monorepo/" target="_blank" rel="noopener noreferrer">Clojure Monorepo using Clojure CLI Tools</a>.
-      <a href="#monorepo-comment-ref" aria-label="Back to content">Back</a>
-    </li>
-  </ol>
-</aside>
+::: footnotes
+
+->->-> footnote#my-way
+This point is more nuanced than it appears and could also warrant a post of it's own.  Just note that this is my process.  I don't recommend it to everyone.
+->->->
+
+->->-> footnote#cli-tool-v-dev-tools
+In earlier versions of this blog post I referred to the `Clojure CLI Tools` as `Clojure Tools`.  The reason I now refer to them as the "Clojure CLI Tools" is because on August 21, 2020 it was announced in Clojurians (The official Clojure Slack Org) that cognitect released a free set of tools called [Cognitect Dev Tools].  Thus, I made the change to be very clear that there is a difference.
+->->->
+
+->->-> footnote#clojure-tools-simple
+I feel this was true for me because their role in the Clojure ecosystem tooling setup is deceptively simple and focused.
+->->->
+
+->->-> footnote#clj-calls-clojure-note
+You can see this [brew install script]
+->->->
+
+->->-> footnote#when-to-use-clojure-script
+Of course, production scripts are not the only times you would want to use the `clojure` command.  Other times include when you are combining it with other tools e.g. emacs.  In general, if you are finding the `clj` command is causing some headaches when composing tools, give `clojure` a try.  Thanks, sogaiu for the tip!
+->->->
+
+->->-> footnote#monorepo-comment
+To clarify the "monorepo" comment: Choosing a sane structure for your monorepo is important to making this work.  I have a personal project which has 4 or 5 sub-projects and I have not run into any issues as of yet.  I would eventually love to write about my approach, but until then checkout Sean Corfield's Blog Post about [Clojure Monorepo using Clojure CLI Tools].
+->->->
+
+:::
 
 [lein]: https://leiningen.org/
 [boot]: https://boot-clj.com/
@@ -229,3 +227,6 @@ So yes, `clj` for the win.
 [clj calling to lein]: https://github.com/oakes/full-stack-clj-example
 [official tools.build announcement]: https://clojure.org/news/2021/07/09/source-libs-builds
 [tools.build]: https://github.com/clojure/tools.build
+[Cognitect Dev Tools]: https://cognitect.com/dev-tools/index.html
+[brew install script]: https://github.com/clojure/brew-install/blob/1.10.1/src/main/resources/clj#L4
+[Clojure Monorepo using Clojure CLI Tools]: https://corfield.org/blog/2021/02/23/deps-edn-monorepo/
