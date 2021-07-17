@@ -142,6 +142,10 @@ module.exports = function (eleventyConfig) {
     ul: true,
   });
 
+  // @todo this is terrible.  It's a container to hold the current footnote value
+  // for the custom markdown block further down in this file.
+  let currentTag;
+
   // @configuration configure and add custom markdown parsing library
   const markdownLibrary = markdownIt
     .use(mdIterator, "url_new_win", "link_open", function (tokens, idx) {
@@ -198,15 +202,16 @@ module.exports = function (eleventyConfig) {
       },
       // @note ::: footnotes ::: or ::: footnotes#id-arg :::
       render: function (tokens, idx) {
-        var m = tokens[idx].info.trim().split("#");
-
         if (tokens[idx].nesting === 1) {
           // opening tag
-          let openTag = isEmpty(m[1]) ? "<li>" : `<li id=${m[1]}>`;
+          currentTag = tokens[idx].info.trim().split("#");
+          let openTag = isEmpty(currentTag[1])
+            ? "<li>"
+            : `<li id=${currentTag[1]}>`;
           return openTag;
         } else {
           // closing tag
-          return `<a href='${m[1]}' aria-label='Back to content'>Back</a></li>`;
+          return `<a href='#${currentTag[1]}-ref' aria-label='Back to content'>Back</a></li>`;
         }
       },
     });
