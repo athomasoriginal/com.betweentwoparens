@@ -119,17 +119,15 @@ For each of the plugins listed below you will have to install them.  If you have
 
 Remember that no matter what language you choose, there are going to be a ton of micro decisions to make.  The important thing in the beginning is to focus on the language and the learning process and not stress over the tooling.  Be good to yourself in your learning journey and try not to obsess over all the details or aligning to the _ideal programmer_ stereotype.
 
+::: footnotes
 
-<aside>
-  <h3>Footnotes</h3>
-  <ol>
-    <li id="popular-editors">
-      This list is based on the <a class="blog-content__link" href="https://clojure.org/news/2021/04/06/state-of-clojure-2021" target="_blank" rel="noopener noreferrer">2021 State of Clojure Survey</a>.
-      <a href="#popular-editors-ref" aria-label="Back to content">Back</a>
-    </li>
-  </ol>
-</aside>
+->->-> footnote#popular-editors
+This list is based on the [2021 State of Clojure Survey].
+->->->
+
+:::
 
 [Atom Setup Guide Video Series]: https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp.
 [Setup Atom for Clojure Development]: https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp
 [Checkout this guide]: https://flight-manual.atom.io/using-atom/sections/atom-packages/
+[2021 State of Clojure Survey]: https://clojure.org/news/2021/04/06/state-of-clojure-2021
