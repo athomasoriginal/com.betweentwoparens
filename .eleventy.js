@@ -169,8 +169,6 @@ module.exports = function (eleventyConfig) {
       // html, in this case `blah`, into the html structure and then close it off
       // when it sees :::
       render: function (tokens, idx) {
-        var m = tokens[idx].info.trim();
-
         if (tokens[idx].nesting === 1) {
           // opening tag
           return '<aside class="blog-content__note">';
