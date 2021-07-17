@@ -27,7 +27,7 @@ With this in mind, let's start coding.
 The rest of this article assumes that you have a Github account. If you don't, no worries. Take a moment and [create one for free] or just sit back and enjoy the read. For those who want to adventure with me, go through Github's official [Github Pages Quickstart] for projects and follow it exactly.  Note that throughout this post I will have footnotes referencing [my demo project] which has each step mirrored by its corresponding [commit]. Please lean on them if you feel lost at any point.
 :::
 
-Let's start by getting Clojure setup on your local machine. To do this, visit the [ClojureScript Quickstart](https://clojurescript.org/guides/quick-start) and follow the instructions there.
+Let's start by getting Clojure setup on your local machine. To do this, visit the [ClojureScript Quickstart] and follow the instructions there.
 
 Not sure if you have everything setup properly? We can run a quick sanity check in your terminal by executing the following command:
 
@@ -245,3 +245,4 @@ When you run the development or production build commands they will generate a b
 [-d or :output-dir flag]: https://clojurescript.org/reference/compiler-options#output-dir
 [gh pages clojurescript repo]: https://athomasoriginal.github.io/demo-clojurescript-gh-pages/
 [level 2]: https://github.com/athomasoriginal/demo-clojurescript-gh-pages/tree/level-2-what-to-version-control
+[ClojureScript Quickstart]: https://clojurescript.org/guides/quick-start
