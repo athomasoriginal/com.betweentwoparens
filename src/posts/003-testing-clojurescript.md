@@ -568,27 +568,24 @@ The goal here was to layout some context.  Point you to tools and explore how an
 
 Finally, there is no "right" or "wrong" testing tool.  Start.  Figure out what works and what doesn't work and then iterate.  Have fun!
 
-<aside>
-  <h3>Footnotes</h3>
-  <ol>
-    <li id="cljs-test">
-      It is also maintained by the ClojureScript core team you can feel confident that it is a healthy tool to use.
-      <a href="#cljs-test-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="test-add-fn">
-      You can name the test anything you like. There are many idiomatic conventions for this so I recommend you do a little research into naming/structuring tests and find one that aligns with your sensibilities.
-      <a href="#test-add-fn-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="doo-runner">
-      I have used doo in production apps and have found that this tool is not as useful as I would like it to be.  You may here it recommended, but I believe these are based on what used to be available, which was not nearly as much as of now (2019-2020).
-      <a href="#doo-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="jest-clojurescript">
-      This is a viable option, but probably needs a little work for it perform well as your project scales.  The other downside is you are opting out of the ClojureScript ecosystem a little can be frustrating.  This is the reason that while I explored this option, I opted for stay in the CLJS ecosystem.
-      <a href="#jest-clojurescript-ref" aria-label="Back to content">Back</a>
-    </li>
-  </ol>
-</aside>
+::: footnotes
+
+->->-> footnote#cljs-test
+It is also maintained by the ClojureScript core team you can feel confident that it is a healthy tool to use.
+->->->
+
+->->-> footnote#test-add-fn
+You can name the test anything you like. There are many idiomatic conventions for this so I recommend you do a little research into naming/structuring tests and find one that aligns with your sensibilities.
+->->->
+
+->->-> footnote#doo-runner
+I have used doo in production apps and have found that this tool is not as useful as I would like it to be.  You may here it recommended, but I believe these are based on what used to be available, which was not nearly as much as of now (2019-2020).
+->->->
+
+->->-> footnote#jest-clojurescript
+This is a viable option, but probably needs a little work for it perform well as your project scales.  The other downside is you are opting out of the ClojureScript ecosystem a little can be frustrating.  This is the reason that while I explored this option, I opted for stay in the CLJS ecosystem.
+->->->
+:::
 
 [create reagent app]: https://github.com/athomasoriginal/create-reagent-app
 [Setup Clojure(Script)]: https://www.youtube.com/watch?v=P60dMljS-OM&list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA
