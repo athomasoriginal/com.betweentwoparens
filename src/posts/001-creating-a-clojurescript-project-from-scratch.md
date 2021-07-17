@@ -448,9 +448,10 @@ A little about the above:
 - `app` is our first example of a [Reagent component]
 - `mount` a function. When called, it will display our `time-dive` app
 - `re-render` a function with a hook. When called, it reloads our app. It supports the HMR part
+- `defonce` is used to control side effects.
 
 ::: note
-Remember figwheel hooks from the previous section?  The above is us using them with Reagent to achieve HMR.
+A little more about `defonce`:  When your app re-loads through figwheels HMR the code in the file will rerun.  So, if instead of `start-up` we just called `(mount)`, `mount` would rerun every time the file changes.  Instead, we want to control this process.  We want to say:  when the file runs there are things I want to do only the first time and things I want to happen every other time.  This is called writing reloadable code.  See [Students of The Game: Reloadable Code].
 :::
 
 Last step: open up `style.css` and change the `body` tag to `#root`
@@ -613,3 +614,4 @@ I believe the difference between ClojureScript and Figwheel options is a great s
 [commit 4b6b65]: https://github.com/athomasoriginal/demo-clojurescript-app/commit/4b6b656323ea5cda9edb9265e61e49de6d9f7cfc
 [commit 4c8cbd]: https://github.com/athomasoriginal/demo-clojurescript-app/commit/4c8cbd67dcc24d0365feb25bf511e03cba0fcf36
 [commit e1cf66]: https://github.com/athomasoriginal/demo-clojurescript-app/commit/e1cf66d7ed1973d4fa1ec1091c0cbe16e61cf4b4
+[Students of The Game: Reloadable Code]: https://betweentwoparens.com/blog/students-of-the-game:-reloadable-code/
