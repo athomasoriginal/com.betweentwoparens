@@ -410,15 +410,13 @@ And with that we have successfully deployed our ClojureScript app to our own `Ng
 
 Again, my hope is to outline a piece of the process.  Let me know if this helped!
 
-<aside>
-  <h3>Footnotes</h3>
-  <ol>
-    <li id="why-docker">
-      The reason I am using docker is because I want to reach as many OS's as I can and I feel that docker is pretty standard.  If I did not use docker, I would just write this with shell scripts because this work is straightforward and does not require much more than that, but perhaps it would be fun to write a CLJS node script in the future to show what that would look like.
-      <a href="#why-docker-ref" aria-label="Back to content">Back</a>
-    </li>
-  </ol>
-</aside>
+::: footnotes
+
+->->-> footnote#why-docker
+The reason I am using docker is because I want to reach as many OS's as I can and I feel that docker is pretty standard.  If I did not use docker, I would just write this with shell scripts because this work is straightforward and does not require much more than that, but perhaps it would be fun to write a CLJS node script in the future to show what that would look like.
+->->->
+
+:::
 
 
 [Nginx]: https://www.nginx.com/
