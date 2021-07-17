@@ -295,28 +295,28 @@ However, I think the biggest thing for me is something I referenced a few times 
 
 Less philosophically though, I find it encouraging to know that everything is, generally speaking, JavaScript under the hood.  This is important because it allows us to take advantage of what has come before and really dig into interesting ways we can use and manipulate JS from within CLJS.
 
-<aside>
-  <h3>Footnotes</h3>
-  <ol>
-    <li id="reagent-default-class">
-      I say "default" because prior to version xx of Reagent you did not have a choice between class or function components.
-      <a href="#reagent-default-class-ref" aria-label="Back to content"s>Back</a>
-    </li>
-    <li id="reagent-components">
-      This is <a class="blog-content__link" href="https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#final-note" target="_blank" rel="noopener noreferrer">briefly touched on</a> in Reagents component guide but they do not explicitly use the words <code class="gatsby-code-text">React class component</code> which means that it is easy to miss the implication of this point. Hence this blog post.
-      <a href="#reagent-components-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="javascript-es6-classes">
-      It is important to note that even with ES6 class syntax JavaScript still does not have classes in the traditional sense.
-      <a href="#javascript-es6-classes-ref" aria-label="Back to content">Back</a>
-    </li>
-    <li id="why-modify">
-      If your curious as to why there is an <a class="blog-content__link" href="https://github.com/reagent-project/reagent/pull/437#issuecomment-520943315" target="_blank" rel="noopener noreferrer">official response</a> from the current maintainer of the Reagent to this post.
-      <a href="#why-modify-ref" aria-label="Back to content">Back</a>
-    </li>
-  </ol>
-</aside>
+::: footnotes
+
+->->-> footnote#reagent-default-class
+I say "default" because prior to version xx of Reagent you did not have a choice between class or function components.
+->->->
+
+->->-> footnote#reagent-components
+This is [briefly touched on] in Reagents component guide but they do not explicitly use the words `React class component` which means that it is easy to miss the implication of this point. Hence this blog post.
+->->->
+
+->->-> footnote#javascript-es6-classes
+It is important to note that even with ES6 class syntax JavaScript still does not have classes in the traditional sense.
+->->->
+
+->->-> footnote#why-modify
+If your curious as to why there is an [official response] from the current maintainer of the Reagent to this post from the current maintainer of the Reagent to this post.
+->->->
+
+:::
 
 [ES6 class syntax]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 [Reagent 1.0.0]: https://github.com/reagent-project/reagent/blob/master/CHANGELOG.md#100-alpha2-2020-05-13
 [this code sandbox]: https://codesandbox.io/s/pseudoclassical-instantiation-pattern-sc0fk
+[briefly touched on]: https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#final-note
+[official response]: https://github.com/reagent-project/reagent/pull/437#issuecomment-520943315
