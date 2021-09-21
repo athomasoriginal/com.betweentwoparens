@@ -17,31 +17,32 @@ You can read the [official tools.build announcement] for more information.
 When it's no longer in **pre-release** I will update this post to include it.
 :::
 
-I like to begin learning new languages by understanding the tooling ecosystem.
-For me, understanding the tools enables me to confidently focus on learning the
-language itself<a href="#my-way" aria-describedby="footnote-label" id="my-way-ref">.</a>
-Thus, when I approach a new language, e.g. Clojure, I often start by asking
-questions like this:
+This post is about helping Clojure devs understand the [Clojure CLI Tools], the
+problem(s) it's solving and how it compares to other tools like `lein` and `boot`.
 
-- How do I **install** Clojure?
-- How do I **run** a Clojure program?
-- How do I **manage** Clojure packages (dependencies)?
-- How do I **configure** a Clojure project?
-- How do I **build** Clojure for production?
+When I start with a new language I _usually_ begin by finding answers to these
+questions:
 
-Now, when I first came to clojure, the answer to the above questions were,
-_"use [lein] or [boot]"_. Then, around the end of 2017, a third option came
-along: the [Clojure CLI Tools]<a href="#cli-tool-v-dev-tools" aria-describedby="footnote-label" id="cli-tool-v-dev-tools-ref">.</a>.
-Admittedly, it took me some time to understand how the `Clojure CLI Tools` fit
-into the bigger picture.<a href="#clojure-tools-simple" aria-describedby="footnote-label" id="clojure-tools-simple-ref">.</a>
+- How do I **install** [insert language here]?
+- How do I **run** a [insert language here] program?
+- How do I **manage** [insert language here] packages (dependencies)?
+- How do I **configure** a [insert language here] project?
+- How do I **build** [insert language here] for production?
 
-This is where I hope this post will help by providing an overview of what the
-[Clojure CLI Tools] are, the problem they solve and how they compare to other
-tools like `lein` and `boot`.
+With Clojure, the answer to the above questions is to use one of three tools
+(listed in order of their release):
+
+- use [lein]
+- use [boot]
+- use [Clojure CLI Tool]<a href="#cli-tool-v-dev-tools" aria-describedby="footnote-label" id="cli-tool-v-dev-tools-ref">.</a>
+
+The rest of this post will review the context around `Clojure CLI Tool` and
+why it's my preferred tool for working with Clojure
 
 ::: note
 If you're interested in using the `Clojure CLI Tools` you can visit the
-[Official Getting Started Guide] or even [watch this video] if you're using mac
+[Official Getting Started Guide] or watch [Installing Clojure on Mac].  Sorry
+Linux and Windows, friends.  I will get to those videos in time!
 :::
 
 ## Clojure CLI Tools
@@ -253,22 +254,12 @@ So yes, `clj` for the win.
 
 ::: footnotes
 
-->->-> footnote#my-way
-This point is more nuanced than it appears and could also warrant a post of
-it's own.  Just note that this is my process.  I don't recommend it to everyone.
-->->->
-
 ->->-> footnote#cli-tool-v-dev-tools
 In earlier versions of this blog post I referred to the `Clojure CLI Tools` as
 `Clojure Tools`.  The reason I now refer to them as the "Clojure CLI Tools" is
 because on August 21, 2020 it was announced in Clojurians (The official Clojure Slack Org)
 that cognitect released a free set of tools called [Cognitect Dev Tools].
 Thus, I made the change to be very clear that there is a difference.
-->->->
-
-->->-> footnote#clojure-tools-simple
-I feel this was true for me because their role in the Clojure ecosystem tooling
-setup is deceptively simple and focused.
 ->->->
 
 ->->-> footnote#clj-calls-clojure-note
