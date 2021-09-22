@@ -47,12 +47,14 @@ Linux and Windows, friends.  I will get to those videos in time!
 
 ## Clojure CLI Tools
 
-To begin, what are the `Clojure CLI Tools`?  They are a CLI tool accessed using
-the `clj` or `clojure` command.  Furthermore, they are built/maintained by Cognitect,
-the official maintainers of the Clojure language.
+The `Clojure CLI Tools` are a suite of programs which are wrapped in a bash
+script called `clojure` or `clj` (I will explain the difference in a moment).
+They are built and maintained by Cognitect (the maintainers of the Clojure
+language).
 
-Here are some **simple** examples of how and what you can do with the
-`Clojure CLI Tools`.
+To use the `Clojure CLI Tools` you have to [Install the Clojure CLI Tools] and
+then you can access them by calling `clojure` or `clj` from your terminal.
+Here are _some_ examples of what you can do with the `Clojure CLI Tools`.
 
 **Run** a Clojure repl
 
@@ -72,29 +74,30 @@ clj -M -m your-clojure-program
 clj -Sdeps '{:deps {bidi/bidi {:mvn/version "2.1.6"}}}'
 ```
 
-Thus, we can see that `clj` is a very useful tool.  Now, `clj`  itself is just
-a bash script which itself wraps other tools.  At the time of this writing, it
-wraps 3 main tools:
+Now, you will remember that I referred to the `Clojure CLI Tools` as a
+"suite of tools".  The reason I chose these words is because under the
+hood `clj` is made up of 4 separate tools:
 
-- [clojure] - another bash script program
-- [deps.edn] - an edn file (just data)
-- [tools.deps.alpha] -  a clojure program
+- [clojure] - a bash script (CLI command)
+- [deps.edn] - an edn file (Think: package.json)
+- [tools.deps.alpha] -  a clojure library
+- [tools.build] - a clojure library
 
-The reason why I believe it's important to understand this early is because, no
-matter what part of the learning journey you're on, it will help.
+The next sections will review each of the above tools in the "suite".
 
-If you're brand new to Clojure, this is going to help you better understand
-conversations amongst other Clojurians and help guide questions you may have.
-For example, if you're ever on [Clojurians Slack] you will notice that there
-isn't a Clojure CLI Tools channel, but there is a [#tools-deps] channel.  If
-you ever have questions about the CLI Tools, that's the place to be.
+::: note
+If it seems odd that we are looking at what may seem like "implementation details"
+let's address that now.  The value in understanding this is you will begin to
+think about the tools in the way that I imagine the Clojure team thinks about
+them.  Through this you will be able to use them more effectively, solve
+problems with them as intended and understand where and how to go about asking
+questions and solving problems you may run into.  For example, if you were to
+go into the [Clojurians Slack] right now you wouldn't find a channel about the `clj`
+or `clojure` tool.  Instead, you would visit [#tools-deps] or [#tools-build]
+:::
 
-If you're beyond the early learner phase, understanding the nuance is going to
-help you level up and gather greater context which can act as a stepping stone
-as you guide your own learning journey.
 
-In summary, the `Clojure CLI Tools` is more of an umbrella term made up of
-`deps.edn`, `clj`, `clojure` or `tools.deps.alpha`.
+### clj/clojure
 
 The next few sections will discuss each of the above tools in more detail and
 how they all come together.
