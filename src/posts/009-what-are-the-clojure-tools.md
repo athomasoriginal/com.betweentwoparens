@@ -199,12 +199,11 @@ What this means is that this file is an extensible tool.  In other words, you
 could write your own `tools.deps.alpha` which knows how to consume this file
 and be compliant with projects which use the `deps.edn` file.
 
-## Clojure CLI Tools Installer
+### tools.tools
 
-"Clojure CLI Tools Installer" is a fancy way of referring to the `brew tap`
-used to install Clojure on mac and linux machines.  As of February 2020, Clojure
-started maintaining their own [brew tap].  Thus, if you installed the
-`Clojure CLI Tools` via
+This is an exciting tool for many as it was a piece of the Clojure development
+story which came several years after `clj/clojure`. This is a library which
+provides tools that allow you to build Clojure artifacts.
 
 ```bash
 brew install clojure
