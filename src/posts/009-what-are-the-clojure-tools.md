@@ -205,6 +205,14 @@ This is an exciting tool for many as it was a piece of the Clojure development
 story which came several years after `clj/clojure`. This is a library which
 provides tools that allow you to build Clojure artifacts.
 
+### Installer
+
+Honestly, i'm not even sure that this is part of the `Clojure CLI Tools` suite,
+but let's include it anyways.  The "Clojure CLI Tools Installer" is a fancy way
+of referring to the `brew tap` used to install Clojure on mac and linux machines.
+As of February 2020, Clojure started maintaining their own [brew tap].  Thus, if
+you installed the `Clojure CLI Tools` via
+
 ```bash
 brew install clojure
 ```
@@ -215,9 +223,9 @@ you will likely want to uninstall `clojure` and install the following:
 brew install clojure/tools/clojure
 ```
 
-In all likelihood, you would probably be fine with `brew install clojure`.
-The thing is that while `brew install clojure` will still see some love, it
-won't be as consistent as `clojure/tools/clojure` tap.
+In all likelihood, you would probably be fine with `brew install clojure` as it
+will recieve updates.  However, while `brew install clojure` will still see some
+love, it won't be as active as the `clojure/tools/clojure` tap.
 
 ## clj v lein v boot
 
