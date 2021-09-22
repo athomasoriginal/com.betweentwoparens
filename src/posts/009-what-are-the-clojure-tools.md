@@ -168,7 +168,7 @@ Continuing on, in order for `tools.deps.alpha` to know which dependencies you
 need you have to write them out.  We do this, and more, in a file called
 `deps.edn`.
 
-## deps.edn
+### deps.edn
 
 `deps.edn` allows you to specify project dependencies and configurations.  At
 it's heart, `deps.edn` is just an [edn] file.  You can think of it like
@@ -197,7 +197,7 @@ is well defined.  Which could be seen as acting like a contract.
 
 What this means is that this file is an extensible tool.  In other words, you
 could write your own `tools.deps.alpha` which knows how to consume this file
-and be compliant with projects which use it.
+and be compliant with projects which use the `deps.edn` file.
 
 ## Clojure CLI Tools Installer
 
