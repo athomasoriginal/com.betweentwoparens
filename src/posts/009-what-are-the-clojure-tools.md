@@ -142,27 +142,27 @@ look at `tools.deps.alpha`.
 
 ### tools.deps.alpha
 
-As I said, it's a convenience wrapper.  The meat and potatoes of the `clj` tool
-is `tools.deps.alpha`.
-
-## tools.deps.alpha
-
-`tools.deps.alpha` is responsible for understanding which dependencies your
-project needs and specifying how to get them.  A more detailed way of explaining
-what it does is:
+`tools.deps.alpha` is a Clojure libary responsible for managing your dependencies,
+or more specifically:
 
 - reads in dependencies from a `deps.edn` file
 - resolves the dependencies and their transitive dependencies
 - builds a classpath
 
+Note that I said it's a Clojure library.  You don't have to be using `clj/clojure`
+in order to use this tool.  You can just use it by itself if you wanted to.
+
 ::: note
 Note that **NEITHER** `clj` or `tools.deps.alpha` are "building" clojure artifacts.
 :::
 
-There isn't too much else going on here and the library itself is small enough
-that you can read it in an afternoon.  If you're interested in learning more I
-highly recommend listening to the [Clojure Weekly Podcast] featuring Alex Miller,
-the author of `tools.deps.alpha`, speak about the `Clojure CLI Tools`.
+That is pretty much "all" it does.  The library is small and focused and this
+is excellent because it means you can read and understand the entire thing in
+an afternoon if you wanted.
+
+If you're interested in learning more I highly recommend listening to the
+[Clojure Weekly Podcast] featuring Alex Miller, the author of `tools.deps.alpha`,
+speak about the `Clojure CLI Tools`.
 
 Continuing on, in order for `tools.deps.alpha` to know which dependencies you
 need you have to write them out.  We do this, and more, in a file called
