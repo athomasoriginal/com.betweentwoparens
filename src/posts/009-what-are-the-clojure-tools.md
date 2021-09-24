@@ -190,13 +190,31 @@ when `tools.build` was released the `Clojure CLI` was also enhanced to provide
 the `-T` switch.  As one can imagine, this could be seen as confusing because
 of the similarity of their names.
 
-### Installer
+The best way that I can _currently_ explain the `-T` switch is by saying that
+it's meant to be another level of convenience provided by the `Clojure CLI`.
 
-Honestly, i'm not even sure that this is part of the `Clojure CLI Tools` suite,
-but let's include it anyways.  The "Clojure CLI Tools Installer" is a fancy way
-of referring to the `brew tap` used to install Clojure on mac and linux machines.
-As of February 2020, Clojure started maintaining their own [brew tap].  Thus, if
-you installed the `Clojure CLI Tools` via
+Regarding usage, it helps to first breakdown the main types of Clojure
+programs one might build into 3 sub categories:
+
+- A `tool`
+- A `library`
+- An `app`
+
+You would use `-T` for Clojure programs that you want to run as a "tool".  For
+example, [deps-new] is a Clojure library which creates new Clojure projects
+based on a template you provide.  This is a great example of a Clojure project
+which is built to be a "tool".
+
+I don't want to go into more detail about `-T` now because that means we would
+have to dive into other `Clojure CLI` switches like `-X` and `-M`.  That's for
+another post. On to the Installer!
+
+## Installer
+
+The "Clojure CLI Installer" is a fancy way of referring to the `brew tap` used
+to install Clojure on mac and linux machines. As of February 2020, Clojure
+started maintaining their own [brew tap].  Thus, if you installed the
+`Clojure CLI` via
 
 ```bash
 brew install clojure
@@ -214,60 +232,54 @@ love, it won't be as active as the `clojure/tools/clojure` tap.
 
 ## clj v lein v boot
 
-Let's end this conversation with a quick contextualization of `clj`, `lein`
-and `boot`.
+This section will provide a quick comparison of `clj`, `lein` and `boot`.
 
 ::: note
 I won't dive into the history, for this I recommend the blog post [All the Paths]
 by Sean Corfield.
 :::
 
-The first point is that you will choose between _one_ of the three tools
-(`clj`, `lein`, or `boot`) for your project.  You don't use more than one.
-Just like you wouldn't use both `boot` and `lein`, you won't use both `clj`
-and `boot` or `clj` and `lein`.  Furthermore, none of these tools should
-conflict with one another.
+Firstly, all of the above tools are more or less addressing the same problems
+in their own way.  Your job is to choose the one you like best.
 
 ::: note
-Now, when I said that you don't actually combine more than one of these tools,
-this is not 100% true. Take for example the fact that the "build" story for
-`clj` is not as "easy" as `lein` which has led to examples of [clj calling to lein]
-just for the production builds of ones apps.  As of the latest update though,
-I have not found a need to do this for any of my Clojure or ClojureScript apps.
+Understanding that you have to choose one should be a relief, but note that some
+people have experimented
+with combining these tools.  Specifically, combining `Clojure CLI` and `lein`.
+Here is an example of [clj calling to lein].  This was desireable years ago
+because the `Clojure CLI` didn't cover building CLJ artifacts.  Having
+said this, there isn't a need to do this anymore because you have libraries like
+[depstar] which handle the "build" story.  In addition, you have `tools.build`
+which is Clojure's official answer to the build question.
 :::
 
-If you're curious which to choose, I think it's obvious that I would suggest
-`clj`.  The reason I like `clj` is because the tool is simple _and_ easy to use.
+If you're curious which to choose, my answer is the `Clojure CLI`.
+The reason I like the `Clojure CLI` is because the tool is simple.
 You can read through `clj` and `tools.deps.alpha` in an afternoon and understand
 what they are doing if you had to.  The same (subjectively of course) cannot be
-said for `lein` or `boot`.
+said for `lein` or `boot`.  This is not just implementation, but also usage.
+Yes, `lein` seems easier to start, but the moment you break away from the
+beginner examples you are left deeps in the woods without a compass.
 
-Secondly, and most importantly, the Clojure community is really leaning into
-building tools for `clj`.  For example, where `lein` used to have significantly
+Secondly, the `Clojure Tools` promote libraries over frameworks.  This is
+important when working with a language like Clojure because it really does
+reward you for breaking down your thinking.
+
+Finally, the Clojure community is really leaning into
+building tools for `Clojure CLI`.  For example, where `lein` used to have significantly
 more functionality, the community has built a ton of [incredible tools] that
-will cover many of your essential requirements.  There is also the fact that
-`deps.edn` is easier to configure because there are less configuration options
-and less need to understand what lein is doing as you want to perform more
-advanced configurations.
+will cover many of your essential requirements.
 
-Finally, when it comes to managing your project configurations and building out
-maintainable organizational structures (monorepo) it doesn't get easier than
-`clj`<a href="#monorepo-comment" aria-describedby="footnote-label" id="monorepo-comment-ref">.</a>
-
-So yes, `clj` for the win.
+So yes, `Clojure Tools` for the win.
 
 ::: footnotes
 
 ->->-> footnote#cli-tool-v-dev-tools
-In earlier versions of this blog post I referred to the `Clojure CLI Tools` as
-`Clojure Tools`.  The reason I now refer to them as the "Clojure CLI Tools" is
+In earlier versions of this blog post I referred to the `Clojure CLI` as
+`Clojure Tools`.  The reason I now refer to them as the "Clojure CLI" is
 because on August 21, 2020 it was announced in Clojurians (The official Clojure Slack Org)
 that cognitect released a free set of tools called [Cognitect Dev Tools].
 Thus, I made the change to be very clear that there is a difference.
-->->->
-
-->->-> footnote#clj-calls-clojure-note
-You can see this [brew install script]
 ->->->
 
 ->->-> footnote#when-to-use-clojure-script
@@ -292,9 +304,7 @@ Post about [Clojure Monorepo using Clojure CLI Tools].
 [official getting started]: https://clojure.org/guides/getting_started
 [Clojure]: https://clojure.org/guides/getting_started
 [ClojureScript]: https://clojurescript.org/guides/quick-start
-[Clojure CLI Tools]: https://clojure.org/guides/deps_and_cli
-[Clojure cli tool]: https://clojure.org/guides/deps_and_cli
-[Clojure cli tools]: https://clojure.org/guides/deps_and_cli
+[Clojure CLI]: https://clojure.org/guides/deps_and_cli
 [clj/clojure]: https://github.com/clojure/brew-install
 [rlwrap]: https://linux.die.net/man/1/rlwraps
 [readline]: https://en.wikipedia.org/wiki/GNU_Readline
@@ -302,21 +312,28 @@ Post about [Clojure Monorepo using Clojure CLI Tools].
 [deps.edn - an edn config file]: https://www.clojure.org/guides/deps_and_cli
 [tools.deps.alpha - a clojure program]: https://github.com/clojure/tools.deps.alpha
 [tools.deps.alpha]: https://github.com/clojure/tools.deps.alpha
+[tools.build]: https://github.com/clojure/tools.build
 [edn]: https://github.com/edn-format/edn
 [map]: https://clojure.org/reference/data_structures#Maps
 [Clojure Weekly Podcast]: https://soundcloud.com/user-959992602
+[deps-new]: https://github.com/seancorfield/deps-new
 [installing the Clojure CLI tools]: https://clojure.org/guides/getting_started
 [Getting Started with Clojure]: https://www.youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA
 [brew tap]: https://clojure.org/news/2020/02/28/clojure-tap
 [All The Paths]: https://corfield.org/blog/2018/04/18/all-the-paths/
 [incredible tools]: https://github.com/clojure/tools.deps.alpha/wiki/Tools
 [#tools-deps]: https://clojurians.slack.com/archives/C6QH853H8
+[#tools-build]: https://clojurians.slack.com/archives/C02B5GHQWP4
 [Clojurians Slack]: https://clojurians.slack.com/?redir=%2Fmessages%2F
 [Official Getting Started Guide]: https://clojure.org/guides/getting_started
-[watch this video]: https://www.youtube.com/watch?v=5_q5pLoz9b0
+[Installing Clojure on Mac]: https://www.youtube.com/watch?v=5_q5pLoz9b0
+[Install the Clojure CLI Tools]: https://clojure.org/guides/getting_started
 [clj calling to lein]: https://github.com/oakes/full-stack-clj-example
 [official tools.build announcement]: https://clojure.org/news/2021/07/09/source-libs-builds
-[tools.build]: https://github.com/clojure/tools.build
 [Cognitect Dev Tools]: https://cognitect.com/dev-tools/index.html
 [brew install script]: https://github.com/clojure/brew-install/blob/1.10.1/src/main/resources/clj#L4
 [Clojure Monorepo using Clojure CLI Tools]: https://corfield.org/blog/2021/02/23/deps-edn-monorepo/
+[depstar]: https://github.com/seancorfield/depstar
+[Official Deps and CLI Guide]: https://clojure.org/guides/deps_and_cli
+[tools.build release announcement]: https://clojurians-log.clojureverse.org/tools-deps/2021-07-09
+[tools.build official announcement]: https://clojure.org/news/2021/07/09/source-libs-builds
