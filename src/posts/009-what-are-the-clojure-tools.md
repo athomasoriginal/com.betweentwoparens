@@ -11,38 +11,39 @@ canonical: true
 summary: "It's not a build tool, it's clj."
 ---
 
+This post is about "getting" the `Clojure Tools`.  The reason?  They stumped me
+in the beginning and I felt like if I can make someone's journey just a _bit_
+easier that might be a good thing.
+
+My Clojure learning journey started by asking questions like:
+
+- How do I **install** Clojure?
+- How do I **run** a Clojure program?
+- How do I **manage** Clojure packages (dependencies)?
+- How do I **configure** a Clojure project?
+- How do I **build** Clojure for production?
+
+Now, when I started working with Clojure the answer to these questions was:
+choose either [lein] or [boot].  Then Rich Hickey and his ride or die homeboys
+rolled by and provided their own answer: The `Clojure Tools`
+<a href="#cli-tool-v-dev-tools" aria-describedby="footnote-label" id="cli-tool-v-dev-tools-ref">.</a>
+
+Their vision, like the vision of Clojure itself, is a bit offbeat.  So, this post
+is about reviewing the `Clojure Tools` and figuring out a mental model for them.
+
+At a high level, the `Clojure Tools` currently consist of:
+
+- `Clojure CLI`
+- `tools.build`
+
+The first is a CLI tool and the second is a Clojure library which provides
+some helper functions to make it easier to build Clojure artifacts.  The rest of
+this post will dig into each of these tools.
+
 ::: note
-Exciting news!  Cognitect has released a new Clojure Tool called [tools.build].
-You can read the [official tools.build announcement] for more information.
-When it's no longer in **pre-release** I will update this post to include it.
-:::
-
-This post is about helping Clojure devs understand the [Clojure CLI Tools], the
-problem(s) it's solving and how it compares to other tools like `lein` and `boot`.
-
-When I start with a new language I _usually_ begin by finding answers to these
-questions:
-
-- How do I **install** [insert language here]?
-- How do I **run** a [insert language here] program?
-- How do I **manage** [insert language here] packages (dependencies)?
-- How do I **configure** a [insert language here] project?
-- How do I **build** [insert language here] for production?
-
-With Clojure, the answer to the above questions is to use one of three tools
-(listed in order of their release):
-
-- use [lein]
-- use [boot]
-- use [Clojure CLI Tool]<a href="#cli-tool-v-dev-tools" aria-describedby="footnote-label" id="cli-tool-v-dev-tools-ref">.</a>
-
-The rest of this post will review the context around `Clojure CLI Tool` and
-why it's my preferred tool for working with Clojure
-
-::: note
-If you're interested in using the `Clojure CLI Tools` you can visit the
-[Official Getting Started Guide] or watch [Installing Clojure on Mac].  Sorry
-Linux and Windows, friends.  I will get to those videos in time!
+Want to install the `Clojure CLI`? Visit the [Official Getting Started Guide] or
+watch [Installing Clojure on Mac].  Sorry Linux and Windows, friends.  I will
+get to those videos in time!
 :::
 
 ## Clojure CLI Tools
