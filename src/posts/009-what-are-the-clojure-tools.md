@@ -309,16 +309,12 @@ Post about [Clojure Monorepo using Clojure CLI Tools].
 [rlwrap]: https://linux.die.net/man/1/rlwraps
 [readline]: https://en.wikipedia.org/wiki/GNU_Readline
 [deps.edn]: https://www.clojure.org/guides/deps_and_cli
-[deps.edn - an edn config file]: https://www.clojure.org/guides/deps_and_cli
-[tools.deps.alpha - a clojure program]: https://github.com/clojure/tools.deps.alpha
 [tools.deps.alpha]: https://github.com/clojure/tools.deps.alpha
 [tools.build]: https://github.com/clojure/tools.build
 [edn]: https://github.com/edn-format/edn
 [map]: https://clojure.org/reference/data_structures#Maps
 [Clojure Weekly Podcast]: https://soundcloud.com/user-959992602
 [deps-new]: https://github.com/seancorfield/deps-new
-[installing the Clojure CLI tools]: https://clojure.org/guides/getting_started
-[Getting Started with Clojure]: https://www.youtube.com/playlist?list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA
 [brew tap]: https://clojure.org/news/2020/02/28/clojure-tap
 [All The Paths]: https://corfield.org/blog/2018/04/18/all-the-paths/
 [incredible tools]: https://github.com/clojure/tools.deps.alpha/wiki/Tools
@@ -327,9 +323,7 @@ Post about [Clojure Monorepo using Clojure CLI Tools].
 [Clojurians Slack]: https://clojurians.slack.com/?redir=%2Fmessages%2F
 [Official Getting Started Guide]: https://clojure.org/guides/getting_started
 [Installing Clojure on Mac]: https://www.youtube.com/watch?v=5_q5pLoz9b0
-[Install the Clojure CLI Tools]: https://clojure.org/guides/getting_started
 [clj calling to lein]: https://github.com/oakes/full-stack-clj-example
-[official tools.build announcement]: https://clojure.org/news/2021/07/09/source-libs-builds
 [Cognitect Dev Tools]: https://cognitect.com/dev-tools/index.html
 [brew install script]: https://github.com/clojure/brew-install/blob/1.10.1/src/main/resources/clj#L4
 [Clojure Monorepo using Clojure CLI Tools]: https://corfield.org/blog/2021/02/23/deps-edn-monorepo/
