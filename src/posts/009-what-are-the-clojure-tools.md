@@ -46,16 +46,16 @@ watch [Installing Clojure on Mac].  Sorry Linux and Windows, friends.  I will
 get to those videos in time!
 :::
 
-## Clojure CLI Tools
+## Clojure CLI
 
-The `Clojure CLI Tools` are a suite of programs which are wrapped in a bash
-script called `clojure` or `clj` (I will explain the difference in a moment).
-They are built and maintained by Cognitect (the maintainers of the Clojure
-language).
+The `Clojure CLI` is made up of the following subprograms:
 
-To use the `Clojure CLI Tools` you have to [Install the Clojure CLI Tools] and
-then you can access them by calling `clojure` or `clj` from your terminal.
-Here are _some_ examples of what you can do with the `Clojure CLI Tools`.
+- [clj/clojure] - a bash script
+- [tools.deps.alpha] a clojure library (commonly referred to as `deps`)
+- [deps.edn] - an [edn] file with a specific structure
+
+And here is what it looks like to use the `Clojure CLI` and some of the things
+it can do:
 
 **Run** a Clojure repl
 
@@ -75,27 +75,13 @@ clj -M -m your-clojure-program
 clj -Sdeps '{:deps {bidi/bidi {:mvn/version "2.1.6"}}}'
 ```
 
-Now, you will remember that I referred to the `Clojure CLI Tools` as a
-"suite of tools".  The reason I chose these words is because under the
-hood `clj` is made up of 4 separate tools:
+The above is just the tip of the `CLojure CLI` iceburg.  I have omitted more
+interesting examples so we can focus on the `Clojure CLI` at a higher level. In
+honor of said "high level" overview, the following sections will cover each
+of the`Clojure CLI's` subprograms.
 
-- [clojure] - a bash script (CLI command)
-- [deps.edn] - an edn file (Think: package.json)
-- [tools.deps.alpha] -  a clojure library
-- [tools.build] - a clojure library
 
-The next sections will review each of the above tools in the "suite".
-
-::: note
-If it seems odd that we are looking at what may seem like "implementation details"
-let's address that now.  The value in understanding this is you will begin to
-think about the tools in the way that I imagine the Clojure team thinks about
-them.  Through this you will be able to use them more effectively, solve
-problems with them as intended and understand where and how to go about asking
-questions and solving problems you may run into.  For example, if you were to
-go into the [Clojurians Slack] right now you wouldn't find a channel about the `clj`
-or `clojure` tool.  Instead, you would visit [#tools-deps] or [#tools-build]
-:::
+### clj/clojure
 
 
 ### clj/clojure
