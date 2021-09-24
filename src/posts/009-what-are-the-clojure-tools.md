@@ -83,15 +83,19 @@ of the`Clojure CLI's` subprograms.
 
 ### clj/clojure
 
+As we see above, the `Clojure CLI` is invoked by calling one of the two
+shell commands:
 
-### clj/clojure
+- `clj`
+- `clojure`
 
-When you read the `Clojure CLI Tools` [official getting started] you will notice
-that you can use two commands: `clj` or `clojure`.  They seem to do the same
-thing, but are used at different times.  When do you use one over
-the other?
+When you read through the [Official Deps and CLI Guide] you will see that you
+can use either `clj` or `clojure`.  `clj` is the recommended version, but
+both are used.  Furthermore, when you start to look at open source code, you
+will see that both are used.
 
-`clj` is _mainly_ used during development.  `clojure` is _mainly_ used in
+What's the difference between these two commands? `clj` is _mainly_ used during
+development.  `clojure` is _mainly_ used in
 a production or CI environment.  The reason for
 this is because `clj` is a light wrapper around the `clojure` command.
 
@@ -101,31 +105,29 @@ easier to type in the terminal while you're running your Clojure REPL.
 
 The tradeoff for the convenience provided by `clj` is that `clj` introduces
 dependencies. This is a tradeoff because you may not have access to `rlwrap`
-in production and tools like `rlwrap` _can_ make it harder to
-compose the `clj` command with other tools.  As a result of this, it's a common
-practice to use `clojure` in production/ci environments.
+in production. In addition, a tool like `rlwrap` _can_ make it harder to
+compose the `clj` command with other tools.  As a result, it's a common
+practice to use `clojure` in production/ci environments
 <a href="#when-to-use-clojure-script" aria-describedby="footnote-label" id="when-to-use-clojure-script-ref">.</a>
 
-Okay, so they do the same thing, but what is the purpose of `clj/clojure`?
-
-If `clj/clojure` didn't exist you would have to manually do what it does under
-the hood which is run a command like this to run Clojure:
+Now that we see they both more or less the same command, what do they do?
+`clj/clojure` has one job:  run Clojure programs against a classpath.  If you
+dig into the `clj/clojure` bash script you see that it ultimatley calls a
+command like this:
 
 ```bash
 java [java-opt*] -cp classpath clojure.main [init-opt*] [main-opt] [arg*]
 ```
 
-If you're new to a language the above isn't the greatest "getting started" story.
-That's why a tool like `clj/clojure` exists:  To run the above command so you
-don't have to.  As a result, it makes it easier to use Clojure across different
-environments (Mac, Windows, Linux) and help you configure your
-Clojure program.  The alternative would be quite error prone, tedious and require
-a lot of upfront knowledge from each developer.
+The above might look like a simple command, but the value of having
+`clj/clojure` is that you as a new Clojure developer don't have to manually
+build the classpath, figure out the exact right Java command to run or
+work to make this execute on different environments (windows, linux, mac etc).
 
-To be honest though, this is exactly what all the other tools provide as well.
-Where it starts to become different is in how `clj/clojure` orchestrates the
-tools it uses and how it allows you to extend it's functionality.  Let's take a
-look at `tools.deps.alpha`.
+In summary, `clj/clojure` is about running Clojure programs in a classpath and
+orchestrates other tools.  For example, in order to run against a classpath, there
+has to be a classpath.  `clj/clojure` is not responsible for figuring out the
+`classpath` though.  That's a job for `tools.deps.alpha`
 
 ### tools.deps.alpha
 
