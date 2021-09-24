@@ -131,31 +131,30 @@ has to be a classpath.  `clj/clojure` is not responsible for figuring out the
 
 ### tools.deps.alpha
 
-`tools.deps.alpha` is a Clojure libary responsible for managing your dependencies,
-or more specifically:
+`tools.deps.alpha` is a Clojure libary responsible for managing your dependencies.
+What it does is:
 
 - reads in dependencies from a `deps.edn` file
 - resolves the dependencies and their transitive dependencies
 - builds a classpath
 
-Note that I said it's a Clojure library.  You don't have to be using `clj/clojure`
-in order to use this tool.  You can just use it by itself if you wanted to.
+Note that I said it's a Clojure library.  You don't have to be using the
+`Clojure CLI` in order to use this tool.  You can just use it by itself if you
+wanted to.
 
 ::: note
-Note that **NEITHER** `clj` or `tools.deps.alpha` are "building" clojure artifacts.
+It's a good time to note that **NEITHER** `clj/clojure` or `tools.deps.alpha` are
+"building" Clojure artifacts.  More on this later.
 :::
 
-That is pretty much "all" it does.  The library is small and focused and this
-is excellent because it means you can read and understand the entire thing in
-an afternoon if you wanted.
+What makes `tools.deps.alpha` so great is that it's a small and focused library.
+There isn't much more to say about this other than if you want to learn more
+about the history, development and goals of the tool from the Clojure team
+I recommend listening to this episode of [Clojure Weekly Podcast]
+which features Alex Miller, the author of `tools.deps.alpha`.
 
-If you're interested in learning more I highly recommend listening to the
-[Clojure Weekly Podcast] featuring Alex Miller, the author of `tools.deps.alpha`,
-speak about the `Clojure CLI Tools`.
-
-Continuing on, in order for `tools.deps.alpha` to know which dependencies you
-need you have to write them out.  We do this, and more, in a file called
-`deps.edn`.
+As noted above, the first thing `tools.deps.alpha` is going to do is read in
+your project configuration and deps.  This information is stored in `deps.edn`.
 
 ### deps.edn
 
