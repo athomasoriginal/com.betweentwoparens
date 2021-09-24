@@ -174,22 +174,21 @@ Here is an example of what a `deps.edn` file looks like:
  :aliases {...}}
 ```
 
-With this file we describe the dependencies our project needs, where our project
-should look to find our source/tests and shortcuts for running our project's code.
+As you can see, we use the keywords `:deps`, `:paths` and `:aliases` and more
+to start to describe your project and the dependencies it requires.
 
-Now, given this is just an `edn` file it can be odd to think of it as a separate
-"tool".  The reason I believe this is done is because the shape of the `edn` map
-is well defined.  Which could be seen as acting like a contract.
 
-What this means is that this file is an extensible tool.  In other words, you
-could write your own `tools.deps.alpha` which knows how to consume this file
-and be compliant with projects which use the `deps.edn` file.
+## Tools.Build
 
-### tools.tools
+This is the newest Clojure Tool.  It's been in the works for a while and might
+be the simplest to understand conceptually:  It's a Clojure library with
+functions that do things like build a `jar`, `uberjar` etc.
 
-This is an exciting tool for many as it was a piece of the Clojure development
-story which came several years after `clj/clojure`. This is a library which
-provides tools that allow you to build Clojure artifacts.
+One distinction that's important to note is that `tools.build` is not the same
+as the `Clojure CLI` tool's `-T` switch.  I am calling this out now because
+when `tools.build` was released the `Clojure CLI` was also enhanced to provide
+the `-T` switch.  As one can imagine, this could be seen as confusing because
+of the similarity of their names.
 
 ### Installer
 
