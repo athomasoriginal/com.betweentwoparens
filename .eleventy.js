@@ -26,7 +26,7 @@ const mdAnchorOpts = {
   permalink: true,
   permalinkClass: "anchor-link",
   permalinkSymbol: "#",
-  level: [2],
+  level: [2, 3],
 };
 
 const isEmpty = function (value) {
@@ -136,9 +136,10 @@ module.exports = function (eleventyConfig) {
   });
 
   // @configuration markdown table of contents.  If you change this, be sure to
-  // also consider changing the anchor links
+  // also consider changing the anchor links because the anchor links + this
+  // component work together
   eleventyConfig.addPlugin(pluginMarkdownTOC, {
-    tags: ["h2"],
+    tags: ["h2", "h3"],
     ul: true,
   });
 
