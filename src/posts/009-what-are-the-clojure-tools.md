@@ -158,17 +158,15 @@ your project configuration and deps.  This information is stored in `deps.edn`.
 
 ### deps.edn
 
-`deps.edn` allows you to specify project dependencies and configurations.  At
-it's heart, `deps.edn` is just an [edn] file.  You can think of it like
-Clojure's version of `json`.
+The `deps.edn` file is a Clojure map with a specific structure.  Thus, when
+you run `clj/clojure` one of the first things it does is find a `deps.edn` file
+and reads it in.
 
-::: note
-If you're from the JavaScript community, it can be helpful to think of this file
-like a `package.json` file
-:::
+`deps.edn` is where you configure your project and specify project dependencies.
+At it's heart, `deps.edn` is just an [edn] file.  You can think of it like
+Clojure's version of `package.json`.
 
-`deps.edn` is just a [map] which accepts specific keywords.  Here is an example
-of _some_ of the common keywords:
+Here is an example of what a `deps.edn` file looks like:
 
 ```clojure
 {:deps    {...}
