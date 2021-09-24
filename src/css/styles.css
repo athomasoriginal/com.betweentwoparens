@@ -520,6 +520,13 @@ They are: notes, code blocks, lists */
   margin: 0px;
 }
 
+/* @note styles for nested TOC (h3's).  I'm not sure why they are rendered as
+ * `ol` over `ul`.  Might be an issue with the library */
+.blog-content__toc ol {
+  list-style: none;
+  margin-bottom: 0;
+}
+
 .blog-content__toc p {
   font-size: 14px;
   margin: 0;
