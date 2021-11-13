@@ -6,7 +6,7 @@ layout: post
 tags:
   - post
 title: What the Reagent Component?!
-permalink: blog/{{ title | slug }}/index.html
+permalink: blog/what-the-reagent-component/index.html
 canonical: true
 summary: "It's time to uncover the truth about Reagent components."
 ---
