@@ -135,6 +135,7 @@ The above builds on the idea of having a `save point` and layers on some `code s
 
 Of course, there are other types of setup code that you may want.  For example, you might be working on a pure function which is just going to transform some data.  In this case, we might setup a `comment` like this:
 
+{% raw %}
 ```clojure
 (comment
 (refer 'set)
@@ -150,6 +151,8 @@ Of course, there are other types of setup code that you may want.  For example, 
 ; ...
 )
 ```
+{% endraw %}
+
 
 The above is the [example Stuart provided] in his talk which provides us with some sample data allowing us to immediately begin using our functions to transform said data.
 

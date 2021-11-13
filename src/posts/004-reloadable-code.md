@@ -6,7 +6,7 @@ layout: post
 tags:
   - post
 title: "Students of the Game: Reloadable Code"
-permalink: blog/{{ title | slug }}/index.html
+permalink: blog/students-of-the-game-reloadable-code/index.html
 canonical: true
 summary: "This is for the students of the game, the ones who want to reloadable code.."
 ---
