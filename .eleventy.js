@@ -23,14 +23,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 const pluginMarkdownTOC = require("eleventy-plugin-toc");
 
 const mdAnchorOpts = {
-  permalink: markdownItAnchor.permalink.linkInsideHeader({
-    symbol: `
-      <span class="visually-hidden">Jump to heading</span>
-      <span aria-hidden="true">#</span>
-    `,
-    placement: "before",
-  }),
-  permalinkClass: "anchor-link",
+  permalink: markdownItAnchor.permalink.headerLink(),
   permalinkSymbol: "#",
   level: [2, 3],
 };
