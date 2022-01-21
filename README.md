@@ -16,6 +16,7 @@
 - [Blog Features]
 - [Before Dev]
 - [Before Deploy]
+- [Writing Style Guide]
 - [Special Thanks]
   - [Design]
   - [Illustrations]
@@ -303,6 +304,19 @@ This section outlines the features our blog supports.  This is valuable because 
   - [ ] set yarn env variable
   - [ ] update build settings
 
+## Writing Style Guide
+
+This is the style guide for actually writing posts.
+
+- `italic`
+  - New terms, extensions and filenames
+  - Only the first time it appears
+- `inline code`
+  - programming terms (vars, syntax and programming tools)
+- Undecided
+  - This section is things I have found a need to write, but haven't aligned on
+    anything consistent yet.
+  - commands to be run/typed by users
 
 ## Special Thanks
 
@@ -343,6 +357,7 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 [Blog Features]: #blog-features
 [Before Dev]: #before-dev
 [Before Deploy]: #before-deploy
+[Writing Style Guide]: #writing-style-guide
 [Special Thanks]: #special-thanks
 [Design]: #design
 [Illustrations]: #illustrations
