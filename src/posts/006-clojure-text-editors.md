@@ -31,7 +31,7 @@ I will work to help new Clojurists by outlining the landscape of "Clojure Editor
 
 ## Clojure Text Editors
 
-Let's start by introducing the top Text Editors for Clojure(Script) development based on the [2021 State of Clojure Survey].
+Let's start by introducing the top Text Editors for Clojure(Script) development based on the [{{ site.posts.resource.clojure_survey.title }}].
 
 1. [Emacs](https://www.gnu.org/software/emacs/)
 1. [IntelliJ](https://www.jetbrains.com/idea/)
@@ -123,4 +123,4 @@ Remember that no matter what language you choose, there are going to be a ton of
 [Atom Setup Guide Video Series]: https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp.
 [Setup Atom for Clojure Development]: https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp
 [Checkout this guide]: https://flight-manual.atom.io/using-atom/sections/atom-packages/
-[2021 State of Clojure Survey]: https://clojure.org/news/2021/04/06/state-of-clojure-2021
+[{{ site.posts.resource.clojure_survey.title }}]: {{ site.posts.resource.clojure_survey.url }}

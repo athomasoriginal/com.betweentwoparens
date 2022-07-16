@@ -106,5 +106,30 @@
     "lastName": {
       "column": "MERGE0"
     }
+  },
+  "posts": {
+    "dep": {
+      "clojurescript": {
+        "version": "\"1.10.866\""
+      },
+      "clj_new": {
+        "version": "\"v1.2.399\""
+      },
+      "cra": {
+        "sha": "5d15373ae711d215cd426e77b029238762e1df1d"
+      },
+      "figwheel": {
+        "version": "\"0.2.13\""
+      },
+      "reagent": {
+        "version": "\"1.1.0\""
+      }
+    },
+    "resource": {
+      "clojure_survey": {
+        "title": "2022 State of Clojure Survey",
+        "url": "https://clojure.org/news/2022/06/02/state-of-clojure-2022"
+      }
+    }
   }
 }

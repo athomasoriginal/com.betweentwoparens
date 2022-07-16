@@ -27,7 +27,9 @@ The first type of comment is a literal [comment]
 ; I'm a comment
 ```
 
-Anything that follows the `;` is ignored by Clojure until the end of the line.  A common use for the `comment` is to help future humans understand our code better<a href="#comments" aria-describedby="footnote-label" id="comments-ref">.</a>
+Anything that follows the `;` is ignored by Clojure until the end of the line.
+A common use for the `comment` is to help future humans understand our code
+better<a href="#comments" aria-describedby="footnote-label" id="comments-ref">.</a>
 
 ## Discard Comment
 
@@ -39,7 +41,11 @@ The second type of comment is a [discard comment]
 (-> 5 inc #_ inc inc)  ; 7
 ```
 
-In the above code, the `#_` makes it as if the second `inc` doesn't exist<a href="#wonderful-life" aria-describedby="footnote-label" id="wonderful-life-ref">.</a>  This is great for debugging because the `discard` comment doesn't return a value.  In addition to this, there are two additional usage notes about the `discard comment`.
+In the above code, the `#_` makes it as if the second `inc` doesn't
+exist<a href="#wonderful-life" aria-describedby="footnote-label" id="wonderful-life-ref">.</a>
+This is great for debugging because the `discard` comment doesn't return a value.
+In addition to this, there are two additional usage notes about the
+`discard comment`.
 
 The first is that they nest:
 

@@ -28,9 +28,9 @@ Start by creating a basic ClojureScript app.  The easiest way to do this is by u
 
 ```bash
 clj -Sdeps '{:deps
-              {seancorfield/clj-new {:mvn/version "1.1.321"}}}' \
+              {seancorfield/clj-new {:mvn/version {{ site.posts.dep.clj_new.version }}}}}' \
   -X clj-new/create \
-  :template '"https://github.com/tkjone/create-reagent-app@7500dd43dc1be88a762ec2d74aad1f2c2c29842d"' \
+  :template '"https://github.com/tkjone/create-reagent-app@{{ site.posts.dep.cra.sha }}"' \
   :name nike/nike-app
 ```
 
@@ -490,11 +490,11 @@ Now from here we need to create an alias in our `deps.edn` file:
  ["src" "test" "resources" "target"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version "1.10.866"}
+ {org.clojure/clojurescript {:mvn/version {{ site.posts.dep.clojurescript.version }}}
 
-  com.bhauman/figwheel-main  {:mvn/version "0.2.13"}
+  com.bhauman/figwheel-main  {:mvn/version {{ site.posts.dep.figwheel.version }}}
 
-  reagent                   {:mvn/version "1.1.0"}}
+  reagent                   {:mvn/version {{ site.posts.dep.reagent.version }}}}
 
  :aliases
  {:dev
