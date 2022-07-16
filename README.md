@@ -164,30 +164,21 @@ When we write blog posts a key factor in choosing topic to write about and struc
 
 ### Updating Blog Checklist
 
-- Keeping blog posts updated is important because it ensures that the work stays relevant and therefore useful to future readers.  With CLJ(s) this is easier because of the stability of the ecosystem.  Either way though, here is an outline of artifacts that need to be updated:
+Keeping blog posts updated is important because it ensures that the work stays
+relevant and therefore useful to future readers.  With CLJ(s) this is easier
+because of the stability of the ecosystem.  We also take it a step further in
+this blog by having all the variables (versions, important resources updated
+on intervals etc) controlled through the `site.json` file.
+
+Now, these only work for the blog, so the following subsections are noting which
+of the non-blog resources we need to also maintain.
+
 
 #### ClojureScript Versions
 
-- post - 000 - deploy cljs github
 - demo - https://github.com/athomasoriginal/demo-clojurescript-gh-pages
-- post - 001 - cljs app from scratch
-- post - 003 - cljs tests
 - video - 016 - figwheel
 
-#### Figwheel Versions
-
-- post - 001 - cljs app from scratch
-- post - 003 - cljs tests
-
-#### Clojure Survey
-
-- post - 001 - cljs app from scratch
-- post - 006 - clj text editors
-
-#### Create Reagent App Versions
-
-- post - 003 - cljs tests
-- post - 005 - deploy cljs nginx
 
 #### Atom Editor
 
