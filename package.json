@@ -7,10 +7,10 @@
   "author": "athomasoriginal <thomasmattacchione@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "1.0.0",
     "@11ty/eleventy-plugin-rss": "1.1.2",
-    "@11ty/eleventy-upgrade-help": "^1.0.1",
-    "dotenv": "^14.2.0",
+    "@11ty/eleventy-upgrade-help": "1.0.1",
+    "dotenv": "14.2.0",
     "eleventy-plugin-svg-contents": "0.7.0",
     "eleventy-plugin-toc": "1.1.5",
     "markdown-it": "12.3.2",
