@@ -67,7 +67,8 @@ Here are some examples of where you might find the `discard comment` useful:
 {#_ #_ :name "Between Two Parens" :host "Thomas"}
 ```
 
-The second take away is that you don't have to add spaces after the `discard comment`:
+The second take away is that you don't have to add spaces after the
+`discard comment`:
 
 ```clojure
 ;; these all produce the same result
@@ -79,14 +80,19 @@ The second take away is that you don't have to add spaces after the `discard com
 ```
 
 ::: note
-You may have noticed that I used `;;` and `;` in the above code block.  This is a common idiom when writing Clojure and is often used to denote a hierarchy.  You can find more information about this convention in [bbatsov's community clojure style guide]
+You may have noticed that I used `;;` and `;` in the above code block.
+This is a common idiom when writing Clojure and is often used to denote a
+hierarchy.  You can find more information about this convention in
+[bbatsov's community clojure style guide]
 :::
 
-The difference between adding the space or removing the space is which one _you_ find more readable<a href="#discard-comment-credit" aria-describedby="footnote-label" id="discard-comment-credit-ref">.</a>
+The difference between adding the space or removing the space is which one
+_you_ find more readable<a href="#discard-comment-credit" aria-describedby="footnote-label" id="discard-comment-credit-ref">.</a>
 
 ## Rich Comment
 
-Finally, we have the `comment macro` which is more affectionatley known as a `Rich Comment Block`:
+Finally, we have the `comment macro` which is more affectionatley known as a
+`Rich Comment Block`:
 
 ```clojure
 (comment
@@ -94,13 +100,20 @@ Finally, we have the `comment macro` which is more affectionatley known as a `Ri
   )
 ```
 
-The first time I heard of a `Rich Comment` was in Stuart Halloway's excellent talk [Running With Scissors] where he notes:
+The first time I heard of a `Rich Comment` was in Stuart Halloway's excellent
+talk [Running With Scissors] where he notes:
 
 ::: note
-"These comments are rich because they provide rich detail about the development process and because they were written by a person named Rich."
+"These comments are rich because they provide rich detail about the development
+process and because they were written by a person named Rich."
 :::
 
-Yet, even after watching `Running With Scissors` the use of the `Rich Comment` hadn't started to click yet.  Two more things would need to happen:  The first, I would witness REPL Driven Development used in person by [David Nolen].  The second, I would start to use REPL Driven Development in my own workflow.  When I did these things, I was able to better see the benefits of the `comment macro` as
+Yet, even after watching `Running With Scissors` the use of the `Rich Comment`
+hadn't started to click yet.  Two more things would need to happen:  The first,
+I would witness REPL Driven Development used in person by [David Nolen].  The
+second, I would start to use REPL Driven Development in my own workflow.  When
+I did these things, I was able to better see the benefits of the `comment macro`
+as
 
 - documentation
 - a save point
@@ -108,7 +121,8 @@ Yet, even after watching `Running With Scissors` the use of the `Rich Comment` h
 - improved code exploration
 - preservation of syntax highlighting
 
-With that, let's review a few examples of the `Rich Comment` from real life Clojure codebases<a href="#example-comments" aria-describedby="footnote-label" id="example-comments-ref">.</a>
+With that, let's review a few examples of the `Rich Comment` from real life
+Clojure codebases<a href="#example-comments" aria-describedby="footnote-label" id="example-comments-ref">.</a>
 
 The first example illusrates the `documentation` and `save point` ideas.
 
@@ -123,7 +137,11 @@ The first example illusrates the `documentation` and `save point` ideas.
 )
 ```
 
-The above comes from the [clojure codebase] itself and is a code example of how to use [sh].  For me, the value is that we have an example of how to use `sh` (`documentation`) and we have some code ready for us to run through our REPL (`a save point`). This idea of having a `save point` becomes more powerful in the next example:
+The above comes from the [clojure codebase] itself and is a code example of
+how to use [sh].  For me, the value is that we have an example of how to use
+`sh` (`documentation`) and we have some code ready for us to run through our
+REPL (`a save point`). This idea of having a `save point` becomes more powerful
+in the next example:
 
 ```clojure
 (comment
@@ -133,43 +151,53 @@ The above comes from the [clojure codebase] itself and is a code example of how 
    (def db (app.db/connection!)))
 
   (cart/add db {:item-name "iPhone"})
-  ; ...more stuffs
-  )
 ```
 
-The above builds on the idea of having a `save point` and layers on some `code setup` helpers.  What the above does is add in a few lines of code which, when run, will provide us with a `db connection`. Through this, I can quickly begin interacting with my app's database code and building out features.
+The above builds on the idea of having a `save point` and layers on some
+`code setup` helpers.  What the above does is add in a few lines of code
+which, when run, will provide us with a `db connection`. Through this, I can
+quickly begin interacting with my app's database code and building out features.
 
-Of course, there are other types of setup code that you may want.  For example, you might be working on a pure function which is just going to transform some data.  In this case, we might setup a `comment` like this:
+Of course, there are other types of setup code that you may want.  For example,
+you might be working on a pure function which is just going to transform some
+data.  In this case, we might setup a `comment` like this:
 
 {% raw %}
 ```clojure
 (comment
-(refer 'set)
-(def xs #{{:a 11 :b 1 :c 1 :d 4}
-         {:a 2 :b 12 :c 2 :d 6}
-         {:a 3 :b 3 :c 3 :d 8 :f 42}})
 
-(def ys #{{:a 11 :b 11 :c 11 :e 5}
-         {:a 12 :b 11 :c 12 :e 3}
-         {:a 3 :b 3 :c 3 :e 7 }})
+  (def xs #{{:a 11 :b 1  :c 1 :d 4}
+            {:a 2  :b 12 :c 2 :d 6}
+            {:a 3  :b 3  :c 3 :d 8 :f 42}})
 
-(join xs ys)
-; ...
-)
+  (def ys #{{:a 11 :b 11 :c 11 :e 5}
+            {:a 12 :b 11 :c 12 :e 3}
+            {:a 3  :b 3  :c 3  :e 7}})
+
+  (join xs ys))
 ```
 {% endraw %}
 
 
-The above is the [example Stuart provided] in his talk which provides us with some sample data allowing us to immediately begin using our functions to transform said data.
+The above is the [example Stuart provided] in his talk which provides us with
+some sample data allowing us to immediately begin using our functions to
+transform said data.
 
 ## Conclusion
 
-These are just a few examples of how to use a `Rich Comment Block`.  The most interesting part of the `Rich Comment Block` for me is that it's a tangible example of the pragmatism of Clojure.  In this case, the `comment macro` provides an additional mechanism for speeding up my workflow and making our code more maintainable overall because of the improved documentation and context we get from these comments.
+These are just a few examples of how to use a `Rich Comment Block`.  The most
+interesting part of the `Rich Comment Block` for me is that it's a tangible
+example of the pragmatism of Clojure.  In this case, the `comment macro` provides
+an additional mechanism for speeding up my workflow and making our code more
+maintainable overall because of the improved documentation and context we get
+from these comments.
 
 ::: footnotes
 
 ->->-> footnote#comments
-Of course, there are arguments on both sides about how much to use comments.  As I see it, don't shy away from them in the pursuit of "self documenting code" and also don't lean on them too heavily.
+Of course, there are arguments on both sides about how much to use comments.
+As I see it, don't shy away from them in the pursuit of "self documenting code"
+and also don't lean on them too heavily.
 ->->->
 
 ->->-> footnote#wonderful-life
@@ -177,11 +205,13 @@ Of course, there are arguments on both sides about how much to use comments.  As
 ->->->
 
 ->->-> footnote#discard-comment-credit
-Much love to [Sean Corfield] for pointing out nesting and the spacing points for the discard comment.  Very cool!
+Much love to [Sean Corfield] for pointing out nesting and the spacing points
+for the discard comment.  Very cool!
 ->->->
 
 ->->-> footnote#example-comments
-Each example I provided in this post are really just my interpretations of how they may be used.  The author may have had a different intent.
+Each example I provided in this post are really just my interpretations of how
+they may be used.  The author may have had a different intent.
 ->->->
 
 :::

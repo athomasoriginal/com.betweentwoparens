@@ -35,7 +35,7 @@ Not sure if you have everything setup properly? We can run a quick sanity check 
 clj -Stree
 ```
 
-you should see a response like this:
+You should see a response like this:
 
 ```bash
 org.clojure/clojure 1.10.3
