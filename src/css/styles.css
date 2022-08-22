@@ -763,7 +763,7 @@ a[aria-label='Back to content']:hover {
 
 .contact-wrapper .box {
   --max-width: 50vw;
-  --min-width: 45vw;
+  --min-width: 75vw;
   --padding: 20px 30px;
 }
 
@@ -954,5 +954,9 @@ a[aria-label='Back to content']:hover {
 
   .blog-content__note {
     margin: 20px -30px 30px -30px;
+  }
+
+  .contact-wrapper .box {
+    --max-width: 45vw;
   }
 }
