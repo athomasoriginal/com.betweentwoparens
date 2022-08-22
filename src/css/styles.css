@@ -450,6 +450,15 @@ img {
   );
 }
 
+.box {
+  display: flex;
+  max-width: 380px;
+  flex-direction: column;
+  box-shadow: 0 10px 32px -5px rgba(54, 61, 77, 0.2);
+  padding: 40px;
+  border-radius: 4px;
+}
+
 /* -----------------------------------------------------------------------------
    Blog Content
    -------------------------------------------------------------------------- */
@@ -673,15 +682,6 @@ a[aria-label='Back to content']:hover {
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
-
-.subscribe {
-  display: flex;
-  max-width: 380px;
-  flex-direction: column;
-  box-shadow: 0 10px 32px -5px rgba(54, 61, 77, 0.2);
-  padding: 40px;
-  border-radius: 4px;
 }
 
 .subscribe__description {
