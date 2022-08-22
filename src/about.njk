@@ -1,0 +1,14 @@
+---
+layout: html-base
+title: contact
+---
+
+<main class="blog__home contact-wrapper">
+  {% for link in site.about_links %}
+    <a class="box | link:reset h__base h__1"
+       href={{ link.link }}
+       {% if link.isExternalLink %} target="__blank" {% endif %}>
+      {{ link.title }}
+    </a>
+  {% endfor %}
+</main>

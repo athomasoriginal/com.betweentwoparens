@@ -77,11 +77,11 @@
       "isInternalLink": true
     },
     {
-      "title": "Contact",
-      "link": "mailto:thomasmattacchione@gmail.com?subject=Hey%20Thomas",
+      "title": "About",
+      "link": "/about",
       "iconName": "",
       "isIconLink": false,
-      "isInternalLink": false
+      "isInternalLink": true
     },
     {
       "title": "Youtube",
@@ -131,5 +131,22 @@
         "url": "https://clojure.org/news/2022/06/02/state-of-clojure-2022"
       }
     }
-  }
+  },
+  "about_links": [
+    {"title": "Twitter",
+     "link": "https://twitter.com/athomasoriginal",
+     "isExternalLink": true},
+
+    {"title": "Email",
+     "link": "mailto:thomasmattacchione@gmail.com?subject=Hey%20Thomas",
+     "isExternalLink": false},
+
+    {"title": "Youtube",
+     "link": "https://www.youtube.com/channel/UCfBUN43AQoyGiQxmCIDZe2w/featured?view_as=subscriber",
+     "isExternalLink": true},
+
+    {"title": "Newsletter",
+     "link": "/subscribe",
+     "isExternalLink": false}
+  ]
 }
