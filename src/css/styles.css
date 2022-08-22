@@ -758,7 +758,7 @@ a[aria-label='Back to content']:hover {
    Contact Screen
    -------------------------------------------------------------------------- */
 .contact-wrapper {
-  margin-top: 3em;
+  margin-top: 2em;
 }
 
 .contact-wrapper .box {
@@ -955,7 +955,9 @@ a[aria-label='Back to content']:hover {
   .blog-content__note {
     margin: 20px -30px 30px -30px;
   }
-
+  .contact-wrapper {
+    margin-top: 3em;
+  }
   .contact-wrapper .box {
     --max-width: 45vw;
   }
