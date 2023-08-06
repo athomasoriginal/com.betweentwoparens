@@ -7,7 +7,7 @@
   "author": "athomasoriginal <thomasmattacchione@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "1.0.2",
+    "@11ty/eleventy": "2.0.1",
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "dotenv": "16.0.1",
     "eleventy-plugin-svg-contents": "0.7.0",
