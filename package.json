@@ -16,7 +16,7 @@
     "markdown-it-anchor": "8.6.4",
     "markdown-it-container": "3.0.0",
     "markdown-it-for-inline": "0.1.1",
-    "prismjs": "1.28.0"
+    "prismjs": "1.29.0"
   },
   "scripts": {
     "dev": "eleventy --serve --port 8080 --output=dist",
