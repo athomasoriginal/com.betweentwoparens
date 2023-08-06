@@ -127,8 +127,8 @@
     },
     "resource": {
       "clojure_survey": {
-        "title": "2022 State of Clojure Survey",
-        "url": "https://clojure.org/news/2022/06/02/state-of-clojure-2022"
+        "title": "2023 State of Clojure Survey",
+        "url": "https://clojure.org/news/2023/02/27/clojure-survey-2023"
       }
     }
   },
