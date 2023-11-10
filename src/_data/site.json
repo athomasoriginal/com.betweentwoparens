@@ -110,13 +110,13 @@
   "posts": {
     "dep": {
       "clojurescript": {
-        "version": "\"1.10.866\""
+        "version": "\"1.11.60\""
       },
       "figwheel": {
-        "version": "\"0.2.13\""
+        "version": "\"0.2.18\""
       },
       "reagent": {
-        "version": "\"1.1.0\""
+        "version": "\"1.2.0\""
       }
     },
     "resource": {
