@@ -112,12 +112,6 @@
       "clojurescript": {
         "version": "\"1.10.866\""
       },
-      "clj_new": {
-        "version": "\"v1.2.399\""
-      },
-      "cra": {
-        "sha": "5d15373ae711d215cd426e77b029238762e1df1d"
-      },
       "figwheel": {
         "version": "\"0.2.13\""
       },
