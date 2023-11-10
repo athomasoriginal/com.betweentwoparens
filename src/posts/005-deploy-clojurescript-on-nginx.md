@@ -67,15 +67,18 @@ If you are going to follow along with this post please make sure you have the fo
 This whole process starts with a ClojureScript app.  If you already have an app you can skip this part.  If you don't have an app, please follow along with this section and we will set you up with your very own ClojureScript app.
 :::
 
-We will create our ClojureScript app using [Create Reagent App](https://github.com/athomasoriginal/create-reagent-app).  This is a tool which automatically builds a modern ClojureScript/Reagent (READ: React) app for us.  All you need to do is move to a directory where you want your project to live and run the following command:
+Start by creating a basic ClojureScript app.  The easiest way to do this is by
+following the [templates getting started guide].
 
-```bash
-clj -Sdeps '{:deps
-              {seancorfield/clj-new {:mvn/version {{ site.posts.dep.clj_new.version }}}}}' \
-  -X clj-new/create \
-  :template '"https://github.com/tkjone/create-reagent-app@{{ site.posts.dep.cra.sha }}"' \
-  :name demo-clojurescript-nginx/demo-clojurescript-nginx
-```
+::: note
+`templates` is a repo of my personal "start projects". Using the Reagent template,
+as outlined in the getting started guide linked above, will quickly get you
+started with a modern ClojureScript app for us.
+
+You can think of the above as a lightweight ClojureScript version of
+[create-react-app]. If you're curious about the `reagent` template generated
+you can read all about it in [Start a ClojureScript App from Scratch].
+:::
 
 Once the above is complete you should have a project that looks like this:
 
@@ -421,3 +424,7 @@ The reason I am using docker is because I want to reach as many OS's as I can an
 
 [Nginx]: https://www.nginx.com/
 [source code here]: https://github.com/athomasoriginal/demo-clojurescript-nginx
+[create-react-app]: https://create-react-app.dev/
+[templates getting started guide]: https://github.com/athomasoriginal/templates#getting-started
+[templates]: https://github.com/athomasoriginal/templates
+[Start a ClojureScript App from Scratch]: https://betweentwoparens.com/blog/start-a-clojurescript-app-from-scratch
