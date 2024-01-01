@@ -147,7 +147,7 @@ To develop and run our app the most popular tools in Clojure land are `lein`, `b
  - resolve transitive dependencies
  - build classpaths
 
- Ultimatley, `clj` is simple, oriented towards beginners and yet powerful enough to support advanced users.  If you're interested in learning more, checkout out the [clojure tools] post.  Also feel free to checkout the [2021 State of Clojure Community Report] to see which tools the Clojure community uses most.
+ Ultimatley, `clj` is simple, oriented towards beginners and yet powerful enough to support advanced users.  If you're interested in learning more, checkout out the [clojure tools] post.  Also feel free to checkout the [{{ site.posts.resource.clojure_survey.title }}] to see which tools the Clojure community uses most.
 
 ### Step 6 - Add deps file
 
@@ -573,7 +573,6 @@ I believe the difference between ClojureScript and Figwheel options is a great s
 [boot]: https://boot-clj.com/
 [clj]: https://clojure.org/guides/deps_and_cli
 [clojure tools]: https://betweentwoparens.com/blog/what-are-the-clojure-tools
-[2021 State of Clojure Community Report]: https://clojure.org/news/2021/04/06/state-of-clojure-2021
 [:paths]: https://clojure.org/reference/deps_and_cli#_paths
 [:deps]: https://clojure.org/reference/deps_and_cli#_dependencies
 [:aliases]: https://clojure.org/reference/deps_and_cli#_aliases
@@ -615,3 +614,4 @@ I believe the difference between ClojureScript and Figwheel options is a great s
 [commit 4c8cbd]: https://github.com/athomasoriginal/demo-clojurescript-app/commit/4c8cbd67dcc24d0365feb25bf511e03cba0fcf36
 [commit e1cf66]: https://github.com/athomasoriginal/demo-clojurescript-app/commit/e1cf66d7ed1973d4fa1ec1091c0cbe16e61cf4b4
 [Students of The Game: Reloadable Code]: https://betweentwoparens.com/blog/students-of-the-game:-reloadable-code/
+[{{ site.posts.resource.clojure_survey.title }}]: {{ site.posts.resource.clojure_survey.url }}
