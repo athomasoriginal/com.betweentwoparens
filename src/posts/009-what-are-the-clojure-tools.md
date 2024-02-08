@@ -11,37 +11,31 @@ canonical: true
 summary: "It's not a build tool, it's clj."
 ---
 
-This post is an overview of the `Clojure Tools`. When I started my Clojure
-journey I had questions like:
-
-- How do I **install** Clojure?
-- How do I **run** a Clojure program?
-- How do I **manage** Clojure packages (dependencies)?
-- How do I **configure** a Clojure project?
-- How do I **build** Clojure for production?
-
-The short answer to all the above is: use the `Clojure Tools`
-<a href="#cli-tool-v-dev-tools" aria-describedby="footnote-label" id="cli-tool-v-dev-tools-ref">.</a>
-
-:::note
-Please note there are other popular solutions like [lein] and [boot]. So why do
-I just skip over those? Don't worry, we'll chat about that later in
-this post.
-:::
-
-At a high level, the `Clojure Tools` currently consist of:
-
-- `Clojure CLI`
-- `tools.build`
-
-The first is a CLI tool and the second is a Clojure library which provides
-some helper functions to make it easier to build Clojure artifacts.  The rest of
-this post will dig into each of these tools.
-
 ::: note
 Want to install the `Clojure CLI`? Visit the [Official Getting Started Guide] or
 watch [Installing Clojure on Mac].  Sorry Linux and Windows, friends.  I will
 get to those videos in time!
+:::
+
+The `Clojure Tools` are a group of convenience tools which currently consist of:
+
+* `Clojure CLI`
+* `tools.build`
+
+The `Clojure Tools`<a href="#cli-tool-v-dev-tools" aria-describedby="footnote-label" id="cli-tool-v-dev-tools-ref">.</a>
+were designed to answer some of the following questions:
+
+* How do I **install** Clojure? (`Clojure CLI`)
+* How do I **run** a Clojure program? (`Clojure CLI`)
+* How do I **manage** Clojure packages (dependencies)? (`Clojure CLI`)
+* How do I **configure** a Clojure project? (`Clojure CLI`)
+* How do I **build** Clojure for production? (`tools.build`)
+
+The rest of this post will dig into each of these tools.
+
+:::note
+The alternatives to `Clojure CLI` are [lein] and [boot]. We'll chat about these
+later.
 :::
 
 ## Clojure CLI
@@ -73,43 +67,46 @@ Like all `Clojure` programs, the `Clojure CLI` is built on a few libraries:
 - [tools.deps.alpha] a clojure library (commonly referred to as `deps`)
 - [deps.edn] - an [edn] file with a specific structure
 
-The next few sections will review each one in turn.
+The following sections will provide overviews of each of the above tools.
 
-### clj/clojure
+The `Clojure CLI` is invoked by calling either `clj` or `clojure` shell commands:
 
-As we see above, the `Clojure CLI` is invoked by calling one of the two
-shell commands:
+```bash
+# clj
+clj -M -m your-clojure-program
 
-- `clj`
-- `clojure`
+# clojure
+clojure -M -m your-clojure-program
+```
 
-When you read through the [Official Deps and CLI Guide] you will see that you
-can use either `clj` or `clojure`.  What's the difference between these two
-commands?  Functionally nothing.  They both do the exact same thing. The
-difference is that `clj` wraps the `clojure` command with a tool called
-[rlwrap]. `rlwrap` improves the developer experience by making it
-easier to type in the terminal while you're running your Clojure REPL.
-
-`rlwrap` is great if you're a human typing in the terminal, but if your a
-program running `clj` you're not gonna have a good time.  This is because
-`rlwrap` _can_ make it harder to compose the `clj` command with other tools
-depending on the tools you  use.  As a result, it's a common practice to use `clojure` in production/ci environments
-<a href="#when-to-use-clojure-script" aria-describedby="footnote-label" id="when-to-use-clojure-script-ref">.</a>
+Under the hood, `clj` actually calls `clojure`.  The difference is that `clj`
+wraps the `clojure` command with a tool called [rlwrap]. `rlwrap`
+improves the developer experience by making it easier for you, a human, to type
+in the terminal while you're running your Clojure REPL.  However, even though
+it's easier for you to type, `rlwrap` _can_ make it hard to compose the `clj`
+command with other tools.  As a result, it's a common practice to use `clojure`
+in production/ci environments <a href="#when-to-use-clojure-script" aria-describedby="footnote-label" id="when-to-use-clojure-script-ref">.</a>
 Additionally, not all environments have access to `rlwrap` so it's another
 dependency you have to install.
 
 Okay, so they do the same thing.  What do they do?  `clj/clojure` has one job:
-run Clojure programs against a classpath.  If you dig into the `clj/clojure`
-bash script you see that it ultimatley calls a command like this:
+run Clojure programs against a classpath.
+
+The next sections will outline the tools that make up the `Clojure CLI` tool.
+
+### clj/clojure
+
+If you dig into the `clj/clojure` is just a bash script which ultimatley calls
+a command like this:
 
 ```bash
 java [java-opt*] -cp classpath clojure.main [init-opt*] [main-opt] [arg*]
 ```
 
-Thus, `Clojure CLI` bash script is a convenience making it easier to run
-Clojure programs.  You don't have to type out a gnarly `Java` command and make
-it work on different environments (windows, linux, mac etc).  However, it
-orchestrates the building of the classpath by calling out to `tools.deps.alpha`.
+Thus, the `Clojure CLI` tool makes it easier to run Clojure programs.  It saves
+you having to type out a gnarly `Java` command and make it work on different
+environments (windows, linux, mac etc).  However, it orchestrates the building
+of the classpath by calling out to `tools.deps.alpha`.
 
 ### tools.deps.alpha
 
@@ -123,40 +120,30 @@ It does the following things:
 What's interesting about this program is that it's just a Clojure library.
 This means that you can use it outside of the `Clojure CLI`.
 
-::: note
-It's a good time to note that **NEITHER** `clj/clojure` or `tools.deps.alpha` are
-"building" Clojure artifacts.  More on this later.
-:::
-
 The other thing that makes `tools.deps.alpha` great is that it's a small and
 focused library.  Why this is great is that if something goes wrong it's easy
 to read and learn the library in a short period of time.
 
-Now, if you're of the
+::: note
+if you're of the
 opinion that you shouldn't have to know implementation details of the tools you
 use, well, welcome to professional software development.  It doesn't matter what
 language or tool you use, you will run across outdated docs, bugs or undefined
 behaviour.  You could choose to wait for someone to save you, or solve the
 problem yourself.  This is where small, well designed and focused libraries
-win out over battery included solutions.  To learn more about the history,
+win out over "battery included" solutions.  To learn more about the history,
 development and goals of the tool from the Clojure team I recommend listening
 to this episode of [Clojure Weekly Podcast] which features Alex Miller,
 the author of `tools.deps.alpha`.
-
-Tangents aside, in order for the classpath to be built we need to tell
-`tools.deps.alpha` what we need on the classpath.  This is the job of `deps.edn`.
+:::
 
 ### deps.edn
 
-The `deps.edn` file is a Clojure map with a specific structure.  Thus, when
-you run `clj/clojure` one of the first things it does is find a `deps.edn` file
-and reads it in.
-
-`deps.edn` is where you configure your project and specify project dependencies.
-At it's heart, `deps.edn` is just an [edn] file.  You can think of it like
-Clojure's version of `package.json`.
-
-Here is an example of what a `deps.edn` file looks like:
+`deps.edn` is just an [edn] file where you configure your project and specify
+project dependencies. You can think of it like Clojure's version of
+`package.json`.  The `deps.edn` file is a Clojure map
+with a specific structure.  Here's an example of some of the properties of
+a `deps.edn` file:
 
 ```clojure
 {:deps    {...}
@@ -167,28 +154,29 @@ Here is an example of what a `deps.edn` file looks like:
 As you can see, we use the keywords `:deps`, `:paths` and `:aliases` and more
 to start to describe your project and the dependencies it requires.
 
+As we noted above, `deps.edn` is read in when you run `clj/clojure` and tells `clj/clojure`
+which dependencies are requires to run your project.
 
 ## Tools.Build
 
-This is the newest Clojure Tool.  It's been in the works for a while and might
-be the simplest to understand conceptually:  It's a Clojure library with
-functions that do things like build a `jar`, `uberjar` etc.
+`tools.build` is a Clojure library with functions for building clojure projects.
+For example, build a `jar` or `uberjar`.
 
-One distinction that's important to note is that `tools.build` is not the same
-as the `Clojure CLI` tool's `-T` switch.  I am calling this out now because
-when `tools.build` was released the `Clojure CLI` was also enhanced to provide
-the `-T` switch.  As one can imagine, this could be seen as confusing because
-of the similarity of their names.
+The way you would use `tools.build` is by writing a separate program inside
+your app which knows how to build your app.  The convention is to create a
+`build.clj` file in the root of your project.  Import `tools.build` and use
+the functions provides by `tools.build` to build your program.
 
-The best way that I can _currently_ explain the `-T` switch is by saying that
-it's meant to be another level of convenience provided by the `Clojure CLI`.
-
-Regarding usage, it helps to first breakdown the main types of Clojure
-programs one might build into 3 sub categories:
+The 3 main types of Clojure programs one might build into 3 sub categories:
 
 - A `tool`
 - A `library`
 - An `app`
+
+When you run your `build.clj` file, you will use `Clojure CLI`'s `-T` switch.
+The `-T` switch is meant to run general clojure programs via the `Clojure CLI`
+and since `build.clj` is a separate program, distinct form the app you are
+writing, you would run it via the `-T` switch.
 
 You would use `-T` for Clojure programs that you want to run as a "tool".  For
 example, [deps-new] is a Clojure library which creates new Clojure projects
@@ -246,10 +234,9 @@ which is Clojure's official answer to the build question.
 If you're curious which to choose, my answer is the `Clojure CLI`.
 The reason I like the `Clojure CLI` is because the tool is simple.
 You can read through `clj` and `tools.deps.alpha` in an afternoon and understand
-what they are doing if you had to.  The same (subjectively of course) cannot be
-said for `lein` or `boot`.  This is not just implementation, but also usage.
-Yes, `lein` seems easier to start, but the moment you break away from the
-beginner examples you are left deeps in the woods without a compass.
+what they are doing.  The same (subjectively of course) cannot be
+said for `lein` or `boot`.  I will note that `Clojure CLI`'s API is not
+straightforward and can be confusing.
 
 Secondly, the `Clojure Tools` promote libraries over frameworks.  This is
 important when working with a language like Clojure because it really does
@@ -259,8 +246,6 @@ Finally, the Clojure community is really leaning into
 building tools for `Clojure CLI`.  For example, where `lein` used to have significantly
 more functionality, the community has built a ton of [incredible tools] that
 will cover many of your essential requirements.
-
-So yes, `Clojure Tools` for the win.
 
 ::: footnotes
 
@@ -318,6 +303,5 @@ Post about [Clojure Monorepo using Clojure CLI Tools].
 [brew install script]: https://github.com/clojure/brew-install/blob/1.10.1/src/main/resources/clj#L4
 [Clojure Monorepo using Clojure CLI Tools]: https://corfield.org/blog/2021/02/23/deps-edn-monorepo/
 [depstar]: https://github.com/seancorfield/depstar
-[Official Deps and CLI Guide]: https://clojure.org/guides/deps_and_cli
 [tools.build release announcement]: https://clojurians-log.clojureverse.org/tools-deps/2021-07-09
 [tools.build official announcement]: https://clojure.org/news/2021/07/09/source-libs-builds
