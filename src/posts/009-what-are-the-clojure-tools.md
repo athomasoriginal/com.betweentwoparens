@@ -64,7 +64,7 @@ clj -Sdeps '{:deps {bidi/bidi {:mvn/version "2.1.6"}}}'
 Like all `Clojure` programs, the `Clojure CLI` is built on a few libraries:
 
 - [clj/clojure] - a bash script
-- [tools.deps.alpha] a clojure library (commonly referred to as `deps`)
+- [tools.deps] a clojure library (commonly referred to as `deps`)
 - [deps.edn] - an [edn] file with a specific structure
 
 The following sections will provide overviews of each of the above tools.
@@ -106,11 +106,11 @@ java [java-opt*] -cp classpath clojure.main [init-opt*] [main-opt] [arg*]
 Thus, the `Clojure CLI` tool makes it easier to run Clojure programs.  It saves
 you having to type out a gnarly `Java` command and make it work on different
 environments (windows, linux, mac etc).  However, it orchestrates the building
-of the classpath by calling out to `tools.deps.alpha`.
+of the classpath by calling out to `tools.deps`.
 
-### tools.deps.alpha
+### tools.deps
 
-`tools.deps.alpha` is a Clojure libary responsible for managing your dependencies.
+`tools.deps` is a Clojure libary responsible for managing your dependencies.
 It does the following things:
 
 - reads in dependencies from a `deps.edn` file
@@ -120,7 +120,7 @@ It does the following things:
 What's interesting about this program is that it's just a Clojure library.
 This means that you can use it outside of the `Clojure CLI`.
 
-The other thing that makes `tools.deps.alpha` great is that it's a small and
+The other thing that makes `tools.deps` great is that it's a small and
 focused library.  Why this is great is that if something goes wrong it's easy
 to read and learn the library in a short period of time.
 
@@ -134,7 +134,7 @@ problem yourself.  This is where small, well designed and focused libraries
 win out over "battery included" solutions.  To learn more about the history,
 development and goals of the tool from the Clojure team I recommend listening
 to this episode of [Clojure Weekly Podcast] which features Alex Miller,
-the author of `tools.deps.alpha`.
+the author of `tools.deps`.
 :::
 
 ### deps.edn
@@ -233,7 +233,7 @@ which is Clojure's official answer to the build question.
 
 If you're curious which to choose, my answer is the `Clojure CLI`.
 The reason I like the `Clojure CLI` is because the tool is simple.
-You can read through `clj` and `tools.deps.alpha` in an afternoon and understand
+You can read through `clj` and `tools.deps` in an afternoon and understand
 what they are doing.  The same (subjectively of course) cannot be
 said for `lein` or `boot`.  I will note that `Clojure CLI`'s API is not
 straightforward and can be confusing.
@@ -284,7 +284,7 @@ Post about [Clojure Monorepo using Clojure CLI Tools].
 [rlwrap]: https://linux.die.net/man/1/rlwraps
 [readline]: https://en.wikipedia.org/wiki/GNU_Readline
 [deps.edn]: https://www.clojure.org/guides/deps_and_cli
-[tools.deps.alpha]: https://github.com/clojure/tools.deps.alpha
+[tools.deps]: https://github.com/clojure/tools.deps
 [tools.build]: https://github.com/clojure/tools.build
 [edn]: https://github.com/edn-format/edn
 [map]: https://clojure.org/reference/data_structures#Maps
