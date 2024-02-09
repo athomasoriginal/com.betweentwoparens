@@ -37,10 +37,7 @@ Let's start by introducing the top Text Editors for Clojure(Script) development 
 1. [IntelliJ](https://www.jetbrains.com/idea/)
 1. [VS code](https://code.visualstudio.com/)
 1. [Vim](https://www.vim.org/)
-1. [Atom](https://atom.io/)
 1. [Sublime](https://www.sublimetext.com/)
-1. [Eclipse](https://www.eclipse.org/downloads/)
-1. [Light Table](http://lighttable.com/)
 
 For professional and hobby developers, the above list contains the editors you might expect to see.  The issue is that for newcomers and developers without a strong idea of language specific tooling the above list can feel prohibitive.
 
