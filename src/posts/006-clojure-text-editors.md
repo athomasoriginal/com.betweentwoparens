@@ -80,37 +80,10 @@ Knowing this, lets move onto how I setup Atom for my development workflow.
 
 ## My Text Editor Setup
 
-As mentioned, `Atom` is _currently_ my preferred text editor for Clojure development.  The reason? it's portable, easy to setup and customize.
-
-::: note
-My Atom setup can be found below, but if you find video tutorials more helpful checkout my youtube video series [Setup Atom for Clojure Development] where I go through everything from installing Atom to installing, configuring and demoing each tool I use.
-:::
-
-### Plugins and Configuration
-
-I have always found that to be productive with Clojure you don't need many tools. This is great because it means I can keep a relatively spartan setup for my Text Editor.  Now, let's take a look at the plugins I use and how I configure them.
-
-::: note
-For each of the plugins listed below you will have to install them.  If you have never installed packages with Atom it's straightforward, but if you need additional help [Checkout this guide]
-:::
-
-- [Ink](https://atom.io/packages/ink)
-
-  - Ink only required if your using a version of Chlorine under ` 0.7.2`.  Having said this, it doesn't hurt to have Ink installed because a lot of other Atom plugins require it anyways
-
-  - **Description:** Chlorine depends on this.
-  - **Configuration:** None required.
-
-- [Chlorine](https://atom.io/packages/chlorine)
-
-  - **Description:** Integrate your Clojure REPL into your editor.
-  - **Configuration:** Add the Chlorine hotkeys.  [Here is an example](https://github.com/athomasoriginal/dotfiles/blob/master/atom/keymap.cson#L34) of where to put them.
-
-- [Parinfer](https://atom.io/packages/parinfer)
-
-  - **Description:** Automatically balance your parens.  Translation?  Thinks less about your parens.
-  - **Configuration:** The default settings are great, but I recommend enabling `smart mode`
-
+I use `nvim` as my daily text editor for all development because it's fast,
+customizable and I can control how much or little I want `nvim` to do.  The
+problem with Vim is that it's not friendly to people new to software
+development.  For those interested in my `nvim` setup you can see my [Dotfiles].
 
 ## Conclusion
 
@@ -121,3 +94,6 @@ Remember that no matter what language you choose, there are going to be a ton of
 [Setup Atom for Clojure Development]: https://www.youtube.com/playlist?list=PLaGDS2KB3-AqeOryQptgApJ6M7mfoFXIp
 [Checkout this guide]: https://flight-manual.atom.io/using-atom/sections/atom-packages/
 [{{ site.posts.resource.clojure_survey.title }}]: {{ site.posts.resource.clojure_survey.url }}
+[think]: https://www.youtube.com/watch?v=f84n5oFoZBc
+[emacs]: https://www.gnu.org/software/emacs/
+[Dotfiles]: https://github.com/athomasoriginal/dotfiles
