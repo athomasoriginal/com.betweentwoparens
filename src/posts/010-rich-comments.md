@@ -8,7 +8,7 @@ tags:
 title: "Rich Comment Blocks"
 permalink: blog//{{ title | slug }}/index.html
 canonical: true
-summary: "Your coding life doesn't have to be a Rogue Like."
+summary: "Your coding life doesn't have to be a Rogue-Like."
 ---
 
 The three main types of comments in Clojure are
