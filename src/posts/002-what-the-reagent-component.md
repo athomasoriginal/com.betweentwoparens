@@ -298,7 +298,7 @@ Less philosophically though, I find it encouraging to know that everything is, g
 ::: footnotes
 
 ->->-> footnote#reagent-default-class
-I say "default" because prior to version xx of Reagent you did not have a choice between class or function components.
+I say "default" because prior to [reagent 1.0] you did not have a choice between class or function components.
 ->->->
 
 ->->-> footnote#reagent-components
@@ -329,3 +329,4 @@ If your curious as to why there is an [official response] from the current maint
 [this code sandbox]: https://codesandbox.io/s/pseudoclassical-instantiation-pattern-sc0fk
 [briefly touched on]: https://github.com/reagent-project/reagent/blob/master/doc/CreatingReagentComponents.md#final-note
 [official response]: https://github.com/reagent-project/reagent/pull/437#issuecomment-520943315
+[reagent 1.0]: https://github.com/reagent-project/reagent/blob/master/CHANGELOG.md#100-2020-12-21
