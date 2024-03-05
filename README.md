@@ -196,6 +196,7 @@ of the non-blog resources we need to also maintain.
 ```yaml
 author: "Thomas Mattacchione"
 createdDate: '29 July 2019'
+updatedDate: '05 March 2024'
 date: Last Modified
 layout: post
 tags:
@@ -207,6 +208,14 @@ summary: "It's time to uncover the truth about Reagent components."
 ```
 
 - `createdDate`: the original publication date
+- `updatedDate`: the last modified date
+  - Why both `date` and `updatedDate`?  They both serve the same function and
+    originally `date` was something I saw as a lower maintence way of documenting
+    last modified.  However, when I went to update the blog index to show the
+    last modified date it became apparent that `date` could not be used as-is.
+    So, instead of swapping it out and potentially creating an error, I just
+    added `updatedDate`.  Prefer this.  We will eventually phase out the use
+    of `date`.
 - `date`: the date the post was last updated
 - `summary`: max 140 characters tagline
 - `permalink`: dynamically generate based on the title.
