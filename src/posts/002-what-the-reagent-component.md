@@ -48,25 +48,44 @@ I assume readers have a level of familiarity with ClojureScript, JavaScript and 
 
 ## A Pseudoclassical Pattern
 
-The reason all of your Reagent components become `class components` is because all of the code you pass to Reagent is run through an internal Reagent function called [create-class].  The interesting part of this is _how_ `create-class` uses JavaScript mechanics to transform the Reagent component you wrote into something that is recognized as a React class component.  Before we look into what `create-class` is doing, it's helpful to review how "classes" work in JavaScript.
+The reason all of your Reagent components become `class components` is because
+all of the code you pass to Reagent is run through an internal Reagent function
+called [create-class].
 
-Prior to ES6, JavaScript did not have classes<a href="#javascript-es6-classes" aria-describedby="footnote-label" id="javascript-es6-classes-ref">.</a>  and this made _some_ JS developers sad because classes are a common pattern used to structure ones code and provide mechanisms for:
+`create-class` is interesting because of how it uses JavaScript to
+transform a Reagent component into something that is recognized as a React
+class component.  Before we look into what `create-class` is doing, it's
+helpful to review how "classes" work in JavaScript.
+
+Prior to ES6, JavaScript did not have classes<a href="#javascript-es6-classes" aria-describedby="footnote-label" id="javascript-es6-classes-ref">.</a>
+and this made _some_ JS developers sad because classes are a common pattern used
+to structure code and provide support for:
 
 - instantiation
 - inheritance
 - polymorphism
 
-But as I said, prior to ES6, JavaScript did not have a formal syntax for "classes".  This led the JavaScript community to develop a [series of instantiation patterns] to help _simulate_ classes.
+But as I said, prior to ES6, JavaScript didn't have a formal syntax for "classes".
+To compensate for the lack of classes, the JavaScript community got creative
+and developed a [series of instantiation patterns] to help _simulate_ classes.
 
 Of all of these patterns, the `pseudoclassical instantiation pattern` became one of the most popular ways to simulate a class in JavaScript.  This is evidenced by the fact that many of the "first generation" JavaScript libraries and frameworks, like [google closure library] and [backbone], are written in this style.
 
 The reason we are going over this history is because the thing about a programming language is there are "patterns" and "syntax".  The challenge with "patterns" is:
 
-- They are disseminated culturally
-- They are _often_ not easy to search
-- They _often_ require a deeper understanding of the language and problem being solved to understand why the pattern became accepted.
+- They're disseminated culturally (tribal knowledge)
+- They're difficult to identify
+- They're _often_ difficult to search
+- They _often_ require a deeper knowledge to understand how and why to use a pattern.
 
-The last point is relevant to our conversation because patterns ultimatley make assumptions. Assumptions like our understanding of the problem being solved and where and when a pattern should itself be used.  The end result is that a pattern can just become a "thing" we do all while forgetting why we started to do it in the first place or what the world could look like without it.
+The last point in praticular is relevant to our conversation because patterns
+live in a context and assume prior knowledge. Knowledge like how well we know the
+context of a problem, the alternative approaches to addressing a problem,
+advancements in a language and so on.
+
+The end result is that a pattern can just become a thing we do.  We can
+forget or never know why it started in the first place or what the world could
+look like if we chose a different path.
 
 For example, the most common way of writing a React class component is to use ES6 class syntax.  But did you know that ES6 class syntax is little more than syntactic sugar around the `pseudoclassical instantiation pattern`?
 
@@ -206,7 +225,9 @@ cmp.prototype.constructor = cmp
 ```
 
 ::: note
-Note that the above is written in JavaScript where as Reagent's is written in ClojureScript. The reason I have done this is that I feel it can reach a broader audience when written in JS, but most importantly, the reader doesn't have to transform the code in their header from CLJS to JS which allows us to examine the work with less mental overhead.
+I ported the CLJS code to JS above because it should make it easier to examine
+what the code is actually doing without adding the overhead of transcribing
+CLJS to JS
 :::
 
 What we have above is Reagents take on the `pseudoclassical instantiation pattern` with a few minor tweaks:
@@ -281,19 +302,34 @@ console.log(Welcome.prototype.isPrototypeOf(welcome))
 
 What the above shows is that `Welcome` is not a child of `React.component` even though it has all the properties and methods that `React.Component` has.  This is why were lucky that React is smart about detecting [class vs. function components].
 
-Second, by `copying` rather than `linking` prototypes we could inccur a performance cost but again, in our case this cost is negligible.
+Second, by `copying` rather than `linking` prototypes we could inccur a
+performance cost. How much of a performance hit?  In our case this cost is likely
+negligible.
 
 ::: note
-For those who want to know why the Reagent team chose to modify the pseudoclassical instantiation pattern I do not really have an answer.  At the end of the day, they do more or less the same things without any significant downsides<a href="#why-modify" aria-describedby="footnote-label" id="why-modify-ref">?</a>
+For those who want to know why the Reagent team chose to modify the
+pseudoclassical instantiation pattern the [official response] from the current
+maintainer of the Reagent to this post from the current maintainer of the
+Reagent to this post.
 :::
 
 ## Conclusion
 
-I think it's important to dive into the weeds.  In my experience, it's these detours and thorough questioning of topics which has led to considerable improvements in my programming skill and general comfort with increasingly challenging topics.
+In my experience, digging into the weeds and going on these detours
+has been an important part of my growth as a developer. The weeds have allowed
+me to be a better programmer because I'm honing my ability to understand
+challenging topics and find answers.  The result is a strange feeling of calm
+and comfort.
 
-However, I think the biggest thing for me is something I referenced a few times in this post: "cultural knowledge".  I have come to see that that is the most powerful tools we have as a species.  It's unfortunate that this kind of information is not always available and my hope is that I could fill some of the gaps with this writing and maybe even open the door to works which can be built ontop of this.
-
-Less philosophically though, I find it encouraging to know that everything is, generally speaking, JavaScript under the hood.  This is important because it allows us to take advantage of what has come before and really dig into interesting ways we can use and manipulate JS from within CLJS.
+This calm and comfort shouldn't be overlooked.  So much of our day-to-day is
+left unquestioned and unanalyzed.  We let knowledge become "cultural" or
+"tribal". This is scary. It's scary because it leads to bad decisions because no one around us
+knows the whys or wherefores.  Ultimately, it's a bad habit.  A bad habit which is seen
+by some as a virtue because it would simply take too much time for to learn
+things ourselves.  That's until you actually start doing this kind of work
+and spend time learning and observing and seeing that these "new things"
+we're seeing all the time aren't really new, but just another example
+of that old thing back.
 
 ::: footnotes
 
@@ -307,10 +343,6 @@ This is [briefly touched on] in Reagents component guide but they do not explici
 
 ->->-> footnote#javascript-es6-classes
 It is important to note that even with ES6 class syntax JavaScript still does not have classes in the traditional sense.
-->->->
-
-->->-> footnote#why-modify
-If your curious as to why there is an [official response] from the current maintainer of the Reagent to this post from the current maintainer of the Reagent to this post.
 ->->->
 
 :::
