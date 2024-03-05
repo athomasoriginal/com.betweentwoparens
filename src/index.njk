@@ -19,10 +19,10 @@ title: home
         </div>
 
         <p class="blog__meta">
+          <span class="blog__by">posted on</span>
           <time class="blog__date">{{ post.data.createdDate | dateFilter }}</time>
-          <span class="hide">posted on</span>
-          <span class="blog__by"> BY </span>
-          <span class="blog__author">{{ post.data.author }}</span>
+          <span class="blog__by">and updated</span>
+          <time class="blog__date">{{ post.data.updatedDate }}</time>
         </p>
       </article>
     {%- endfor -%}
