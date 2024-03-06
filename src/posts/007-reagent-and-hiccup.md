@@ -1,7 +1,7 @@
 ---
 author: "Thomas Mattacchione"
 createdDate: '31 December 2019'
-updatedDate: '11 January 2024'
+updatedDate: '06 March 2024'
 date: Last Modified
 layout: post
 tags:
@@ -13,16 +13,27 @@ summary: "Hiccup is the Ryan Atwood to JSX's Seth Cohen."
 ---
 
 
-Let's start this post by looking at React's [hello world](https://reactjs.org/docs/hello-world.html) example:
+I'm writing this post because `hiccup` in the context of Reagent
+confused me and I wanted to work through some of the confusion.
 
-```javascript
+Things that confused me: I apparently don't need to import a library,
+modify my build tools or do anything and I just get to write `hiccup` for free?
+How is this possible? Also, what is `hiccup` and is it the same everywhere?
+
+In React (JavaScript) you primarily write your HTML markup with [JSX].  In
+Reagent (a ClojureScript wrapper around React) we write our HTML markup with
+something called `hiccup`.
+
+Here is a React [hello world] written in JS uxing `jsx`:
+
+```js
 ReactDOM.render(
   <h1 className="welcome">Hello, world!</h1>, // <-- JSX
   document.getElementById('root')
 );
 ```
 
-and now let's rewrite it in Reagent (a popular ClojureScript React wrapper)
+Here is the same React hello world written in Reagent using hiccup:
 
 ```clojure
 (reagent.dom/render
@@ -30,17 +41,28 @@ and now let's rewrite it in Reagent (a popular ClojureScript React wrapper)
   (.. js/document (getElementById  "root")))
 ```
 
-::: note
-`reagent.dom/render` is Reagent's wrapper around `ReactDOM.render`.  This was introduced in version `0.10.0` of `Reagent`
-:::
+Let's pull the `JSX` and `hiccup` out so we can see them clearly:
 
-If the above is the first time you're reading ClojureScript or Reagent, it may look foreign, but you might also notice that the overall shape of the code (lines, structure, functions) is more or less the same.  To me, the biggest difference is what happens on **line 2**
+```js
+// JSX
+<h1 className="welcome">Hello, world!</h1>
 
-```clojure
+
+// hiccup
 [:h1 {:class "welcome"} "Hello, world!"]
 ```
 
-The above, my friends, is `Reagent Hiccup` and it's a common way to _represent_ HTML in Clojure.  In this way, it's Reagent's version of [JSX](https://reactjs.org/docs/introducing-jsx.html).  Just to provide more context, here is another example of `Reagent Hiccup`:
+::: note
+`reagent.dom/render` is Reagent's wrapper around `ReactDOM.render`.  This was
+introduced in version `0.10.0` of `Reagent`.  I also want to note that there
+are many implementations of `hiccup`.  Some run on the server and some run in
+the browser and some can be run in both places.  Hiccup is actually very simple
+to implement.  The result is you have several implementations which were built
+for different purposes.  I will cover these at the end of this post.  The majority
+of this post is covering `reagent hiccup`.
+:::
+
+For fun, here is some more hiccup:
 
 ```clojure
 [:ul {:class "list"}
@@ -49,15 +71,19 @@ The above, my friends, is `Reagent Hiccup` and it's a common way to _represent_ 
   [:li {:class "list-item"} "Item 3"]]
 ```
 
-If you're like me when I first started writing ClojureScript, `Hiccup` can seem a little confusing.  How is it possible to use `Hiccup` without importing a library or adding a plugin to our build tools?  How does React know what to do with `Reagent Hiccup`?  These, and more, are questions I hope to answer in this post.
+The rest of this post is going to dig into the questions asked in the
+introductory paragraph.
 
 ::: note
-This post is geared toward beginner and intermediate ClojureScript developers who want to understand a little more about how `Reagent Hiccup` works.  As a result, we won't cover how to write Hiccup, but if that's your goal, please see this [Guide to Writing Hiccup].
+This post is geared toward beginner and intermediate ClojureScript developers
+who want to understand a little more about how `Reagent Hiccup` works.  As a
+result, we won't cover how to write Hiccup, but if that's your goal, please see
+this [Guide to Writing Hiccup].
 :::
 
 ## Reagent Hiccup
 
-Let's return to the code snippet we started this post with:
+Let's return to the original reagent code snippet we started with:
 
 ```clojure
 (reagent.dom/render
@@ -65,11 +91,12 @@ Let's return to the code snippet we started this post with:
   (.. js/document (getElementById  "root")))
 ```
 
-On **line 2** we have an unassuming Clojure vector, or is it?  In truth, that's exactly what it is.  It's just a vector, but it's also known as `Reagent Hiccup`.  This might lead one to ask, _"If it's just a vector, how is it also `Reagent Hiccup`?"_.
+On **line 2** we have a Clojure vector.  Don't overthink it.  It's just a
+vector.  However, because of the order and type of the arguments, it becomes
+`hiccup`.
 
-The reason is because `reagent.dom/render`, the entry point for a Reagent app, accepts either `Reagent Hiccup` or a `React Element` as the first argument.  So by providing a `vector`, Reagent automatically treats it like `Reagent Hiccup`.  This means that Reagent also expects it to be written in a specific way.
-
-To be considered valid `Reagent Hiccup`, the vector you pass to Reagent needs to take one of the following shapes:
+To be considered valid `Reagent Hiccup`, the vector you pass to Reagent needs
+to take on one of the following shapes:
 
 ```clojure
 [tag]
@@ -91,21 +118,40 @@ To be considered valid `Reagent Hiccup`, the vector you pass to Reagent needs to
 
 Here is another way to break it down:
 
-- **tag** - `:h1`
-- **attributes** - `{:class "welcome"}`
-- **children** - `"Hello world!"`
+* **tag**
+  * A keyword (`:h1`) or symbol (`hi`)
+* **attributes**
+  * A map `{:class "welcome"}`
+* **children**
+  * A string (`"Hello world!"`), vector (`[:p "hi"]`) or symbol (`hi`)
 
-Thus, if we were to pass something that's not actually `Reagent Hiccup`, Reagent is kind enough to throw a JavaScript assertion error in the browser console letting us know what went wrong.  For example, an empty vector would result in a console assertion error being thrown.
+:::note
+The above are the main flavours, but there are more ways to do things.
+:::
 
-What allows Reagent to understand Hiccup without us needing to import a library or add a plugin to our build tools?  It's because Reagent comes with a Hiccup compiler built-in.  This will be covered in more detail in the next section.
+How does Reagent know what do with `hiccup`?  The `reagent.dom/render` accepts
+either `Reagent Hiccup` or a `React Element` as the first argument.  So by
+providing a `vector`, Reagent automatically treats it like `Reagent Hiccup`.
+
+Thus, if we were to pass something that's not actually `Reagent Hiccup`,
+Reagent is kind enough to throw a JavaScript assertion error in the browser
+console letting us know what went wrong.
+
+Okay, so Reagent can just accept `hiccup`.  How does Reagent understand Hiccup
+and know what to do with it?  We didn't import a library or add a plugin to
+our build tools?
+
+The answer is that Reagent comes with a Hiccup compiler built-in which converts
+Reagent's `hiccup` to `React Elements`.
 
 ### Reagent Hiccup to React Element
 
-As we mentioned, all components are passed into `reagent.dom/render` and it's this function that's responsible for turning Hiccup into something that React understands.
+The process begins by Reagent passing the `component` given to `reagent.dom/render`
+to a function called `create-class`.
 
-The process begins by Reagent passing the `component` given to `reagent.dom/render` to a function called `create-class`.
-
-`create-class` has [other jobs](https://betweentwoparens.com/blog/what-the-reagent-component) aside from handling Hiccup, but nonetheless one of it's jobs is to compile `Reagent Hiccup` to `React.createElement` calls.  This step is handled by the [as-element](https://github.com/reagent-project/reagent/blob/88e9833be9c3135548d760286ffd84d88a0a0489/src/reagent/impl/template.cljs#L382) function.
+`create-class` has [other jobs] aside from handling Hiccup, but
+one of it's jobs is to compile `Reagent Hiccup` to `React.createElement` calls.
+This step is handled by the [as-element] function.
 
 `as-element` accepts `Reagent Hiccup` like this:
 
@@ -123,7 +169,8 @@ React.createElement(
 );
 ```
 
-The above is given to React which actually runs the `React.createElement` calls turning them into `React Elements` like this:
+The above is given to React which actually runs the `React.createElement` calls
+turning them into `React Elements` like this:
 
 ```javascript
 {
@@ -181,19 +228,26 @@ Thus, the following are equivalent
 `reagent.core/create-element` is a Reagent helper function which wraps `React.createElement`.  It's the equivalent of calling `React.createElement`, but `reagent.core/create-element` provides a "natural" way to write `React.createElement` in Clojure and also provides a few conveniences.
 :::
 
-Understanding this, are there any reasons to use `reagent.core/create-element` over `Reagent Hiccup`?
-
-From a technical perspective, there aren't any noticeable benefits.  The advantages would be felt at an individual developer level based on their preferences.
-
-For example, one might suggest that using `reagent.core/create-element` over `hiccup` initially feels easier to teach new developers how to create components in React/Reagent.
-
-At this point, I feel it's a good time to go into why we use `Reagent Hiccup` at all.
+Understanding this, are there any reasons to use `reagent.core/create-element`
+over `Reagent Hiccup`?
 
 ### Why Reagent Hiccup?
 
-As we can see, `Reagent Hiccup` is the Clojure(Script) equivalent of [JSX](https://reactjs.org/docs/introducing-jsx.html).  While they look different, they are both Domain Specific Languages (DSLs) which allow us to _represent_ HTML in Clojure and JavaScript respectively.
+From a technical perspective, you can argue that there is less work being done
+if you don't use hiccup because you don't have to convert `hiccup` to `createElement`
+calls.  However, i'm not sure this optimization would be worth it. Especially
+because you could just change the implementation of hiccup to be run at compile
+time and see the performance improvements and still have the advantage of
+writing your components in `hiccup`.
 
-The reason we use Hiccup in Reagent is similar to the reasons for using JSX in React.
+From a developer experience perspective, you might suggest that using
+`reagent.core/create-element` over `hiccup` initially feels easier to teach
+new developers how to create components in React/Reagent.  However, this is
+subjective and I could argue that `hiccup` is far friendlier and because of its
+uniquity is a better tool to rely on.
+
+Some more reasons we use Hiccup in Reagent is similar to the reasons for using
+JSX in React.
 
 - Separation of concerns: Separate by component vs. technology
 - Accessibility: easier to read and write than `React.createElement`
@@ -207,29 +261,54 @@ The second point, _Accessibility_, is particularly interesting.  One of the thin
 
 ## Hiccup and Clojure
 
-You may have noticed that I've been writing `Reagent Hiccup` instead of just Hiccup.  The reason for this is because, as mentioned above, Hiccup is not specific to `Reagent`.
+As I mentioned at the top, there are many flavours of `hiccup`. `hiccup` is
+not a Reagent thing, but a DSL which was adapted from a server-side tool called
+[Hiccup].
 
-Hiccup was introduced by [James Reeves](https://github.com/weavejester/hiccup) and has become a standard DSL for Clojure developers looking to represent HTML in Clojure.  This means that there are many 3rd party libraries which allow you to write Hiccup in your app even if you aren't using Reagent.  For example, the following are all examples of popular Hiccup libraries.
+`hiccup` was introduced by [James Reeves] and has become a standard DSL for
+Clojure developers looking to represent HTML in Clojure.  This means that there
+are many 3rd party libraries which allow you to write Hiccup in your app even
+if you aren't using Reagent.  For example, the following are all examples of
+popular Hiccup libraries.
 
-- [Hiccup](https://github.com/weavejester/hiccup)
-- [Soblano](https://github.com/r0man/sablono)
-- [Hicada](https://github.com/rauhs/hicada)
-- [enlive](https://github.com/cgrand/enlive)
+- [Hiccup]
+- [Soblano]
+- [Hicada]
+- [enlive]
 
-And I think this is the beginning of some of the confusion when it comes to Hiccup and Reagent.
+And I think this is the beginning of some of the confusion when it comes to
+`hiccup` and Reagent.
 
-When one begins to learn ClojureScript, they often start with Clojure.  The reading material for Clojure, in the form of guides, references and libraries, is larger and oriented toward Clojure.  This makes sense for a number of reasons, but it also creates a challenge when trying to figure out how to use HTML in Clojure.
+When one starts to learn ClojureScript, they often start with Clojure.  The
+Clojure guides, references and libraries are generally oriented towards Clojure.
+While this is understanable, it can create a challenge when trying to figure
+out how to write HTML in Clojure.
 
-So, you start going through community resources and see that the answer is Hiccup.  You pick up one of the above libraries, create a demo app and things are great.  Now that you made something happen, you start to experiment with Reagent and notice that you are some how just able to write Hiccup without importing a library and this can seem like "magic".
-
-Eventually you figure it out, but it can be a bumpy road.  This is why I decided to write a little about this because I always find it easier to conceptualize what I am doing when I understand how the pieces fit together.
+My story was that I started with Clojure building a little MPA with `hiccup`.
+I found my library of choice and made stuff appear on the screen by calling
+the `hiccup` library I chose.  Then I tried to make the same thing
+happen in Reagent and noticed that I didn't need a library or to call to anything
+and it all just worked.  I eventually learned what was happening, hence this
+post, but it was irritating at first to not get what was really going on.
 
 ## Conclusion
 
-The overarching point is that Hiccup is a common way of writing HTML is Clojure.  Unlike JSX, which for a long while was a React only thing, Hiccup is not specific to Reagent/React and as a result, it can be confusing to understand where it all connects.
+The overarching point is that `hiccup` is a common way of writing HTML is
+Clojure.  Unlike JSX, which for a long while was a React only thing, Hiccup is
+not specific to Reagent/React.  So, this point is meant to provide the context.
 
-That's all for this post, but if you are interested in learning more about Hiccup, please take a read through his [article on hiccup](https://tonsky.me/blog/hiccup/). For everyone else, thanks for reading along and I hope this has helped demystify some of the inner workings of Reagent without gettting us too lost in the weeds.
+Want to learn more about `hiccup`? Tonsky's [article on hiccup] is pretty great.
 
 
 [Guide to Writing Hiccup]: https://purelyfunctional.tv/guide/reagent/#hiccup
 [React: Rethinking Best Practices]: https://www.youtube.com/watch?v=x7cQ3mrcKaY
+[JSX]: https://react.dev/learn/writing-markup-with-jsx
+[hello world]: https://reactjs.org/docs/hello-world.html
+[other jobs]:https://betweentwoparens.com/blog/what-the-reagent-component
+[as-element]: https://github.com/reagent-project/reagent/blob/88e9833be9c3135548d760286ffd84d88a0a0489/src/reagent/impl/template.cljs#L382
+[Hiccup]: https://github.com/weavejester/hiccup
+[Soblano]: https://github.com/r0man/sablono
+[Hicada]: https://github.com/rauhs/hicada
+[enlive]: https://github.com/cgrand/enlive
+[James Reeves]: https://github.com/weavejester
+[article on hiccup]: https://tonsky.me/blog/hiccup/
