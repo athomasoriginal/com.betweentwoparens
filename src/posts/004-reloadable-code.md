@@ -1,7 +1,7 @@
 ---
 author: "Thomas Mattacchione"
 createdDate: '29 September 2019'
-updatedDate: '11 January 2024'
+updatedDate: '07 March 2024'
 date: Last Modified
 layout: post
 tags:
@@ -39,37 +39,49 @@ So in the intrepid spirit of craftsmanship, I have resurected my Calendar App an
 
 ## Intro to Hot Module Reloading
 
-`HMR` is when we have a special program running outside of our app.  The job of this program is to watch for changes to our `.cljs` files.  When our special program detects changes it will tell the browser that there are changes in our code, send those changes to the browser, and trigger a "reload" which means our running app is automatically updated with the new code and the app state is exactly where we left it<a href="#what-hmr" aria-describedby="footnote-label" id="what-hmr-ref">.</a>
+`HMR` is a program which runs alongside our app which watches for changes to
+our `.cljs` files and when it sees that one of these `.cljs` files has changed
+it tells the browser to fetch the latest changes and trigger a "reload". This
+means our running app is automatically updated with the new code and the app
+state is exactly where we left it<a href="#what-hmr" aria-describedby="footnote-label"
+id="what-hmr-ref">.</a>
 
-The reason we do this is because:
+We like `HMR` because it allows us to develop faster and with less friction.
+Specifically, `HMR` can make it so:
 
-- We don't like manually refreshing our browsers.
-- We don't like losing our applications state
-- We despise suffering through slow development feedback loops
+- We don't have to manually refresh our browsers
+- We don't have to lose our applications state
+- We don't have to manually recompile our code
 
-But `HMR` is not a feature that comes with a language.  This is why we use "special programs" as I mentioned above.  Examples of these "special programs" are [figwheel](https://github.com/bhauman/figwheel-main), [shadow-cljs](https://github.com/thheller/shadow-cljs) or [webpack](https://webpack.js.org/)<a href="#build-tools" aria-describedby="footnote-label" id="build-tools-ref">.</a>
+`HMR` is provided by programs like [figwheel], [shadow-cljs] or [webpack]<a href="#build-tools" aria-describedby="footnote-label" id="build-tools-ref">.</a>
 
 ::: note
-Each of the above tools does far more than just `HMR`, but `HMR` is one of their standout features.
+Each of the above tools does far more than just `HMR`, but `HMR` is one of
+their standout features.
 :::
 
-As I mentioned earlier, just because you use `figwheel` or `shadow-cljs` and the HMR mechanism they provide, does not mean you can take advantage of all the powers of HMR.  You first have to architect your code in a particular way.  Specifically, you have to control your side effects.  In other words, you have to write `reloadale code`.
+Having said the above, just because you use `figwheel` or `shadow-cljs` doesn't
+mean you can get the benefits of `HMR`.  You also have to architect your
+code in a specific way. Namely, you have to control side effects.  In other words,
+you have to write `reloadale code`.
 
 ::: note
-The exception to the above paragraph is if you are using `React`.  If you use `React`, then HMR will pretty much work for free.  This article is for developers who want use HMR with their vanilla CLJS or JavaScript code.  Yet, even if you are writing `React` this article is still a good overview and will hopefully provide a deeper appreciation for the architectural decisions of React.
-:::
-
-Okay, now that we have reviewed what HMR is doing, lets dive into the code and transform it into `reloadable code`.
-
-::: note
-Again the [source code] is available and if you are following along, all you have to do to trigger a `reload` is save a `.cljs` file in the `src` dir.
+The exception to the above paragraph is if you are using `React`.  If you use
+`React`, then HMR will pretty much work for free.  This article is for
+developers who want use HMR with their vanilla CLJS or JavaScript code.  Yet,
+even if you are writing `React` this article is still a good overview and will
+hopefully provide a deeper appreciation for the architectural decisions of
+React.
 :::
 
 ## "Submit" Event Listeners
 
-If you save `calendar.cljs` 5 times and then press the `Add` button in the Calendar App you will see it creates 5 `Calendar Events`.
+If you save the `calendar.cljs` file 5 times and then press the `Add` button in the
+Calendar App you will see it creates 5 `Calendar Events`.
 
-If we inspect the console we can see that there are actually 5 event listeners attached to the `submit` event.  So it seems that when we click `Add` 5 event handlers are fired one after the other<a href="#debugging-event-listeners" aria-describedby="footnote-label" id="debugging-event-listeners-ref">.</a>
+If we inspect the console we can see that this is because our "submit" event
+listener is attached 5 times to the `submit` event.  This is why when we click the
+`Add` button, we get 5 `Calendar Events` added instead of the expected 1<a href="#debugging-event-listeners" aria-describedby="footnote-label" id="debugging-event-listeners-ref">.</a>
 
 Why is this happening?  As it turns out, if you look to the [code here](https://github.com/athomasoriginal/demo-reloadable-code/commit/b26c1aac8e9c9d6e2d5c7407cc1806dac9b92724#diff-9f16cf6f6db4d58c84ae2d61fd54ec7fR168):
 
@@ -114,7 +126,8 @@ So how do we control what we do to the DOM to avoid these unpredictable side eff
 
 Before we go further, lets breakdown what the above is doing.  `teardown` and `setup` are nothing more than clojure functions.  The only part we have to care about from the above are the `^:before-load` and `^:after-load` words that come before `teardown` and `setup`.
 
-`^:before-load` and `^:after-load` are called [metadata](https://clojure.org/reference/metadata) in Clojure(Script).  What makes them `metadata`is the `^` that comes before the `:` (colon).
+`^:before-load` and `^:after-load` are called [metadata] in Clojure(Script).
+What makes them `metadata` is the `^` that comes before the `:` (colon).
 
 When figwheel sees these particular pieces of metdata infront of a function it knows that it has to run our functions before and after the CLJS reloads.
 
@@ -214,12 +227,14 @@ Having said this, for this scenario I am going to play it safe and show you how 
     update-event-end-dropdown!))
 ```
 
-You can see the above change [here](https://github.com/athomasoriginal/demo-reloadable-code/commit/c87c9b13562856191c3374ffe521c5d97875f281).  In the next section we are going to explore more subjective goodness.
+You can see the above change [here].  In the next section we are going to
+explore more subjective goodness.
 
 
 ## Populating Dropdown Options
 
-Reading [along with the code](https://github.com/athomasoriginal/demo-reloadable-code/blob/c87c9b13562856191c3374ffe521c5d97875f281/src/demo_reloadable_code/calendar.cljs#L188) in Calendar App, we have another invokation when the `ns` loads.
+Reading [along with the code] in Calendar App, we have another invocation when
+the `ns` loads.
 
 ```clojure
 (set! (.. start-time-dropdown -innerHTML) (time-option-list (time-range)))
@@ -253,7 +268,10 @@ To make this happen all you have to do, based on how I wrote Calendar App, is th
 (defonce app-state (atom []))
 ```
 
-That's it.  Now, whenever your app `reloads`, your state is never forgotten.  The way this works is explained nicely in [Hot Reload in ClojureScript](https://code.thheller.com/blog/shadow-cljs/2019/08/25/hot-reload-in-clojurescript.html).  The short answer: `defonce` means that `app-state` will not reset to `(atom [])` when the app `reloads`.
+That's it.  Now, whenever your app `reloads`, your state is never forgotten.
+The way this works is explained nicely in [Hot Reload in ClojureScript].  The
+short answer: `defonce` means that `app-state` will not reset to `(atom [])`
+when the app `reloads`.
 
 This is a simple example, but it should provide some ideas for what needs to be done to make our `reloadable code` capable of managing state.
 
@@ -261,7 +279,7 @@ This is a simple example, but it should provide some ideas for what needs to be 
 
 Writing `reloadable code` can seem tricky at first, but hopefully we can see that with ClojureScript it is an achievable and worthwhile goal.  For me the benefits of writing your code like this and even thinking about these things is the understanding you gain about how your code works.
 
-The other gain is the power that ClojureScript gives you out of the box.  It take very little to setup HMR and start writing reloadable code with the tools provided by Clojure(Script) core library.  You don't need additional dependencies.
+The other gain is the power that ClojureScript gives you out of the box.  It takes very little to setup HMR and start writing reloadable code with the tools provided by Clojure(Script) core library.  You don't need additional dependencies.
 
 Hopefully this provides a decent example set with which to start your reloadable code journey.
 
@@ -289,3 +307,10 @@ If you like to debug using `console.log` statements you are going to run into a 
 [source code]: https://github.com/athomasoriginal/demo-reloadable-code
 [code]: https://github.com/athomasoriginal/demo-reloadable-code/commit/ceb1ae2b907eb8c04befcb30c21e9bab81706000
 [Managing App State]: #managing-app-state
+[figwheel]: https://github.com/bhauman/figwheel-main
+[shadow-cljs]: https://github.com/thheller/shadow-cljs
+[webpack]: https://webpack.js.org/
+[metadata]: https://clojure.org/reference/metadata
+[Hot Reload in ClojureScript]: https://code.thheller.com/blog/shadow-cljs/2019/08/25/hot-reload-in-clojurescript.html
+[here]: https://github.com/athomasoriginal/demo-reloadable-code/commit/c87c9b13562856191c3374ffe521c5d97875f281
+[along with the code](https://github.com/athomasoriginal/demo-reloadable-code/blob/c87c9b13562856191c3374ffe521c5d97875f281/src/demo_reloadable_code/calendar.cljs#L188
