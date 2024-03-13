@@ -1,7 +1,7 @@
 ---
 author: "Thomas Mattacchione"
 createdDate: '26 August 2019'
-updatedDate: '11 January 2024'
+updatedDate: '13 March 2024'
 date: Last Modified
 layout: post
 tags:
@@ -13,38 +13,40 @@ summary: "Setup a ClojureScript Test Toolchain like a Boss."
 ---
 
 This post will walk through how to setup a `Test Toolchain` from scratch for a
-ClojureScript app.  The tools we use are the ones that come with Clojure.
+ClojureScript app.
 
 :::note
-A `Test Toolchain` is a reference to all the tools you need to write, find, run and
-report on the tests you write.  Also, if you're following along please make sure
-you have Clojure setup on your local machine.  If you haven't done this already,
-I've created a **FREE** youtube series that will show you how to
-[Setup Clojure(Script)].  Furthermore, we won't be discussing topics like
-RDD, best practices etc.  This post is dedicated to understanding _how_ to setup a
-basic `Test Toolchain` in ClojureScript.
+When I say `Test Toolchain` I mean all the programming tools you need to write,
+find, run and report on the tests you write.  Also, if you're following along
+please make sure you have Clojure setup on your local machine.  If you haven't
+done this already, I've created a **FREE** youtube series that will show you
+how to [Setup Clojure(Script)].  Furthermore, we won't be discussing topics
+like RDD, best practices etc.  This post is dedicated to understanding _how_ to
+setup a basic `Test Toolchain` in ClojureScript using the tools that
+ClojureScript provides.
 :::
 
 ## Create a Project
 
 Start by creating a basic ClojureScript app.  The easiest way to do this is by
-following the [templates getting started guide].
+following my [templates projects] Quickstart guide.
 
 ::: note
-`templates` a repo of my personal "start projects". Using the Reagent template,
-as outlined in the getting started guide linked above, will quickly get you
-started with a modern ClojureScript app for us.
+`templates` a tool which automates the creation of some of my personal
+starter projects. Using the `Reagent` template, as outlined in the Quickstart
+linked above, will get you up and running with a modern ClojureScript app.
 
 You can think of the above as a lightweight ClojureScript version of
 [create-react-app]. If you're curious about the `reagent` template generated
 you can read all about it in [Start a ClojureScript App from Scratch].
 :::
 
-
-Once the above command is done you will have a project called `nike-app`.  It should look like this:
+Assuming you're using the `templates` tool from above, you would run the
+command in the quickstart guide and you should have a project called `my-app-name`
+which has the following folder structure:
 
 ```bash
-nike-app
+my-app-name
 ├── README.md
 ├── deps.edn
 ├── dev.cljs.edn
@@ -54,137 +56,160 @@ nike-app
 │       ├── index.html
 │       └── style.css
 ├── src
-│   └── nike
-│       └── nike_app.cljs
+│   └── myusername
+│       └── my_app_name.cljs
 └── test
-    └── nike
-        └── nike_app_test.cljs
+    └── myusername
+        └── my_app_name.cljs
 ```
 
 Now, move into the project you just created
 
 ```bash
-cd nike-app
+cd my-app-name
 ```
 
-Now let's make sure everything is working as expected by running the following command:
+Install the project's JS dependencies
+
+```bash
+yarn install
+```
+
+Now let's make sure everything is working as expected by running the following
+command:
 
 ```bash
 clj -M:dev
 ```
 
 ::: note
-Remember that you should be running the above command from inside the root of `nike-app`.  Also note that `-M` is a flag which is part of `Clojure CLI Tools` version `1.10.1.697` or later.  You can check your version of the `Clojure CLI Tools` by running
-`clj -h` if you find that `-M` doesn't work.
+Remember that you should be running the above command from inside the root of
+`my-app-name`.  Also note that `-M` is a flag which is part of `Clojure CLI Tools`
+version `1.10.1.697` or later.  You can check your version of the `Clojure CLI
+Tools` by running `clj -h` if you find that `-M` doesn't work.
 :::
 
 
-If everything worked, a new browser window should automatically open to http://localhost:9500/ and you should see the following:
+If everything worked, a new browser window should automatically open to
+`http://localhost:9500/` and you should see the following:
 
 ![screenshot of example hello clojurescript site](/images/003-sanity-check.png)
 
-I now want to draw your attention to the folder structure and naming conventions of the project we just built:
+I now want to draw your attention to the names of the file and folders:
 
 ```bash
 ├── src
-│   └── nike
-│       └── nike_app.cljs
+│   └── myusername
+│       └── my_app_name.cljs
 └── test
-    └── nike
-        └── nike_app_test.cljs # <--- notice the `_test`
+    └── myusername
+        └── my_app_name_test.cljs # <--- notice the `_test`
 ```
 
-It's an accepted practice in Clojure to have your tests mirror your `src` directory structure.  Then, when you name the actual files containing your tests they get suffixed with `_test`.
+It's a convention in Clojure to have your tests mirror your `src`
+directory structure.  Additionally, when you name the actual files containing
+your tests they get suffixed with `_test`.
 
 ## Write a Test
 
-Now that we have a project to work in, let's write our first test!
+Now that we have a project to work in, let's write some code and test it!
 
-Open `nike_app.cljs`.  You will notice that some code already exists in this
-namespace.  Delete that code below the namespace decleration at the top so the
-whole file looks like this:
+Open `my_app_name.cljs`.  You will notice that some code already exists in this
+file.  Delete all the code in the file.  Type the following into the file:
 
 ```clojure
-(ns nike.nike-app)
+(ns myusername.my-app-name)
 
 (defn add
   [a b]
   (+ a b))
 ```
 
-Now we can write our first ClojureScript test! I will show you what it looks like first and then we will explain it after.
+The above is just a simple function which we've written so we have something
+to test with.  The next step is to write our first test.
 
-Open `nike_app_test.cljs` and write the following exactly as you see:
+Open `my_app_name_test.cljs`.  Delete all the code in the file. Type the following
+into the file.
 
 ```clojure
-(ns nike.nike-app-test
+(ns myusername.my-app-name-test
   (:require
-    [cljs.test     :refer-macros [deftest is]]
-    [nike.nike-app :as nike-app]))
+    [cljs.test              :refer-macros [deftest is]]
+    [myusername.my-app-name :as my-app-name]))
 
 (deftest test-add-function
-  (is (= (nike-app/add 1 1) 2)))
+  (is (= (my-app-name/add 1 1) 2)))
 ```
 
 ::: note
-Notice that we did not have to add `cljs.test` as a dependency in our project. This is because `cljs.test` [comes with ClojureScript].
+Notice that we did not have to add `cljs.test` as a dependency in our project.
+This is because `cljs.test` [comes with ClojureScript].
 :::
 
-Okay, let's review the test we just wrote.  We will start with explaining what what `cljs.test` is.  `cljs.test` is a minimal library with everything you need to test ClojureScript code<a href="#cljs-test" aria-describedby="footnote-label" id="cljs-test-ref">.</a>  Among other things, it comes with:
+Let's review the test we just wrote.  `cljs.test` is a small library with
+everything you need to test ClojureScript code<a href="#cljs-test"
+aria-describedby="footnote-label" id="cljs-test-ref">.</a>  Among other things,
+it comes with:
 
 - **Test Decleration Utils** e.g. `deftest`
-  - `deftest` defines a test where `test-add-function` is a name of our tes<a href="#test-add-fn" aria-describedby="footnote-label" id="test-add-fn-ref">t</a>
+  - `deftest` let's us define a test. In our example, we defined a test called `test-add-function`<a href="#test-add-fn" aria-describedby="footnote-label" id="test-add-fn-ref">.</a>
 - **Test Assertion Library** e.g. `is`
-  - `is` function is a convenience wrapper around a try-catch block
+  - `is` is a convenience wrapper around a `try-catch` block
 - **Test Runner**
   - we haven't introduced this to you yet, but it's called `run-tests`
 
-Now that we have written a test, lets go over how to run the test.  Now, there are a few way you can run the tests so we will go over some of the main options.
+Now that we have written a test, the next section will show you how to run
+the test.
 
 ## Run tests with cljs-main
 
-To run our tests, we need to create a namespace that will import all of our tests and then run them.  We can refer to this namespace as our `test_runner`, but you can also think of it as the `test entrypoint`.
+To run our tests, we need to create a namespace that will import all of our
+tests and then run them.  We can refer to this namespace as our `test_runner`,
+but you can also think of it as the `test entrypoint`.
 
-Start by creating a new namespace in `test/nike` called `test_runner.cljs`.  Open that file and make it look like this:
+Start by creating a new file in `test/myusername`.  Call this file
+`test_runner.cljs`.  Open `test_runner.cljs` and type the following into it:
 
 ```clojure
-(ns nike.test-runner
+(ns myusername.test-runner
   (:require
     [cljs.test :refer-macros [run-tests]]
-    [nike.nike-app-test]))
+    [myusername.my-app-name-test]))
 
-(run-tests 'nike.nike-app-test)
+(run-tests 'myusername.my-app-name-test)
 ```
 
 What the above does is:
 
-- Import our test namespaces e.g. `nike.nike-app-test`
+- Import our test namespaces e.g. `myusername.my-app-name-test`
 - Run all of our rests by calling `run-tests`
 
-From here, we have to build our tests and then run them in the browser.  We can do this by adding the following alias to our `deps.edn` file.
+Now that we have a file which knows how to run our tests, we need a command in
+our app which we call to run the tests.
+
+Open the `deps.edn` file.  Type the following new alias into the file:
 
 ```clojure
+{
 ;; ...
 
 :test {:main-opts ["--main"    "cljs.main"
-                   "--compile" "nike.test_runner"
+                   "--compile" "myusername.test_runner"
                    "--repl"]}}
 ```
 
 ::: note
-This is just using `cljs.main` (AKA vanilla ClojureScript) to build and run our
-tests. Ideally, you will be using `figwheel`, but it's a good thing to see how
-you can do this without extra tools.
+The above is using `cljs.main` (ClojureScript tools) to run the tests.  We will
+show you later how to run the tests with figwheel.  For now though, I feel it's
+valuable to show you how to start from scratch.
 :::
 
-The big beautiful takeaway here is that there is nothing magical happening.
-This is just `cljs` code compiled like any other `cljs` file and than added to
-an `index.html` file.  The `index.html` file can be customized if you like.
-
-From here, we just have to run the tests.  To do this, go to your terminal and run the test alias:
+From here, we just have to run the tests.  To do this, go to your terminal and
+run the test alias:
 
 ::: note
-If you haven't stopped the previous running instance of your app, please do that before running the following command.
+If you haven't stopped the previous running instance of your app, please do
+that before running the following command.
 :::
 
 ```clojure
@@ -196,18 +221,27 @@ What the above alias is going to do is:
 - compile your `cljs` to `js`
 - automatically open your app in your default browser
 - render the default ClojureScript `index.html`
+- run the tests in the browser
 
 But you will notice that you won't see the tests anywhere. So, what happened?
-Your test `report` or `output` is actually not display in the browser, but in
-your terminal and will look something like this:
+Your test `report` or `output` won't be found in the browser, rather, you will
+find it in your terminal and will look something like this:
 
-![screenshot of example hello clojurescript site](/images/003-test-result-terminal.png)
+```text
+➜ clj -M:test
+ClojureScript 1.11.60
+cljs.user=>
+Testing myusername.my-app-name-test
+
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
+```
 
 ::: note
 You will see the tests run in the terminal only when the REPL has connected to
 browser.  Sometimes this doesn't happen automatically so you can try to make it
-happen by refreshing the browser window.  Or, remove the `--repl` bit of the
-command and just manually open the page http://localhost:9000
+happen by refreshing the browser window.  Or, remove the `--repl` in the
+alias and just manually open the page http://localhost:9000
 :::
 
 Note that you could also have the `test report` displayed in your browser
@@ -215,54 +249,75 @@ console by adding `(enable-console-print!)` in your `test-runner` namespace
 before you invoke `run-tests`:
 
 ```clojure
-(ns nike.test-runner
+(ns myusername.test-runner
   (:require
     [cljs.test :refer-macros [run-tests]]
-    [nike.nike-app-test]))
+    [myusername.my-app-name-test]))
 
 (enable-console-print!) ; new
 
-(run-tests 'nike.nike-app-test)
+(run-tests 'myusername.my-app-name-test)
 ```
 
-The last note I want to make is that if you are writing tests like this, you likely don't want to have to manually re-build your tests every time you make a change to your `src` or `test` code.  To improve this workflow you can tell ClojureScript to watch the `src` and `test` directory so that every time you update files in your `src` or `test` dir they will automatically be recompiled on save.  To make this happen, update your `:test` alias to look like this:
+Cancel out of the `clj -M:test` process in your terminal.  Run `clj -M:test`
+again.  Check the browser console and you should see the tests logged there
+as well.
+
+Note that it's pretty cumbersome to have to stop and re-run tests all the time.
+Instead, we can tell ClojureScript to watch the `src` and `test` directory so
+that every time you update files in your `src` or `test` dir they will
+automatically be recompiled on save.  To make this happen, update your
+`:test` alias to look like this:
 
 ```clojure
 {:test {:main-opts ["-m"  "cljs.main"
                     "-w"  "src:test" ; new
-                    "-c"  "nike.test_runner"
+                    "-c"  "myusername.test_runner"
                     "-r"]}}
 ```
 
 ::: note
-Notice that we use a colon between `src` and `test`.  This is called a path-separator and it's how you can tell ClojureScript to watch multiple directories.  Also note that this path-separator is `system-dependent`.  This means that this will only work on mac and linux.  However, if you want to make this work on windows try replacing `:` with `;`.  For example, `src;test`.
+Notice that we use a colon between `src` and `test`.  This is called a
+path-separator and it's how you can tell ClojureScript to watch multiple
+directories.  Also note that this path-separator is `system-dependent`.  This
+means that this will only work on mac and linux.  However, if you want to make
+this work on windows try replacing `:` with `;`.  For example, `src;test`.
 :::
 
-And that's everything involved in setting up a ClojureScript only `Test Toolchain`.  For those who want to take it a step further, let's see how we can configure `figwheel` to run these tests.
+And that's everything involved in setting up a ClojureScript only `Test
+Toolchain`.  For those who want to take it a step further, let's see how we can
+configure `figwheel` to run these tests.
 
 ## Run tests with figwheel
 
-Because we are using the `templates` reagent template, we have everything we need to run our tests using `figwheel.  In fact, most everything we needed from the previous section will be used in this section with a few changes.  As you will see, one awesome feature of using figwheel for testing is you get more tooling, with less configuration.
+Because we are using the `templates` reagent template, we have everything we
+need to run our tests using `figwheel`.  In fact, most everything we needed from
+the previous section will be used in this section with a few changes.  As you
+will see, one awesome feature of using figwheel for testing is you get more
+tooling, with less configuration.
 
 To recap, we already have:
 
 - A `test`
 - A `test runner`
 
-The only thing we have to change is a small piece of our test runner.  Open up `test_runner.cljs` and update the following
+The only thing we have to change is a small piece of our test runner.  Open up
+`test_runner.cljs` and update the following
 
 ```clojure
-(ns nike.test-runner
+(ns myusername.test-runner
   (:require
     [cljs-test-display.core] ; new
     [figwheel.main.testing :refer-macros [run-tests]] ; new
-    [nike.nike-app-test]))
+    [myusername.my-app-name-test]))
 
 (run-tests (cljs-test-display.core/init! "app-testing")) ; updated
 ```
 
 ::: note
-Notice that we are using `run-tests` from `figwheel`.  This is a convenience function provided by `figwheel` and as we will see does more than `run-test` provided by `cljs.test`.
+Notice that we are using `run-tests` from `figwheel`.  This is a convenience
+function provided by `figwheel` and as we will see does more than `run-test`
+provided by `cljs.test`.
 :::
 
 The next step is to open your `dev.cljs.edn` file and add a `:extra-main-files` key set like this:
@@ -271,11 +326,17 @@ The next step is to open your `dev.cljs.edn` file and add a `:extra-main-files` 
 ^{:auto-bundle      :webpack
   :watch-dirs       ["src" "test"] ; updated
   :css-dirs         ["resources"]
-  :extra-main-files {:testing {:main nike.test-runner}}}; new
-{:main nike.nike-app}
+  :extra-main-files {:testing {:main myusername.test-runner}}}; new
+{:main myusername.my-app-name}
 ```
 
-What the above does is build and run your tests, like we did with the `:test` alias in the previous section.  The difference is that we are going to do this as part of our `:dev` alias.  This is amazing because it means we have a file watcher, HMR and this is running in the same process as our development build.  So now, we can develop our app and tests at the same time in one simple command.
+What the above does is build and run your tests, like we did with the `:test`
+alias in the previous section.
+
+The difference is that we are going to do this as part of our `:dev` alias.
+This is great because it means we have a single file watcher and HMR process
+runing in the same process as our development build. So now, we can develop
+our app and tests at the same time in one simple command.
 
 To run the above:
 
@@ -283,236 +344,134 @@ To run the above:
 clj -M:dev
 ```
 
-Now you can visit your app at http://localhost:9500 and your tests at http://localhost:9500/figwheel-extra-main/testing
+Now you can visit your app at `http://localhost:9500` and your tests at
+`http://localhost:9500/figwheel-extra-main/testing`
 
-When you visit `localhost:9500/figwheel-extra-main/testing` you should see something like this:
+:::note
+When you visit `http://localhost:9500` it will be blank.  This is expected
+because you only have an `add` function in your ClojureScript app.
+:::
+
+When you visit `localhost:9500/figwheel-extra-main/testing` you should see
+something like this:
 
 ![screenshot of figwheel test runner](/images/003-figwheel-testing.png)
 
-The above is a graphical version of the textual `test report` that we got when we ran the tests using `cljs.test`.  From here, you can modify your code and your `figwheel-extra-main/testing` will not only rebuild, but live update creating a nice developer experience.
+The above is a graphical version of the textual `test report` that we got when
+we ran the tests using `cljs.test`.  From here, you can modify your code and
+your `figwheel-extra-main/testing` will not only rebuild, but live update
+creating a nice developer experience.
 
 
 ## Runtime Environments
 
-Up until now, we haven't really discussed "Runtime Environments".  Yet, I feel this is something important to discuss because its something that confusing in JavaScript land and sooner or later, you have to consider it in ClojureScript as well.
+Up until now, we haven't discussed `Runtime Environments`.  `Runtime Environments`
+are important because they impact your test results.
 
-Consider this, when you run code in your ClojureScript REPL, where is that code run?  Is it the browser?  node?  The answer is that it depends on how you run your REPL.  If you run it like we did in the above [run tests with cljs.main](#run-tests-with-cljs-main) section your code will be run in a `Browser Environment`.  If you were to set `--repl-env` to `node` then your code would be run in a `Node Environment`.  This is what we mean by understanding which environment your code is running in.
+When we ask which `runtime environment` our JS code is running in we want to know
+if it's running in a browser or server environment.  Then, we also need to know
+which browser (Safari, Chrome, Firefox) or server environment (Node, Dino, Bun)
+our code is specifically running in.
 
-The importance of the environment is your code, when run in production, is targeting one of these and this means that the JS API's you have available to you will be different for each and the performance of your tests.  For example, you won't have the `window` object in `Node`, so it wouldn't be a good idea to test your browser code in a Node environment.
+Right now, if you run your code like we did in the [run tests with cljs.main]
+section, your code will be run in a `Browser Environment`.  If you were to set
+`--repl-env` to `node` then your code would be run in a `Node Environment`.
+
+Making sure we're testing against the right environments is important because
+the behavior and APIs made available to you will change based on the environment
+your code's run in.
+
+For example, you won't have the `window` object in `Node`, so it wouldn't be a
+good idea to test your browser code in a Node server environment.
 
 ::: note
-Yes, you can test some code that's agnostic of the environment, but in general, test your code where you expect it to run
+Yes, you can test some code that's agnostic of the environment, but in general,
+test your code where you expect it to run
 :::
 
-The second point is test performance. As it turns out, it's not always desirable or possible to test your browser code directly in the browser.  For example, you may run into a scenario where you want to run your code in your CI/CD process.  How does this work?  When this is the case, you will want to setup a `Headless Browser Runtime Environment`.  The following section will show you how to do this.
+Another consideration is test performance. As it turns out, it's not always
+desirable or possible to test your browser code directly in the browser.  For
+example, you may run into a scenario where you want to run your code in your
+CI/CD process.  When this is the case, you will want to
+setup a `Headless Browser Runtime Environment`.  The following section will
+show you how to do this.
 
 ### Headless Browser Runtime Environment
 
-This section is going to show how to run your ClojureScript tests in JSDOM.  This is something we want to configure so we can run our tests as part of our CI/CD process.  The why of it is this:  we don't need a browser GUI to run in our CI Environment.  The GUI is slow and performance intensive.  For this reason, we should consider setting up our tests to run in a headless environment.  Here are some example of headless JS environments
+This section is going to illustrate how to run your ClojureScript tests using headless
+chrome.
 
-- [headless chrome](https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md)
-- [Nightmare](http://www.nightmarejs.org/)
-- [Puppeteer](https://github.com/GoogleChrome/puppeteer)
-- [jsdom](https://github.com/jsdom/jsdom)
+This is something we want to configure so we can run our tests as part of our
+CI/CD process.
 
-For our purposes we are going to use [jsdom](https://github.com/jsdom/jsdom) which is a node based browser like environment.  My preference here is because `jsdom` is a fast, healthy open source project backed with great documentation and battle tested.  Evidence?  companies like [Gitlab](https://docs.gitlab.com/ee/development/testing_guide/frontend_testing.html), [Facebook](https://opensource.facebook.com/) and [Airbnb](https://www.airbnb.ca/) support their extensive testing infrastructure with `jsdom`.
+The reason we do this is because in CI/CD we don't need a browser GUI.  The GUI
+is slow and uses more computer resources.  For this reason, we configure our tests
+to run in a headless environment.  Here are some example of headless JS environments
 
-The following sub-sections will walk through the steps required to setup this environment and teach figwheel to execute your tests inside of it.
+- [headless chrome]
+- [Nightmare]
+- [Puppeteer]
+- [jsdom]
 
-::: note
-housekeeping: ensure you have [yarn]: https://yarnpkg.com/en/docs/getting-started and [node] installed before continuing. You can also swap out `yarn` for `npm`.
+For our purposes I use [headless chrome] which is Chrome without the GUI.
+
+:::note
+I choose `headless chrome` as this causes less issues compared to JSDOM which
+I originally used.
 :::
 
-#### Step 1 Add JavaScript Dependencies
-
-Since we are going to be using packages from JavaScript land we need to setup our ClojureScript with a `package.json` file.  To do this we can run this from the root of our `nike-app` project:
-
-```bash
-yarn init -y
-```
+The following sub-sections will walk through the steps required to setup this
+environment and teach figwheel to execute your tests inside of it.
 
 ::: note
-`-y` will tell yarn to say yes to all of its questions.
+housekeeping: ensure you have [yarn] and [node] installed before continuing.
+You can also swap out `yarn` for `npm`.
 :::
 
-The above will create a `package.json` file for us and a `yarn.lock`.  The next step is to install `jsdom`:
 
-```bash
-yarn add -D jsdom
-```
+#### Step 1 Setup A Headless Test Runner
 
-::: note
-`-D` flag will tell our `js` that this dependency is for development only.
-:::
-
-The above will take a short while and when complete your `package.json` will have been updated and you will have a `node_modules` dir in your repo. Your project should now look like this:
-
-```bash
-nike-app
-├── README.md
-├── deps.edn
-├── dev.cljs.edn
-├── package.json  # new
-├── yarn.lock     # new
-├── node_modules/ # new
-├── resources
-│   └── public
-│       ├── index.html
-│       └── style.css
-├── src
-│   └── nike
-│       └── nike_app.cljs
-└── test
-    └── nike
-        ├── test_runner.cljs
-        └── nike_app_test.cljs
-```
-
-#### Step 2 Setup a JSDOM Environment
-
-Now we need to write some JavaScript.  Inside of `test/nike` create a file called `test_environment.js` and make it look like this:
-
-```javascript
-// ------------------------------------------------------------
-// Browser Test Environment - JSDOM
-// ------------------------------------------------------------
-
-const fs = require('fs');
-var vm = require('vm');
-var path = require('path');
-const jsdom = require ('jsdom');
-
-const args = process.argv.slice(2)
-const testScript = args[0];
-const url = args[1];
-
-// helpers
-function addScript (fname, window){
-  var scriptText =  fs.readFileSync(fname, { encoding: "utf-8" });
-  var scriptEl = window.document.createElement("script");
-  scriptEl.text = scriptText;
-  window.document.body.appendChild(scriptEl);
-}
-
-// setup JSDOM options
-const {JSDOM, VirtualConsole} = jsdom;
-
-const html = '<!DOCTYPE html>';
-
-const virtualConsole = new VirtualConsole()
-
-const options = {
-  // see https://github.com/jsdom/jsdom#loading-subresources
-  url:  url,
-  resources: "usable",
-  runScripts: "dangerously",
-  pretendToBeVisual: true,
-  // see https://github.com/jsdom/jsdom#virtual-consoles
-  virtualConsole: virtualConsole.sendTo(console)
-};
-
-// create JSDOM instance
-const dom = new JSDOM(html, options);
-
-global.window = dom.window;
-
-// run tests
-addScript(testScript, dom.window);
-```
-
-::: note
-The above is going to look like a lot of code.  90% of it is directly from the jsdom docs.  The only things I have added are comments and some helper functions to make it more maintainable.
-:::
-
-The above is just a JavaScript file meant to be run by node.  You can prove this by manually running the file like this:
-
-```bash
-node test_environment.js file.js url
-```
-
-`file.js` is any JavaScript file you have.  When you call the above, it will run `file.js` in the `jsdom` environment.
-
-In our case, `file.js` is going to be the name of the file that ClojureScript compiled. The tests will run inside of `jsdom` and the results of those tests will be returned to us.
-
-To help understand the above script a little more:
-
-- `addScript` a function that is going to write our file to the `jsdom` environment which is what makes the script run
-- `VirtualConsole` is a `jsdom` config that allows the output to be returned to the console.  For example, if you write `(js/console.log "hi")` in your tests, this line is what will return it to the console.
-- `url` this allows us to support `figwheel` HMR.  When you make changes to your code, `figwheel` broadcasts those.  We need this URL in there to tell our `jsdom` environment about the changes.
-
-Alright, from here we are done with JavaScript and we can go back to configuring our ClojureScript project.
-
-#### Step 3 Setup A Headless Test Runner
-
-We need to create a second `test runner` which is going to be used to run our headless tests. So create a new file called `test_runner_headless.cljs` inside of `tests/nike` and make it look like this:
+Open `test_runner.cljs`.  Make it match the following:
 
 ```clojure
-(ns nike.test-runner-headless
+(ns myusername.test-runner
   (:require
     [figwheel.main.testing :refer-macros [run-tests-async]]
     ; tests here
-    [nike.nike-app-test]))
+    [myusername.my-app-name-test]))
 
 (defn -main [& args]
   (run-tests-async 10000))
 ```
 
-This file is the `entrypoint` for our tests.  It's this file that will be run in `jsdom`.  The next step is to write the code that will run our `jsdom` JS environment
+#### Step 2 Add a test config
 
-#### Step 4 JS Environment Runner
-
-Figwheel does this great thing where it allows us to choose the JS environment where you want to run your code.
-
-In the [browser testing](#browser-testing) section we let `figwheel` choose which JS environment to run our code in.  Now we want to do something different.  We want to tell `figwheel` the JS environment to run our tests in.  In order to do this we need to write a Clojure file.  Yup, we are writing Clojure.
-
-Create a new file in `test` called `nike.clj` and add the following code:
+Create a new file in the root of `my-app-name` called `test.headless.cljs.edn`. Open
+`test.headless.cljs.edn` and type the following into it:
 
 ```clojure
-(ns nike
-  (:require
-    [clojure.java.shell :as shell]))
-
-(defn run-js-test-environment
-  [{:keys [output-to open-url] :as args}]
-  (let [js-env "test/nike/test_environment.js"
-        result (shell/sh "node" js-env output-to open-url)]
-    (if (zero? (:exit result))
-      result
-      (do (println result)
-          (System/exit 0)))))
+^{:auto-bundle         :webpack
+  :ring-server-options {:port 9504}}
+{:main            myusername.test-runner
+ :infer-externs   true
+ :output-dir      "target/public/cljs-out"
+ :output-to       "target/public/cljs-out/main.js"
 ```
 
-::: note
-For those not familiar with `clojure.java.shell` it is going to return a map with an `:exit` code of `0` or `1`.  If it is `1` that means something has gone wrong and your process will just hang and tell you nothing about what went wrong.  For example, pretend you skipped step 1 - 2 of this section.  If you run the above, node will throw an error saying that you do not have `jsdom` installed.  However, you will not know this because `clojure.java.shell` will silently eat that message and [just do nothing].  So what we do is provide a little developer convenience and add a check.  If anything goes wrong we print it and then kill the program.
-:::
+#### Step 3 Configure Figwheel
 
-When we call `run-js-test-environment` it is ultimatley responsible for running `node test_environment.js file.js url` like we illustrated in [Step 2 Setup a JSDOM Environment](#step-2-setup-a-jsdom-environment).
-
-Awesome.  At this point we have our dependencies, a JS environment and a test runner.  The last step is to configure `figwheel`.
-
-#### Step 5 Configure Figwheel
-
-The first step is adding a new `build configuration` for `figwheel`.  We cannot use our old `dev.cljs.edn` one because that is running our app/tests in the `browser environment`.   However, because we need to tell `figwheel` to run this build in a different environment, we need a new build.
-
-My rule of thumb is that every time you need to run your ClojureScript in a different JS environment, whether that is `node` or `browser`, you need a different build configuration.  Create a new file called `test.headless.cljs.edn` in the root of our project and make it look like this:
-
-```clojure
-^{:launch-js nike/run-js-test-environment}
-{:main nike.test-runner-headless}
-```
-
-Now from here we need to create an alias in our `deps.edn` file:
+Open `deps.edn` and add a `:test-headless` alias:
 
 ```clojure
 {:paths
  ["src" "test" "resources" "target"]
 
  :deps
- {org.clojure/clojurescript {:mvn/version {{ site.posts.dep.clojurescript.version }}}
+ {org.clojure/clojurescript  {:mvn/version {{ site.posts.dep.clojurescript.version }}}
 
   com.bhauman/figwheel-main  {:mvn/version {{ site.posts.dep.figwheel.version }}}
 
-  reagent                   {:mvn/version {{ site.posts.dep.reagent.version }}}}
+  reagent                    {:mvn/version {{ site.posts.dep.reagent.version }}}}
 
  :aliases
  {:dev
@@ -521,70 +480,89 @@ Now from here we need to create an alias in our `deps.edn` file:
   :test-headless ; new alias
   {:main-opts ["--main"         "figwheel.main"
                "--compile-opts" "test.headless.cljs.edn"
-               "--main"         "nike.test-runner-headless"]}}}
+               "--fw-opts"      "{:launch-js [\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" \"--headless\" \"--remote-debugging-port=9222\" :open-url]}"
+               "--main"         "myusername.test-runner"]}}}
 ```
 
-That's it.  We are ready to run our headless browser testing setup.  Try it out by running `clj -M:test-headless` in your terminal.
+:::note
+The `launch-js` is going to run a headless chrome.  This path is specific to
+macos.  You will have to change it based on your environment e.g. Windows, Linux
+etc.  As a result, you will have mulitple `test-headless` aliases based on
+environment.
+:::
+
+That's it.  We are ready to run our headless browser testing setup.  Try it out
+by running `clj -M:test-headless` in your terminal.
 
 If it all worked you should see something like this:
 
 ```bash
 # ...
 
-Testing nike.nike-app-tests
+Testing myusername.my-app-name-test
 
 Ran 1 tests containing 1 assertions.
 0 failures, 0 errors.
-Tests passed!
+:figwheel.main.testing/success
 ```
 
-You are going to notice that you have to re-run this every time you want to run your headless tests.  This is to be expected. The thing with this approach is that we have only really configured it to be run by our CI environment and also as a quick sanity check for newcomers to our project.  Could we make it do more?  Yup!  You can take this and connect it to `figwheel`'s file watching mechanism and have it behave exactly like the browser testing setup.
-
-In addition, while I have chosen to use `jsdom` you could choose to use any headless JS environment you like!
+You're going to notice that you have to re-run this every time you want to run
+your headless tests.  This is to be expected. The thing with this approach is
+that we have only really configured it to be run by our CI environment and also
+as a quick sanity check for newcomers to our project.  Could we make it do
+more?  Yup!  You can take this and connect it to `figwheel`'s file watching
+mechanism and have it behave exactly like the browser testing setup.
 
 ## Alternative Tools
 
-Up until now, i've shown you only `cljs.test`.  The reason is because it does everything you need, it's a simple library and it's commonly used.  However, for many reasons, you may be interested in using a different tool.  That's totally possible with our setup!  Part of the reason I broke down `cljs.test` into smaller groups of functionality:
+Up until now, i've shown you only `cljs.test`.  The reason is because it's simple,
+does what we need and means we don't have to pull in more deps.
 
-- assertion library
-- test definitions
-- test reporting
-- test runner
+Having said this, you might want more features.  That's totally understandable
+and possible with this setup. Part of the reason I broke down `cljs.test`
+into smaller groups of functionality like `assertion library`, `test definitions`,
+`test reporting` and `test runner` is because it helps you see that you're not
+looking to replace everything, but maybe just a small piece of something.
 
-Is because some libraries you come across may only focus on one of these tasks and some may focus on more.  Thus, it's helpful to know how each works at a lower level so you can confidently replace them if you need to.  With this in mind, here are some alternatives you can consider if you want to experiment with different tools.
+Now that we know what some of these pieces are you should be in a position to
+replace them if you need to.  With this in mind, here are some alternatives you
+can consider if you want to experiment with different tools.
 
-To replace your assertion libraries and test definitions these are some popular libraries in Clojure(Script)
+To replace your assertion libraries and test definitions these are some popular
+libraries in Clojure(Script)
 
-- [expectation](https://github.com/clojure-expectations/expectations)
-- [testit](https://github.com/metosin/testit)
-- [midje](https://github.com/marick/Midje)
-- [fudje](https://github.com/jimpil/fudje)
+- [expectation]
+- [testit]
+- [midje]
+- [fudje]
 
-
-For now I recommend sticking with `cljs.test` and then look into one of the above when/if the need arises.
+For now I recommend sticking with `cljs.test` and then look into one of the
+above when/if the need arises.
 
 And replacements for `test-runners` and `test reporters`
 
-- [eftest](https://github.com/weavejester/eftest)
-- [kaocha](https://github.com/lambdaisland/kaocha)
+- [eftest]
+- [kaocha]
 
 ::: note
-What about a tool like [doo]? See the footnote<a href="#doo-runner" aria-describedby="footnote-label" id="doo-ref">.</a>
+What about a tool like [doo]? See the footnote<a href="#doo-runner"
+aria-describedby="footnote-label" id="doo-ref">.</a>
 :::
 
-And you can even lean on the JavaScript ecosystem if you like.  For example, I was able to get [Jest working with ClojureScript](https://github.com/athomasoriginal/demo-clojurescript-jest)<a href="#jest-clojurescript" aria-describedby="footnote-label" id="jest-clojurescript-ref">.</a>
-
-What is my recommendation?  Keep it simple, friends.  Start with `cljs.test`.  Find something you don't like and figure out exactly why it doesn't work for you and then, and only then, start looking for other tooling.  For example, let's say you want better `test reports` because they really don't provide enough information.  When that happens, start to look around for other tooling.  For me, it's about being pragmatic with our choices.
 
 ## Next Steps
 
-The goal here was to layout some context.  Point you to tools and explore how and what to configure in your tooling for testing ClojureScript.  From here, play with the setup, see how far it takes you and run with it.  Here are some other resources you might be interested in:
+The goal here was to layout some context.  Point you to tools and explore how
+and what to configure in your tooling for testing ClojureScript.  From here,
+play with the setup, see how far it takes you and run with it.  Here are some
+other resources you might be interested in:
 
 - [Testing Your Application - CLJS](https://hub.packtpub.com/testing-your-application-cljstest/)
 - [Figwheel Testing Guide](https://figwheel.org/docs/testing.html)
 - [JavaSCript and Node Best Practices](https://github.com/goldbergyoni/javascript-testing-best-practices)
 
-Finally, there is no "right" or "wrong" testing tool.  Start.  Figure out what works and what doesn't work and then iterate.  Have fun!
+Finally, there is no "right" or "wrong" testing tool.  Start.  Figure out what
+works and what doesn't work and then iterate.
 
 ::: footnotes
 
@@ -600,13 +578,10 @@ You can name the test anything you like. There are many idiomatic conventions fo
 I have used doo in production apps and have found that this tool is not as useful as I would like it to be.  You may here it recommended, but I believe these are based on what used to be available, which was not nearly as much as of now (2019-2020).
 ->->->
 
-->->-> footnote#jest-clojurescript
-This is a viable option, but probably needs a little work for it perform well as your project scales.  The other downside is you are opting out of the ClojureScript ecosystem a little can be frustrating.  This is the reason that while I explored this option, I opted for stay in the CLJS ecosystem.
-->->->
 :::
 
-[templates]: https://github.com/athomasoriginal/templates
-[templates getting started guide]: https://github.com/athomasoriginal/templates#getting-started
+[run tests with cljs.main]: #run-tests-with-cljs-main
+[templates projects]: https://github.com/athomasoriginal/templates
 [Setup Clojure(Script)]: https://www.youtube.com/watch?v=P60dMljS-OM&list=PLaGDS2KB3-ArG0WqAytE9GsZgrM-USsZA
 [create-react-app]: https://create-react-app.dev/
 [Start a ClojureScript App from Scratch]: https://betweentwoparens.com/blog/start-a-clojurescript-app-from-scratch
@@ -615,3 +590,19 @@ This is a viable option, but probably needs a little work for it perform well as
 [node]: https://nodejs.org/en/
 [just do nothing]: https://clojureverse.org/t/why-doesnt-my-program-exit/3754/1
 [doo]: https://github.com/bensu/doo
+[headless chrome]: https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md
+[Nightmare]: http://www.nightmarejs.org/
+[Puppeteer]: https://github.com/GoogleChrome/puppeteer
+[jsdom]: https://github.com/jsdom/jsdom
+
+[Gitlab]: https://docs.gitlab.com/ee/development/testing_guide/frontend_testing.html
+[Facebook]: https://opensource.facebook.com/
+[Airbnb]: https://www.airbnb.ca/
+[yarn]: https://yarnpkg.com/en/docs/getting-started
+[browser testing]: #browser-testing
+[expectation]: https://github.com/clojure-expectations/expectations
+[testit]: https://github.com/metosin/testit
+[midje]: https://github.com/marick/Midje
+[fudje]: https://github.com/jimpil/fudje
+[eftest]: https://github.com/weavejester/eftest
+[kaocha]: https://github.com/lambdaisland/kaocha
