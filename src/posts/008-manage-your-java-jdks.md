@@ -1,7 +1,7 @@
 ---
 author: "Thomas Mattacchione"
 createdDate: '01 January 2020'
-updatedDate: '11 January 2024'
+updatedDate: '16 March 2024'
 date: Last Modified
 layout: post
 tags:
@@ -12,33 +12,50 @@ canonical: true
 summary: "Live like Jay."
 ---
 
-Pro tip for anyone working with _any_ programming language: seek out a language version management tool.
+Pro tip for anyone working with _any_ programming language: Find a clean and easy
+way to switch versions of your programming language of choice.
 
-All it takes is a [CI] environment running a different version of your programming language and the world goes Pete Tong.
+All it takes is a [CI] environment running a different version of your
+programming language and the world goes Pete Tong.
 
-It's for this reason that I always manage my programming languages with a language version manager.  If you're using JavaScript, [nvm] is a great option, Ruby has [rvm] and for Clojure developers we have [tools.deps] for managing versions of Clojure and [jEnv] for managings our JDKs.
+My approach is to use a language version manager.  If you're using JavaScript,
+[nvm] is a great option, Ruby has [rvm] and for Clojure developers we have
+[tools.deps] for managing versions of Clojure and [jEnv] for managing our JDKs.
+
+:::note
+Some languages, Clojure included, don't need a tool for this.
+:::
 
 ## Why Version Management Tools
 
-With every line of code we write, we're making assumptions. We assume that our code will run in specific environment(s) and work in a particular way.  The longer we play the game, the clearer we see that these assumptions are traps.
-
-A possible solution is to agree on standards.  We say that our software _will_ work on specific versions of a language and in specific environments.  Then we work to back this guarantee.  There is also another side to this coin. Something unexpected happens and our standards are betrayed and we have to figure out why.
-
-It's for these reasons that we have language version management tools.  They allow us to quickly and easily manage (add, switch, remove et al.) the versions of our programming languages.  This enables us to better debug and fortify our code.  Example scenarios where I've  had to switch language versions:
+Version management tools allow us to quickly and easily manage (add, switch,
+remove et al.) the version of our programming languages. This enables us to
+easily test our code against different languages.  Example scenarios where I've
+had to switch language versions:
 
 - Debugging CI environments
-- Resolving "works on my machine" events
-- Regression testing an app or library
+- Resolving "works on my machine" issues
+- Regression testing an app or library against an older version of a language
 - Switching between multiple projects with different language version requirements
 
-As you can imagine, this is a common software development problem and for every language it's handled in a different, but similar way.  In the case of Clojure, there two things we have to manage:  versions of Clojure and versions of the JDK.  This post is going to focus on managing versions of the JDK with the help of `jEnv`.
+The need to do this exists with all programming languages.  Some languages
+are easier to do this with than others.  For example, with Clojure you don't
+need a tool, you just use [tools.deps] to specify the version of the language
+you want to use.  With Java, it's more complicated so I use a tool called `jEnv`.
 
-`jEnv` is a tool that allows you to manage your Java JDK installations.  It's focus is on allowing you to easily switch between versions of the JDK.  One thing to note is that this tool does not allow you to install a JDK.  You have to do this separatley.  Further, while the process to setup `jEnv` is straightforward, there are some gotchas which is why i'm writing this guide.
+`jEnv` is a tool that allows you to manage your Java JDK installations.  It
+you switch between versions of the JDK.  One thing to note is that this tool
+does not allow you to install a JDK.  You have to do this separatley.  Further,
+while it's straightforward to setup `jEnv`, there are some gotchas
+which is why i'm writing this guide.
 
-## Installing jEnv
+## Install jEnv
 
 ::: note
-Please note that at the time of this writing I have two versions of the JDK installed right now: **AdoptOpenJDK 11** and **AdoptOpenJDK 13**.  I'm also running MacOS 10.15.2.  If you are using a different OS please head over to [The official jEnv guide] to see how to install `jEnv` on linux.
+Please note that at the time of this writing I have two versions of the JDK
+installed right now: **AdoptOpenJDK 11** and **AdoptOpenJDK 13**.  I'm also
+running MacOS 10.15.2.  If you are using a different OS please head over to
+[The official jEnv guide] to see how to install `jEnv` on linux.
 :::
 
 The first thing we have to do is install `jEnv`.
@@ -48,7 +65,8 @@ brew install jenv
 ```
 
 ::: note
-The above is actually the only step that is different for linux.  So macos and linux users can follow everything that comes next together
+The above is actually the only step that is different for linux.  So macos and
+linux users can follow everything that comes next together
 :::
 
 and now let's do a sanity check to see if it's installed correctly.  Run:
@@ -67,21 +85,34 @@ and if the above worked you should see something like this:
 ```
 
 ::: note
-Note that the above output is truncated because I am choosing to focus on what I consider the important details.  Further, the pieces I truncated may be specific to my machine.  For example, i'm using `zsh`.  If you're using `bash`, then your output on line 3 will read `bash`.  Everything truncated is identified with `# ...`.
+Note that the above output is truncated because I'm choosing to focus on what
+I consider the important details.  Further, the pieces I truncated may be
+specific to my machine.  For example, i'm using `zsh`.  If you're using `bash`,
+then your output on line 3 will read `bash`.  Everything truncated is
+identified with `# ...`.
 :::
 
-Assuming the above worked, we can move onto actually configuring `jEnv`.  This means that the next step is to add `jEnv` to our `PATH`.
 
-To do this, we have to add some code to our shell configuration file.  Now, if you'r not sure which shell you're running, that's fine, I will assume we don't know.  This means that our next step is to find out which shell we are using is run the following command:
+## Configure jEnv
+
+Assuming the above worked, we can now configure `jEnv`.  The next step is to
+add `jEnv` to our `PATH` by updating our configuration file.
+
+To do this, you need to know which `shell` you're running.  Type the following
+into your terminal to figure out the `shell` you're running:
+
 
 ```shell
 echo $0
 ```
 
-If you are using `bash`, the above will print out `-bash` and if you're using `zsh` the above will print out `-zsh`.  Once you discover which shell you are using, please choose the associated code block below and run the code inside of it line by line:
+If you are using `bash`, the above will print out `-bash` and if you're using
+`zsh` the above will print out `-zsh`.  Once you discover which `shell` you are
+using, please choose the associated code block below and run the code inside of
+it line by line:
 
 ::: note
-In other words, you only have to run the code from **one** of the following blocks
+You only have to run the code from **one** of the following blocks
 :::
 
 **zsh shell**
@@ -129,11 +160,15 @@ and now running `jenv doctor` returns this:
 [OK]	Jenv is correctly loaded
 ```
 
-again, the output has changed indicating that we are moving along.  At this point, `jEnv` is setup and the last item on our list is to install a Java JDK.  If you don't have one installed checkout [AdoptOpenJDK]
+At this point, `jEnv` is setup and the last item on our list is to install a
+Java JDK.  If you don't have one installed checkout [AdoptOpenJDK]
 
 ## Add a JDK to jEnv
 
-Not sure if you have a Java JDK installed?  No worries, we will find out together!  What we can do is run the following command which is going to tell us where our Java JDK's are installed. So, run this command:
+Not sure if you have a Java JDK installed?  No worries, we'll find out
+together!
+
+Run the following command in your terminal to see which Java JDKs we have installed.
 
 ```bash
 /usr/libexec/java_home -V
@@ -151,7 +186,8 @@ Matching Java Virtual Machines (2):
     11.0.6, x86_64:	"AdoptOpenJDK 11"	/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
 ```
 
-If you see something like the above, where your JDK's are listed out, it means you have one installed and can continue on with this section.
+If you see something like the above, it means you have at least one Java JDK
+installed and you can continue on with this section.
 
 ::: note
 Also note that the above is specific to me.  So while you may have JDk's installed, they may be different distributions and versions compared to mine.
