@@ -29,8 +29,10 @@ The first type of comment is a literal [comment]
 ```
 
 Anything that follows the `;` is ignored by Clojure until the end of the line.
-A common use for the `comment` is to help future humans understand our code
-better<a href="#comments" aria-describedby="footnote-label" id="comments-ref">.</a>
+A common use for a `comment` is to add human readable documentation to your
+code to help the people reading our code understand it<a href="#comments" aria-describedby="footnote-label" id="comments-ref">.</a>
+We can also comment out blocks of code which we don't want our program
+to run.
 
 ## Discard Comment
 
@@ -42,13 +44,22 @@ The second type of comment is a [discard comment]
 (-> 5 inc #_ inc inc)  ; 7
 ```
 
-In the above code, the `#_` makes it as if the second `inc` doesn't
-exist<a href="#wonderful-life" aria-describedby="footnote-label" id="wonderful-life-ref">.</a>
-This is great for debugging because the `discard` comment doesn't return a value.
-In addition to this, there are two additional usage notes about the
-`discard comment`.
+The `#_` will comment out the form directly behind it.  In the above, the code
+commented out is the second `inc`.
 
-The first is that they nest:
+I actually ignored this tool for an embarasignly long time, but it's wildly
+useful and actually makes coding faster!
+
+At a high level, what makes the `discard` comment great is that it doesn't
+return a value, they nest and you can insert it into the middle of a line of
+Clojure code and it only comments the form directly behind it.
+
+Additionally, if you're commenting out an entire block of code you only have
+to add the `discard` to the top level of the form and the entire form will be
+commented.  This means the formatting of the code block won't be affected
+and you have very little code to remove.
+
+Here's an example of nesting:
 
 ```clojure
 (-> 5 #_ inc #_ inc inc) ; you could discard each form in turn
@@ -199,10 +210,6 @@ from these comments.
 Of course, there are arguments on both sides about how much to use comments.
 As I see it, don't shy away from them in the pursuit of "self documenting code"
 and also don't lean on them too heavily.
-->->->
-
-->->-> footnote#wonderful-life
-#itsAWonderfulLife
 ->->->
 
 ->->-> footnote#discard-comment-credit
