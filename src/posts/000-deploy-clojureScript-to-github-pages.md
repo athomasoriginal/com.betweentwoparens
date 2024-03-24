@@ -1,7 +1,7 @@
 ---
 author: "Thomas Mattacchione"
 createdDate: '20 May 2019'
-updatedDate: '11 January 2024'
+updatedDate: '24 March 2024'
 date: Last Modified
 layout: post
 tags:
@@ -12,15 +12,45 @@ canonical: true
 summary: "How to build a static site in ClojureScript in probably 2.5 minutes"
 ---
 
-This blog will guide you through the process of building and deploying a minimal static website to Github Pages. By the end we should see how straightforward and accessible working with ClojureScript has become. Before we dive in, let's introduce the key players.
+Here's a small example of what it looks like to deploy a static website with
+some ClojureScript to Github Pages. I'll start by introducing some key cocepts
+and then move into how we actually do the thing.
 
 ### What is ClojureScript?
 
-ClojureScript, like [Elm] or [Reason], is a compile to js programming language. It's different from JavaScript because its data structures are immutable, its paradigm is functional and it's part of a family of programming languages called [lisp]. The tangible benefits are that you can experience a world of web dev where classes of problems influenced by state and questionable language design are significantly reduced. If nothing else, ClojureScript is guarenteed to make you think different.
+ClojureScript, like [Elm] or [Reason], is a compile to js programming language.
+ClojureScript is different from JavaScript in a few ways.
+
+* It's a functional language
+* It's a [lisp] (AKA: Not C style syntax)
+* It's development and design is intentional
+
+Some of the more pragmatic differences
+
+* The culture of the language avoids breaking changes
+* Write your frontend and backend in one language
+* Out-of-the-box tools to help you solve problems better
+
+If nothing else, ClojureScript is guarenteed to make you think different.
 
 ### Github Pages and Static Sites?
 
-Github Pages is a service provided by Github which allows you to freely host your static website. For the uninitiated, a static website is when you write your website in plain old html, css and ~~javascript~~ ClojureScript. You don't need servers, databases or additonal server side code. The benefits include increased performance, a quick development workflow and enhanced website security. The downsides are that static websites will not be able to acheive all the cool features of a beefy web app.
+`Github Pages` is a service provided by Github which allows you to freely host
+your static website.
+
+A static website is when you write your website in html, css and
+javascript.  You don't need to setup servers, databases or additonal server
+side code. The benefits:
+
+* Performance
+* A quick development workflow
+* Easier website security
+* Less expensive to build and host
+
+The downsides are that static websites will not be able to acheive all the cool
+features of a beefy web app.  Often times I will use a static website to prove
+a concept for an app, host docs or build marketing websites.  They are cheap,
+fast to build and let you prove out concepts.
 
 With this in mind, let's start coding.
 
@@ -39,9 +69,9 @@ clj -Stree
 You should see a response like this:
 
 ```bash
-org.clojure/clojure 1.10.3
-org.clojure/spec.alpha 0.2.194
-org.clojure/core.specs.alpha 0.2.56
+org.clojure/clojure 1.11.1
+  . org.clojure/spec.alpha 0.3.218
+  . org.clojure/core.specs.alpha 0.2.62
 ```
 
 ::: note
@@ -50,7 +80,10 @@ Don't worry if your versions are different from mine.
 
 ### Setting up your HTML
 
-For those that went through the Github Pages quickstart, you should have a repo with a sad little <a href="#fn-step-1-commit" aria-describedby="footnote-label" id="fn-step-1-commit-ref">index.html</a> inside of it. Open your `index.html` and add some life to it by making it look like this:
+For those that went through the Github Pages quickstart, you should have a repo
+with a sad, empty <a href="#fn-step-1-commit" aria-describedby="footnote-label"
+id="fn-step-1-commit-ref">`index.html`</a>. Open your `index.html`
+and type the following:
 
 ```html
 <!DOCTYPE html>
@@ -68,11 +101,19 @@ For those that went through the Github Pages quickstart, you should have a repo 
 </html>
 ```
 
-<aside class="blog-content__note">You will notice that we have added a reference to a js and css file in our HTML. We will add those later. Please also note that where it says "demo-clojurescript-gh-pages" in the script tag above, it should be the name of your Github project repo.</aside>
+:::note
+You'll notice that we added a reference to a `main.js` and `style.css`
+file in our HTML. These don't exist yet, but we will create them later.
+Please also note that where it says `"demo-clojurescript-gh-pages"`.  This is
+named after my Github project repo.  You should name yours after _your_ Github
+project repo.
+:::
 
 ### Setting up your CSS
 
-The next thing we want to do is add a `style.css` file at the same level as our `index.html` file so we can make our hello world look <a href="#fn-step-2-commit" aria-describedby="footnote-label" id="fn-step-2-commit-ref">gorg'</a>
+The next thing we want to do is add a `style.css` file at the same level as our
+`index.html`<a href="#fn-step-2-commit" aria-describedby="footnote-label"
+id="fn-step-2-commit-ref">.</a>  Type the following into it
 
 ```css
 :root {
@@ -110,17 +151,28 @@ Now that we have our HTML and CSS, we need to add ClojureScript.
 
 ### Setting up your ClojureScript
 
-To do _anything_ with ClojureScript, we need to configure our project to use it. This begins by adding ClojureScript as a dependency. The way we do this in Clojure land is by creating a file called `deps.edn` at the same level as our <a href="#fn-deps" aria-describedby="footnote-label" id="fn-deps-ref"><code class="gatsby-code-text">index.html</code></a>. Once you have created your `deps.edn`, open it and add the following code:
+This section will now add the absolute minimum requirements to start working with
+ClojureScript.
+
+Create a file called `deps.edn` at the same level as our
+<a href="#fn-deps" aria-describedby="footnote-label" id="fn-deps-ref"
+class="gatsby-code-text">`index.html`</a> file.
+
+Open the file you've created and type the following code into it.
 
 ```clojure
 {:deps {org.clojure/clojurescript {:mvn/version {{ site.posts.dep.clojurescript.version }} }}}
 ```
 
 ::: note
-If you are coming from JavaScript it can be helpful to think of the `deps.edn` as similar to `package.json`. The purpose of this file is to tell `clojure` which version of `ClojureScript` we want to use.
+If you're coming from JavaScript it can be helpful to think of the `deps.edn`
+as similar to `package.json`. `deps.edn` tells `clojure` which version of
+`ClojureScript` we want to use.
 :::
 
-Let's recap a bit. At this point, your directory structure should look like <a href="#fn-step-3-commit" aria-describedby="footnote-label" id="fn-step-3-commit-ref">this:</a>
+Let's recap a bit. At this point, your directory structure should look like <a
+href="#fn-step-3-commit" aria-describedby="footnote-label"
+id="fn-step-3-commit-ref">this:</a>
 
 ```bash
 .
@@ -131,7 +183,11 @@ Let's recap a bit. At this point, your directory structure should look like <a h
 
 If yes, we are good to move onto the next step: writing ClojureScript!
 
-Like most code projects our code is going to live in a `src` directory. Go ahead and create a `src/demo` <a href="#fn-src-dir" aria-describedby="footnote-label" id="fn-src-dir-ref">directory</a>. Once created, move into `demo` and create our first ClojureScript file called `static_website.cljs`. Now our repo should look like <a href="#fn-step-4-commit" aria-describedby="footnote-label" id="fn-step-4-commit-ref">this:</a>
+Create `src/demo` <a href="#fn-src-dir" aria-describedby="footnote-label"
+id="fn-src-dir-ref">directory</a>. Once created, move into `src/demo` and create
+a ClojureScript file called `static_website.cljs`. Now our repo should
+look like <a href="#fn-step-4-commit" aria-describedby="footnote-label"
+id="fn-step-4-commit-ref">this:</a>
 
 ```bash
 
@@ -143,7 +199,7 @@ Like most code projects our code is going to live in a `src` directory. Go ahead
 └── index.html
 ```
 
-Once completed, open `static_website.cljs` and type this in:
+Open `static_website.cljs` and type the following:
 
 ```clojure
 (ns demo.static-website)
@@ -151,44 +207,62 @@ Once completed, open `static_website.cljs` and type this in:
 (js/console.log "Hello, Github Pages!")
 ```
 
-### Build development bundle
-
-In the above steps, we have built a minimal site using HTML, CSS and ClojureScript so the last step is to make sure everything is working by running the following command from the root of your project.
+Open your terminal and run the following command
 
 ```bash
 clj -m cljs.main -d "demo-clojurescript-gh-pages/out"  -c demo.static-website -r
 ```
 
 ::: note
-You want to run the above command from the same place as your `deps.edn`.  Further, if you're curious above the above command and what things like `-d` or `-c` means you can check these out in your terminal by running  `clj -m cljs.main --help`.
+You want to run the above command from the same place as your `deps.edn`.
+Further, if you're curious above the above command and what things like `-d` or
+`-c` means you can check these out in your terminal by running  `clj -m
+cljs.main --help`.
 :::
 
-The above command will take a moment to run. When completed, a browser tab will automatically open and serve your HTM, CSS and ClojureScript. If everything worked you should see a site that looks like this:
+The above command will compile your CLJS into JS. It can take a moment to run.
+When completed, a browser tab will automatically open and serve your HTML, CSS
+and ClojureScript. If everything worked you should see a site that looks like
+this:
 
 ![screenshot of example hello clojurescript site](/images/000-image-hello-cljs-dev-example.png)
 
 Further, if you open your browser console you should see "Hello, Github Pages!"
 
 ::: note
-If you are not seeing your ClojureScript in the browser console, please veryify that your `index.html` file is using your Github project name and the string following the `-d` in the above command, `demo-clojurescript-gh-pages`, is also using your Github project <a href="#fn-project-name" aria-describedby="footnote-label" id="fn-project-name-ref">name</a>.
+If you're not seeing your ClojureScript in the browser console, please verify
+that your `index.html` file is using your Github project name and the string
+following the `-d` in the above command, `demo-clojurescript-gh-pages`, is also
+using your Github project <a href="#fn-project-name"
+aria-describedby="footnote-label" id="fn-project-name-ref">name</a>.
 :::
 
 ### Build production bundle
 
-At this point we have shown ourselves that our code works locally, now it's time to show the world by deploying our site. Before we deploy, we need to build a production version by executing the following command:
+The above is an example of how we test our code locally. After we're happy with
+our code, we can build it for production by runnin the following command:
 
 ```bash
 clj -m cljs.main -O advanced -c "demo.static-website"
 ```
 
-Once the above is done, rock a `git push` to your Github project repo and you should see your ClojureScript app live<a href="#fn-versioned-dependencies" aria-describedby="footnote-label" id="fn-versioned-dependencies-ref">!</a>
+Once the above is done, commit your code with `git`, and push the code to your
+Github project repo and you should see your ClojureScript app live<a
+href="#fn-versioned-dependencies" aria-describedby="footnote-label"
+id="fn-versioned-dependencies-ref">!</a>
 
 ### Conclusion
 
-As I noted in the beginning, this is a minimal example without 3rd party build tools, frameworks, libraries or conveniences and this the point. There are all kinds of routes you can take, but I hope that I have shown that ClojureScript can be an accessible tool for building static websites.
+As I noted in the beginning, this is a very small example of a ClojureScript
+project. From here, you can go in many different directions.  However, the idea
+is the same: turn your CLJS code into JS code and ship the JS code.
+
 
 ::: note
-Hopefully you did not run into any issues, but if you did please head over to [my demo project] where I try to identify and help to resolve some gotchas.  Experience something new?  Please feel free to get in touch and I would be happy to help work through the issue with you.
+Hopefully you did not run into any issues, but if you did please head over to
+[my demo project] where I try to identify and help to resolve some gotchas.
+Experience something new?  Please feel free to get in touch and I would be
+happy to help work through the issue with you.
 :::
 
 :::footnotes
