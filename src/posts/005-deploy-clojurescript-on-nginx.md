@@ -12,26 +12,25 @@ canonical: true
 summary: "Learn how to serve a ClojureScript project on Nginx."
 ---
 
-My [first blog post](https://betweentwoparens.com/blog/deploy-clojurescript-to-github-pages) outlined how to deploy a static ClojureScript website to Github Pages. This is an excellent choice for personal websites, or an open source project's documentation because you get free hosting infrastructure with relatively little effort.  Having said this, what happens if you can't use static hosting providers like Github Pages or [Netlify](https://www.netlify.com/)?  What if you need to control more of the hosting service?  This post will show you how to deploy your ClojureScript site on a webserver you control.  Specifically, we will cover the following topics:
-
-- [The Deploy Process](#the-deploy-process)
-- [Housekeeping](#housekeeping)
-- [Create App](#create-app)
-- [Sanity Check Webserver](#sanity-check-webserver)
-- [Build Production Artifacts](#build-production-artifacts)
-- [Move Production Artifacts to Webserver](#move-production-artifacts-to-webserver)
-- [Teach Webserver to Serve Artifacts](#teach-webserver-to-serve-artifacts)
-- [Automate Process](#automate-process)
-
-By the time we are finished I hope to have clarified the general steps involved in hosting your own ClojureScript app (**spoiler:** it's the same as hosting a JavaScript app).
+My [first blog post] outlined how to deploy a static ClojureScript website to
+Github Pages. This is an excellent choice for personal websites, or an open
+source project's documentation because you get free hosting infrastructure with
+relatively little effort.  Having said this, what happens if you can't use
+static hosting providers like Github Pages or [Netlify]?  What if you need to
+control more of the hosting service?  This post will show you how to deploy
+your ClojureScript site on a webserver you control.
 
 ::: note
-Beyond creating a simple ClojureScript app, this post is not really about ClojureScript. I see it's role as clearing up the process of deploying a static site.  Specifically, we will focus on deploying ClojureScript to a webserver ([Nginx]).  If you are following along, you can see the [source code here].
+Beyond creating a simple ClojureScript app, this post is not really about
+ClojureScript. I see it as clarifying the process of deploying static sites in
+general.  Specifically, we will focus on deploying ClojureScript to a webserver
+([Nginx]).  If you are following along, you can see the [source code here].
 :::
 
 ## The Deploy Process
 
-In order to make our site available to the internet we need a `physical webserver` and `software webserver`.  Once we have these, we just have to:
+In order to make our site available to the internet we need a `physical
+webserver` and a `software webserver`.  Once we have these, we just have to:
 
 1. Store your website's artifacts (`html`, `css` and `js`) on a `physical server`
 1. Teach your `software webserver` where those files live
@@ -42,14 +41,15 @@ In order to do the above, we need to perform the following steps:
 2. Move your website's  production artifacts to a `physical webserver`
 3. Configure your `software webserver` to deliver your website's artifacts to users
 
-These steps are the same whether you are writing `JavaScript`, `ClojureScript`, `Reason` or any other web ready language.
+These steps are the same whether you are writing `JavaScript`, `ClojureScript`,
+`Reason` etc.
 
-In order to illustrate the deploy process we are going to:
+We can illustrate the whole process on your computer right now by:
 
-1. use the computer you are on right now as your `physical server`
-2. use [Nginx](https://www.nginx.com/) as our `software server`
-3. use `ClojureScript` for our static website
-4. use [docker](https://www.docker.com/) to make the deploy consistent and predictable
+1. Using your as your `physical server`
+2. Using [Nginx] as our `software server`
+3. Using `ClojureScript` for our static website
+4. Using [docker] to make the deploy consistent and predictable
 
 ::: note
 We are using `Nginx` because as far as webservers go it's easy to setup, configure and find documentation for.  Finally, because it's ready to use you can use this solution in your workplace today to quickly deploy static documentation or a prototype app.
@@ -59,13 +59,16 @@ We are using `Nginx` because as far as webservers go it's easy to setup, configu
 
 If you are going to follow along with this post please make sure you have the following tools installed:
 
-- Install [Docker](https://docs.docker.com/v17.09/engine/installation/)<a href="#why-docker" aria-describedby="footnote-label" id="why-docker-ref"></a>
-- Install [Clojure](https://clojurescript.org/guides/quick-start)
+- [Install Docker]<a href="#why-docker" aria-describedby="footnote-label" id="why-docker-ref"></a>
+- [Install Clojure]
+
 
 ## Create App
 
 ::: note
-This whole process starts with a ClojureScript app.  If you already have an app you can skip this part.  If you don't have an app, please follow along with this section and we will set you up with your very own ClojureScript app.
+This whole process starts with a ClojureScript app.  If you already have an app
+you can skip this part.  If you don't have an app, please follow along with
+this section and we will set you up with your very own ClojureScript app.
 :::
 
 Start by creating a basic ClojureScript app.  The easiest way to do this is by
@@ -101,12 +104,21 @@ Once the above is complete you should have a project that looks like this:
 ```
 
 ::: note
-This app comes with commands for running the app in `dev` and building a `production` version of the app.  The commands are `clj -M:dev` and `clj -M:prod` respectively.  Feel free to play with the app.
+Note that your project will have a different name than mine (`demo_clojurescript_nginx`).
+This app comes with commands for running the app in `dev` and building a
+`prod` version of the app.  The commands are `clj -M:dev` and `clj
+-M:prod` respectively.  Feel free to play with the app.
 :::
 
 ## Sanity Check Webserver
 
-In this section, I want to spend some time making sure the lightbulbs are working before we decorate the tree.  We are going to verify that we can use docker to pull and run an `Nginx` container locally. To begin, `pull` an nginx docker image into your local filesystem:
+I always start with a sanity check.  A sanity check is us setting a baseline
+to make sure things are working.  If you were decorating a tree, this step would
+be us making sure the lightbulbs are working before we decorate the tree.
+
+We're going to verify that we can use docker to pull and run an `Nginx`
+container locally. To begin, `pull` an nginx docker image into your local
+filesystem:
 
 ```bash
 docker pull nginx
@@ -144,11 +156,15 @@ CONTAINER ID  IMAGE  COMMAND                  CREATED        STATUS
 9118c08ed0a6  nginx  "nginx -g 'daemon of…"   6 seconds ago  Up 4 seconds
 ```
 
-and now you should be able to visit your docker container at `http://localhost:80`.  This step was like checking that the all the lightbulbs work before you hang them on the tree.  With this, we can go on to the meat and potatoes of the excercise.  Before continuing on, be sure to stop your `Nginx` docker container:
+and now you should be able to visit your docker container at
+`http://localhost:80`.
 
-If this worked, we are ready to deploy our site `Nginx`.  What we are going to do is start by manually deploying our app so we can understand the manual steps and then automate things using `docker` (because we're lazy boys).
+If the above is working we can move onto the next step which is deploying our
+app.  The reason I'm manually going through these steps is so that we have a
+clear understanding of what we'll eventually automate.
 
-Before we continue, make sure you stop your `Nginx` docker container and remove it like so:
+Before we continue, make sure you stop your `Nginx` docker container and remove
+it like so:
 
 ```bash
 docker stop demo-clojurescript-nginx \
@@ -279,11 +295,14 @@ Now we should be able to visit our site at `http://localhost:4001` and see the f
 
 ## Automate Process
 
-You may have noticed, but the above process is a manualy process.  The point was to show you exactly what the process looks like if you have to manually run it.  Now though, we want to show the automated flow using docker.
+Everything we just did is very manual and we can save time and reduce chances
+of human error by automating the above process.  The following will show you
+how to do this.
 
 ### Automate Prod Artifact Builds
 
-Go into the `tools/nginx` directory and create a file called `Dockerfile.build` and make it look like this:
+Go into the `tools/nginx` directory and create a file called `Dockerfile.build`
+and make it look like this:
 
 ```bash
 # base image
@@ -307,11 +326,13 @@ In the above the goal is really to keep everything as light as possible. We just
 :::
 
 A few things to note:
-- we use `clojure` rather than `clj` as `clj` include `rlwrap`, but they are the same for our purposes.
+- we use `clojure` instead of `clj`
 - when you run this container you want to run it from the root of the app
-- will copy everything in the root project to a generically name folder called `app`
+- this will copy everything in the root project to a generically name folder called `app`
 
-This docker file is responsible for building our artifacts that we performed in step 2 earlier.  Now lets go ahead and move to the root of our project and run that dockerfile and see if everything works:
+This docker file is responsible for building our artifacts that we performed in
+step 2 earlier.  Now lets go ahead and move to the root of our project and run
+that dockerfile and see if everything works:
 
 ```bash
 docker build -t \
@@ -319,7 +340,9 @@ docker build -t \
              -f "tools/nginx/Dockerfile.build" .
 ```
 
-The above is going to build our image and the production clojurescript object.  The next step is to run a container based off the above image so that we can get the production artifacts
+The above is going to build our image and the production clojurescript object.
+The next step is to run a container based off the above image so that we can
+get the production artifacts
 
 ```bash
 docker run -d \
@@ -329,7 +352,8 @@ docker run -d \
 ```
 
 ::: note
-If you curious about the content of your docker build container you can exec into it like this `docker exec -it demo-clojurescript-nginx-build bash`.
+If you're curious about the content of your docker build container you can exec
+into it like this `docker exec -it demo-clojurescript-nginx-build bash`.
 :::
 
 ### Move Production Artifacts to Local FileSystem
@@ -406,7 +430,7 @@ docker run -d \
 
 Now we should be able to visit `http://localhost:4001` and we should be able to see
 
-![demo clojurescript nginx](./images/005-demo-clojurescript-nginx-final.png)
+![demo clojurescript nginx](/images/005-demo-clojurescript-nginx-final.png)
 
 ## Conclusion
 
@@ -424,8 +448,13 @@ The reason I am using docker is because I want to reach as many OS's as I can an
 
 
 [Nginx]: https://www.nginx.com/
+[docker]: https://www.docker.com/
 [source code here]: https://github.com/athomasoriginal/demo-clojurescript-nginx
 [create-react-app]: https://create-react-app.dev/
 [templates getting started guide]: https://github.com/athomasoriginal/templates#getting-started
 [templates]: https://github.com/athomasoriginal/templates
 [Start a ClojureScript App from Scratch]: https://betweentwoparens.com/blog/start-a-clojurescript-app-from-scratch
+[first blog post]: https://betweentwoparens.com/blog/deploy-clojurescript-to-github-pages
+[Netlify]: https://www.netlify.com/
+[Install Docker]: https://docs.docker.com/v17.09/engine/installation/
+[Install Clojure]: https://clojurescript.org/guides/quick-start
