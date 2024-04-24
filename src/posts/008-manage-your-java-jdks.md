@@ -1,7 +1,7 @@
 ---
 author: "Thomas Mattacchione"
 createdDate: '01 January 2020'
-updatedDate: '16 March 2024'
+updatedDate: '24 April 2024'
 date: Last Modified
 layout: post
 tags:
@@ -161,7 +161,7 @@ and now running `jenv doctor` returns this:
 ```
 
 At this point, `jEnv` is setup and the last item on our list is to install a
-Java JDK.  If you don't have one installed checkout [AdoptOpenJDK]
+Java JDK.  If you don't have one installed checkout [Adoptium]
 
 ## Add a JDK to jEnv
 
@@ -182,8 +182,9 @@ and that will print something like this:
 
 ```bash
 Matching Java Virtual Machines (2):
-    13.0.2, x86_64:	"AdoptOpenJDK 13"	/Library/Java/JavaVirtualMachines/adoptopenjdk-13.jdk/Contents/Home
-    11.0.6, x86_64:	"AdoptOpenJDK 11"	/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+    21.0.3 (arm64) "Eclipse Adoptium" - "OpenJDK 21.0.3" /Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home
+    17.0.11 (arm64) "Eclipse Adoptium" - "OpenJDK 17.0.11" /Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
+/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home
 ```
 
 If you see something like the above, it means you have at least one Java JDK
@@ -196,7 +197,7 @@ Also note that the above is specific to me.  So while you may have JDk's install
 Now we can go ahead and add JDK's to `jEnv` so it can manage them for us.  Run the following command
 
 ```bash
-jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-13.jdk/Contents/Home
+jenv add /Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home
 ```
 
 ::: note
@@ -207,45 +208,58 @@ Again, the path you use might be different.  The trick to finding the path you n
 When you run the above, you will see something like this returned:
 
 ```bash
-openjdk64-13.0.2 added
-13.0.2 added
-13.0 added
+temurin64-21.0.3 added
+21.0.3 added
+21.0 added
+21 added
 ```
 
 As a sanity check, we can run `jenv versions` to see if `jEnv` knows about our JDK:
 
 ```bash
-* system (set by /Users/thomasmattacchione/.jenv/version)
-  13.0
-  13.0.2
-  openjdk64-13.0.2
+* system (set by /Users/username/.jenv/version)
+  21
+  21.0
+  21.0.3
+  temurin64-21.0.3
 ```
 
-Great, but remember how I have two JDK's installed?  The above indicates that only one of them is being managed by `jEnv`.  This means I have to run through the above step again to have `jEnv` know about the other version of the JDK I have installed.  So, let's repeat those steps:
+Great, but remember how I have two JDK's installed?  The above indicates that
+only one of them is being managed by `jEnv`.  This means I have to run through
+the above step again to have `jEnv` know about the other version of the JDK I
+have installed.  So, let's repeat those steps:
 
 ```bash
-jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+jenv add /Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
 ```
 
 again we get our success output
 
 ```bash
-openjdk64-11.0.6 added
-11.0.6 added
-11.0 added
+temurin64-17.0.11 added
+17.0.11 added
+17.0 added
+17 added
 ```
 
 and when we check versions available now by running `jenv versions` we have both 11 and 13 available to us:
 
 ```shell
-* system (set by /Users/thomasmattacchione/.jenv/version)
-  11.0
-  11.0.6
-  13.0
-  13.0.2
-  openjdk64-11.0.6
-  openjdk64-13.0.2
+* system (set by /Users/username/.jenv/version)
+  17
+  17.0
+  17.0.11
+  21
+  21.0
+  21.0.3
+  temurin64-17.0.11
+  temurin64-21.0.3
 ```
+
+:::note
+`username` in the `system` path is my actual username, but I changed it here
+to avoid confusion
+:::
 
 ## Set a JDK version via jEnv
 
@@ -254,7 +268,7 @@ As a final step, we want to actualy set a JDK to be the one we use.  You have tw
 `jenv local` is going to set your JDK of choice for your current terminal session.  `jenv global` is going to set your chosen JDK as the default for all terminal sessions.  For now, let's set a global version.  In my case, i'm going to set my `jenv global` to `AdoptOpenJDK 11` like this:
 
 ```shell
-jenv global 11.0.6
+jenv global 21.0.3
 ```
 
 Now, in order for the above to take effect, we have to open a new terminal window.  Once you open a new terminal window run the following command to be sure our specified version of Java was set:
@@ -266,9 +280,9 @@ java -version
 and you should see something like this:
 
 ```shell
-openjdk version "11.0.6" 2020-01-14
-OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.6+10)
-OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.6+10, mixed mode)
+openjdk 21.0.3 2024-04-16 LTS
+OpenJDK Runtime Environment Temurin-21.0.3+9 (build 21.0.3+9-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.3+9 (build 21.0.3+9-LTS, mixed mode)
 ```
 
 That's  everything involved in setting a `global` version of JDK through `jEnv`.
@@ -302,5 +316,5 @@ That's everything involved in setting up and working with Jenv.  I hoped this he
 [Add a JDK to jEnv]: #add-a-jdk-to-jenv
 [Set a JDK version via jEnv]: #set-a-jdk-version-via-jenv
 [Uninstalling jEnv]: #uninstalling-jenv
-[AdoptOpenJDK]: https://adoptopenjdk.net/
+[Adoptium]: https://adoptium.net
 [The official jEnv guide]: https://www.jenv.be/
