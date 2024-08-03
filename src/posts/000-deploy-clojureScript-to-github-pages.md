@@ -240,7 +240,7 @@ aria-describedby="footnote-label" id="fn-project-name-ref">name</a>.
 ### Build production bundle
 
 The above is an example of how we test our code locally. After we're happy with
-our code, we can build it for production by runnin the following command:
+our code, we can build it for production by running the following command:
 
 ```bash
 clj -m cljs.main -O advanced -c "demo.static-website"
