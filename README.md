@@ -348,7 +348,7 @@ I appreciate everyone who has helped to improve this blog whenever possible. Sho
 - [rogererens](https://github.com/rogererens)
 - [ludbek](https://github.com/ludbek)
 - [oakmac](https://github.com/oakmac)
-
+- [3willows](https://github.com/3willows)
 
 [Housekeeping]: #housekeeping
 [Quickstart]: #quickstart
